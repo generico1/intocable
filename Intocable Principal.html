@@ -59,7 +59,7 @@ tw-sidebar tw-icon.undo {
 (link-goto: &quot;Regresar&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="8" name="Mirar el teléfono" tags="" position="1483,332" size="100,100">Tienes 1 mensaje no leído y 15 llamadas perdidas.
 
 [[Mirar las llamadas]]
-[[Mirar mensaje]]
+(if: $textedCarmen is false)[ [[Mirar mensaje]] ]
 (if: $itemClothes&#39;s isCarried is true or $CalledCarmen is true)[(link:&quot;Llévate el teléfono&quot;)[(set:$selectedItem to $itemPhone)(set:$itemPhone&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)]]</tw-passagedata><tw-passagedata pid="9" name="Salir de la cama" tags="" position="776,415" size="100,100">[(if: $itemClothes&#39;s isCarried is false)[No te diste cuenta que te dormiste vestido. 
 
 Hay [[ropa nueva]] en el armario.] ]
