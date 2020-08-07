@@ -86,7 +86,9 @@ Hay dos puertas, una al baño y la otra a la sala. [[Ir al baño.]] [[Ir a la sa
 [[Tomar agua]]]
 (if: ($hasBathed is false) and ($itemClothes&#39;s isCarried is false))[ Necesitas bañarte y cambiarte de ropa.
 [[Ir a ducharte]] ]
-(link-goto: &quot;Regresar al cuarto para ponerte guapo.&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="12" name="Ir a la sala." tags="" position="3463,840" size="100,100">(if: $calledCarmen is false) [¿Qué haces? ¿A dónde vas?  Tal vez debes hablar con alguien...]
+(link-goto: &quot;Regresar al cuarto para ponerte guapo.&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="12" name="Ir a la sala." tags="" position="3463,840" size="100,100">Estás en la sala.
+
+(if: $calledCarmen is false) [¿Qué haces? ¿A dónde vas?  Tal vez debes hablar con alguien...]
 (else:)[Tienes un poco de hambre, pero tampoco quieres estar mucho tiempo en casa.]
 
 [[Volver a la habitación |Salir de la cama]]
@@ -198,7 +200,9 @@ No contesta. ¿Qué haces?
 [[Dejar el teléfono]]
 (set: $textedManuel to true)</tw-passagedata><tw-passagedata pid="29" name="No dejarle ningún mensaje" tags="" position="1233,1364" size="100,100">Probablemente él vuelve a llamar más tarde. Tu cabeza está que estalla.   
 
-[[Dejar el teléfono]]</tw-passagedata><tw-passagedata pid="30" name="Ir a la cocina" tags="" position="3678,1006" size="100,100">Necesitas comer y beber algo. Ves el refrigerador entreabierto, y el comedor con alguna comida cubierta con una servilleta.
+[[Dejar el teléfono]]</tw-passagedata><tw-passagedata pid="30" name="Ir a la cocina" tags="" position="3678,1006" size="100,100">Estás en la cocina.
+
+Necesitas comer y beber algo. Ves el refrigerador entreabierto, y el comedor con alguna comida cubierta con una servilleta.
 
 [[Ver refrigerador]]
 [[Ver comedor]]
