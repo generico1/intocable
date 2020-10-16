@@ -129,10 +129,8 @@ Parece que a él no le agradó, y empieza a llamar muchas veces. Aún no tienes 
 [[Dejar el teléfono]]
 (set: $puntosDemocraticos to $puntosDemocraticos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="17" name="Llamar a Carlos" tags="" position="2449,766" size="100,100">(set: $calledCarlos to true)
-(if: $calledManuela is false) [ (goto: &quot;Carlos Amable&quot;)
-	[[Carlos Amable]] ]
-(else:)[ (goto: &quot;Carlos Agresiva&quot;)
-	[[Carlos Agresiva]] ]</tw-passagedata><tw-passagedata pid="18" name="Dejar el teléfono" tags="" position="997,1445" size="100,100">(if: ($itemClothes&#39;s isCarried is false) and (($hasDrunkWater is false) or ($hasDrunkJuice is false) or ($hasEatenChicken is false)) )[
+(if: $calledManuela is false) [ (goto: &quot;Carlos Amable&quot;) [[Carlos Amable]] ]
+(else:)[ (goto: &quot;Carlos Agresivo&quot;) [[Carlos Agresivo]] ]</tw-passagedata><tw-passagedata pid="18" name="Dejar el teléfono" tags="" position="997,1445" size="100,100">(if: ($itemClothes&#39;s isCarried is false) and (($hasDrunkWater is false) or ($hasDrunkJuice is false) or ($hasEatenChicken is false)) )[
 Ahora, a aliviar esa resaca. ]
 (else:)[
   Sigue averiguando más sobre anoche.
@@ -217,7 +215,7 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 [[&quot;Sí, claro. Adonde tú quieras.&quot;]]
 [[&quot;Supongo que podemos encontrar un lugar.&quot;]]
 (set: $puntosDemocraticos to $puntosDemocraticos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="29" name="El Sitio amable" tags="" position="2947,1271" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por tomar la iniciativa**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="29" name="El Sitio amable" tags="" position="2988,1293" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por tomar la iniciativa**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Sí, claro. Es tu sitio favorito,  aunque creo que es mejor ir al Café Tinta. Sabes que me queda más cerca de mi casa, y es mucho más bonito.*
 
@@ -239,7 +237,7 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 [[&quot;Sí, sí. Entiendo.&quot;]]
 [[&quot;Sí, me parece bien. No hay problema.&quot;]]
 (set: $puntosDemocraticos to $puntosDemocraticos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="32" name="Café Tinta amable" tags="" position="3001,1427" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por tomar de nuevo la iniciativa**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="32" name="Café Tinta amable" tags="" position="2969,1604" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por tomar de nuevo la iniciativa**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¡Genial! Tú sí que sabes leerme la mente, picarón. Te veo en media hora. ¡Besito, chao!*
 
@@ -266,34 +264,36 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 (if: $itemClothes&#39;s isCarried is true) [ [[Salir de la casa]] ]
 [[Dejar el teléfono]]
 (set: $puntosDemocraticos to $puntosDemocraticos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="35" name="&quot;Estaba con resaca, ya sabes.&quot;" tags="" position="1951,1144" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por responder con honestidad**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="35" name="&quot;Estaba con resaca, ya sabes.&quot;" tags="" position="1966,1095" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por responder con honestidad**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¡¿Y qué con eso?! No es excusa. Tenemos que hacer planes juntos desde ya.* 
 
 [[&quot;Ya, ¿pero planes de qué o qué?&quot;]] 
-[[&quot;Ok. Hablemos un rato en El Sitio.&quot; |El Sitio agresiva]] 
+[[&quot;Ok. Hablemos un rato en El Sitio.&quot; |El Sitio agresiva]]
+[[&quot;Tienes razon, discúlpame. Yo conozco un lugar perfecto para nuestra cita, El Sitio.&quot;|El Sitio amable]]
 (set: $puntosDemocraticos to $puntosDemocraticos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="36" name="&quot;Nada, me estaba alistando.&quot;" tags="" position="2236,1148" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder algo que él cree muy improbable**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="36" name="&quot;Nada, me estaba alistando.&quot;" tags="" position="2236,1119" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder algo que él cree muy improbable**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Ya, claro. Espero que te hayas arreglado para encontrarnos ahora, ¿verdad?*
 
 [[Claro. ¿Qué tal si nos vemos en El Sitio? |El Sitio agresiva]]
 [[Como siempre, disponible para ti.]]
 (set: $puntosDemocraticos to $puntosDemocraticos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="37" name="&quot;Ya, ¿pero planes de qué o qué?&quot;" tags="" position="1797,1294" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder sin diplomacia a Carlos**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="37" name="&quot;Ya, ¿pero planes de qué o qué?&quot;" tags="" position="1814,1269" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder sin diplomacia a Carlos**]
 
 (css: &quot;color: white;&quot;) [**Carlos:**] *Pues el plan para anunciar nuestro amor a todo el mundo. Espero que me estés tomando en serio, ¿no?*
 
 [[&quot;Tienes razón. Hablemos por acá cerca en El Sitio.&quot; |El Sitio agresiva]]
 [[&quot;Total. Veámonos en el Café Tinta, que es un poco más distanciado.&quot; |Café Tinta agresiva]]  
 
-(set: $puntosDemocraticos to $puntosDemocraticos - 1)</tw-passagedata><tw-passagedata pid="38" name="El Sitio agresiva" tags="" position="2080,1233" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por tomar la iniciativa**]
+(set: $puntosDemocraticos to $puntosDemocraticos - 1)</tw-passagedata><tw-passagedata pid="38" name="El Sitio agresiva" tags="" position="2124,1337" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por tomar la iniciativa**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Sí, claro. Es tu sitio favorito,  aunque creo que es mejor ir al Café Tinta. Sabes que me queda más cerca de mi casa, y es mucho más bonito.* 
 
 [[&quot;No me siento muy bien. Así que El Sitio es preferible para mí.&quot; |El Sitio insistencia agresiva]]
 [[&quot;Sí, ya lo sé. No me lo recuerdes.&quot;]]
 [[&quot;Entiendo. Vamos al Café Tinta como dices.&quot; |Café Tinta agresiva]]
+[[&quot;Por supuesto, lo que te quede mejor para ti. Vamos al Café Tinta.|Café Tinta amable]]
 (set: $puntosDemocraticos to $puntosDemocraticos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="39" name="Como siempre, disponible para ti." tags="" position="2352,1240" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por ser innecesariamente complaciente**]
 
@@ -302,7 +302,7 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 [[Vamos a El Sitio, que nos queda más cerca a ambos. |El Sitio agresiva]]
 [[Aunque está lejos, propongo el Café Tinta. |Café Tinta agresiva]]
 (set: $puntosDemocraticos to $puntosDemocraticos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="40" name="&quot;Sí, ya lo sé. No me lo recuerdes.&quot;" tags="" position="1932,1399" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder de mala manera**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="40" name="&quot;Sí, ya lo sé. No me lo recuerdes.&quot;" tags="" position="1933,1496" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder de mala manera**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¡Te lo tengo que recordar porque eres una joyita! Te veo en el Café Tinta en media hora. Yo veré. Chaíto.*
 
@@ -313,7 +313,7 @@ Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay
 (if: $itemClothes&#39;s isCarried is true) [ [[Salir de la casa]] ]
 [[Dejar el teléfono]]
 (set: $puntosDemocraticos to $puntosDemocraticos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="41" name="Café Tinta agresiva" tags="" position="2281,1400" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por querer ir al lugar que Carlos esperaba**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="41" name="Café Tinta agresiva" tags="" position="2479,1500" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por querer ir al lugar que Carlos esperaba**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Es una idea brillante. Un sitio lejano y bien raro para que nadie nos vea. ¡Me encanta! Nos vemos en media hora, ¡sin falta! Besos, chao.* 
 
@@ -331,7 +331,7 @@ Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay
 (if: $inBed is true) [ [[&quot;En la cama&quot;]] ]
 
 (set: $puntosDemocraticos to $puntosDemocraticos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="43" name="Carlos Agresiva" tags="" position="2125,961" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por llamar a Manuela primero**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="43" name="Carlos Agresivo" tags="" position="2172,909" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por llamar a Manuela primero**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¡Hasta que por fin! ¿Por qué no me contestas?*
 
@@ -408,7 +408,7 @@ Jason Denney y Félix González - 2020
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos
 
 (if: $puntosDemocraticos &gt;7) [*Lo estás haciendo muy bien.*]
-(else:) [(if: $puntosDemocraticos &lt;7) [*Puedes hacerlo mejor la próxima vez.*]]</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2107,1400" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por hacer valer tu punto de vista**]
+(else:) [(if: $puntosDemocraticos &lt;7) [*Puedes hacerlo mejor la próxima vez.*]]</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2133,1486" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por hacer valer tu punto de vista**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Bien, como digas. Te espero en media hora. No tienes excusa de llegar tarde. Chao.*
 
@@ -476,25 +476,27 @@ Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: 
 
 [[Mirar las llamadas]]
 (if: $textedCarlos is false)[ [[Mirar mensaje]] ]
-(if: $itemClothes&#39;s isCarried is true or $CalledCarlos is true)[(link:&quot;Llévate el teléfono&quot;)[(set:$selectedItem to $itemPhone)(set:$itemPhone&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)]]</tw-passagedata><tw-passagedata pid="63" name="&quot;Por ahí&quot;" tags="" position="2580,985" size="100,100">
+(if: $itemClothes&#39;s isCarried is true or $CalledCarlos is true)[(link:&quot;Llévate el teléfono&quot;)[(set:$selectedItem to $itemPhone)(set:$itemPhone&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)]]</tw-passagedata><tw-passagedata pid="63" name="&quot;Por ahí&quot;" tags="" position="2527,1028" size="100,100">(css: &quot;color: red;&quot;)[**-2 puntos por evitar la pregunta**]
 
-
-(css: &quot;color: white;&quot;)[**Carlos:**] *Quiero verte para que hagamos planes juntos.*
+(css: &quot;color: white;&quot;)[**Carlos:**] *¿Dormiste bien? No estoy tan seguro... Mira, quiero verte para que hagamos planes juntos.*
 
 [[&quot;Vale, ¿qué te parece si nos reunimos en El Sitio?&quot; |El Sitio amable]]
+[[&quot;Ya, ¿pero planes de qué o qué?&quot;]]
 [[&quot;Sí, claro. Adonde tú quieras.&quot;]]
+
 (set: $puntosDemocraticos to $puntosDemocraticos - 2)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="64" name="&quot;Supongo que podemos encontrar un lugar.&quot;" tags="" position="2526,1171" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *Vale.... ¿Por qué no vamos a El Sitio?*
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos</tw-passagedata><tw-passagedata pid="64" name="&quot;Supongo que podemos encontrar un lugar.&quot;" tags="" position="2682,1149" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *Vale.... ¿Por qué no vamos a El Sitio?*
 
 [[Sí, me suena bien.|El Sitio insistencia amable]]
 [[Prefiero el Café Tinta, que es mi favorito.|Café Tinta amable]]
+[[¿En serio? ¿Me sabes en verdad? Vamos al Cafe Tinta.  |Café Tinta agresiva]]
 [[En verdad, quiero acostarme. Chao.]]</tw-passagedata><tw-passagedata pid="65" name="En verdad, quiero acostarme. Chao." tags="" position="2665,2106" size="100,100">Te acuestas y manana descubreras la ruinas de tu vida. Es probable que has perdido la confianza de tu mejor amiga y habra consequencias.
 
 
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
 
-(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="66" name="Sí, me suena bien. " tags="" position="2845,1297" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
