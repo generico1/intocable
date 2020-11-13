@@ -385,11 +385,15 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 ¡Gracias por jugar! Si tienes comentarios nos envías un correo a drawingboardgames2020@gmail.com. También, visítanos en nuestra página web: https://drawingboard.games 
 
 Jason Denney y Félix González - 2020
-(set: $puntosDemocraticos to $puntosDemocraticos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosDemocraticos
 
-(if: $puntosDemocraticos &gt;7) [*Lo estás haciendo muy bien.*]
-(else:) [(if: $puntosDemocraticos &lt;7) [*Puedes hacerlo mejor la próxima vez.*]]</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2134,1486" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por hacer valer tu punto de vista**]
+
+(css: &quot;color: yellow;&quot;)[**Qué tan bien lo hiciste:**]
+
+**Carlos** - (if: $puntosCarlos &gt;4) [*Estás en buena relación con él.*](else:) [*Está molesto contigo.*]
+
+**Manuela** - (if: $puntosManuela &gt;0) [*Estás en buena relación con ella.*](else:) [*Está molesta contigo.*]
+
+**Preparación para la cita** - (if: $puntosCarisma &gt;4) [*¡Te ves increíble!*](elseif: $puntosCarisma &gt;0) [*Puedes hacerlo mejor la próxima vez.*](else:) [¿*Quién es este cavernícola? Huele mal.*]</tw-passagedata><tw-passagedata pid="51" name="El Sitio insistencia agresiva" tags="" position="2093,1479" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por hacer valer tu punto de vista**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Bien, como digas. Te espero en media hora. No tienes excusa de llegar tarde. Chao.*
 
