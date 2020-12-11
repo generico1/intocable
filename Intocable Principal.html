@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -180,7 +180,12 @@ Necesitas comer y beber algo. Ves el refrigerador entreabierto, y el comedor con
 
 [[Comes el pollo]] ]
 [[Ir al refrigerador |Ver refrigerador]]
-(link-goto: &quot;Da una vuelta por la cocina&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="26" name="Salir de la casa" tags="" position="2976,2107" size="100,100">(if: $calledCarlos is true) [ (goto: &quot;Fin del demo&quot;)
+(link-goto: &quot;Da una vuelta por la cocina&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="26" name="Salir de la casa" tags="" position="2976,2107" size="100,100">
+(if: $calledCarlos is true) [
+	(if: $itemPhone&#39;s isCarried is false or $itemWallet&#39;s isCarried is false )[
+ (css: &quot;color: yellow;&quot;)[¿Estás seguro que tienes todo lo que necesitas?]
+ [[Ir a la habitación|Salir de la cama]]
+]
 	[[Fin del demo]] ]
 (else:)[ Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
 
@@ -405,6 +410,27 @@ Jason Denney y Félix González - 2020
 
 **Preparación para la cita** - (if: $puntosCarisma &gt;=3) [*¡Te ves increíble!*](elseif: $puntosCarisma &gt;0) [*Puedes hacerlo mejor la próxima vez.*](else:) [¿*Quién es este cavernícola? Hueles muy mal.*]
 
+**Tu Actitud**
+(if: $puntosCarlos + $puntosCarisma &gt;= 11)[
+	Bueno, lo que tengo que hacer es hablar con sinceridad con Carlos, a ver qué pasa. Pero debo tener claro también si quiero tener la confianza de Manuela. ¿Qué puedo hacer ahora?
+]
+(elseif: $puntosCarlos + $puntosCarisma &gt;= 9)[
+	Vale. Una de dos: o termino con Carlos y sigo firme con Manuela, o todo se puede ir al traste. Igual tengo que hablar con Carlos con firmeza y sinceridad. Seguro que podemos arreglar algo.
+]
+(elseif: $puntosCarlos + $puntosCarisma &gt;= 5)[
+    Bien. Sé que esto no puede ser o estar con Carlos, o mantener mi amistad con Manuela. Tiene que haber algo para estar todos contentos. Si juego bien mis cartas, seguro habrá una solución justa. Veremos…
+]
+(elseif: $puntosCarlos + $puntosCarisma &gt;= 2)[
+	¡Aaaaah! ¿Por qué todo tiene que reducirse a esto? Me molesta muchísimo todo esto. Que Carlos, que Manuela, que esto, que lo otro. ¡Estoy harto! Si no juego bien mis cartas, todo esto se va a la mismísima mierda.
+]
+(elseif: $puntosCarlos + $puntosCarisma &gt;= 0)[
+	Bueno. Puedo llegar, hablarle a Carlos con firmeza, y aquí nada ha pasado. Claro, y borrar la evidencia si hay alguna. Simple.	
+]
+(else:)[
+  ¡Carlos está loco! ¡Si hay evidencia de algo entre nosotros, hay que borrarla! Y ya.
+]
+
+
 (link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2093,1481" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por hacer valer tu punto de vista**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Bien, como digas. Te espero en media hora. No tienes excusa de llegar tarde. Chao.*
@@ -469,8 +495,13 @@ Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: 
 (link-goto: &quot;Explora más el cuarto&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="62" name="Revisa el teléfono." tags="" position="1595,103" size="100,100">Tienes 1 mensaje no leído y 15 llamadas perdidas.
 
 [[Mirar las llamadas]]
+
 (if: $textedCarlos is false)[ [[Mirar mensaje]] ]
-(if: $itemClothes&#39;s isCarried is true and $CalledCarlos is true)[ [(link:&quot;Llévate el teléfono&quot;)][ (set:$selectedItem to $itemPhone)(set:$itemPhone&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)] ]</tw-passagedata><tw-passagedata pid="63" name="&quot;Por ahí&quot;" tags="" position="2597,965" size="100,100">(css: &quot;color: red;&quot;)[**-2 puntos por evitar la pregunta**]
+
+(if: ($itemClothes&#39;s isCarried is true) and ($calledCarlos is true))[ (link:&quot;Llévate el teléfono&quot;)[ (set:$selectedItem to $itemPhone)(set:$itemPhone&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)]]
+
+(if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo.&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)] ]
+</tw-passagedata><tw-passagedata pid="63" name="&quot;Por ahí&quot;" tags="" position="2597,965" size="100,100">(css: &quot;color: red;&quot;)[**-2 puntos por evitar la pregunta**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Dormiste bien? No estoy tan seguro... Mira, quiero verte para que hagamos planes juntos.*
 
@@ -487,7 +518,7 @@ Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: 
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
 
-(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata></tw-storydata>
+(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="66" name="Called Carlos false" tags="" position="1595,253" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
