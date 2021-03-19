@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -196,6 +196,9 @@ Necesitas comer y beber algo. Ves el refrigerador entreabierto, y el comedor con
 No hablaste con nadie, así que es imposible saber qué pasó anoche.
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
+
+&lt;!--Do this before starting part 2 -&gt;
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;))
 
 (link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;) ]</tw-passagedata><tw-passagedata pid="27" name="&quot;En la casa&quot;" tags="" position="2965,1104" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por responder lo que él espera**]
 
@@ -522,16 +525,28 @@ Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: 
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
 
-(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="66" name="Parte 2" tags="" position="2715,2379" size="100,100">Intocable - Parte 2
+(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="66" name="Parte 2" tags="" position="2599,2337" size="100,100">Intocable - Parte 2
 
 [[2.1. Llegas a El Sitio]]
 [[2.1.1. TAXI CON MI DINERO EN EL SITIO]]
 [[2.3. LLEGAS AL CAFÉ TINTA]]
 
+
+
+
+
+
+&lt;!-- Use this when restarting part 2 -&gt;
+(set: $puntosCarisma to $part2SavedState&#39;s puntosCarisma)
+(set: $puntosCarlos to $part2SavedState&#39;s puntosCarlos)
+(set: $puntosManuela to $part2SavedState&#39;s puntosManuela)
+
+
+
+&lt;!-- delete this later, for testing part 2 -&gt;
 (set: $puntosCarisma to 0)
 (set: $puntosCarlos to 0)
 (set: $puntosManuela to 0)
-
 (set: $hasBathed to false)
 (set: $hasDrunkWater to false)
 (set: $hasDrunkJuice to false)
@@ -607,24 +622,34 @@ Carlos: Hola. Yo la verdad no entiendo por qué me hiciste venir a este sitio ta
 
 Carajo, Manuela está aquí. Vámonos de aquí. ¡Ya! 
 
--si tienes menos de 3 puntos Carlos-
+!!!!!- si tienes menos de 3? puntos Carlos -!!!!!
+
 Carlos: Wow, mira que sí es El Sitio favorito de ustedes dos. ¿Por qué le temes? ¿Qué ocultas? Hablemos todos. 
 
 [[Prefiero evitar problemas. Te cuento luego donde tú quieras.|2.2.2. MANUELA TE SORPRENDE HUYENDO]] -ir a 2.2.2.-
 [[Vale, como quieras.|2.2.2.1. ENFRENTA CON CARLOS A MANUELA CON CONFIANZA]] -ir a 2.2.2.1.-
 [[Oooook. Si tú insistes.|2.2.2.2. ENFRENTA CON CARLOS A MANUELA SIN CONFIANZA]] -ir a 2.2.2.2.-
 
--si tienes más de 3 puntos Carlos-
+!!!!!- si tienes más de 3? puntos Carlos -!!!!!
 Carlos: Mira quién está aquí si no es mi hermanita Manuela. Vaya que este es El Sitio de ustedes dos. Sería interesante conocer cómo eres con tu gran amiga.
 
 [[Sí, claro. Pero después. Te cuento luego en el lugar donde tú quieras.|2.2.2. MANUELA TE SORPRENDE HUYENDO]] -ir a 2.2.2.-
-[[Claro, totalmente. Sigamos entonces.|2.2.2.1. ENFRENTA CON CARLOS A MANUELA CON CONFIANZA]] -ir a 2.2.2.1.-</tw-passagedata><tw-passagedata pid="77" name="2.2.2. MANUELA TE SORPRENDE HUYENDO" tags="" position="1486,3093" size="100,100">(-1 punto Manuela por intentar huirle)
+[[Claro, totalmente. Sigamos entonces.|2.2.2.1. ENFRENTA CON CARLOS A MANUELA CON CONFIANZA]] -ir a 2.2.2.1.-
 
-Manuela: ¿Carlos? ¡Carlitos, hermanito, qué sorpresa! Ven y siéntate. ¿Y con quién estás ahora? ¡Aaaahhh! ¿Qué es esto? ¿Qué está pasando? ¡Que alguien me explique!
+
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="77" name="2.2.2. MANUELA TE SORPRENDE HUYENDO" tags="" position="1486,3093" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto Manuela por intentar huirle**] 
+
+(css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás diciendo que me vaya? ¿O que entre a mi propio riesgo?*
+
+(css: &quot;color: orange;&quot;)[**Manuela:**] *¿Carlos? ¡Carlitos, hermanito, qué sorpresa! Ven y siéntate. ¿Y con quién estás ahora? ¡Aaaahhh! ¿Qué es esto? ¿Qué está pasando? ¡Que alguien me explique!*
 
 Al ver la reacción de Manuela sales a correr como la persona cobarde que eres. Carlos queda desconcertado y desilusionado contigo. Mientras tanto, Manuela se enloquece, te persigue, se siente muy ofendida. Pierdes la confianza de ambos, y te quedarás sin saber qué fue lo que pasó en realidad anoche. 
 
-[Fin del juego: reinicia]</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="3051,2454" size="100,100">El taxista te pide el dinero de tu recorrido. 
+[Fin del juego: reinicia]
+
+(set: $puntosManuela to $puntosManuela - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
+</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="3051,2454" size="100,100">El taxista te pide el dinero de tu recorrido. 
 
 (if: $itemWallet&#39;s isCarried is true) [ [[Pagar carrera |2.1.1. TAXI CON MI DINERO EN EL SITIO]] ] 
 (else:) [ [[Pedir prestado a alguien de confianza en El Sitio |2.1.3. PEDIR PRESTADO A MANUELA]] ]</tw-passagedata><tw-passagedata pid="79" name="2.1.5.7 RECUPERAR BILLETERA" tags="" position="3133,3679" size="100,100">Sabes que olvidas un objeto muy importante. ¿Dónde puede estar?
@@ -646,45 +671,64 @@ Sales rápidamente de El Sitio para tomar otro taxi.
 Carlos: Hola, hermanita querida. ¿Cómo así que no puede ser? 
 
 [[Sí puede ser. Me enamoré de tu hermana.|2.2.2.3. MANUELA SABE &#39;LA VERDAD&#39; DE TI]] -ir a 2.2.2.3.-
-[[Es que le hice una promesa a tu hermana de no estar contigo, Carlos. Lo siento.|2.2.2.4. CARLOS SABE &#39;LA VERDAD&#39; DE TI]] -ir a 2.2.2.4.-</tw-passagedata><tw-passagedata pid="83" name="2.2.1.2. CARLOS SE VA DE EL SITIO" tags="" position="1456,2917" size="100,100">Ya con Carlos ido, entras a El Sitio, hablas con Manuela como si nada hubiera pasado. Pero Carlos decide publicar sus fotos contigo en sus redes. Manuela las ve y comienza a reclamarte para luego golpearte en el bar. Se arma un gran escándalo. Pierdes la confianza de ambos. Tu vida es horrible. 
+[[Es que le hice una promesa a tu hermana de no estar contigo, Carlos. Lo siento.|2.2.2.4. CARLOS SABE &#39;LA VERDAD&#39; DE TI]] -ir a 2.2.2.4.-</tw-passagedata><tw-passagedata pid="83" name="2.2.1.2. CARLOS SE VA DE EL SITIO" tags="" position="1151,2717" size="100,100">Ya con Carlos ido, entras a El Sitio, hablas con Manuela como si nada hubiera pasado. Pero Carlos decide publicar sus fotos contigo en sus redes. Manuela las ve y comienza a reclamarte para luego golpearte en el bar. Se arma un gran escándalo. Pierdes la confianza de ambos. Tu vida es horrible. 
 
-[Fin del juego - Reiniciar]</tw-passagedata><tw-passagedata pid="84" name="2.2.2.2. ENFRENTA CON CARLOS A MANUELA SIN CONFIANZA" tags="" position="1693,3092" size="100,100">(-1 punto con Carlos y Manuela por no mostrar honestidad con ninguno de los dos)
+[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="84" name="2.2.2.2. ENFRENTA CON CARLOS A MANUELA SIN CONFIANZA" tags="" position="1693,3092" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto con Carlos y Manuela por no mostrar honestidad con ninguno de los dos**]
 
-Manuela: ¡Buenas, buenas! Uy, Carlitos, querido. ¡Qué sorpresa! No me digan que están juntos. Porque eso no puede ser.
+
+(css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás diciendo que me vaya? ¿O que entre a mi propio riesgo?*
+
+(css: &quot;color: orange;&quot;)[**Manuela:**] *¡Buenas, buenas! Uy, Carlitos, querido. ¡Qué sorpresa! No me digan que están juntos. Porque eso no puede ser.*
 
 Por más que intentas reducir la importancia de estar con Carlos, pierdes la confianza de ambos. Manuela comienza a golpearte en el bar. Se arma un escándalo. Y el indignado Carlos también te abandona. Tu vida es horrible y pagas todos los daños en el restaurante, que son muchos. 
 
-[Fin del juego: reinicia]</tw-passagedata><tw-passagedata pid="85" name="2.2.2.3. MANUELA SABE &#39;LA VERDAD&#39; DE TI" tags="" position="1847,3087" size="100,100">(+1 punto Carlos por decidirte por él
--1 punto Manuela por decidirte por Carlos).
+[Fin del juego: reinicia]
+
+(set: $puntosCarlos to $puntosCarlos - 1)
+(set: $puntosManuela to $puntosManuela - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="85" name="2.2.2.3. MANUELA SABE &#39;LA VERDAD&#39; DE TI" tags="" position="1847,3087" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto Carlos por decidirte por él**]
+(css: &quot;color: red;&quot;)[**-1 punto Manuela por decidirte por Carlos**]
+
 
 Manuela: Muy bien. Ya que te has decidido, entonces no cuentes más conmigo. Y tú, Carlos, también me has traicionado. Por más que digan algo, no me convencerán de que esto es un adefesio. ¡Fuera de mi vista!
 
 Al salir de El Sitio, Carlos te dice:
 
--si tienes más de 4 puntos Carlos-
+**!!!!!- si tienes más de 4? puntos Carlos -!!!!**
 Carlos: Has mostrado valentía, amor mío. Te admiro muchísimo. Sea lo que sea que haya pasado entre ustedes, sé que nuestro amor es más fuerte, y Manuela tendrá que entrar en razón.
  
--si tienes 4 puntos Carlos o menos- 
+**!!!!!-- si tienes 4? puntos Carlos o menos -!!!!!**
 Carlos: ¿Pero esto qué significa? ¿A qué viene esa actitud de mi hermana? Explícame porque no entiendo nada. 
 
 Te decidiste por estar con Carlos, pero aún no tienes claro por qué. Él está tan enamorado de ti que sólo quiere saber de tu promesa con ella, y nunca sabrás qué pasó realmente anoche. 
 
-[Fin del juego - reiniciar]</tw-passagedata><tw-passagedata pid="86" name="2.2.2.4. CARLOS SABE &#39;LA VERDAD&#39; DE TI" tags="" position="2007,3086" size="100,100">(+1 punto Manuela por decidirte por ella
--1 punto Carlos por decidirte por Manuela).
+[Fin del juego - reiniciar]
 
--si tienes 4 puntos Carlos o menos-
+(set: $puntosCarlos to $puntosCarlos + 1)
+(set: $puntosManuela to $puntosManuela - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="86" name="2.2.2.4. CARLOS SABE &#39;LA VERDAD&#39; DE TI" tags="" position="2007,3086" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto Manuela por decidirte por ella**]
+(css: &quot;color: red;&quot;)[**-1 punto Carlos por decidirte por Manuela**]
+
+**!!!!- si tienes 4? puntos Carlos o menos -!!!!**
 Carlos: ¿Y aún así te metiste conmigo anoche? No sé ni qué pensar de ti. Te maldigo. Y a ti también, Manuela. ¿Qué le haces prometer a quien creía que amaba con locura? Esto es absurdo. 
 
 Al salir Carlos, indignado y dolido, sube las pruebas de que acompañaste a Carlos a la fiesta de anoche. Esto Manuela no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes la confianza de ambos. Tu vida es terrible. 
 
 [Fin de juego - reiniciar]
 
--si tienes más de 4 puntos Carlos-
+**!!!!- -si tienes más de 4 puntos Carlos- -!!!!**
 Carlos: ¡Ah, claro! Para ti es muy fácil olvidarlo todo y ya. La cobardía tuya no tiene límites. Manuelita, mírame estas fotos y dime si todo esto es mentira. 
 
 Carlos muestra algunas fotos en las que lo acompañas a la fiesta de anoche. Algunas revelan la mucha cercanía que tuvieron, que Manuela no lo aguanta y te hace un tremendo y te hace un tremendo escándalo ante todo el mundo. Pierdes la confianza de ambos. Tu vida es terrible. 
 
-[Fin de juego - reiniciar]</tw-passagedata><tw-passagedata pid="87" name="2.3. LLEGAS AL CAFÉ TINTA" tags="" position="3571,2460" size="100,100">El taxista te pide el dinero de tu recorrido. 
+[Fin de juego - reiniciar]
+
+(set: $puntosCarlos to $puntosCarlos - 1)
+(set: $puntosManuela to $puntosManuela + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="87" name="2.3. LLEGAS AL CAFÉ TINTA" tags="" position="3571,2460" size="100,100">El taxista te pide el dinero de tu recorrido. 
 
 -si llevas la billetera- [[Pagar carrera|2.3.1. PAGAR TAXI AL CAFÉ TINTA]] : ir a 2.3.1.
 [[Pedirle prestado a Carlos en El Café Tinta|2.3.1.1. PEDIRLE PRESTADO A CARLOS]] -si olvidaste la billetera- : ir a 2.3.1.1.</tw-passagedata><tw-passagedata pid="88" name="2.3.1. PAGAR TAXI AL CAFÉ TINTA" tags="" position="3816,2529" size="100,100">¡Bien! Pagaste la carrera completa. 
@@ -807,21 +851,31 @@ Mike”.
 
 ¿La mejor década? Hmm… yo lo dudo mucho, pero bueno. Entre gustos no hay disgustos).
 
-[[Ver el bolso|2.3.5.2.2.1. TOMA EL BOLSO]] -ir a 2.3.5.2.2.1.-</tw-passagedata><tw-passagedata pid="106" name="2.2.1.A" tags="" position="1552,2722" size="100,100">-Si A- [-1 punto Carlos por ser grosero con él.] 
+[[Ver el bolso|2.3.5.2.2.1. TOMA EL BOLSO]] -ir a 2.3.5.2.2.1.-</tw-passagedata><tw-passagedata pid="106" name="2.2.1.A" tags="" position="1552,2722" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto Carlos por ser grosero con él.**] 
 
-Carlos: ¿Estás diciendo que me vaya? ¿O que entre a mi propio riesgo?
+(css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás diciendo que me vaya? ¿O que entre a mi propio riesgo?*
 
 [[Pues vete si quieres. Nadie te obligó a venir.|2.2.1.2. CARLOS SE VA DE EL SITIO]] -ir a 2.2.1.2.-
 
-[[No, dale, entremos y hablemos.|2.2.1.1. VES A MANUELA EN EL SITIO]] -ir a 2.2.1.1.-</tw-passagedata><tw-passagedata pid="107" name="2.2.1.B" tags="" position="1710,2720" size="100,100">-Si B- [+1 punto Carlos por ser honesto con él.]
+[[No, dale, entremos y hablemos.|2.2.1.1. VES A MANUELA EN EL SITIO]] -ir a 2.2.1.1.-
 
-Carlos: Me gusta tu confianza. Me siento más seguro contigo, cariño. Sigamos. 
+(set: $puntosCarlos to $puntosCarlos - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="107" name="2.2.1.B" tags="" position="1710,2720" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto Carlos por ser honesto con él.**] 
 
-[[Entra a El Sitio.|2.2.2.1. ENFRENTA CON CARLOS A MANUELA CON CONFIANZA]] -ir a 2.2.2.1.: Manuela con confianza-</tw-passagedata><tw-passagedata pid="108" name="2.2.1.C" tags="" position="1900,2719" size="100,100">-Si C- [+1 punto Carlos por bromear con él.]
 
-Carlos: Ja,... ja,... ja. Sí, qué gracia. Búrlate. Tu comedia es también ordinaria. Buena para El Sitio. ¿Vamos?
+(css: &quot;color: white;&quot;)[**Carlos:**] * Me gusta tu confianza. Me siento más seguro contigo, cariño. Sigamos.* 
 
-[[Entra a El Sitio|2.2.1.1. VES A MANUELA EN EL SITIO]] -ir a 2.2.1.1. Ves a Manuela-</tw-passagedata><tw-passagedata pid="109" name="2.3.5.2.C" tags="" position="4743,3479" size="100,100">[-Si C: -1 punto Carlos por mostrar más lealtad a Manuela.
+[[Entra a El Sitio.|2.2.2.1. ENFRENTA CON CARLOS A MANUELA CON CONFIANZA]] -ir a 2.2.2.1.: Manuela con confianza-
+
+(set: $puntosCarlos to $puntosCarlos + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="108" name="2.2.1.C" tags="" position="1900,2719" size="100,100">(css: &quot;color: red;&quot;)[**+1 punto Carlos por bromear con él.**]
+
+(css: &quot;color: white;&quot;)[**Carlos:**] *Ja,... ja,... ja. Sí, qué gracia. Búrlate. Tu comedia es también ordinaria. Buena para El Sitio. ¿Vamos?*
+
+[[Entra a El Sitio|2.2.1.1. VES A MANUELA EN EL SITIO]] -ir a 2.2.1.1. Ves a Manuela-
+
+(set: $puntosCarlos to $puntosCarlos + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="109" name="2.3.5.2.C" tags="" position="4743,3479" size="100,100">[-Si C: -1 punto Carlos por mostrar más lealtad a Manuela.
 
 Carlos: ¿Un pacto? Bien, pues tengo que aclarar eso con él ahora mismo. Debiste decírmelo antes de que me ilusionaras anoche.
 
@@ -861,13 +915,13 @@ Carlos: ¿Qué sospecha? ¿Que estuviste conmigo anoche? Bueno, pues eso ya no l
 
 [[Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] -B-
 
-[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] -C-</tw-passagedata><tw-passagedata pid="116" name="2.1.1.1.B" tags="" position="2408.6318359375,2713" size="100,100">-B- Manuela: Andas siempre por ahí. Sobre todo anoche. -si le dejaste mensaje a Manuela-
+[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] -C-</tw-passagedata><tw-passagedata pid="116" name="2.1.1.1.B" tags="" position="2408,2713" size="100,100">-B- Manuela: Andas siempre por ahí. Sobre todo anoche. -si le dejaste mensaje a Manuela-
 
 [[Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] -A-
 
 [[Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] -B-
 
-[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] -C-</tw-passagedata><tw-passagedata pid="117" name="2.1.1.1.C" tags="" position="2582.6318359375,2682" size="100,100">-C- Manuela: ¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?! -si no llamaste a Manuela- (-1 punto por no llamar a Manuela)
+[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] -C-</tw-passagedata><tw-passagedata pid="117" name="2.1.1.1.C" tags="" position="2582,2682" size="100,100">-C- Manuela: ¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?! -si no llamaste a Manuela- (-1 punto por no llamar a Manuela)
 
 [[Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] -A-
 
@@ -914,7 +968,7 @@ Carlos: Hola, ¿cómo estás? Estaba en el concierto de mi banda favorita, esa d
 Manuela: Sé que eres muy amable con la gente. Pero recuerda quién está realmente preocupado por ella ahora. 
 
 [[Discúlpame, Manuela. Tienes toda la razón. Ahora, ¿sabes qué pasó anoche?|2.1.3.5.2.4]] -A-
-[[Lo sé bien, Manuela. Perdón. No quiero quitarte mucho tiempo. ¿Sabes qué pasó anoche?|2.1.3.5.2.5]] -B-</tw-passagedata><tw-passagedata pid="124" name="2.1.3.5.2.1" tags="" position="2227.9200439453125,3638" size="100,100">Si A: -1 punto por ser demasiado complaciente. Incluso Manuela sabe que detestas esa banda.
+[[Lo sé bien, Manuela. Perdón. No quiero quitarte mucho tiempo. ¿Sabes qué pasó anoche?|2.1.3.5.2.5]] -B-</tw-passagedata><tw-passagedata pid="124" name="2.1.3.5.2.1" tags="" position="2227,3638" size="100,100">Si A: -1 punto por ser demasiado complaciente. Incluso Manuela sabe que detestas esa banda.
 
 Manuela: Huh. No sabía que tenías esas confiancitas con él. ¿Rock pesado? ¿Tú? Jajaja… No me creas tan imbécil. 
 
@@ -982,7 +1036,7 @@ Tienes razón. Te las pago todas pronto.
 (-1 punto por no recordar su banda favorita)
 
 [[1349|BANDA SÚPER INCORRECTA]] -A-
-[[1919|2.3.4.2.1. LA BANDA “1919”]] -C- (ir a 2.3.4.2.1.) ]</tw-passagedata><tw-passagedata pid="135" name="BANDA SÚPER INCORRECTA" tags="" position="3892,3733.771240234375" size="100,100">(-1 punto por no recordar su banda favorita de nuevo)
+[[1919|2.3.4.2.1. LA BANDA “1919”]] -C- (ir a 2.3.4.2.1.) ]</tw-passagedata><tw-passagedata pid="135" name="BANDA SÚPER INCORRECTA" tags="" position="3892,3733" size="100,100">(-1 punto por no recordar su banda favorita de nuevo)
 
 -Si A o B otra vez- Carlos: Estoy comenzando a pensar que eres un odioso. ¡1919! 
 
