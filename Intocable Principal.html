@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -539,16 +539,11 @@ Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: 
 
 
 
-&lt;!-- Use this when restarting part 2 -&gt;
-(set: $puntosCarisma to $part2SavedState&#39;s puntosCarisma)
-(set: $puntosCarlos to $part2SavedState&#39;s puntosCarlos)
-(set: $puntosManuela to $part2SavedState&#39;s puntosManuela)
-(set: $dateLocation to $part2SavedState&#39;s dateLocation)
-(set: $itemWalletisCarried to $part2SavedState&#39;s itemWalletisCarried)
 
 
 
-&lt;!-- delete this later, for testing part 2 -&gt;
+
+&lt;!-- delete this later once connected to part 1, for testing part 2 -&gt;
 (set: $puntosCarisma to 0)
 (set: $puntosCarlos to 0)
 (set: $puntosManuela to 0)
@@ -569,7 +564,18 @@ Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: 
 (set: $itemGlass to (datamap:&quot;name&quot;, &quot;glass&quot;, &quot;description&quot;, &quot;Este vaso puede contener líquidos.&quot;, &quot;pickupText&quot;, &quot;A este vaso le falta líquido.&quot;, &quot;isCarried&quot;, false))
 (set: $selectedItem to &quot;&quot;)
 (set: $previousPassage to &quot;Despierta&quot;)
-(set: $itemShoes to (datamap:&quot;name&quot;, &quot;shoes&quot;, &quot;description&quot;, &quot;Son unos zapatos más casuales, pero más apropiados.&quot;, &quot;pickupText&quot;, &quot;Ahora tienes puestos los zapatos.&quot;, &quot;isCarried&quot;, false))</tw-passagedata><tw-passagedata pid="67" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2574,2524" size="100,100">¡Bien! Pagaste la carrera completa. Pero te queda apenas para ir a ese otro sitio. Ya sabes… el más íntimo para encontrarte con Carlos. 
+(set: $itemShoes to (datamap:&quot;name&quot;, &quot;shoes&quot;, &quot;description&quot;, &quot;Son unos zapatos más casuales, pero más apropiados.&quot;, &quot;pickupText&quot;, &quot;Ahora tienes puestos los zapatos.&quot;, &quot;isCarried&quot;, false))
+
+
+&lt;!-- Remove this when connected to part 1 --&gt;
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried))
+
+&lt;!-- Use this when restarting part 2 -&gt;
+(set: $puntosCarisma to $part2SavedState&#39;s puntosCarisma)
+(set: $puntosCarlos to $part2SavedState&#39;s puntosCarlos)
+(set: $puntosManuela to $part2SavedState&#39;s puntosManuela)
+(set: $dateLocation to $part2SavedState&#39;s dateLocation)
+(set: $itemWalletisCarried to $part2SavedState&#39;s itemWalletisCarried)</tw-passagedata><tw-passagedata pid="67" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2574,2524" size="100,100">¡Bien! Pagaste la carrera completa. Pero te queda apenas para ir a ese otro sitio. Ya sabes… el más íntimo para encontrarte con Carlos. 
 
 -si no acordaste con Carlos estar en El Sitio- [[Entrar a El Sitio|2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE]]
 
@@ -588,13 +594,29 @@ Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: 
 (if: $hasPaidTaxi is false) [ [[Le pides prestado para el taxi |2.1.3. PEDIR PRESTADO A MANUELA]] ] 
 
 -si has pagado el taxi-[[Habla con Manuela|2.1.5.A]]
-[[Tratas de ignorarla |2.1.7. TRATAS DE IGNORARLA]] ] </tw-passagedata><tw-passagedata pid="70" name="2.1.3. PEDIR PRESTADO A MANUELA" tags="" position="3170,2616" size="100,100">¡Manuela! ¡Qué bueno verte! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota. 
+[[Tratas de ignorarla |2.1.7. TRATAS DE IGNORARLA]] ] </tw-passagedata><tw-passagedata pid="70" name="2.1.3. PEDIR PRESTADO A MANUELA" tags="" position="3166,2585" size="100,100">¡Manuela! ¡Qué bueno verte! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota. 
 (css: &quot;color: red;&quot;) [**(-1 punto por pedirle prestado a Manuela)**]
 
-[[Manuela: ¡Claro! Precisamente quería hablarte.|2.1.4. TAXI CON DINERO DE MANUELA]] -si le dejaste un mensaje a Manuela-
+(if: $calledManuela is false) [
+	(css: &quot;color: orange;&quot;)[**Manuela:**] Sólo estoy para favores, ¿no?
+]
+(else:) [
+  (if: $textedManuela is true) [
+  (css: &quot;color: orange;&quot;)[**Manuela:**] ¡Claro! Precisamente quería hablarte.
+  ] 
+  (else:)[
+	(css: &quot;color: orange;&quot;)[**Manuela:**] ¿Y a ti qué carajos te pasó? Jajaja… sí que eres idiota.
+  ]
+]
+[[Paga el taxi.|2.1.4. TAXI CON DINERO DE MANUELA]]
 
+(set: $puntosManuela to $puntosManuela - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
+
+
+Modo de prueba:
+[[ Manuela: ¡Claro! Precisamente quería hablarte.|2.1.4. TAXI CON DINERO DE MANUELA]] -si le dejaste un mensaje a Manuela-
 [[Manuela: ¿Y a ti qué carajos te pasó? Jajaja… sí que eres idiota.|2.1.4. TAXI CON DINERO DE MANUELA]] -si no le dejaste un mensaje a Manuela-
-
 [[Manuela: Sólo estoy para favores, ¿no?|2.1.4. TAXI CON DINERO DE MANUELA]] -si no llamaste a Manuela-</tw-passagedata><tw-passagedata pid="71" name="2.1.5.3. MANUELA PRUEBA TU VALENTÍA" tags="" position="2869,3196" size="100,100">Si B: -1 punto por evadir el tema que le interesa a Manuela.  
 
 Manuela: Lo siento, cariño. Pero entenderás que no me tranquiliza tu supuesta amnesia. Llámala, insisto.
@@ -653,7 +675,7 @@ Al ver la reacción de Manuela sales a correr como la persona cobarde que eres. 
 (set: $puntosManuela to $puntosManuela - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="3051,2454" size="100,100">El taxista te pide el dinero de tu recorrido. 
 
-(if: $itemWallet&#39;s isCarried is true) [ [[Pagar carrera |2.1.1. TAXI CON MI DINERO EN EL SITIO]] ] 
+(if: $itemWalletisCarried is true) [ [[Pagar carrera |2.1.1. TAXI CON MI DINERO EN EL SITIO]] ] 
 (else:) [ [[Pedir prestado a alguien de confianza en El Sitio |2.1.3. PEDIR PRESTADO A MANUELA]] ]</tw-passagedata><tw-passagedata pid="79" name="2.1.5.7 RECUPERAR BILLETERA" tags="" position="3133,3679" size="100,100">Sabes que olvidas un objeto muy importante. ¿Dónde puede estar?
 
 [En tu habitación]
@@ -900,13 +922,18 @@ Carlos: ¿Qué sospecha? ¿Que estuviste conmigo anoche? Bueno, pues eso ya no l
 
 [[Hicimos un pacto, Carlos. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]] -B-
 
-[[Hicimos un pacto, Carlos. Y mi amistad con él es más importante.|2.3.5.2.C]] -C- </tw-passagedata><tw-passagedata pid="112" name="2.1.5.1.A" tags="" position="2318,3082" size="100,100">-A- Manuela: ¿No sabes nada? ¿No recuerdas nada? Eso es curioso porque ni siquiera mi hermano me contesta las llamadas desde anoche, precisamente. (-1 punto por contestar sin ser sincero)
+[[Hicimos un pacto, Carlos. Y mi amistad con él es más importante.|2.3.5.2.C]] -C- </tw-passagedata><tw-passagedata pid="112" name="2.1.5.1.A" tags="" position="2318,3082" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] ¿No sabes nada? ¿No recuerdas nada? Eso es curioso porque ni siquiera mi hermano me contesta las llamadas desde anoche, precisamente. (-1 punto por contestar sin ser sincero)
+(css: &quot;color: red;&quot;) [**(-1 punto por contestar sin ser sincero)**]
 
-[[Debe ser que Carlos está con alguna amiga, o algo. Como buen amigo que soy, es claro que ni borracho sería capaz de traicionar tu confianza hablando con ella.|2.1.5.2.A]] -A-
 
-[[¿Carlos? No, si ni siquiera le hablo, como me dijiste. ¡Palabra que sí!|2.1.5.2.B]] -B-
+[[Debe ser que Carlos está con alguien, o algo. Como buena persona que soy, es claro que no sería capaz de traicionar tu confianza hablando con él.|2.1.5.2.A]]
 
-[[Ah no, eso no. Segurísimo que Carlos no estaba ahí conmigo. Imagínate el problema. Borracho, sí. Pero mentiroso, no. ¡Yo no sería capaz!|2.1.5.2.B]] -C-</tw-passagedata><tw-passagedata pid="113" name="2.1.5.1.B" tags="" position="2549,3082" size="100,100">-B- Manuela: Sí que te emborrachaste. Hasta se te nota en la cara de idiota de siempre que llevas, jajaja. ¿Y de casualidad no estaba Carlos por ahí cerca? (+1 punto por contestar honestamente) 
+[[¿Carlos? No, si ni siquiera le hablo, como me dijiste. ¡Palabra que sí!|2.1.5.2.B]]
+
+[[Ah no, eso no. Segurísimo que Carlos no estaba ahí conmigo. Imagínate el problema. ¡Yo no sería capaz!|2.1.5.2.B]]
+
+(set: $puntosManuela to $puntosManuela - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="113" name="2.1.5.1.B" tags="" position="2549,3082" size="100,100">-B- Manuela: Sí que te emborrachaste. Hasta se te nota en la cara de idiota de siempre que llevas, jajaja. ¿Y de casualidad no estaba Carlos por ahí cerca? (+1 punto por contestar honestamente) 
 
 [[Debe ser que Carlos está con alguna amiga, o algo. Como buen amigo que soy, es claro que ni borracho sería capaz de traicionar tu confianza hablando con ella.|2.1.5.2.A]] -A-
 
@@ -1024,23 +1051,41 @@ Manuela: No, la verdad, no. Me da curiosidad que vengas así como tan de afán a
 
 [[Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] -B-
 
-[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] -C-</tw-passagedata><tw-passagedata pid="131" name="2.1.5.C" tags="" position="2986,2983" size="100,100">-C- Manuela: ¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?! -si no llamaste a Manuela- (-1 punto por no llamar a Manuela)
+[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] -C-</tw-passagedata><tw-passagedata pid="131" name="2.1.5.C" tags="" position="2986,2983" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] ¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!
+(css: &quot;color: red;&quot;) [**(-1 punto por no llamar a Manuela)**]
 
-[[Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] -A-
 
-[[Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] -B-
 
-[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] -C-</tw-passagedata><tw-passagedata pid="132" name="2.1.4. TAXI CON DINERO DE MANUELA" tags="" position="3139,2780" size="100,100">Gracias, querida. Te debo una. 
+[[Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]]
 
-Manuela: Me debes varias ya. 
+[[Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]]
+
+[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]
+
+(set: $puntosManuela to $puntosManuela - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="132" name="2.1.4. TAXI CON DINERO DE MANUELA" tags="" position="3139,2780" size="100,100">Gracias, querida. Te debo una. 
+
+(css: &quot;color: orange;&quot;)[**Manuela:**] Me debes varias ya. 
 
 Tienes razón. Te las pago todas pronto. 
+(if: $itemWalletisCarried is true) [
+[[Ven, que te invito a tomar lo que quieras.|2.1.5.A]]
+]
+(if: $textedManuela is true) [
+[[¿Viste mi mensaje?|2.1.5.B]]
+]
+(if: $calledManuela is false) [
+[[Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.5.C]]
+]
+(else:)[
+  [[Vine a preguntarte algo.|2.1.5.C]]
+]
 
+
+Modo de prueba:
 [[Ven, que te invito a tomar lo que quieras.|2.1.5.A]] -si pagaste con tu dinero- (A)
-
 [[¿Viste mi mensaje?|2.1.5.B]] -si le dejaste mensaje a Manuela.
 (B) 
-
 [[Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.5.C]] -si no llamaste a Manuela- (C) </tw-passagedata><tw-passagedata pid="133" name="2.3.4.2.A" tags="" position="3640,3526" size="100,100">-Si A o B- Carlos: ¿En serio? En realidad estás mal, querido. Bien mal. Te doy otra oportunidad.
 (-1 punto por no recordar su banda favorita)
 
