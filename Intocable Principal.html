@@ -42,6 +42,7 @@ Te despiertas, tienes dolor de cabeza y de estómago. ¿Qué haces?
 (set: $inBed to true)
 (set: $itemPhone to (datamap:&quot;name&quot;, &quot;phone&quot;, &quot;description&quot;, &quot;Pagaste demasiado por este smartphone.&quot;, &quot;pickupText&quot;, &quot;Tienes el teléfono en el bolsillo.&quot;, &quot;isCarried&quot;, false))
 (set: $itemWallet to (datamap:&quot;name&quot;, &quot;wallet&quot;, &quot;description&quot;, &quot;Es una billetera&quot;, &quot;pickupText&quot;, &quot;Tienes la billetera en tu bolsillo.&quot;, &quot;isCarried&quot;, false))
+(set: $examinedWallet to false)
 (set: $itemClothes to (datamap:&quot;name&quot;, &quot;clothes&quot;, &quot;description&quot;, &quot;Tienes gracias para una madre tan buena.&quot;, &quot;pickupText&quot;, &quot;La ropa huele a una mezcla fresca de flores y quimicos varios.&quot;, &quot;isCarried&quot;, false))
 (set: $itemGlass to (datamap:&quot;name&quot;, &quot;glass&quot;, &quot;description&quot;, &quot;Este vaso puede contener líquidos.&quot;, &quot;pickupText&quot;, &quot;A este vaso le falta líquido.&quot;, &quot;isCarried&quot;, false))
 (set: $selectedItem to &quot;&quot;)
@@ -198,7 +199,7 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
 
 &lt;!--Do this before starting part 2 -&gt;
-(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried), &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela)
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela ))
 
 (link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;) ]</tw-passagedata><tw-passagedata pid="27" name="&quot;En la casa&quot;" tags="" position="2965,1104" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por responder lo que él espera**]
 
@@ -494,7 +495,8 @@ Has saciado tu sed, pero por el afán se ha regado parte del jugo en tu camisa. 
 
 Ahora empiezas a recordar algo, pero no es muy claro. 
 
-(link-goto: &quot;Sigue pensando&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="59" name="Ponerte los zapatos" tags="" position="1029,686" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por ponerte zapatos nuevos**]
+(link-goto: &quot;Sigue pensando&quot;, $previousPassage)
+(set: $examinedWallet to true)</tw-passagedata><tw-passagedata pid="59" name="Ponerte los zapatos" tags="" position="1029,686" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por ponerte zapatos nuevos**]
 
 Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: $selectedItem to $itemShoes)(set:$itemShoes&#39;s isCarried to true)] 
 
@@ -569,7 +571,7 @@ Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: 
 
 &lt;!--- is typically saved at the end of part1, but copied here for testing --&gt;
 
-(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
 
 &lt;!-- Use this when restarting part 2 -&gt;
 (set: $puntosCarisma to $part2SavedState&#39;s puntosCarisma)
@@ -577,12 +579,14 @@ Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: 
 (set: $puntosManuela to $part2SavedState&#39;s puntosManuela)
 (set: $dateLocation to $part2SavedState&#39;s dateLocation)
 (set: $itemWalletisCarried to $part2SavedState&#39;s itemWalletisCarried)
+(set: $examinedWallet to $part2SavedState&#39;s examinedWallet)
 (set: $textedManuela to $part2SavedState&#39;s textedManuela)
 (set: $calledManuela to $part2SavedState&#39;s calledManuela)
 (set: $hasDrunkWater to $part2SavedState&#39;s hasDrunkWater)
 (set: $hasDrunkJuice to $part2SavedState&#39;s hasDrunkJuice)
 (set: $hasEatenChicken to $part2SavedState&#39;s hasEatenChicken)
-(set: $hasEatenSandwich to $part2SavedState&#39;s hasEatenSandwich)</tw-passagedata><tw-passagedata pid="67" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2574,2524" size="100,100">¡Bien! Pagaste la carrera completa. Pero te queda apenas para ir a ese otro sitio. Ya sabes… el más íntimo para encontrarte con Carlos. 
+(set: $hasEatenSandwich to $part2SavedState&#39;s hasEatenSandwich)
+</tw-passagedata><tw-passagedata pid="67" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2574,2524" size="100,100">¡Bien! Pagaste la carrera completa. Pero te queda apenas para ir a ese otro sitio. Ya sabes… el más íntimo para encontrarte con Carlos. 
 
 -si no acordaste con Carlos estar en El Sitio- (if: $dateLocation is &quot;Sitio&quot;) [ [[Entrar a El Sitio|2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE]] ]
 
@@ -818,9 +822,18 @@ Modo de prueba:
 -si llevas la billetera- [[Pagar carrera|2.3.1. PAGAR TAXI AL CAFÉ TINTA]] : ir a 2.3.1.
 [[Pedirle prestado a Carlos en El Café Tinta|2.3.1.1. PEDIRLE PRESTADO A CARLOS]] -si olvidaste la billetera- : ir a 2.3.1.1.</tw-passagedata><tw-passagedata pid="88" name="2.3.1. PAGAR TAXI AL CAFÉ TINTA" tags="" position="3816,2527" size="100,100">¡Bien! Pagaste la carrera completa. 
 
-[[Entrar al Café Tinta|2.3.2. SALUDO A CARLOS]] 
+
 (if: $dateLocation == &quot;Sitio&quot;)[ [[Entrar al Café Tinta|2.3.3. SALUDO A CARLOS CUANDO FUISTE A EL SITIO]]
 ]
+(else:)[
+	[[Entrar al Café Tinta|2.3.2. SALUDO A CARLOS]] 
+]
+
+
+
+
+
+
 
 Modo de prueba:
 [[Entrar al Café Tinta|2.3.2. SALUDO A CARLOS]] : ir a 2.3.2.
@@ -836,6 +849,12 @@ Modo de prueba:
 ]
 
 [[Pagar el taxi|2.3.1. PAGAR TAXI AL CAFÉ TINTA]]
+
+
+
+
+
+
 
 Modo de prueba:
 -si Carlos agresivo o si fuiste a El Sitio- (css: &quot;color: white;&quot;)[**Carlos:**] *Ya. Toma. Y ven rápido.* 
@@ -855,6 +874,8 @@ Carlos intenta besarte. Le permites hacerlo:
 
 [[En tu boca|2.3.2.2. EN TU BOCA]] : ir a 2.3.2.1.
 [[En tu mejilla|2.3.2.1. EN TU MEJILLA]] : ir a 2.3.2.2.
+
+
 
 
 
@@ -887,6 +908,12 @@ Modo de prueba:
 (set: $puntosManuela to $puntosManuela - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
 
+
+
+
+
+
+
 Modo de prueba:
 - si no te bañaste- (css: &quot;color: white;&quot;)[**Carlos:**] *Hola.* 
 
@@ -909,59 +936,135 @@ Modo de prueba:
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
 
 
+
+
+
+
+
+
 Modo de prueba:
 -si no te bañaste o default- (css: &quot;color: white;&quot;)[**Carlos:**] *Hola.*
 -si te bañaste- (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño.*
-</tw-passagedata><tw-passagedata pid="94" name="2.3.2.3. TOMAR CAFÉ" tags="" position="3698,3030" size="100,100">-si comiste pollo y tomaste agua o jugo- (css: &quot;color: #187FF5;&quot;)[*¡Qué buen café! Apenas para el frío de la mañana.*]
+</tw-passagedata><tw-passagedata pid="94" name="2.3.2.3. TOMAR CAFÉ" tags="" position="3698,3030" size="100,100">-si comiste pollo y tomaste agua o jugo- 
+(if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
+(css: &quot;color: #187FF5;&quot;)[*¡Qué buen café! Apenas para el frío de la mañana.*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Sí, es verdad. ¿Cómo estás?*
 
+[[Estoy bien. Con un poco de dolor de cabeza, y además no recuerdo todo sobre anoche.|2.3.4. NO RECUERDO TODO]] : ir a 2.3.4.
+]
+(else:)[
 -si comiste el sánduche o no has tomado nada-
 (css: &quot;color: lightblue;&quot;)[*¡Ay, no! El dolor de estómago es insoportable. Creo que debo ir al baño pronto.*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás bien?* 
+]
 
+[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : ir a 2.3.4.1.
+
+
+
+
+
+Modo de prueba:
 [[Estoy bien. Con un poco de dolor de cabeza, y además no recuerdo todo sobre anoche.|2.3.4. NO RECUERDO TODO]] : ir a 2.3.4.
-
-[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : ir a 2.3.4.1.</tw-passagedata><tw-passagedata pid="95" name="2.3.2.4. TOMAR AGUA" tags="" position="3880,3026" size="100,100">-si comiste pollo y tomaste agua o jugo- 
+[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : ir a 2.3.4.1.</tw-passagedata><tw-passagedata pid="95" name="2.3.2.4. TOMAR AGUA" tags="" position="3880,3026" size="100,100">(if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
 (css: &quot;color: lightblue;&quot;)[*Bueno, creo que ya se me está pasando el dolor de cabeza.*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Cómo estás?*
 
--si comiste el sánduche o no has tomado nada-
+[[Estoy bien. Con un poco de dolor de cabeza, y no recuerdo todo sobre anoche.|2.3.4. NO RECUERDO TODO]] : ir a 2.3.4.
+]
+(else:)[
 (css: &quot;color: lightblue;&quot;)[*Bueno, el dolor de estómago está pasando. Pero igual tendré que ir al baño pronto.*] 
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás bien?*
+]
+[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : 2.3.4.1.
 
+
+
+
+
+
+Modo de prueba:
 [[Estoy bien. Con un poco de dolor de cabeza, y no recuerdo todo sobre anoche.|2.3.4. NO RECUERDO TODO]] : ir a 2.3.4.
-
-[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : 2.3.4.1.</tw-passagedata><tw-passagedata pid="96" name="2.3.4. NO RECUERDO TODO" tags="" position="3700,3177" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por pedir respuestas con amabilidad)**]
+[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : 2.3.4.1.</tw-passagedata><tw-passagedata pid="96" name="2.3.4. NO RECUERDO TODO" tags="" position="3700,3177" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por pedir respuestas con amabilidad**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Qué no recuerdas exactamente? Es decir, ¿ni siquiera del concierto? ¿Nada?*
 
--si has mirado la billetera- [[El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.
--si has escuchado a Carlos en El Sitio- [[Ya. Fuimos a ver a “1919”? Tu banda favorita, no?|2.3.4.2.1. LA BANDA “1919”]] : ir a 2.3.4.2.1.
--si no has mirado la billetera ni has escuchado a Carlos en El Sitio- [[Nada, en serio. Dime qué pasó, por favor.|BANDA SÚPER INCORRECTA]] : ir a 2.3.4.2.1.
+(if: $examinedWallet is true)[
+[[El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]]
+]
+(elseif: $dateLocation == &quot;Sitio&quot;)[ [[Ya. Fuimos a ver a “1919”? Tu banda favorita, no?|2.3.4.2.1. LA BANDA “1919”]]
+]
+(else:)[
+[[Nada, en serio. Dime qué pasó, por favor.|BANDA SÚPER INCORRECTA]]
+]
 
+(css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que hiciste...**]
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="97" name="2.3.4.1. QUISIERA QUE ME LO ACLARARAS" tags="" position="3877,3177" size="100,100">(css: &quot;color: green;&quot;)[**(-1 punto por pedir respuestas de manera muy directa)**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+
+
+
+
+
+
+
+
+Modo de prueba:
+-si has mirado la billetera- [[El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.
+- si fuiste al sitio [[Ya. Fuimos a ver a “1919”? Tu banda favorita, no?|2.3.4.2.1. LA BANDA “1919”]] : ir a 2.3.4.2.1.
+-si no has mirado la billetera ni has escuchado a Carlos en El Sitio- [[Nada, en serio. Dime qué pasó, por favor.|BANDA SÚPER INCORRECTA]] : ir a 2.3.4.2.1.</tw-passagedata><tw-passagedata pid="97" name="2.3.4.1. QUISIERA QUE ME LO ACLARARAS" tags="" position="3877,3177" size="100,100">(css: &quot;color: green;&quot;)[**(-1 punto por pedir respuestas de manera muy directa)**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Ahora sí que estás desvariando, jajaja. Estabas en un concierto conmigo, ¿recuerdas?*
 
+(if: $examinedWallet is true)[
+[[El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]]
+]
+(elseif: $dateLocation == &quot;Sitio&quot;)[
+[[Ya. Fuimos a ver a “1919”. Tu banda favorita.|2.3.4.2.1. LA BANDA “1919”]]
+]
+(else:)[[[Sí, recuerdo algo. ¿Fuimos a ver a una banda, tal vez?|2.3.4.2. TU BANDA FAVORITA]]
+]
+
+(css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que hiciste...**]
+(set: $puntosCarlos to $puntosCarlos - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+
+
+
+
+
+
+Modo de prueba:
 -si has mirado la billetera- [[El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.
 -si has escuchado a Carlos en El Sitio- [[Ya. Fuimos a ver a “1919”. Tu banda favorita.|2.3.4.2.1. LA BANDA “1919”]] : ir a 2.3.4.2.1.
--si no has mirado la billetera ni has escuchado a Carlos en El Sitio- [[Sí, recuerdo algo. ¿Fuimos a ver a una banda, tal vez?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.
-
-(set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="98" name="2.3.4.2. TU BANDA FAVORITA" tags="" position="3697,3336" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *Ajá. A ver, ¿cómo se llama?* [-si tienes la billetera- *Te di una boleta de recuerdo, ¿recuerdas?*] [-si no tienes la billetera- *El año de la última peste.*]
+-si no has mirado la billetera ni has escuchado a Carlos en El Sitio- [[Sí, recuerdo algo. ¿Fuimos a ver a una banda, tal vez?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.</tw-passagedata><tw-passagedata pid="98" name="2.3.4.2. TU BANDA FAVORITA" tags="" position="3697,3336" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *Ajá. A ver, ¿cómo se llama?* (if: $itemWalletisCarried)[-si tienes la billetera- *Te di una boleta de recuerdo, ¿recuerdas?*](else:)[-si no tienes la billetera- *El año de la última peste.*]
 
 [[1349|2.3.4.2.A]] -A-
 [[1653|2.3.4.2.B]] -B-
 [[1919|2.3.4.2.1. LA BANDA “1919”]] -C- (ir a 2.3.4.2.1.) 
 
-[-si has mirado la billetera- Claro. Dame un momento para recordar. (+opciones y “mirar billetera”)] -D-
-[-si no has mirado la billetera- Ah, sí. A ver miro…] -E-
--para E (ir a “Mirar billetera”)-</tw-passagedata><tw-passagedata pid="99" name="2.3.4.2.1. LA BANDA “1919”" tags="" position="3874,3335" size="100,100">-si has respondido correctamente a la primera- (css: &quot;color: #187FF5;&quot;)[*¡1919! Bueno, no me gusta esa banda. Pero hice el esfuerzo por acompañarte. De resto, lo olvidé completamente.*]
+(if: $examinedWallet is true)
+[[[Claro. Dame un momento para recordar.|Mirar billetera]]]
+(else:)
+[[[Ah, sí. A ver miro…|Mirar billetera]]]
+(set: $previousPassage to &quot;2.3.4.2. TU BANDA FAVORITA&quot;)
+
+
+
+
+
+
+
+Modo de prueba:
+
+-si tienes la billetera- *Te di una boleta de recuerdo, ¿recuerdas?*
+-si no tienes la billetera- *El año de la última peste.*
+-si has mirado la billetera- Claro. Dame un momento para recordar. (+opciones y “mirar billetera”)
+-si no has mirado la billetera- Ah, sí. A ver miro…</tw-passagedata><tw-passagedata pid="99" name="2.3.4.2.1. LA BANDA “1919”" tags="" position="3874,3335" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡1919! Bueno, no me gusta esa banda. Pero hice el esfuerzo por acompañarte. De resto, lo olvidé completamente.*]
 (css: &quot;color: green;&quot;)[**(+1 punto Carlos por recordar rápidamente el nombre de la banda)**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Ok. No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al comienzo no lo creía. Pero luego me convenciste. Quiero asegurarme que es real lo que sientes por mí.*
