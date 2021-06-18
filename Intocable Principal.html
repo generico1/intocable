@@ -491,7 +491,7 @@ Has saciado tu sed, pero por el afán se ha regado parte del jugo en tu camisa. 
 
 [[Volver a la habitación |Salir de la cama]]
 [[Ir a la cocina]]
-[[Salir de la casa]]</tw-passagedata><tw-passagedata pid="58" name="Mirar billetera" tags="" position="524,683" size="100,100">Hay dinero y unas boletas de concierto de rock. &quot;1918&quot; no es tu banda favorita, pero sí la de alguien que conoces muy bien. 
+[[Salir de la casa]]</tw-passagedata><tw-passagedata pid="58" name="Mirar billetera" tags="" position="524,683" size="100,100">Hay dinero y unas boletas de concierto de rock. &quot;1919&quot; no es tu banda favorita, pero sí la de alguien que conoces muy bien. 
 
 Ahora empiezas a recordar algo, pero no es muy claro. 
 
@@ -1059,7 +1059,7 @@ Modo de prueba:
 Modo de prueba:
 -si has mirado la billetera- [[El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.
 -si has escuchado a Carlos en El Sitio- [[Ya. Fuimos a ver a “1919”. Tu banda favorita.|2.3.4.2.1. LA BANDA “1919”]] : ir a 2.3.4.2.1.
--si no has mirado la billetera ni has escuchado a Carlos en El Sitio- [[Sí, recuerdo algo. ¿Fuimos a ver a una banda, tal vez?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.</tw-passagedata><tw-passagedata pid="98" name="2.3.4.2. TU BANDA FAVORITA" tags="" position="3697,3336" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *Ajá. A ver, ¿cómo se llama?* (if: $itemWalletisCarried)[*Te di una boleta de recuerdo, ¿recuerdas?*](else:)[ *El año de la última peste.*]
+-si no has mirado la billetera ni has escuchado a Carlos en El Sitio- [[Sí, recuerdo algo. ¿Fuimos a ver a una banda, tal vez?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.</tw-passagedata><tw-passagedata pid="98" name="2.3.4.2. TU BANDA FAVORITA" tags="" position="3697,3336" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *Ajá. A que no recuerdas la banda. * (if: $itemWalletisCarried)[*Te di una boleta de recuerdo, ¿recuerdas?*](else:)[ *El año de la última peste.*]
 
 [[1349|2.3.4.2.A]] -A-
 [[1653|2.3.4.2.B]] -B-
@@ -1192,10 +1192,11 @@ Carlos toma su maleta, se va al baño y llama a Manuela. Sabes que ahora no tien
 [[Final Bueno]]
 ]
 (elseif: ($puntosCarlos + $puntosCarisma) &gt;= 7)[
-[[Voy al baño. Ya vuelvo.|2.3.5.2.2. CARLOS DEJA SU MALETA EN LA MESA]] -ir a 2.3.5.2.1. o 2.2.5.2.2.
+
+[[Ah vale, te espero.|2.3.5.2.2. CARLOS DEJA SU MALETA EN LA MESA]] -ir a 2.3.5.2.1. o 2.2.5.2.2.
 (Si tienes 10 puntos Carlos+Carisma o menos)
-(else:)[
-[[(css: &quot;color: #187FF5;&quot;)[¿Qué pasa?]|2.3.5.2.1. CARLOS SE LLEVA LA MALETA AL BAÑO]] 
+](else:)[
+[[Ah vale, tómate tu tiempo.|2.3.5.2.1. CARLOS SE LLEVA LA MALETA AL BAÑO]] 
 ]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
@@ -1481,6 +1482,8 @@ Carlos sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con é
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="139" name="2.3.5.1.A" tags="" position="4140,3720" size="100,100">-Si A-: (css: &quot;color: red;&quot;)[**-1 punto por decirle que temes la reacción de Manuela.**] 
 
+!TODO: Every time the player loses a point, check to give a hint when puntosCarlos is really low, that it will be difficult to get Carlos to tell you what happened last night.!!!  
+
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Miedo de Manuela? ¡Ja! Si eso es así, yo hablo con ella, y ya. ¿Cuál es el problema?*
 
 (if: $dateLocation is &quot;Sitio&quot;)[
@@ -1501,7 +1504,7 @@ Modo de prueba:
 - si fuiste al sitio
 [[Ya viste cómo te habló. Está furioso, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] -A-</tw-passagedata><tw-passagedata pid="140" name="2.3.5.1.B" tags="" position="4304,3855" size="100,100">-Si B-: (css: &quot;color: green;&quot;)[**+1 punto por establecer con firmeza la razón de tu visita a Carlos**]
 
-(css: &quot;color: white;&quot;)[**Carlos:**] *¿Le tienes miedo a Manuela? Tranquilo, que si yo hablo con ella, estoy seguro que entenderá.*
+(css: &quot;color: white;&quot;)[**Carlos:**] *¿Le tienes miedo a Manuela? Tómalo con calma, que si yo hablo con ella, estoy seguro que entenderá.*
 
 (if: $dateLocation is &quot;Sitio&quot;)[
 [[Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] -A-
