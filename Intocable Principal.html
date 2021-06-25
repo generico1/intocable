@@ -871,7 +871,10 @@ Modo de prueba:
 [[Pagar el taxi|2.3.1. PAGAR TAXI AL CAFÉ TINTA]] -ir a 2.3.1-
 
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="90" name="2.3.2. SALUDO A CARLOS" tags="" position="3813,2695" size="100,100">(if: $puntosCarlos &lt;= 3 or $dateLocation is &quot;Sitio&quot;)[
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(if: $puntosCarlos + $puntosCarisma &lt;= 9)[
+  (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y se hace difícil descubrir que pasó anoche.**]
+]</tw-passagedata><tw-passagedata pid="90" name="2.3.2. SALUDO A CARLOS" tags="" position="3813,2695" size="100,100">(if: $puntosCarlos &lt;= 3 or $dateLocation is &quot;Sitio&quot;)[
 (css: &quot;color: #187FF5;&quot;)[*Disculpa el retraso. Ya sabes…*] (css: &quot;color: lightblue;&quot;)[*¿Qué digo aquí? ¿Qué digo? ¡Ya sé!*] (css: &quot;color: #187FF5;&quot;)[*la resaca.*] 
 ]
 (else:)[
@@ -942,6 +945,9 @@ Modo de prueba:
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
 (set: $puntosManuela to $puntosManuela + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
+(if: $puntosCarlos + $puntosCarisma &lt;= 9)[
+  (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y se hace difícil descubrir que pasó anoche.**]
+]
 
 
 
@@ -1050,6 +1056,9 @@ Modo de prueba:
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que hiciste...**]
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(if: $puntosCarlos + $puntosCarisma &lt;= 9)[
+  (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y se hace difícil descubrir que pasó anoche.**]
+]
 
 
 
@@ -1099,13 +1108,12 @@ Has perdido la oportunidad de hacerlo porque no tienes suficientes puntos con Ca
 [[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="101" name="2.3.5.2.2. CARLOS DEJA SU MALETA EN LA MESA" tags="" position="4522,3814" size="100,100">Carlos está muy confundido, y de la prisa que tenía para aclarar su mente en el baño, dejó su bolso en la mesa.
 
 (if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
--si has comido pollo y tomado algo- [[Toma el bolso.|2.3.5.2.2.1. TOMA EL BOLSO]]
+[[Toma el bolso.|2.3.5.2.2.1. TOMA LA MOCHILA]]
 ]
 (elseif: $hasEatenSandwich)[
--si has comido el sánduche y/o no has tomado nada- [[Toma el bolso y ve al baño.|2.3.5.2.2.1. TOMA EL BOLSO]] 
+[[Toma el bolso y ve al baño.|2.3.5.2.2.1. TOMA LA MOCHILA]] 
 ]
 (else:)[
--si no has comido nada o default- 
 [[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]]  
 ]
 
@@ -1114,14 +1122,14 @@ Has perdido la oportunidad de hacerlo porque no tienes suficientes puntos con Ca
 
 
 Modo de prueba:
--si has comido pollo y tomado algo- [[Toma el bolso.|2.3.5.2.2.1. TOMA EL BOLSO]]
--si has comido el sánduche y/o no has tomado nada- [[Toma el bolso y ve al baño.|2.3.5.2.2.1. TOMA EL BOLSO]] 
+-si has comido pollo y tomado algo- [[Toma el bolso.|2.3.5.2.2.1. TOMA LA MOCHILA]]
+-si has comido el sánduche y/o no has tomado nada- [[Toma el bolso y ve al baño.|2.3.5.2.2.1. TOMA LA MOCHILA]] 
 -si no has comido nada o default- 
 [[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]]  </tw-passagedata><tw-passagedata pid="102" name="2.3.5.2.3. COME EN CAFÉ TINTA" tags="" position="4736,3815" size="100,100">Has comido algo, pero pierdes dos minutos valiosos. 
 
 (set: $segundosReloj to $segundosReloj + 300)
 
-[[Toma el bolso|2.3.5.2.2.1. TOMA EL BOLSO]]</tw-passagedata><tw-passagedata pid="103" name="2.3.5.2.2.1. TOMA EL BOLSO" tags="" position="4648,3972" size="100,100">Has ido al baño. Tienes menos tiempo para saber qué pasó anoche. 
+[[Toma el bolso|2.3.5.2.2.1. TOMA LA MOCHILA]]</tw-passagedata><tw-passagedata pid="103" name="2.3.5.2.2.1. TOMA LA MOCHILA" tags="" position="4648,3972" size="100,100">Has ido al baño. Tienes menos tiempo para saber qué pasó anoche. 
 
 En el bolso de Carlos encuentras:
 
@@ -1144,7 +1152,7 @@ Mike”.
 
 ¿La mejor década? Hmm… yo lo dudo mucho, pero bueno. Entre gustos no hay disgustos*].
 
-[[Ver el bolso|2.3.5.2.2.1. TOMA EL BOLSO]] -ir a 2.3.5.2.2.1.-
+[[Ver el bolso|2.3.5.2.2.1. TOMA LA MOCHILA]] -ir a 2.3.5.2.2.1.-
 
 (set: $segundosReloj to $segundosReloj + 30)</tw-passagedata><tw-passagedata pid="106" name="2.2.1.A" tags="" position="1552,2726" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto Carlos por ser grosero con él.**] 
 
@@ -1192,15 +1200,14 @@ Carlos toma su maleta, se va al baño y llama a Manuela. Sabes que ahora no tien
 [[Final Bueno]]
 ]
 (elseif: ($puntosCarlos + $puntosCarisma) &gt;= 7)[
-
-[[Ah vale, te espero.|2.3.5.2.2. CARLOS DEJA SU MALETA EN LA MESA]] -ir a 2.3.5.2.1. o 2.2.5.2.2.
-(Si tienes 10 puntos Carlos+Carisma o menos)
+[[Ah vale, te espero.|2.3.5.2.2. CARLOS DEJA SU MOCHILA EN LA MESA]]
 ](else:)[
-[[Ah vale, tómate tu tiempo.|2.3.5.2.1. CARLOS SE LLEVA LA MALETA AL BAÑO]] 
+[[Ah vale, tómate tu tiempo.|2.3.5.2.1. CARLOS SE LLEVA LA MOCHILA AL BAÑO]] 
 ]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+
 
 
 
@@ -1219,7 +1226,12 @@ si menos
 
 [[Hicimos un pacto, Carlos. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]] -B-
 
-[[Hicimos un pacto, Carlos. Y mi amistad con él es más importante.|2.3.5.2.C]] -C- 
+[[Hicimos un pacto, Carlos. Y mi amistad con ella es más importante.|2.3.5.2.C]] -C- 
+
+//TODO:
+[[Hicimos un pacto, Carlos. Pero no me importa, quiero estar contigo.]]
+
+
 
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="112" name="2.1.5.1.A" tags="" position="2318,3082" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *¿No sabes nada? ¿No recuerdas nada? Eso es curioso porque ni siquiera mi hermano me contesta las llamadas desde anoche, precisamente.* 
@@ -1433,14 +1445,20 @@ Modo de prueba:
 [[1919|2.3.4.2.1. LA BANDA “1919”]] -C- (ir a 2.3.4.2.1.)
 
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="134" name="2.3.4.2.B" tags="" position="3790,3529" size="100,100">-Si A o B- (css: &quot;color: white;&quot;)[**Carlos:**]  *¿En serio? En realidad estás mal, querido. Bien mal. Te doy otra oportunidad.*
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(if: $puntosCarlos + $puntosCarisma &lt;= 9)[
+  (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y se hace difícil descubrir que pasó anoche.**]
+]</tw-passagedata><tw-passagedata pid="134" name="2.3.4.2.B" tags="" position="3790,3529" size="100,100">-Si A o B- (css: &quot;color: white;&quot;)[**Carlos:**]  *¿En serio? En realidad estás mal, querido. Bien mal. Te doy otra oportunidad.*
 (css: &quot;color: red;&quot;)[**(-1 punto por no recordar su banda favorita)**]
 
 [[1349|BANDA SÚPER INCORRECTA]] -A-
 [[1919|2.3.4.2.1. LA BANDA “1919”]] -C- (ir a 2.3.4.2.1.) 
 
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="135" name="BANDA SÚPER INCORRECTA" tags="" position="3898,3798" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por no recordar de nuevo lo que le importa a Carlos**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(if: $puntosCarlos + $puntosCarisma &lt;= 9)[
+  (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y se hace difícil descubrir que pasó anoche.**]
+]</tw-passagedata><tw-passagedata pid="135" name="BANDA SÚPER INCORRECTA" tags="" position="3898,3798" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por no recordar de nuevo lo que le importa a Carlos**]
 
 -Si A o B otra vez- (css: &quot;color: white;&quot;)[**Carlos:**] *Estoy comenzando a pensar que eres un odioso. ¡1919!* 
 
@@ -1453,7 +1471,10 @@ Modo de prueba:
 [[Aún no creo que hice todo eso. Creo que todo esto es un malentendido. Te pido por favor que me disculpes.|2.3.5.C]] -C-
 
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="136" name="2.3.5.A" tags="" position="4033,3457" size="100,100">-Si A- (css: &quot;color: red;&quot;)[**-1 punto Carlos por responder de manera altanera**] 
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(if: $puntosCarlos + $puntosCarisma &lt;= 9)[
+  (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y se hace difícil descubrir que pasó anoche.**]
+]</tw-passagedata><tw-passagedata pid="136" name="2.3.5.A" tags="" position="4033,3457" size="100,100">-Si A- (css: &quot;color: red;&quot;)[**-1 punto Carlos por responder de manera altanera**] 
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Estabas tan en las nubes? ¿Eso es todo lo que vas a decir? ¡Eres como todo el resto! ¡Te odio demasiado!*
 
@@ -1462,7 +1483,10 @@ Carlos sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con é
 [[Fin del juego - Reiniciar|Parte 2]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="137" name="2.3.5.B" tags="" position="4170,3430" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por ser vulnerable sin disculparte sinceramente.**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(if: $puntosCarlos + $puntosCarisma &lt;= 9)[
+  (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y se hace difícil descubrir que pasó anoche.**]
+]</tw-passagedata><tw-passagedata pid="137" name="2.3.5.B" tags="" position="4170,3430" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por ser vulnerable sin disculparte sinceramente.**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *No tienes nada de qué disculparte. ¿Por qué hay que parar? ¿A qué le tienes miedo?*
 
@@ -1471,7 +1495,10 @@ Carlos sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con é
 [[¿No lo sabes acaso? Manuela no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]] -B-
 
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="138" name="2.3.5.C" tags="" position="4343,3416" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por ser vulnerable disculpándote.**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(if: $puntosCarlos + $puntosCarisma &lt;= 9)[
+  (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y tal vez tendras que hacer algo para descubrir por tus propios medios que pasó anoche.**]
+]</tw-passagedata><tw-passagedata pid="138" name="2.3.5.C" tags="" position="4340,3374" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por ser vulnerable disculpándote.**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *No tienes nada de qué disculparte. ¿Por qué hay que parar? ¿A qué le tienes miedo?*
 
@@ -1480,9 +1507,10 @@ Carlos sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con é
 [[¿No lo sabes acaso? Manuela no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]] -B-
 
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="139" name="2.3.5.1.A" tags="" position="4140,3720" size="100,100">-Si A-: (css: &quot;color: red;&quot;)[**-1 punto por decirle que temes la reacción de Manuela.**] 
-
-!TODO: Every time the player loses a point, check to give a hint when puntosCarlos is really low, that it will be difficult to get Carlos to tell you what happened last night.!!!  
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(if: $puntosCarlos + $puntosCarisma &lt;= 9)[
+  (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y tal vez tendras que hacer algo para descubrir por tus propios medios que pasó anoche.**]
+]</tw-passagedata><tw-passagedata pid="139" name="2.3.5.1.A" tags="" position="4140,3720" size="100,100">-Si A-: (css: &quot;color: red;&quot;)[**-1 punto por decirle que temes la reacción de Manuela.**]  
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Miedo de Manuela? ¡Ja! Si eso es así, yo hablo con ella, y ya. ¿Cuál es el problema?*
 
@@ -1494,6 +1522,9 @@ Carlos sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con é
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(if: $puntosCarlos + $puntosCarisma &lt;= 9)[
+  (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y tal vez tendras que hacer algo para descubrir por tus propios medios que pasó anoche.**]
+]
 
 
 
@@ -1532,7 +1563,7 @@ Modo de prueba:
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[REINICIAR]</tw-passagedata></tw-storydata>
+[REINICIAR]</tw-passagedata><tw-passagedata pid="144" name="Hicimos un pacto, Carlos. Pero no me importa, quiero estar contigo." tags="" position="5177,3467" size="100,100">Final con Carlos</tw-passagedata><tw-passagedata pid="145" name="2.3.5.2.2. CARLOS DEJA SU MOCHILA EN LA MESA" tags="" position="4516,3623" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="146" name="2.3.5.2.1. CARLOS SE LLEVA LA MOCHILA AL BAÑO" tags="" position="4634,3568" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
