@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -559,6 +559,8 @@ Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: 
 (set: $textedManuela to false)
 (set: $textedCarlos to true)
 (set: $hasPaidTaxi to false)
+(set: $examinedCarloswallet to false)
+(set: $phoneCodeGuess to &quot;&quot;)
 (set: $itemWallet to (datamap:&quot;name&quot;, &quot;wallet&quot;, &quot;description&quot;, &quot;Es una billetera&quot;, &quot;pickupText&quot;, &quot;Tienes la billetera en tu bolsillo.&quot;, &quot;isCarried&quot;, false))
 (set: $previousPassage to &quot;Parte 2&quot;)
 
@@ -1113,7 +1115,7 @@ En la mochila de Carlos encuentras:
 [[Su billetera|2.3.5.2.2.2. LA BILLETERA DE CARLOS]]
 
 (set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="102" name="2.4. EL TELÉFONO DE CARLOS" tags="" position="4651,4119" size="100,100">- Acertijo de teléfono -
-
+(set: $phoneCodeGuess to &quot;&quot;)
 [[2.4.1 Ingresa la clave del teléfono de Carlos]]
 [[2.4.2 Busca información en tu teléfono]]
 [[2.4.3 Rendirte]]
@@ -1151,7 +1153,8 @@ Mike”.
 
 [[Ver el bolso|2.3.5.2.2.1. TOMA LA MOCHILA]]
 
-(set: $segundosReloj to $segundosReloj + 30)</tw-passagedata><tw-passagedata pid="104" name="2.2.1.A" tags="" position="1552,2726" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto Carlos por ser grosero con él.**] 
+(set: $segundosReloj to $segundosReloj + 30)
+(set: $examinedCarloswallet to true)</tw-passagedata><tw-passagedata pid="104" name="2.2.1.A" tags="" position="1552,2726" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto Carlos por ser grosero con él.**] 
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás diciendo que me vaya? ¿O que entre a mi propio riesgo?*
 
@@ -1604,32 +1607,38 @@ Pero vas a tener que decidir entre Manuela o yo. Tú eliges.
 [Manuela tendrá muchos defectos, pero siempre ha sido leal conmigo. Eso es algo que tú no tienes, Carlos.] -final a favor de Manuela, y Carlos publica las fotos-
 [Sí que eres insistente. Eso te lo reconozco. Y Manuela no me ha dado sino dolores de cabeza. ¿Cómo sé que contigo es diferente?] -Tendiente a Final Neutro o Final de Obsesión con Carlos-</tw-passagedata><tw-passagedata pid="146" name="2.4.1.1 Entra al teléfono de Carlos" tags="" position="4574,4881" size="100,100">¿Qué quieres hacer?
 
-[[2.4.1.2. Entrar a la aplicación de fotos]]</tw-passagedata><tw-passagedata pid="147" name="2.4.1 Ingresa la clave del teléfono de Carlos" tags="" position="4603,4347" size="100,100">Es una clave numérica de cuatro dígitos. 
+[[2.4.1.2. Entrar a la aplicación de fotos]]
+[[2.4.1.3. Ver mensajes]]
+[[2.4.1.4. Ver correo electrónico]]</tw-passagedata><tw-passagedata pid="147" name="2.4.1 Ingresa la clave del teléfono de Carlos" tags="" position="4603,4347" size="100,100">Es una clave numérica de cuatro dígitos. 
 
-(set: $phoneCodeGuess to &quot;&quot;)
-(link: &quot;0&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;0&quot;)]
-(link: &quot;1&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;1&quot;)]
-(link: &quot;2&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;2&quot;)]
-(link: &quot;3&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;3&quot;)]
-(link: &quot;4&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;4&quot;)]
-(link: &quot;5&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;5&quot;)]
-(link: &quot;6&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;6&quot;)]
-(link: &quot;7&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;7&quot;)]
-(link: &quot;8&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;8&quot;)]
-(link: &quot;9&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;9&quot;)]
+$phoneCodeGuess
+
+(link: &quot;0&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;0&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Carlos&quot;)]
+(link: &quot;1&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;1&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Carlos&quot;)]
+(link: &quot;2&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;2&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Carlos&quot;)]
+(link: &quot;3&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;3&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Carlos&quot;)]
+(link: &quot;4&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;4&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Carlos&quot;)]
+(link: &quot;5&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;5&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Carlos&quot;)]
+(link: &quot;6&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;6&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Carlos&quot;)]
+(link: &quot;7&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;7&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Carlos&quot;)]
+(link: &quot;8&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;8&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Carlos&quot;)]
+(link: &quot;9&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;9&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Carlos&quot;)]
 
 (link: &quot;Ingresa&quot;)[
 
-(if: $phoneCodeGuess is &quot;1978&quot;)[
+(if: $phoneCodeGuess is &quot;1979&quot;)[
 	(link-goto: &quot;Clave correcta!&quot;, &quot;2.4.1.1 Entra al teléfono de Carlos&quot;)
+
 ]
 (else:)[
    (link-goto: &quot;Clave incorrecta&quot;, &quot;2.4. EL TELÉFONO DE CARLOS&quot;)
 ]
+(set: $phoneCodeGuess to &quot;&quot;)
 ]
-</tw-passagedata><tw-passagedata pid="148" name="2.4.1.2. Entrar a la aplicación de fotos" tags="" position="4574,5031" size="100,100">Ves algunas fotos besándote con Carlos, y otras bailando muy sugestivamente con él. Y hay muchas otras de Carlos con sus amigues que no te interesan ver.
+</tw-passagedata><tw-passagedata pid="148" name="2.4.1.2. Entrar a la aplicación de fotos" tags="" position="4574,5031" size="100,100">Ves algunas fotos besándote con Carlos, y otras bailando muy sugestivamente con él. Y hay muchas otras de Carlos con sus amigues que no te interesa ver.
 
-Jugador dice: &quot;¡Ajá! Aquí está la prueba reina. Wow! Sí que no estaba en mí anoche. La verdad no recuerdo eso. Pero no importa porque voy a:
+(css: &quot;color: #187FF5;&quot;)[*¡Ajá! Aquí está la prueba reina. Wow! Sí que no estaba en mí anoche. La verdad no recuerdo eso. Pero no importa porque voy a...*
+]
 
 [[2.4.1.3. Borrar todas las fotos del teléfono de Carlos]]
 [[2.4.1.4. Borrar sólo las fotos en las que apareces con Carlos]]</tw-passagedata><tw-passagedata pid="149" name="2.4.1.3. Borrar todas las fotos del teléfono de Carlos" tags="" position="4469,5164" size="100,100">Has borrado todas las fotos del teléfono de Carlos. Probablemente sospechará de ti, así que debes pensar en una buena coartada. 
@@ -1655,14 +1664,14 @@ Jugador dice: &quot;¡Ajá! Aquí está la prueba reina. Wow! Sí que no estaba 
 ¡Carajo! Viene Carlos. Ya se me ocurrirá algo, en caso de que sospeche de mí. Apagas la pantalla del teléfono y 
 
 [[2.4.1.5. metes el teléfono en la mochila]])
-</tw-passagedata><tw-passagedata pid="151" name="2.4.1.5. metes el teléfono en la mochila" tags="" position="4338,5375" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="152" name="2.4.1.6. dejas el teléfono en la mesa" tags="" position="4816,5371" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="153" name="2.4.2 Busca información en tu teléfono" tags="" position="4827,4345" size="100,100">Jugador: ¡Por fin el wifi funciona! 
+</tw-passagedata><tw-passagedata pid="151" name="2.4.1.5. metes el teléfono en la mochila" tags="" position="4338,5375" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="152" name="2.4.1.6. dejas el teléfono en la mesa" tags="" position="4816,5371" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="153" name="2.4.2 Busca información en tu teléfono" tags="" position="4827,4345" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Por fin el wifi funciona!*] 
 
 ¿Qué información quieres buscar?
 
 [[2.4.2.1. Bandeja de entrada de tu correo electrónico]]
-[[2.4.2.2. Navegador de internet]]</tw-passagedata><tw-passagedata pid="154" name="2.4.2.1. Bandeja de entrada de tu correo electrónico" tags="" position="4660,4494" size="100,100">En tu correo ves que hay dos boletos para ir a ver a &quot;1349&quot; a nombre tuyo en el &quot;Poison Rock Bar&quot; ayer 30 de octubre a las 21 horas.
+[[2.4.2.2. Navegador de internet]]</tw-passagedata><tw-passagedata pid="154" name="2.4.2.1. Bandeja de entrada de tu correo electrónico" tags="" position="4657,4492" size="100,100">En tu correo ves que hay dos boletos para ir a ver a &quot;1349&quot; a nombre tuyo en el &quot;Poison Rock Bar&quot; ayer 30 de octubre a las 21 horas.
 
-Jugador dice: &quot;¿De verdad hice esta reserva? Pero debo estar loco. Con lo poco que me gusta esa banda, seguro que Carlos me manipuló para hacerlo&quot;. 
+(css: &quot;color: #187FF5;&quot;)[*¿De verdad hice esta reserva? Pero debo estar loco. Con lo poco que me gusta esa banda, seguro que Carlos me manipuló para hacerlo.*] 
 
 [[2.4.2.1.1. Quiero preguntarle a Carlos más detalles. Esto me preocupa mucho.]]
 [[2.4.2.1.2. Mejor me evito problemas con Manuela. Debo encontrar más pruebas sobre anoche.|2.4. EL TELÉFONO DE CARLOS]]</tw-passagedata><tw-passagedata pid="155" name="2.4.2.2. Navegador de internet" tags="" position="4863,4494" size="100,100">Hay un buscador donde puedes buscar: 
@@ -1684,15 +1693,27 @@ Jugador dice: &quot;¿De verdad hice esta reserva? Pero debo estar loco. Con lo 
 9) Cincuenta centavitos
 10) Cincuenta y dos abejas 
 
-(Si has mirado billetera de Carlos: 
-Algunas de estas bandas son de época, pero no me dice mucho. Voy a buscar ahora: 
+(if: $examinedCarloswallet)[
+(css: &quot;color: #187FF5;&quot;)[*Algunas de estas bandas son de época, pero no me dice mucho. Voy a buscar ahora*] 
 
 [[2.4.2.2.2 “Canciones con números en su nombre&quot;]])
+]
+(else:)[
+(css: &quot;color: #187FF5;&quot;)[*Esto es demasiado confuso. Debería buscar más pistas en otra parte.*] 
 
+[[2.3.5.2.2.2. LA BILLETERA DE CARLOS]])
+]
+
+
+(css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que hiciste...**]
+
+
+Modo de prueba:
+Has mirado
+[[2.4.2.2.2 “Canciones con números en su nombre&quot;]])
 (Si no has mirado billetera de Carlos: 
-Esto es demasiado confuso. Debería buscar más pistas en otra parte. 
-
-[[2.3.5.2.2.2. LA BILLETERA DE CARLOS]])</tw-passagedata><tw-passagedata pid="158" name="2.4.2.2.2 “Canciones con números en su nombre&quot;" tags="" position="4916,4648" size="100,100">Encuentras la siguiente lista: 
+[[2.3.5.2.2.2. LA BILLETERA DE CARLOS]])
+</tw-passagedata><tw-passagedata pid="158" name="2.4.2.2.2 “Canciones con números en su nombre&quot;" tags="" position="4916,4648" size="100,100">Encuentras la siguiente lista: 
 
 1) “Geny ocho seis siete cinco tres cero nueve”, Tomacito Tutono (1981)
 2) “Dos mil trescientos cuarenta y ocho”, Prisa (1976)
@@ -1700,7 +1721,7 @@ Esto es demasiado confuso. Debería buscar más pistas en otra parte.
 4) “Doce menos un minuto”, Rubiecita (1978)
 5) “1984”, Principito (1982)
 6) “25 o 5 para las 12”, Miami o Chicago (1970)
-7) “1978”, Destrozando Ahuyamas (1996)
+7) “1979”, Destrozando Ahuyamas (1996)
 8) “En el año de 2546”, Zaherir y Evaristo (1969)
 9) “Una pasando la 905”, Los cucarroncitos (1970)
 10) “2001 millas”, Los fingidores (1984)
@@ -1713,7 +1734,7 @@ Bueno, hay algo más de información. Pero debo saber cuáles de estas canciones
 (¿Es posible hacer aparecer esas respuestas en esta misma carta como en la clave del teléfono?)</tw-passagedata><tw-passagedata pid="159" name="2.4.2.2.2.1 Rock pesado" tags="" position="4841,4798" size="100,100">2) “Dos mil trescientos cuarenta y ocho”, Prisa (1976)
 4) “Doce menos un minuto”, Rubiecita (1978)
 5) “1984”, Principito (1982)
-7) “1978”, Destrozando Ahuyamas (1996)
+7) “1979”, Destrozando Ahuyamas (1996)
 8) “En el año de 2546”, Zaherir y Evaristo (1969)
 
 Todas estas canciones son de distintas décadas. Puede ser que sea:
@@ -1744,7 +1765,7 @@ Todas estas canciones son de distintas décadas. Puede ser que sea:
 
 Bueno, esta puede ser la clave. Espero que funcione: 
 
-[El teléfono de Carlos])</tw-passagedata></tw-storydata>
+[El teléfono de Carlos])</tw-passagedata><tw-passagedata pid="161" name="2.4.1.3. Ver mensajes" tags="" position="4454,5031" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="162" name="2.4.1.4. Ver correo electrónico" tags="" position="4694,5031" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
