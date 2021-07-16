@@ -1448,7 +1448,7 @@ Modo de prueba:
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
 (if: $puntosCarlos + $puntosCarisma &lt;= 9)[
   (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y se hace difícil descubrir que pasó anoche.**]
-]</tw-passagedata><tw-passagedata pid="132" name="2.3.4.2.B" tags="" position="3790,3529" size="100,100">-Si A o B- (css: &quot;color: white;&quot;)[**Carlos:**]  *¿En serio? En realidad estás mal, querido. Bien mal. Te doy otra oportunidad.*
+]</tw-passagedata><tw-passagedata pid="132" name="2.3.4.2.B" tags="" position="3790,3529" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**]  *¿En serio? En realidad estás mal, querido. Bien mal. Te doy otra oportunidad.*
 (css: &quot;color: red;&quot;)[**(-1 punto por no recordar su banda favorita)**]
 
 [[1349|BANDA SÚPER INCORRECTA]] -A-
@@ -1551,19 +1551,39 @@ Modo de prueba:
 
 Modo de prueba:
 -si fuiste al Sitio
-[[Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] -A-</tw-passagedata><tw-passagedata pid="139" name="Final Neutro" tags="" position="4346,4365" size="100,100">No es bueno, pero tampoco es malo.
+[[Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] -A-</tw-passagedata><tw-passagedata pid="139" name="Final Neutro" tags="" position="4179,4425" size="100,100">No es bueno, pero tampoco es malo.
+
+
+Opciones:
+-Estas con Manuela, y Carlos esta enfadado pero no tiene evidencia a ruinar tu relacion.  
+-Estas con Carlos, pero Manuela esta suspechosa y tu relacion con ella no es lo mismo.
+
+
+
+
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="140" name="Final Bueno" tags="" position="3932,4370" size="100,100">Lo mejor!
+[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="140" name="Final Bueno" tags="" position="3945,4460" size="100,100">&lt;Queda con Manuela, y explica porque no quieres estar con Carlos y Carlos lo entiende&gt;
+
+
+
+Lo mejor!
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="141" name="Final Caótico" tags="" position="4415,4506" size="100,100">Lo peor!
+[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="141" name="Final Caótico" tags="" position="4377,4426" size="100,100">Lo peor!
+
+
+Queries estar con Manuela pero ella encuentra de la evidencia, y ni ella ni Carlos quieren saber de ti.
+
+
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[REINICIAR]</tw-passagedata><tw-passagedata pid="142" name="Hicimos un pacto, Carlos. Pero no me importa, quiero estar contigo." tags="" position="4963,3212" size="100,100">Final con Carlos</tw-passagedata><tw-passagedata pid="143" name="2.3.5.2.2. CARLOS DEJA SU MOCHILA EN LA MESA" tags="" position="4519,3678" size="100,100">Carlos está muy confundido, y de la prisa que tenía para aclarar su mente en el baño, dejó su mochila en la mesa.
+[REINICIAR]</tw-passagedata><tw-passagedata pid="142" name="Hicimos un pacto, Carlos. Pero no me importa, quiero estar contigo." tags="" position="5948,4444" size="100,100">Final con Carlos
+
+-Estas con Carlos, pero Manuela esta suspechosa y tu relacion con ella no es lo mismo.</tw-passagedata><tw-passagedata pid="143" name="2.3.5.2.2. CARLOS DEJA SU MOCHILA EN LA MESA" tags="" position="4519,3678" size="100,100">Carlos está muy confundido, y de la prisa que tenía para aclarar su mente en el baño, dejó su mochila en la mesa.
 
 (if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
 [[Toma la mochila.|2.3.5.2.2.1. TOMA LA MOCHILA]]
@@ -1587,25 +1607,33 @@ Modo de prueba:
 
 Has perdido la oportunidad de hacerlo porque no tienes suficiente confianza con Carlos.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="145" name="2.4.3 Rendirte" tags="" position="5013,4345" size="100,100">Carlos llega del baño, ahora muy pensativo. 
+[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="145" name="2.4.3 Rendirte" tags="" position="5349,4280" size="100,100">Carlos llega del baño, ahora muy pensativo. 
 
-¿Estás bien? -preguntas. 
+(css: &quot;color: #187FF5;&quot;)[*¿Estás bien?*]
 
-Carlos: No mucho. Lo que me dijiste me deja algo inquieto.  
+(css: &quot;color: white;&quot;)[**Carlos:**] No mucho. Lo que me dijiste me deja algo inquieto.  
 
-(si tienes mala reputación con Carlos = 
-Pero no estoy dispuesto a rendirme tan fácilmente. Quiero luchar por nuestro amor. ¿Quieres hacerlo conmigo?
 
-[Bien. Creo que no tengo nada que perder, salvo a Manuela, mi mejor amiga.] -final de obsesión con Carlos-
-[No me quieres decir qué pasó anoche, y eso me molesta demasiado.] -luego te muestra las fotos y debes convencerle de borrarlas-
-[Insisto en que no estás bien de la cabeza. Deja esa obsesión conmigo, te lo ruego.] -final a favor de Manuela, y Carlos publica las fotos-)
-
-(si tienes regular reputación con Carlos =
+(if: ($puntosCarlos) &gt;= 8)[
 Pero vas a tener que decidir entre Manuela o yo. Tú eliges. 
 
-[No eres quién para darme a elegir, Carlos.] -luego te muestra las fotos y debes convencerle de borrarlas-
-[Manuela tendrá muchos defectos, pero siempre ha sido leal conmigo. Eso es algo que tú no tienes, Carlos.] -final a favor de Manuela, y Carlos publica las fotos-
-[Sí que eres insistente. Eso te lo reconozco. Y Manuela no me ha dado sino dolores de cabeza. ¿Cómo sé que contigo es diferente?] -Tendiente a Final Neutro o Final de Obsesión con Carlos-</tw-passagedata><tw-passagedata pid="146" name="2.4.1.1 Entra al teléfono de Carlos" tags="" position="4579,4847" size="100,100">¿Qué quieres hacer?
+[[No eres quién para darme a elegir, Carlos.]]
+[[Manuela tendrá muchos defectos, pero siempre ha sido leal conmigo. Eso es algo que tú no tienes, Carlos.]] 
+[[Sí que eres insistente. Eso te lo reconozco. Y Manuela no me ha dado sino dolores de cabeza. ¿Cómo sé que contigo es diferente?]] 
+]
+(else:)[
+
+Pero no estoy dispuesto a rendirme tan fácilmente. Quiero luchar por nuestro amor. ¿Quieres hacerlo conmigo?
+
+[[Bien. Creo que no tengo nada que perder, salvo a Manuela, mi mejor amiga.]]
+[[No me quieres decir qué pasó anoche, y eso me molesta demasiado.]]
+[[Insisto en que no estás bien de la cabeza. Deja esa obsesión conmigo, te lo ruego.]]
+
+]
+
+(css: &quot;color: purple;&quot;)[**Esta interacción cambió por tu relación con Carlos **]
+
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="146" name="2.4.1.1 Entra al teléfono de Carlos" tags="" position="4579,4847" size="100,100">¿Qué quieres hacer?
 
 [[2.4.1.2. Entrar a la aplicación de fotos]]
 [[2.4.1.3. Ver mensajes]]
@@ -1835,7 +1863,24 @@ Bueno, esta puede ser la clave. Espero que funcione:
 [[Ver más bien Rock pesado |2.4.2.2.2.1 Rock pesado]]
 
 
-(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="161" name="2.4.1.3. Ver mensajes" tags="" position="4454,5031" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="162" name="2.4.1.4. Ver correo electrónico" tags="" position="4694,5031" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="161" name="2.4.1.3. Ver mensajes" tags="" position="4454,5031" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="162" name="2.4.1.4. Ver correo electrónico" tags="" position="4694,5031" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="163" name="No eres quién para darme a elegir, Carlos." tags="" position="5336,4488" size="100,100"> (No eres quién para darme a elegir, Carlos.)
+ -luego te muestra las fotos y debes convencerle de borrarlas-
+ 
+ (css: &quot;color: white;&quot;)[**Carlos:**] Pues, sí, en este caso tengo la ventaja, si te importa tu amistad con Manuela... tengo algunos fotos que es muy probable que ella no va a gustar...
+ 
+ - a lado de Manuela, pero no covincente
+ [[Manuela no quiere que yo estoy contigo, es imposible estar contigo aun si quisiera.]]
+ - a lado de Manuela, convincente
+ [[Manuela es tu hermana.  No te importa si ella esta feliz?  Quieres que todos son tristes?]]
+ - a lado de Carlos
+ [[Carlos esto no es proprio de ti.  Se&#39; que quieres estar conmigo y podriamos ententarlo. No es necesario estar asi.]]</tw-passagedata><tw-passagedata pid="164" name="Manuela tendrá muchos defectos, pero siempre ha sido leal conmigo. Eso es algo que tú no tienes, Carlos." tags="" position="5174,4479" size="100,100">-final a favor de Manuela, y Carlos publica las fotos-
+
+[[Final Caótico]] </tw-passagedata><tw-passagedata pid="165" name="Sí que eres insistente. Eso te lo reconozco. Y Manuela no me ha dado sino dolores de cabeza. ¿Cómo sé que contigo es diferente?" tags="" position="5623,4487" size="100,100">-Tendiente a Final Neutro o Final de Obsesión con Carlos-</tw-passagedata><tw-passagedata pid="166" name="Bien. Creo que no tengo nada que perder, salvo a Manuela, mi mejor amiga." tags="" position="5784,4487" size="100,100">-final de obsesión con Carlos-
+
+
+-Estas con Carlos, pero Manuela esta suspechosa y tu relacion con ella no es lo mismo.</tw-passagedata><tw-passagedata pid="167" name="No me quieres decir qué pasó anoche, y eso me molesta demasiado." tags="" position="5457,4487" size="100,100">-luego te muestra las fotos y debes convencerle de borrarlas-</tw-passagedata><tw-passagedata pid="168" name="Insisto en que no estás bien de la cabeza. Deja esa obsesión conmigo, te lo ruego." tags="" position="5067,4474" size="100,100">-final a favor de Manuela, y Carlos publica las fotos-)
+
+[[Final Caótico]] </tw-passagedata><tw-passagedata pid="169" name="Manuela no quiere que yo estoy contigo, es imposible estar contigo aun si quisiera." tags="" position="5186,4638" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="170" name="Manuela es tu hermana.  No te importa si ella esta feliz?  Quieres que todos son tristes?" tags="" position="5321,4634" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="171" name="Carlos esto no es proprio de ti.  Se&#39; que quieres estar conmigo y podriamos ententarlo. No es necesario estar asi." tags="" position="5450,4638" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
