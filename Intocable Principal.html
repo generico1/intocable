@@ -1117,9 +1117,12 @@ No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al 
 
 (set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="102" name="2.4. EL TELÉFONO DE CARLOS" tags="" position="4662,4113" size="100,100">- Acertijo de teléfono -
 (set: $phoneCodeGuess to &quot;&quot;)
-[[2.4.1 Ingresa la clave del teléfono de Carlos]]
-[[2.4.2 Busca información en tu teléfono]]
-[[2.4.3 Ríndete]]
+
+(if: $segundosReloj &lt; 750){
+[[Ingresa la clave del teléfono de Carlos|2.4.1 Ingresa la clave del teléfono de Carlos]]
+[[Busca información en tu teléfono|2.4.2 Busca información en tu teléfono]]
+}
+[[Ríndete|2.4.3 Ríndete]]
 
 [[Mirar billetera]] 
 
@@ -1678,7 +1681,7 @@ Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con l
 
 (set: $segundosReloj to $segundosReloj + 5)</tw-passagedata><tw-passagedata pid="151" name="2.4.2.1. Bandeja de entrada de tu correo electrónico" tags="" position="4603,4485" size="100,100">En tu correo ves que hay dos boletos para ir a ver a &quot;1919&quot; a nombre tuyo en el &quot;Poison Rock Bar&quot; ayer 30 de octubre a las 21 horas.
 
-(css: &quot;color: #187FF5;&quot;)[*¿De verdad hice esta reserva? Pero debo estar loco. Con lo poco que me gusta esa música, seguro que Carlos me manipuló para hacerlo.*] 
+(css: &quot;color: #187FF5;&quot;)[*¿De verdad hice esta reserva? Qué locura. Con lo poco que me gusta esa música, seguro que Carlos me manipuló para hacerlo.*] 
 
 [[Espera y pregúntale a Carlos más detalles|2.4.2.1.1. Quiero preguntarle a Carlos más detalles. Esto me preocupa mucho.]]
 [[Busca bandas de rock en internet|2.4.2.2. Navegador de internet]]
@@ -1693,7 +1696,7 @@ Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con l
 [[Mételo en su mochila|2.4.1.5. metes el teléfono en la mochila]]
 [[Déjalo sobre la mesa|2.4.1.6. dejas el teléfono en la mesa]]
 
-(set: $segundosReloj to $segundosReloj + 5)</tw-passagedata><tw-passagedata pid="154" name="2.4.2.2.1 “Bandas con números en su nombre”" tags="" position="4766,4648" size="100,100">Encuentras la siguiente lista: 
+(set: $segundosReloj to $segundosReloj + 5)</tw-passagedata><tw-passagedata pid="154" name="2.4.2.2.1 “Bandas con números en su nombre”" tags="" position="4748,4645" size="100,100">Encuentras la siguiente lista: 
 
 1) Doble U dos
 2) Cero noventa y uno
@@ -1706,15 +1709,15 @@ Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con l
 9) Cincuenta centavitos
 10) Cincuenta y dos abejas 
 
-(if: $examinedCarloswallet)[
+(if: $examinedCarloswallet is true)[
 (css: &quot;color: #187FF5;&quot;)[*Algunas de estas bandas son de época, pero no me dice mucho. Voy a buscar ahora:*] 
 
-[[2.4.2.2.2 “Canciones con números en su nombre&quot;]])
+[[Busca “Canciones con números en su nombre&quot;|2.4.2.2.2 “Canciones con números en su nombre&quot;]]
 ]
 (else:)[
 (css: &quot;color: #187FF5;&quot;)[*Esto es demasiado confuso. Debería buscar más pistas en otra parte.*] 
 
-[[2.3.5.2.2.2. LA BILLETERA DE CARLOS]])
+[[Mira la mochila de Carlos|2.3.5.2.2.1. TOMA LA MOCHILA]]
 ]
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que hiciste...**]
@@ -1724,9 +1727,9 @@ Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con l
 
 Modo de prueba:
 Has mirado
-[[2.4.2.2.2 “Canciones con números en su nombre&quot;]])
+[[2.4.2.2.2 “Canciones con números en su nombre&quot;]]
 (Si no has mirado billetera de Carlos: 
-[[2.3.5.2.2.2. LA BILLETERA DE CARLOS]])
+[[2.3.5.2.2.2. LA BILLETERA DE CARLOS]]
 </tw-passagedata><tw-passagedata pid="155" name="2.4.2.2.2 “Canciones con números en su nombre&quot;" tags="" position="5041,4652" size="100,100">Encuentras la siguiente lista: 
 
 1) “Geny ocho seis siete cinco tres cero nueve”, Tomacito Tutono (1981)
