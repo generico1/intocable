@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -2050,16 +2050,16 @@ Ya no crees que Carlos sea el &quot;intocable&quot; hermano de Manuela, y aunque
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="177" name="2.5. El comienzo del fin" tags="" position="4838,5519" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Inquieto porque no te has definido si me quieres o no. Y eso créeme que no me gusta nada. 
+[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="177" name="2.5. El comienzo del fin" tags="" position="4830,5515" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Inquieto porque no te has definido si me quieres o no. Y eso créeme que no me gusta nada. 
 
 (css: &quot;color: #187FF5;&quot;)[*Claro que te quiero. Sólo que me confundo un poco porque es algo que nunca antes había sentido. Fue divertido anoche.
-Por cierto, ¿encontraste la bufanda que se te extraviò en medio del pogo?*] 
+Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*] 
 
-(css: &quot;color: white;&quot;)[**Carlos:**] No, yo no perdì ninguna bufanda anoche. 
+(css: &quot;color: white;&quot;)[**Carlos:**] No, yo no perdí ninguna bufanda anoche. 
 
-(css: &quot;color: #187FF5;&quot;)[*Sì, yo te la vi puesta. La tuviste casi toda la noche. ¿Estabas borracho?*]
+(css: &quot;color: #187FF5;&quot;)[*Sí, yo te la vi puesta. La tuviste casi toda la noche. ¿Estabas borracho?*]
 
-(css: &quot;color: white;&quot;)[**Carlos:**] No. De hecho, yo no uso bufandas porque suelo perderlas. Te puedo comprobar ahora mismo que no llevaba una anoche. 
+(css: &quot;color: white;&quot;)[**Carlos:**] ¿Yo? Para nada. De hecho, yo no uso bufandas porque suelo perderlas. Te puedo comprobar ahora mismo que no llevaba una anoche. 
 
 [[Carlos saca su teléfono|2.5.1. Carlos descubre que no hay fotos]]</tw-passagedata><tw-passagedata pid="178" name="2.4.2.A Manuela te llama" tags="" position="4957,4112" size="100,100">Manuela te llama y no tienes opción sino responder.
 
@@ -2071,46 +2071,141 @@ Por cierto, ¿encontraste la bufanda que se te extraviò en medio del pogo?*]
 
 
 
-</tw-passagedata><tw-passagedata pid="179" name="2.5.1. Carlos descubre que no hay fotos" tags="" position="5015,5518" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Pero, ¡¿qué carajos?! ¿Dónde están mis fotos?
-
+</tw-passagedata><tw-passagedata pid="179" name="2.5.1. Carlos descubre que no hay fotos" tags="" position="5013,5515" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Pero, ¡¿qué carajos?! ¿Dónde están mis fotos?
 
 (if: $hasDeletedCarlosPhotos is true)[
 
-Como? No estan?
+(css: &quot;color: #187FF5;&quot;)[*¿Cómo? ¿No están?*]
 
-Carlos: So fueron las fotos de anoche... como es posible?
+(css: &quot;color: white;&quot;)[**Carlos:**] Todas las fotos de anoche... borradas. ¿Cómo es posible? 
 
-No se. Cosas que pasan. 
+(css: &quot;color: #187FF5;&quot;)[*Pues, cosas que pasan. ¿No?*]
 
-Carlos: Espera un momento.... hiciste algo verdad?  Debiste ser tu!
+(css: &quot;color: white;&quot;)[**Carlos:**] A ver, un momento... Hiciste algo, ¿verdad? ¡Debiste ser tú!
 
-No hay copia de respaldo en la nube?
+[[¿No hay copia de respaldo en la nube?|2.5.2 Respuesta sobre la nube]]
 
-Carlos: ¡Carajo!
+[[¿Por qué lo piensas, Carlos? ¿Qué pruebas tienes?|2.5.1.1 Acusa a Carlos de calumnioso]]
 
-
-
-
-](else:)[
-
-Ay! Mierda, mis fotos! No estan, donde se fueron?  
-(Como asi? Que paso?)
-¡No entiendo!
-(Uy, tal vez tienes un virus informático. Lo escuché en las noticias la semana pasada.  Hay un virus que puede borrar tus archivos. Puede ser esto?)
-¡No me digas! Me están hackeando.
-(Pobrecita.  No hay copia de respaldo en la nube?)
-Ay… no!  Es un teléfono nuevo y no he conectado con la nube. Soy una idiota.
-(Pues, si están hackeando es mejor que apagues el teléfono, y puedes formatearlo otra vez. Es muy fácil, y ya es un teléfono nuevo, entonces no pierdes mucho más. Mientras tanto, podemos tomar la foto con mi teléfono, y te la mando más tarde.)
-Uy, mi héroe! [da besos] Tan listo también. Bueno. [sacan una foto juntos con el teléfono de Jose]
-No puedo esperar compartir nuestro amor con el mundo!
-
-
+[[Estás loco, Carlos. Soy el menos interesado en hacerte daño.|2.5.1.2 Carlos te acusa de ladrón]]
 
 ]
+(else:)[
+
+(css: &quot;color: white;&quot;)[**Carlos:**] ¡Ay, mierda, mis fotos! No están, ¿adónde se fueron?  
+
+¿Cómo asi? ¿Qué pasó?
+
+(css: &quot;color: white;&quot;)[**Carlos:**] La verdad es que no lo entiendo. Todas mis fotos del teléfono... se perdieron. ¡Esto no puede ser!
+
+(css: &quot;color: #187FF5;&quot;)[*Uy, tal vez tienes un virus informático. Lo escuché en las noticias la semana pasada. Hay un virus que puede borrar tus archivos. Puede ser esto, ¿no?*]
+
+(css: &quot;color: white;&quot;)[**Carlos:**] ¡No me digas! Me están hackeando. No habrás sido tú, ¿verdad?
+
+[[¿No hay copia de respaldo en la nube?|2.5.2 Respuesta sobre la nube]]
+
+[[Jajaja... la cara de hacker que tengo yo ahora. ¡Lo que me faltaba!|2.5.2.3 Ríete de Carlos a la cara]] 
+
+[[Estás loco, Carlos. Soy el menos interesado en hacerte daño.|2.5.1.2 Carlos te acusa de ladrón]]
+
+]</tw-passagedata><tw-passagedata pid="180" name="2.5.2 Respuesta sobre la nube" tags="" position="4873,5667" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¡Carajo! Yo pensé que las fotos ya estaban vinculadas a la nube. 
+
+(css: &quot;color: #187FF5;&quot;)[*Tú sabes que a veces la tecnología es caprichosa. Lo lamento mucho.*] 
+
+(css: &quot;color: white;&quot;)[**Carlos:**] Sí, pero no paro de pensar que es tremenda casualidad.
+
+[[Pues nada. Así son las cosas. Nos vemos.|2.5.2.1 Huir de Carlos]]
+
+[[Bueno, puede ser. Pero como no me has dicho qué pasó anoche, creo que ya no quiero tener nada que ver contigo.|2.5.2.2 Termina con Carlos sin explicaciones]]
+
+[[Sí, es que los hackers son tremendos pillos, ¿no? Mala suerte, querido.|2.5.2.3 Ríete de Carlos a la cara]]</tw-passagedata><tw-passagedata pid="181" name="2.5.2.1 Huir de Carlos" tags="" position="4733,5825" size="100,100">Huyes rápidamente del lugar, y Carlos se queda sorprendido por tu reacción. Con más veras sospecha de ti, pero sabe que no tiene pruebas para acusarte de entrar a su teléfono. 
+
+Sin las cosas aclaradas con Carlos, es imposible volver con Manuela de la misma manera. Con el tiempo pierdes también su amistad. Aprendes que no debes meterte con esta clase de personas tan manipuladoras. Huyes de todos y de todo. 
+
+¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
+Gracias por jugar.
+
+-completar el mensaje-
+
+[Reiniciar]</tw-passagedata><tw-passagedata pid="182" name="2.5.2.2 Termina con Carlos sin explicaciones" tags="" position="4883,5825" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¿Cómo que quieres terminar conmigo? Y claro, luego de que tú borraras las fotos, ¿cierto?
+
+(css: &quot;color: #187FF5;&quot;)[*¿Terminar contigo? No recuerdo haber salido contigo nunca. De lo de las fotos no tienes pruebas. Todo esto está muy raro, y la verdad me cansa estar contigo. No te quiero más en mi vida.*] 
+
+Sin querer aclarar nada, así se enrarece todo en tu vida. Cuando sales del lugar, Carlos ardido llama a Manuela a contarle la situación. Nunca le has importado. Con ello también arruina tu amistad con Manuela, y así pierdes el favor de ambos. 
+
+¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
+Gracias por jugar.
+
+-completar el mensaje-
+
+[Reiniciar]</tw-passagedata><tw-passagedata pid="183" name="2.5.2.3 Ríete de Carlos a la cara" tags="" position="5071,5836" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Aquí estoy viendo a un ladrón, pusilánime, bandido, cínico. ¡Te odio! No te saldrás con la tuya. 
+
+(css: &quot;color: #187FF5;&quot;)[*¿Y eso qué? ¿Qué pruebas hay? ¡Nada! No tienes nada. No eres nada, Carlos. Jajaja. Haz lo que quieras. A la hora de la verdad a quién le creerá Manuela, querido.*]
+
+(css: &quot;color: white;&quot;)[**Carlos:**] Lo pagarás caro. ¡Te acordarás de mí!
+
+(si has tomado fotos del correo o de fotos del teléfono:)
+(css: &quot;color: #187FF5;&quot;)[*¿Y qué? Yo sí soy quien tiene pruebas para hundirte, a-mor-ci-to. Más te vale tener cuidado.
+
+Jajajaja!! Se ve que no eres nada, Carlos. ¡Chaíto!*]
+
+(si no has tomado fotos del teléfono:)
+(css: &quot;color: #187FF5;&quot;)[*Ya te lo dije, Carlos. Nadie te creerá. Y es claro que quien oculta algo eres tú. Es patético ver cómo te retuerces de la rabia, suficiente prueba para pensar que sí que eres un manipulador. Jajaja!! Eres una vileza de ser humano. Esa es la verdad. Nos vemos.*]
+
+Has logrado verle la verdadera cara a Carlos jugándole por donde más le duele: manipulándole como lo ha hecho contigo. Vuelves con Manuela, mantienes tu pacto y relación con ella. Y disfrutas de la impunidad de tus actos. Eso no dura para siempre, ¿pero qué más da? Has ganado ahora, y eso es lo importante. 
+
+¡LLEGASTE AL VERDADERO FINAL DE &#39;INTOCABLE&#39;!
+Gracias por jugar. 
+
+-completar el mensaje-
+
+[Reiniciar el juego]</tw-passagedata><tw-passagedata pid="184" name="2.5.1.1 Acusa a Carlos de calumnioso" tags="" position="4997,5669" size="100,100">(si buen puntaje Carlos)
+
+(css: &quot;color: white;&quot;)[**Carlos:**] Te hice ir a ese concierto, ¿y así es como me pagas?
+
+(css: &quot;color: #187FF5;&quot;)[*¿Cómo es eso? ¿Fui contra mi propia voluntad? ¡Explícame eso ya mismo!*]
+
+A Carlos se le escapó la verdad en sus palabras. Está obligado a decirte sobre su manipulación para que fueras a la fiesta. Como él te acusó de hacker, no le tienes piedad y le denuncias ante la policía por su confesión. 
+
+A ver si entre rejas Carlos aprende a no manipular a nadie nunca más. 
+
+¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
+Gracias por jugar.
+
+-completar el mensaje-
+
+[Reiniciar]
 
 
+(si mal puntaje Carlos)
 
-(Incluir lo de Google Docs)</tw-passagedata></tw-storydata>
+(css: &quot;color: white;&quot;)[**Carlos:**] Pruebas no son necesarias cuando yo, una persona noble que te ama, te rehúsas a amarme a mí. 
+
+(css: &quot;color: #187FF5;&quot;)[*Es claro que no estás en ti, Carlos. Sabes que te puedo denunciar por calumnia, ¿verdad? No he hecho nada, y tú lo sabes.*] 
+
+Como Carlos no tiene más pruebas sino su propia rabia, decides denunciarle ante la policía de todas maneras. Pero la denuncia es rápidamente invalidada y has terminado de muy mala manera con Carlos. 
+
+Manuela se entera y no puede evitar hacerse preguntas sobre la relación de ustedes dos, por lo que también pierdes su amistad. 
+
+¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
+Gracias por jugar.
+
+-completar el mensaje-
+
+[Reiniciar]</tw-passagedata><tw-passagedata pid="185" name="2.5.1.2 Carlos te acusa de ladrón" tags="" position="5129,5669" size="100,100">Carlos: Claro, el menos interesado en hacerme daño. Es que todo es tan casual, en serio. No tienes verguenza en mentirme a la cara.
+
+¡Eres una porquería!
+
+Carlos no tiene más pruebas de su acusación que su propia rabia. Te denuncia ante la policía por robo, pero la denuncia es rápidamente invalidada porque al estimar el caso como de típicos celos, no amerita para revisar alguna manipulación del teléfono. 
+
+Has terminado muy mal con Carlos, y nada más es cuestión de tiempo de que Manuela se entere, haga preguntas incómodas y también pierdas su amistad. 
+
+¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
+Gracias por jugar.
+
+-completar el mensaje-
+
+[Reiniciar]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
