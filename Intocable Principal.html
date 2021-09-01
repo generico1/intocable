@@ -2134,6 +2134,12 @@ Intenta completar el juego otra vez:
 
 Sin querer aclarar nada, así se enrarece todo en tu vida. Cuando sales del lugar, Carlos ardido llama a Manuela a contarle la situación. Nunca le has importado. Con ello también arruina tu amistad con Manuela, y así pierdes el favor de ambos. 
 
+(if: ($puntosManuela) &gt;= 4)[
+Estás triste de perder tu amistad con Manuela, pero sigues con tu vida y encuentras más amigos que llenan ese vacío. Todavía, durante las fechas especiales a veces piensas en ella.
+](else:)[
+En realidad, estás más feliz sin ellos.  Tu vida sigue con menos drama y complicaciones y menos estrés.  Tal vez es un poquito más aburrido, pero lo prefieres así.  
+]
+
 ¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.  Este final es uno de los más difíciles para llegar. 
 
@@ -2145,15 +2151,19 @@ Intenta completar el juego otra vez:
 
 (css: &quot;color: white;&quot;)[**Carlos:**] Lo pagarás caro. ¡Te acordarás de mí!
 
-(si has tomado fotos del correo o de fotos del teléfono:)
+(if: $takenPhoto is true)[
 (css: &quot;color: #187FF5;&quot;)[*¿Y qué? Yo sí soy quien tiene pruebas para hundirte, a-mor-ci-to. Más te vale tener cuidado.
 
 Jajajaja!! Se ve que no eres nada, Carlos. ¡Chaíto!*]
 
-(si no has tomado fotos del teléfono:)
+Has logrado verle la verdadera cara a Carlos jugándole por donde más le duele: manipulándole como lo ha hecho contigo. Vuelves con Manuela, mantienes tu pacto y relación con ella. Y disfrutas de la impunidad de tus actos. Eso no dura para siempre, ¿pero qué más da? Has ganado ahora, y eso es lo importante. 
+
+](else:)[
 (css: &quot;color: #187FF5;&quot;)[*Ya te lo dije, Carlos. Nadie te creerá. Y es claro que quien oculta algo eres tú. Es patético ver cómo te retuerces de la rabia, suficiente prueba para pensar que sí que eres un manipulador. Jajaja!! Eres una vileza de ser humano. Esa es la verdad. Nos vemos.*]
 
-Has logrado verle la verdadera cara a Carlos jugándole por donde más le duele: manipulándole como lo ha hecho contigo. Vuelves con Manuela, mantienes tu pacto y relación con ella. Y disfrutas de la impunidad de tus actos. Eso no dura para siempre, ¿pero qué más da? Has ganado ahora, y eso es lo importante. 
+&lt;TODO: que pasa despues?&gt;
+]
+
 
 ¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.  Este final es uno de los más difíciles para llegar. 
