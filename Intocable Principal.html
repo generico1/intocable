@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -1934,8 +1934,7 @@ Te fugas con Carlos y se van de viaje por algunos días. Esa obsesión suya no d
 
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="165" name="Final con Manuela Sospechosa" tags="" position="5964,4173" size="100,100">
-(if: $textedManuela is true or $calledManuela is true or $dateLocation is &quot;Sitio&quot; or $puntosManuela &gt;= 7)[
+[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="165" name="Final con Manuela Sospechosa" tags="" position="5964,4173" size="100,100">(if: $textedManuela is true or $calledManuela is true or $dateLocation is &quot;Sitio&quot; or $puntosManuela &gt;= 7)[
 Ya aclaradas las cosas con Carlos, él ha borrado cualquier evidencia de lo que pasó anoche. Y es hora de volver con Manuela. Aunque la amistad se mantiene, ella no dejará de hacerle preguntas a Carlos o averiguar por otros medios para saber qué pasó realmente. No hay nadie tan desconfiada como ella.
 ]
 (else:)[
@@ -1975,11 +1974,12 @@ La más importante de todas: perder la amistad de Manuela, tu mejor amiga.
 
 [[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="169" name="2.4.3.2. Carlos es confrontado por causa de Manuela" tags="" position="5457,4205" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por señalarle a Carlos sus defectos de manera muy directa)**]
 
-Carlos: Lealtad es lo que he demostrado contigo cuando me has pedido que te aclare qué pasó anoche sin haber publicado estas fotos todavía. 
+(css: &quot;color: white;&quot;)[**Carlos:**] Lealtad es lo que he demostrado contigo cuando me has pedido que te aclare qué pasó anoche sin haber publicado estas fotos todavía. 
 
 Te muestra algunas fotos tuyas con él bastante comprometedoras. 
 
 [[Debes creerme cuando te digo que no recuerdo nada de lo que pasó anoche. Piensa en lo que vas a hacer, Carlos, te lo pido.|2.3.6.3. Carlos puede ser consciente de lo que hará]]
+
 [[Piensa también en tu hermana, en Manuela. ¿De verdad quieres arruinarlo todo para todos? Te exijo que borres esas fotos ya mismo.|2.4.3.1.1. No convences a Carlos]]</tw-passagedata><tw-passagedata pid="170" name="2.4.3.3. Tratas de querer a Carlos" tags="" position="5611,4283" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Porque sabes que nadie te ha demostrado más lealtad que yo, corazón. Esto es diferente porque soy diferente. Date cuenta que somos tal para cual, cariño. 
 
 ¿Reconoces el amor que te he tenido siempre?
@@ -2021,26 +2021,28 @@ Hablas con Manuela como si nada, pero ella aún sospecha de ti. Quiere preguntar
 
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="174" name="2.3.6.1. Sobre el correo de Mike" tags="" position="5369,4418" size="100,100">Carlos: ¿Manipulación? Estás fuera de ti, en serio. Lo que me faltaba. Que me acuses de algo que sería yo incapaz de hacerle a nadie.
+[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="174" name="2.3.6.1. Sobre el correo de Mike" tags="" position="5369,4418" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¿Manipulación? Estás fuera de ti, en serio. Lo que me faltaba. Que me acuses de algo que sería yo incapaz de hacerle a nadie.
 
-Mira el correo de Mike. El que &quot;no has visto&quot;.
+(css: &quot;color: #187FF5;&quot;)[*Mira el correo de Mike. El que &quot;no has visto&quot;.*]
 
-Carlos: ¡¿Entraste a mi teléfono, acaso?! Eso sí que es absurdo!! Te voy a denunciar por acoso. ¡Te voy a hundir, ¿me oíste?!
+(css: &quot;color: white;&quot;)[**Carlos:**] ¡¿Entraste a mi teléfono, acaso?! Eso sí que es absurdo!! Te voy a denunciar por acoso. ¡Te voy a hundir, ¿me oíste?!
 
-(si has tomado foto del mensaje:)
+(if: $takenPhoto is true)[
 Con mucho gusto te leeré lo que dice: &quot;...&quot;. Ahora explícate, Carlos. 
 
 [[Dime la verdad y nadie saldrá perjudicado.|Final neutro diplomático]]
 [[Ven conmigo a la estación de policía, y ahí les explicarás todo. ¡Quien te va a hundir soy yo, desgraciado!|Final caótico de Carlos]]
+]
 
-(si no has tomado foto del mensaje:)
-Mike te decía que tenías una nueva pareja, que supongo soy yo, y que ibas a hacer algo que le dijiste el otro día que harías. Explícate, Carlos. 
+(else:)[
+(css: &quot;color: #187FF5;&quot;)[*Mike te decía que tenías una nueva pareja, que supongo soy yo, y que ibas a hacer algo que le dijiste el otro día que harías. Explícate, Carlos.*] 
 
 Carlos manipula su teléfono enfrente tuyo. 
 
-Carlos: Ya está. No hay pruebas de lo que me dices. Pero ya te he dicho de lo que te voy a hundir. 
+(css: &quot;color: white;&quot;)[**Carlos:**] Ya está. No hay pruebas de lo que me dices. Pero ya te he dicho que te voy a hundir. 
 
-[[¿Ah, sí? ¿Cómo más entonces? Cobarde que eres|Final con Carlos destrozado]]</tw-passagedata><tw-passagedata pid="175" name="2.6. Confronta a Carlos sobre las fotos" tags="" position="4539,5364" size="100,100">Cuando Carlos vuelve, tú no te aguantas las ganas de reclamarle por esas fotos tan sugestivas que tiene contigo en su teléfono. Aún si hubieras conservado una copia de ellas para denunciarle ante la policía por una supuesta manipulación, él te contrademandaría por invasión de la privacidad de su teléfono. 
+[[¿Ah, sí? ¿Cómo más entonces? Cobarde que eres|Final con Carlos destrozado]]
+]</tw-passagedata><tw-passagedata pid="175" name="2.6. Confronta a Carlos sobre las fotos" tags="" position="4539,5364" size="100,100">Cuando Carlos vuelve, tú no te aguantas las ganas de reclamarle por esas fotos tan sugestivas que tiene contigo en su teléfono. Aún si hubieras conservado una copia de ellas para denunciarle ante la policía por una supuesta manipulación, él te contrademandaría por invasión de la privacidad de su teléfono. 
 
 Sería un proceso de palabra de una parte contra la otra, pierdes a tu amiga y posiblemente pierdes la libertad. ¡El desastre de tu vida!
 
@@ -2077,7 +2079,6 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 (css: &quot;color: #187FF5;&quot;)[*¿Cómo? ¿No están?*]
 
-
 (css: &quot;color: white;&quot;)[**Carlos:**] Todas las fotos de anoche... borradas. ¿Cómo es posible? 
 
 (css: &quot;color: #187FF5;&quot;)[*Pues, cosas que pasan. ¿No?*]
@@ -2088,14 +2089,12 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 [[¿Por qué lo piensas, Carlos? ¿Qué pruebas tienes?|2.5.1.1 Acusa a Carlos de calumnioso]]
 
-[[Estás loco, Carlos. Soy el menos interesado en hacerte daño.|2.5.1.2 Carlos te acusa de ladrón]]
+[[Estás loco, Carlos. A mí no me interesa hacerte daño.|2.5.1.2 Carlos te acusa de ladrón]]
 
 ]
 (else:)[
 
-(css: &quot;color: white;&quot;)[**Carlos:**] ¡Ay, mierda, mis fotos! No están, ¿adónde se fueron?  
-
-¿Cómo asi? ¿Qué pasó?
+(css: &quot;color: #187FF5;&quot;)[*¿Cómo asi? ¿Qué pasó?*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] La verdad es que no lo entiendo. Todas mis fotos del teléfono... se perdieron. ¡Esto no puede ser!
 
@@ -2107,7 +2106,7 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 [[Jajaja... la cara de hacker que tengo yo ahora. ¡Lo que me faltaba!|2.5.2.3 Ríete de Carlos a la cara]] 
 
-[[Estás loco, Carlos. Soy el menos interesado en hacerte daño.|2.5.1.2 Carlos te acusa de ladrón]]
+[[Estás loco, Carlos. A mí no me interesa hacerte daño.|2.5.1.2 Carlos te acusa de ladrón]]
 
 ]</tw-passagedata><tw-passagedata pid="180" name="2.5.2 Respuesta sobre la nube" tags="" position="4873,5667" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¡Carajo! Yo pensé que las fotos ya estaban vinculadas a la nube. 
 
@@ -2161,9 +2160,8 @@ Has logrado verle la verdadera cara a Carlos jugándole por donde más le duele:
 ](else:)[
 (css: &quot;color: #187FF5;&quot;)[*Ya te lo dije, Carlos. Nadie te creerá. Y es claro que quien oculta algo eres tú. Es patético ver cómo te retuerces de la rabia, suficiente prueba para pensar que sí que eres un manipulador. Jajaja!! Eres una vileza de ser humano. Esa es la verdad. Nos vemos.*]
 
-&lt;TODO: que pasa despues?&gt;
+Tú también sabes que no tienes nada para protegerte de una eventual venganza de Carlos, salvo tus palabras y la humillación que le causa tu rechazo. Así las cosas, Carlos decide publicar las fotos comprometedoras en las que apareces con él, Manuela te reclama, pierdes también su amistad, y no tendrás más remedio que desear que te hubiera tragado la tierra. Tu reputación está por el piso. Y terminas mal con quien has conocido hasta ahora.
 ]
-
 
 ¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.  Este final es uno de los más difíciles para llegar. 
@@ -2203,7 +2201,7 @@ Gracias por jugar.  Este final es uno de los más difíciles para llegar.
 
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]
-]</tw-passagedata><tw-passagedata pid="185" name="2.5.1.2 Carlos te acusa de ladrón" tags="" position="5165,5670" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Claro, el menos interesado en hacerme daño. Es que todo es tan casual, en serio. No tienes verguenza en mentirme a la cara. ¡Eres una porquería!
+]</tw-passagedata><tw-passagedata pid="185" name="2.5.1.2 Carlos te acusa de ladrón" tags="" position="5165,5670" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¡Sí, cómo no! Es que todo es tan casual, en serio. No tienes verguenza en mentirme a la cara. ¡Eres una porquería!
 
 Carlos no tiene más pruebas de su acusación que su propia rabia. Te denuncia ante la policía por robo, pero la denuncia es rápidamente invalidada porque al estimar el caso como de típicos celos, no amerita para revisar alguna manipulación del teléfono. 
 
