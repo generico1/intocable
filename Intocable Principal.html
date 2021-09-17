@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="0.25" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -717,7 +717,7 @@ Al ver la reacción de Manuela sales a correr como la persona cobarde que eres. 
 [[Fin del juego - Reiniciar|Parte 2]]
 
 (set: $puntosManuela to $puntosManuela - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="3052,2454" size="100,100">El taxista te pide el dinero de tu recorrido. 
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="3050,2453" size="100,100">El taxista te pide el dinero de tu recorrido. 
 (if: $itemWalletisCarried is true) [ [[Pagar carrera |2.1.1. TAXI CON MI DINERO EN EL SITIO]] ] 
 (else:) [
 Olvidaste tu billetera. ¡Qué mal!
@@ -851,7 +851,7 @@ Modo de prueba:
 [[Entrar al Café Tinta|2.3.2. SALUDO A CARLOS]] : ir a 2.3.2.
 -si fuiste a El Sitio- [[Entrar al Café Tinta|2.3.3. SALUDO A CARLOS CUANDO FUISTE A EL SITIO]] : ir a 2.3.3.</tw-passagedata><tw-passagedata pid="89" name="2.3.1.1. PEDIRLE PRESTADO A CARLOS" tags="" position="3659,2617" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Hola, Carlos! Disculpa, olvidé mi billetera y no tengo para pagar el taxi. ¿Me puedes prestar algo?*]
 
-(css: &quot;color: red;&quot;)[**-1 punto por pedirle dinero prestado a Carlos**]
+(css: &quot;color: red;&quot;)[**(-1 punto por pedirle dinero prestado a Carlos).**]
 
 (if: ($puntosCarlos &lt;= 3) or ($dateLocation is &quot;Sitio&quot;))[
 (css: &quot;color: white;&quot;)[**Carlos:**] *Ya. Toma. Y ven rápido.* 
@@ -999,7 +999,7 @@ Modo de prueba:
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás bien?*
 
-[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : 2.3.4.1.
+[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] 
 ]
 
 
@@ -1012,7 +1012,7 @@ Modo de prueba:
 si comiste pollo o bebiste
 [[Estoy bien. Con un poco de dolor de cabeza, y no recuerdo todo sobre anoche.|2.3.4. NO RECUERDO TODO]] : ir a 2.3.4.
 si no comiste
-[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : 2.3.4.1.</tw-passagedata><tw-passagedata pid="96" name="2.3.4. NO RECUERDO TODO" tags="" position="3700,3177" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por pedir respuestas con amabilidad**]
+[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : 2.3.4.1.</tw-passagedata><tw-passagedata pid="96" name="2.3.4. NO RECUERDO TODO" tags="" position="3700,3177" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por pedir respuestas con amabilidad).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Qué no recuerdas exactamente? Es decir, ¿ni siquiera del concierto? ¿Nada?*
 
@@ -1494,7 +1494,7 @@ Carlos sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con é
 [[Fin del juego - Reiniciar|Parte 2]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="135" name="2.3.5.B" tags="" position="4181,3392" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser vulnerable sin disculparte sinceramente).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="135" name="2.3.5.B" tags="" position="4181,3391" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser vulnerable sin disculparte sinceramente).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *No tienes nada de qué disculparte. ¿Por qué hay que parar? ¿A qué le tienes miedo?*
 
@@ -1707,18 +1707,14 @@ Tiene que ser relacionado con una década en específico. No sé cuál, pero pue
 
 (set: $segundosReloj to $segundosReloj + 5)]
 
-(else:) [
--Su fecha de cumpleaños-
 
-Vale. Puedo mirar su página de Carelibro para recordarla.
+(else:)
+[(link: &quot;Busca su fecha de cumpleaños en su perfil de Carelibro&quot;)[
+(link-goto: &quot;Su cumpleaños es el 27 de noviembre. Bien. Intentaré con esto.&quot;, &quot;2.4.1 Ingresa la clave del teléfono de Carlos&quot;)
 
--Mirar su perfil de Carelibro-: Su cumpleaños es el 27 de noviembre.
+(set: $segundosReloj to $segundosReloj + 10) ]
+]
 
-Bien. Intentaré con esto. 
-
-[[Ve a la pantalla inicial del teléfono de Carlos|2.4.1 Ingresa la clave del teléfono de Carlos]]
-
-(set: $segundosReloj to $segundosReloj + 5) ]
 
 [[No puedo pensar claramente sin alguna pista clara. Necesito buscar más información.|2.3.5.2.2.1. TOMA LA MOCHILA]]</tw-passagedata><tw-passagedata pid="151" name="2.4.2.1.1. Quiero preguntarle a Carlos más detalles. Esto me preocupa mucho." tags="" position="4591,4650" size="100,100">Ves que viene Carlos. Su teléfono está en tu mano. Apaga la pantalla y
 
@@ -2053,7 +2049,7 @@ Te muestra algunas fotos tuyas con él bastante comprometedoras.
 
 (if: ($puntosManuela) &gt;= 4) [Manuela se entera, y aunque desconfía de ti porque estableciste contacto con su querido hermano, se entera de toda la verdad. Le duele mucho saber que su hermano era una persona bastante manipuladora. Te mantuviste firme en tu pacto, pero aún hay dudas. Y eso también te duele mucho.]
 
-(else:) [Vuelves a tener una amistad con Manuela, pero sólo por un tiempo porque desconfía mucho de ti. Y decides separarte de ella. El recuerdo de esa familia te rompe el corazón. A lo mejor es lo mejor para ti, quién sabe.]
+(else:) [Vuelves a tener una amistad con Manuela, pero sólo por un tiempo porque desconfía mucho de ti. Y decides separarte de ella. El recuerdo de esa familia te rompe el corazón. Tal vez sea lo mejor para ti, quién sabe.]
 
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
@@ -2117,12 +2113,12 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *¡Carajo! ¿Por qué no me contestas?  ¿Dónde estuviste?  ¿Qué pasó anoche?* 
 
-(link: &quot;&#39;Lo siento, pero estaba con mucho trabajo y no podía responder. Te llamo pronto.&#39;  Corta la llamada y sigue buscando información.&quot;)[(set: $calledManuela to true)(set: $segundosReloj to $segundosReloj + 50)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosManuela to $puntosManuela - 1)
+(link: &quot;&#39;Lo siento, pero estaba con mucho trabajo y no podía responder. Te llamo pronto.&#39; Corta la llamada y sigue buscando información.&quot;)[(set: $calledManuela to true)(set: $segundosReloj to $segundosReloj + 50)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosManuela to $puntosManuela - 1)
 ]
 
 (link: &quot;Corta la llamada sin decir nada y sigue buscando información.&quot;)[(set: $segundosReloj to $segundosReloj + 10)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosManuela to $puntosManuela - 2)]
 
-(css: &quot;color: red;&quot;)[**(Pierdes puntos por no darle ninguna explicación a Manuela. Tal vez ella comienza a sospechar de ti).**]
+(css: &quot;color: red;&quot;)[**(Pierdes algunos puntos por no darle ninguna explicación a Manuela. Tal vez ella comienza a sospechar de ti).**]
 
 (css: &quot;color: purple;&quot;)[**Esta interacción pasó por no hablar con Manuela antes.**]</tw-passagedata><tw-passagedata pid="179" name="2.5.1. Carlos descubre que no hay fotos" tags="" position="5016,5514" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Pero, ¡¿qué carajos?! ¿Dónde están mis fotos?
 
