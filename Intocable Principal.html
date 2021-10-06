@@ -54,15 +54,15 @@ Te despiertas, tienes dolor de cabeza y de estómago. ¿Qué haces?
 
 (link-goto: &quot;Listo&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="4" name="Mirar alrededor" tags="" position="358,356" size="100,100">Estás acostado en la cama de tu habitación. Ves [[tu teléfono|un teléfono]] en la mesa de noche. 
 
-[[Revisar el teléfono|Revisa el teléfono.]]
-[[Salir de la cama]]
+[[Revisa el teléfono|Revisa el teléfono.]]
+[[Sal de la cama|Salir de la cama]]
 (set: $previousPassage to &quot;Mirar alrededor&quot;)</tw-passagedata><tw-passagedata pid="5" name="Meditar" tags="" position="600,229" size="100,100">Sientes mucho dolor.
 
-[[Mirar alrededor]]
-[[Pensar]]</tw-passagedata><tw-passagedata pid="6" name="Pensar" tags="" position="587,94" size="100,100">(css: &quot;color: lightblue;&quot;)[*Seguro fue el tequila.*]
+[[Mira a tu alrededor|Mirar alrededor]]
+[[Piensa un poco|Pensar]]</tw-passagedata><tw-passagedata pid="6" name="Pensar" tags="" position="587,94" size="100,100">(css: &quot;color: lightblue;&quot;)[*Seguro fue el tequila.*]
 
-[[Mirar alrededor]]
-[[Meditar]]</tw-passagedata><tw-passagedata pid="7" name="un teléfono" tags="" position="172,388" size="100,100">Es un smartphone muy barato, pero me sirve.
+[[Mira a tu alrededor|Mirar alrededor]]
+[[Medita un poco|Meditar]]</tw-passagedata><tw-passagedata pid="7" name="un teléfono" tags="" position="172,388" size="100,100">Es un smartphone muy barato, pero me sirve.
 
 En otros pensamientos, ¿qué pasó anoche que me hizo esto a mí?
 
@@ -84,17 +84,17 @@ Hay dos puertas, una al baño y la otra a la sala. [[Ir al baño.|Ir al baño]] 
 
 [[Sí, me quiero cambiar de ropa ya mismo|cambiarte de ropa sucio]]
 (link-goto: &quot;Encuentra un baño si eres listo&quot;, $previousPassage)] 
-(else:)[(css: &quot;color: green;&quot;) [**+ 1 punto por vestirte luego de bañarte.**] [¡Uy! ¡Quien te ve lo guapo! (set:$itemClothes&#39;s isCarried to true) 
+(else:)[(css: &quot;color: green;&quot;) [**(+1 punto por vestirte luego de bañarte).**] [¡Uy! ¡Quien te ve la guapura! (set:$itemClothes&#39;s isCarried to true) 
 ] (set: $puntosCarisma to $puntosCarisma + 1)]
 (link-goto: &quot;Ve a ponerte más guapo aún&quot;, $previousPassage)
 
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="10" name="cambiarte de ropa sucio" tags="" position="168,854" size="100,100">(set:$itemClothes&#39;s isCarried to true) (css: &quot;color: red;&quot;)[**-1 punto por ponerte ropa sin bañarte**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="10" name="cambiarte de ropa sucio" tags="" position="167,853" size="100,100">(set:$itemClothes&#39;s isCarried to true) (css: &quot;color: red;&quot;)[**(-1 punto por ponerte ropa sin bañarte).**]
 
 Bueno, no hueles tan mal. Pero no es lo ideal.
 
 (link-goto: &quot;Sigue como anoche&quot;, $previousPassage)
 (set: $puntosCarisma to $puntosCarisma - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="11" name="Ir a ducharte" tags="" position="831,751" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por tomar un baño**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="11" name="Ir a ducharte" tags="" position="831,751" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por tomar un baño).**]
 
 Ya estás como nuevo. Ahora ve por ropa limpia.
 
@@ -102,7 +102,7 @@ Pero... por alguna razón, todavía te sientes un poquito... sucio.
 
 (css: &quot;color: lightblue;&quot;)[*Hmmm, no es nada, cerebro estúpido*], te dices a ti mismo.
 
-[[Volver a la habitación |Salir de la cama]]
+[[Vuelve a la habitación |Salir de la cama]]
 (set: $puntosCarisma to $puntosCarisma + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma
 (set: $hasBathed to true)</tw-passagedata><tw-passagedata pid="12" name="Mirar mensaje" tags="" position="1867,449" size="100,100">(if: $calledCarlos is true) [ (goto: &quot;Mensaje Carlos amable&quot;) [[Mensaje Carlos amable]] ]
@@ -112,27 +112,27 @@ Pero... por alguna razón, todavía te sientes un poquito... sucio.
 
 No recuerdas absolutamente nada de lo que pasó anoche. ¿Qué haces? 
 
-[[Responde amable |Respondes amigablemente]]
-[[Responde distante |Respondes con un insulto]]</tw-passagedata><tw-passagedata pid="14" name="No responder mensaje" tags="" position="1886,774" size="100,100">(css: &quot;color: lightblue;&quot;)[*¿En serio, Carlos?*] La verdad no te acuerdas de nada de lo que pasó anoche. 
+[[Responde amable|Respondes amigablemente]]
+[[Responde distante|Respondes con un insulto]]</tw-passagedata><tw-passagedata pid="14" name="No responder mensaje" tags="" position="1886,774" size="100,100">(css: &quot;color: lightblue;&quot;)[*¿En serio, Carlos?*] La verdad no te acuerdas de nada de lo que pasó anoche. 
 
 Tienes ganas de responderle, pero es muy extraño que él sea tan confianzudo contigo. ¿Será que sí pasó algo entre ustedes?
 
-[[Responder mensaje]]
-[[Ignorar por ahora |Salir de la cama]]</tw-passagedata><tw-passagedata pid="15" name="Respondes amigablemente" tags="" position="1499,926" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por responder amigablemente**]
+[[Responde el mensaje|Responder mensaje]]
+[[Ignora todo por ahora|Salir de la cama]]</tw-passagedata><tw-passagedata pid="15" name="Respondes amigablemente" tags="" position="1499,926" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder amigablemente).**]
 
 Tú escribes: (css: &quot;color: white;&quot;)[**“Hola, Carlos. Tengo mucho dolor de cabeza, y no recuerdo bien qué pasó anoche. ¿Me llamas más tarde y hablamos?”.**]
 
 Él comienza a llamar insistentemente, pero ahora no tienes cabeza para responderle. 
 
-[[Dejar el teléfono]]
+[[Deja el teléfono|Dejar el teléfono]]
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="16" name="Respondes con un insulto" tags="" position="1701,920" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder de manera poco diplomática**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="16" name="Respondes con un insulto" tags="" position="1701,920" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder de manera poco diplomática).**]
 
 Tú escribes: (css: &quot;color: white;&quot;)[**“Hola, Carlos. En serio que estoy muy cansado ahora. Te llamo después.**]
 
 Parece que a él no le agradó, y empieza a llamar muchas veces. Aún no tienes cabeza para responder a nadie. Te duele mucho.
 
-[[Dejar el teléfono]]
+[[Deja el teléfono|Dejar el teléfono]]
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="17" name="Llamar a Carlos" tags="" position="2449,766" size="100,100">(set: $calledCarlos to true)
 (if: $calledManuela is false) [ (goto: &quot;Carlos Amable&quot;) [[Carlos Amable]] ]
@@ -144,55 +144,57 @@ Ahora, a aliviar esa resaca. ]
 (else:)[ [[Da una vuelta por el cuarto|Salir de la cama]] ]</tw-passagedata><tw-passagedata pid="19" name="Mirar las llamadas" tags="" position="1365,1230" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] 13 llamadas perdidas.
 (css: &quot;color: white;&quot;)[**Manuela:**] 2 llamadas perdidas.
 
-(css: &quot;color: lightblue;&quot;)[*Manuela es mi mejor amiga. Carlos es su hermana. Manuela me ha ayudado mucho en mis momentos más difíciles y hasta ahora había establecido un contacto tan estrecho con Carlos. Él también me quiere (?). Tengo que averiguarlo.*]
+(css: &quot;color: lightblue;&quot;)[*Manuela es mi mejor amiga. Carlos es su hermano. Manuela me ha ayudado mucho en mis momentos más difíciles y hasta ahora había establecido un contacto tan estrecho con Carlos. Él también me quiere (?). Tengo que averiguarlo.*]
 
-Uh oh. A tu mejor amiga no le va a gustar que Carlos te llamara. Ella específicamente te dijo que nunca le tocaras, ni siquiera le hablaras. Nunca. Por dios, ¿qué hiciste?
+Uh oh. A tu mejor amiga no le va a gustar que Carlos te llamara. Ella específicamente te dijo que nunca le tocaras, ni siquiera le hablaras. Nunca. Carajo, ¿qué hiciste?
 
 (if: $calledManuela is false)[ [[Llamar a Manuela]] ]
 (if: $calledCarlos is false)[ [[Llamar a Carlos]] ]
 
-[[Dejar el teléfono]]</tw-passagedata><tw-passagedata pid="20" name="Llamar a Manuela" tags="" position="1517,1381" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por llamar a tu mejor amiga**]
+[[Deja el teléfono|Dejar el teléfono]]</tw-passagedata><tw-passagedata pid="20" name="Llamar a Manuela" tags="" position="1517,1381" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con tu amiga por llamarla).**]
 
 No contesta. ¿Qué haces?
 
-[[Dejarle un mensaje]]
-[[No dejarle ningún mensaje]]
+[[Déjale un mensaje|Dejarle un mensaje]]
+[[No le dejes ningún mensaje|No dejarle ningún mensaje]]
 (set: $puntosManuela to $puntosManuela + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
 (set: $calledManuela to true)</tw-passagedata><tw-passagedata pid="21" name="Dejarle un mensaje" tags="" position="1374,1498" size="100,100">(css: &quot;color: white;&quot;)[**“Hola, Manuela. Tengo un dolor de cabeza horrible, y no sé qué pasó anoche. Llámame cuando puedas”.**] 
 
 ¿Será que sabe algo? ¿Qué estuviste con su hermano? No tienes cabeza para pensar ahora.
 
-[[Dejar el teléfono]]
-(set: $textedManuela to true)</tw-passagedata><tw-passagedata pid="22" name="No dejarle ningún mensaje" tags="" position="1240,1378" size="100,100">Probablemente ella vuelve a llamar más tarde. Tu cabeza está que estalla.   
+[[Deja el teléfono|Dejar el teléfono]]
+(set: $textedManuela to true)</tw-passagedata><tw-passagedata pid="22" name="No dejarle ningún mensaje" tags="" position="1239,1378" size="100,100">Probablemente ella vuelve a llamar más tarde. Tu cabeza está que estalla. 
 
-[[Dejar el teléfono]]</tw-passagedata><tw-passagedata pid="23" name="Ir a la cocina" tags="" position="3678,1006" size="100,100">Estás en la cocina.
+[[Deja el teléfono|Dejar el teléfono]]</tw-passagedata><tw-passagedata pid="23" name="Ir a la cocina" tags="" position="3680,1006" size="100,100">Estás en la cocina.
 
 Necesitas comer y beber algo. Ves el refrigerador entreabierto, y el comedor con alguna comida cubierta con una servilleta.
 
-[[Ver refrigerador]]
-[[Ver comedor]]
-[[Ir a la habitación |Salir de la cama]]
-[[Salir de la casa]]
+[[Mira el refrigerador|Ver refrigerador]]
+[[Mira el comedor|Ver comedor]]
+[[Ve a la habitación|Salir de la cama]]
+[[Sal de la casa|Salir de la casa]]
 
 (set: $previousPassage to &quot;Ir a la cocina&quot;)</tw-passagedata><tw-passagedata pid="24" name="Ver refrigerador" tags="" position="3949,1097" size="100,100">Abres el refrigerador y ves que hay...
 
-(if: $hasDrunkJuice is false)[ ... una botella de jugo de naranja. ] 
-(if: $hasEatenSandwich is false)[ ... un sánduche de algunos días. ]
+(if: $hasDrunkJuice is false)[... una botella de jugo de naranja.] 
+(if: $hasEatenSandwich is false)[... un sánduche de algunos días.]
 
 (if: $hasDrunkJuice is false)[ [[Bebes el jugo]] ] 
 (if: $hasEatenSandwich is false)[ [[Comes el sánduche de algunos días]] ] 
-(link-goto: &quot;Busca otra comida&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="25" name="Ver comedor" tags="" position="4181,1025" size="100,100">Levantas la servilleta y ves que hay... (if: $hasEatenChicken is false )[... dos presas de pollo rostizado que pediste ayer en la tarde, y que no comiste por andar de borrachera.
+(link-goto: &quot;Busca otra comida&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="25" name="Ver comedor" tags="" position="4181,1025" size="100,100">Levantas la servilleta y ves que... (if: $hasEatenChicken is false)[hay dos presas de pollo rostizado que pediste ayer en la tarde, y que no comiste por andar de borrachera.
 
-[[Comes el pollo]] ]
-[[Ir al refrigerador |Ver refrigerador]]
+(else:) [ no hay nada qué comer. :(( ]
+
+[[Come el pollo|Comes el pollo]] ]
+[[Ve al refrigerador|Ver refrigerador]]
 (link-goto: &quot;Da una vuelta por la cocina&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="26" name="Salir de la casa" tags="" position="2997,2069" size="100,100">(if: $calledCarlos is true) [
-	(if: $itemPhone&#39;s isCarried is false or $itemWallet&#39;s isCarried is false )[
+	(if: $itemPhone&#39;s isCarried is false or $itemWallet&#39;s isCarried is false)[
  (css: &quot;color: yellow;&quot;)[¿Estás seguro que tienes todo lo que necesitas?]
- [[Ir a la habitación|Salir de la cama]]
+ [[Ve a la habitación|Salir de la cama]]
 ]
 	[[Fin del demo]] ]
-(else:)[ Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
+(else:)[Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
 
 No hablaste con nadie, así que es imposible saber qué pasó anoche.
 
@@ -201,19 +203,19 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 &lt;!--Do this before starting part 2 -&gt;
 (set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela ))
 
-(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;) ]</tw-passagedata><tw-passagedata pid="27" name="&quot;En la casa&quot;" tags="" position="2965,1104" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por responder lo que él espera**]
+(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;) ]</tw-passagedata><tw-passagedata pid="27" name="&quot;En la casa&quot;" tags="" position="2965,1104" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder lo que él espera de ti).**]
 
-(css: &quot;color: white;&quot;)[**Carlos:**] *Eso está muy bien. Juicioso. Espero hayas llegado bien.*
+(css: &quot;color: white;&quot;)[**Carlos:**] *Eso está muy bien. Espero hayas llegado bien.*
 
 (css: &quot;color: lightblue;&quot;)[*Pero, en serio. ¿Desde cuándo está tan preocupado por mí?*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Quiero verte para que hagamos planes juntos.*
 
-[[&quot;Vale, ¿qué te parece si nos reunimos en El Sitio?&quot; |El Sitio amable]]
-[[&quot;Sí, claro. Adonde tú quieras.&quot;]]
-[[&quot;Supongo que podemos encontrar un lugar.&quot;]]
+[[─Vale, ¿qué te parece si nos reunimos en El Sitio?|El Sitio amable]]
+[[─Sí, claro. Adonde tú quieras.|&quot;Sí, claro. Adonde tú quieras.&quot;]]
+[[─Supongo que podemos encontrar un lugar.|&quot;Supongo que podemos encontrar un lugar.&quot;]]
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="28" name="&quot;En la cama&quot;" tags="" position="3141,1103" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder lo que él no espera de ti**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="28" name="&quot;En la cama&quot;" tags="" position="3144,1107" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder lo que él no espera de ti).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¡Mira qué pereza! Espero que hayas tenido tiempo de pensar en mí. Porque si no, me pondré muy muy triste...*
 
@@ -221,102 +223,102 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Quiero verte para que hagamos planes juntos.* 
 
-[[&quot;Vale, ¿qué te parece si nos reunimos en El Sitio?&quot; |El Sitio amable]]
-[[&quot;Sí, claro. Adonde tú quieras.&quot;]]
-[[&quot;Supongo que podemos encontrar un lugar.&quot;]]
+[[─Vale, ¿qué te parece si nos reunimos en El Sitio?|El Sitio amable]]
+[[─Sí, claro. Adonde tú quieras.|&quot;Sí, claro. Adonde tú quieras.&quot;]]
+[[─Supongo que podemos encontrar un lugar.|&quot;Supongo que podemos encontrar un lugar.&quot;]]
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="29" name="El Sitio amable" tags="" position="2979,1269" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por tomar la iniciativa**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="29" name="El Sitio amable" tags="" position="2979,1269" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por tomar la iniciativa).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Sí, claro. Es tu sitio favorito,  aunque creo que es mejor ir al Café Tinta. Sabes que me queda más cerca de mi casa, y es mucho más bonito.*
 
-[[&quot;Vamos a El Sitio. Allá hay un buen ambiente para hablar.&quot; |El Sitio insistencia amable]]
-[[&quot;Vale. ¿Vamos al Café Tinta?&quot; |Tienes razón. ¿Entonces qué propones?]]
-[[&quot;Bueno, puede ser el Café Tinta.&quot; |Café Tinta amable]]
+[[─Vamos a El Sitio. Allá hay un buen ambiente para hablar.|El Sitio insistencia amable]]
+[[─Vale. ¿Vamos al Café Tinta?|Tienes razón. ¿Entonces qué propones?]]
+[[─Bueno, puede ser el Café Tinta.|Café Tinta amable]]
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="30" name="&quot;Sí, claro. Adonde tú quieras.&quot;" tags="" position="3196,1270" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por ceder en tu opinión**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="30" name="&quot;Sí, claro. Adonde tú quieras.&quot;" tags="" position="3196,1270" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ceder en tu opinión).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Vamos al Café Tinta. Es un sitio más disimulado… bien íntimo.* 
 
-[[&quot;Sí, sí. Entiendo.&quot;]]
-[[&quot;Sí, me parece bien. No hay problema.&quot;]]
+[[─Sí, sí. Entiendo.|&quot;Sí, sí. Entiendo.&quot;]]
+[[─Sí, me parece bien. No hay problema.|&quot;Sí, me parece bien. No hay problema.&quot;]]
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="31" name="Tienes razón. ¿Entonces qué propones?" tags="" position="2966,1442" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por no tomar la iniciativa**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="31" name="Tienes razón. ¿Entonces qué propones?" tags="" position="2966,1442" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no tomar la iniciativa).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Vamos al Café Tinta. Es un sitio más disimulado... bien... íntimo.* 
 
-[[&quot;Sí, sí. Entiendo.&quot;]]
-[[&quot;Sí, me parece bien. No hay problema.&quot;]]
+[[─Sí, sí. Entiendo.|&quot;Sí, sí. Entiendo.&quot;]]
+[[─Sí, me parece bien. No hay problema.|&quot;Sí, me parece bien. No hay problema.&quot;]]
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="32" name="Café Tinta amable" tags="" position="2894,1631" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por tomar de nuevo la iniciativa**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="32" name="Café Tinta amable" tags="" position="2894,1631" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por tomar de nuevo la iniciativa).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¡Genial! Tú sí que sabes leerme la mente. Te veo en media hora. ¡Besito, chao!*
 
-(css: &quot;color: lightblue;&quot;)[*Wow. ¿Y ahora qué hago? Igual, tengo que hablar con él a ver qué sabe.*] 
+(css: &quot;color: lightblue;&quot;)[*Wow. ¿Y ahora qué hago? Igual, tengo que hablar con él a ver qué sabe sobre lo que de verdad pasó anoche.*] 
 
-(if: $itemClothes&#39;s isCarried is true) [ [[Salir de la casa]] ]
-[[Dejar el teléfono]]
+(if: $itemClothes&#39;s isCarried is true) [ [[Sal de la casa|Salir de la casa]] ]
+[[Deja el teléfono|Dejar el teléfono]]
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
-(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="33" name="&quot;Sí, sí. Entiendo.&quot;" tags="" position="3172,1459" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder de mala gana**]
+(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="33" name="&quot;Sí, sí. Entiendo.&quot;" tags="" position="3172,1459" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder de mala gana).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Ay, no. ¡Arriba ese ánimo! Que la resaca no te pegue tan duro ahora. Jajaja… Nos vemos en media hora. ¡Te amo!.*
 
-(css: &quot;color: lightblue;&quot;)[*Arriba ese ánimo, mis pelotas. En fin, ya me tocó ir a ver qué es lo que quiere. ¡A ponerla en su sitio! Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay que borrarla como sea.*]
+(css: &quot;color: lightblue;&quot;)[*Arriba ese ánimo, mis pelotas. En fin, ya me tocó ir a ver qué es lo que quiere. ¡A ponerlo en su sitio! Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay que borrarla como sea.*]
 
-(if: $itemClothes&#39;s isCarried is true) [ [[Salir de la casa]] ]
-[[Dejar el teléfono]]
+(if: $itemClothes&#39;s isCarried is true) [ [[Sal de la casa|Salir de la casa]] ]
+[[Deja el teléfono|Dejar el teléfono]]
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
-(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="34" name="&quot;Sí, me parece bien. No hay problema.&quot;" tags="" position="3363,1445" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por responder de buena gana**]
+(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="34" name="&quot;Sí, me parece bien. No hay problema.&quot;" tags="" position="3363,1445" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder de buena gana).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¡Qué bien, querido! Tengo unas ganas enormes de estar contigo en todo instante. ¡Te quiero! Chao.* 
 
-(css: &quot;color: lightblue;&quot;)[*¿Tienes ganas? ¡¿Me tienes ganas?! Eso no es para nada bueno. Ahora sí que estoy jodido. Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay que borrarla como sea.*] 
+(css: &quot;color: lightblue;&quot;)[*¿Tienes ganas? ¡¿Me tienes ganas?! Eso no es para nada bueno. Ahora sí que estoy en la inmunda. Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay que borrarla como sea.*] 
 
-(if: $itemClothes&#39;s isCarried is true) [ [[Salir de la casa]] ]
-[[Dejar el teléfono]]
+(if: $itemClothes&#39;s isCarried is true) [ [[Sal de la casa|Salir de la casa]] ]
+[[Deja el teléfono|Dejar el teléfono]]
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
-(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="35" name="&quot;Estaba con resaca, ya sabes.&quot;" tags="" position="1966,1095" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por responder con honestidad**]
+(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="35" name="&quot;Estaba con resaca, ya sabes.&quot;" tags="" position="1966,1095" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder con honestidad).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¡¿Y qué con eso?! No es excusa. Tenemos que hacer planes juntos desde ya.* 
 
-[[&quot;Ya, ¿pero planes de qué o qué?&quot;]] 
-[[&quot;Ok. Hablemos un rato en El Sitio.&quot; |El Sitio agresiva]]
-[[&quot;Tienes razon, discúlpame. Yo conozco un lugar perfecto para nuestra cita, El Sitio.&quot;|El Sitio amable]]
+[[─Ya, ¿pero planes de qué o qué?|&quot;Ya, ¿pero planes de qué o qué?&quot;]] 
+[[─Ok. Hablemos un rato en El Sitio.|El Sitio agresiva]]
+[[─Tienes razón, discúlpame. Yo conozco un lugar perfecto para nuestra cita, El Sitio.|El Sitio amable]]
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="36" name="&quot;Nada, me estaba alistando.&quot;" tags="" position="2235,1094" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder algo que él cree muy improbable**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="36" name="&quot;Nada, me estaba alistando.&quot;" tags="" position="2235,1094" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder algo que él cree muy improbable).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Ya, claro. Espero que te hayas arreglado para encontrarnos ahora, ¿verdad?*
 
-[[Claro. ¿Qué tal si nos vemos en El Sitio? |El Sitio agresiva]]
-[[Como siempre, disponible para ti.]]
+[[─Claro. ¿Qué tal si nos vemos en El Sitio?|El Sitio agresiva]]
+[[─Como siempre, disponible para ti.|Como siempre, disponible para ti.]]
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="37" name="&quot;Ya, ¿pero planes de qué o qué?&quot;" tags="" position="1819,1235" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder sin diplomacia a Carlos**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="37" name="&quot;Ya, ¿pero planes de qué o qué?&quot;" tags="" position="1819,1235" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder sin diplomacia a Carlos).**]
 
 (css: &quot;color: white;&quot;) [**Carlos:**] *Pues el plan para anunciar nuestro amor a todo el mundo. Espero que me estés tomando en serio, ¿no?*
 
-[[&quot;Tienes razón. Hablemos por acá cerca en El Sitio.&quot; |El Sitio agresiva]]
-[[&quot;Total. Veámonos en el Café Tinta, que es un poco más distanciado.&quot; |Café Tinta agresiva]]  
+[[─Tienes razón. Hablemos por acá cerca en El Sitio.|El Sitio agresiva]]
+[[─Total. Veámonos en el Café Tinta, que es un poco más distanciado.|Café Tinta agresiva]]  
 
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="38" name="El Sitio agresiva" tags="" position="2115,1321" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por tomar la iniciativa**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="38" name="El Sitio agresiva" tags="" position="2115,1321" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por tomar la iniciativa).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Sí, claro. Es tu sitio favorito,  aunque creo que es mejor ir al Café Tinta. Sabes que me queda más cerca de mi casa, y es mucho más bonito.* 
 
-[[&quot;No me siento muy bien. Así que El Sitio es preferible para mí.&quot; |El Sitio insistencia agresiva]]
-[[&quot;Sí, ya lo sé. No me lo recuerdes.&quot;]]
-[[&quot;Entiendo. Vamos al Café Tinta como dices.&quot; |Café Tinta agresiva]]
-[[&quot;Por supuesto, lo que te quede mejor para ti. Vamos al Café Tinta.&quot;|Café Tinta amable]]
+[[─No me siento muy bien. Así que El Sitio es preferible para mí.|El Sitio insistencia agresiva]]
+[[─Sí, ya lo sé. No me lo recuerdes.|&quot;Sí, ya lo sé. No me lo recuerdes.&quot;]]
+[[─Entiendo. Vamos al Café Tinta como dices.|Café Tinta agresiva]]
+[[─Por supuesto, lo que te quede mejor para ti. Vamos al Café Tinta.|Café Tinta amable]]
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="39" name="Como siempre, disponible para ti." tags="" position="2350,1241" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por ser innecesariamente complaciente**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="39" name="Como siempre, disponible para ti." tags="" position="2348,1243" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser innecesariamente complaciente).**]
 
-(css: &quot;color: white;&quot;)[**Carlos:**] *¡Ay, no pues! ¡El galán! Luego de que ni siquiera me llamas. Pero, bueno. Así es la vida. A ver, galán, ¿qué propones?*
+(css: &quot;color: white;&quot;)[**Carlos:**] *Jajaja, pero no me hagas reír. Luego de que ni siquiera me llamas. Pero, bueno. Así es la vida... A ver, ¿qué propones?*
 
-[[Vamos a El Sitio, que nos queda más cerca a ambos. |El Sitio agresiva]]
-[[Aunque está lejos, propongo el Café Tinta. |Café Tinta agresiva]]
+[[─Vamos a El Sitio, que nos queda más cerca a ambos.|El Sitio agresiva]]
+[[─Aunque está lejos, propongo el Café Tinta.|Café Tinta agresiva]]
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="40" name="&quot;Sí, ya lo sé. No me lo recuerdes.&quot;" tags="" position="1927,1580" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por responder de mala manera**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="40" name="&quot;Sí, ya lo sé. No me lo recuerdes.&quot;" tags="" position="1938,1564" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder de mala manera).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¡Te lo tengo que recordar porque olvidas todo, cariño! Te veo en el Café Tinta en media hora. Chaíto.*
 
@@ -324,59 +326,60 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 
 Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay que borrarla como sea.*]
 
-(if: $itemClothes&#39;s isCarried is true) [ [[Salir de la casa]] ]
-[[Dejar el teléfono]]
+(if: $itemClothes&#39;s isCarried is true) [ [[Sal de la casa|Salir de la casa]] ]
+[[Deja el teléfono|Dejar el teléfono]]
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
-(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="41" name="Café Tinta agresiva" tags="" position="2404,1521" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por querer ir al lugar que Carlos esperaba**]
+(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="41" name="Café Tinta agresiva" tags="" position="2404,1521" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por querer ir al lugar que Carlos esperaba).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Es una idea brillante. Un sitio lejano y bien raro para que nadie nos vea. ¡Me encanta! Nos vemos en media hora, ¡sin falta! Besos, chao.* 
 
-(css: &quot;color: lightblue;&quot;)[*¿Qué está planeando? Ya veremos cómo se resuelve esto. Igual, tengo que hablar con él a ver qué sabe.*]
+(css: &quot;color: lightblue;&quot;)[*¿Qué está planeando? Ya veremos cómo se resuelve esto. Igual, tengo que hablar con él a ver qué sabe. Y si hay evidencia, hay que eliminarla a como dé cuesta.*]
 
 (if: $itemClothes&#39;s isCarried is true) [ [[Salir de la casa]] ]
 [[Dejar el teléfono]]
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
-(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="42" name="Carlos Amable" tags="" position="3042,900" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por llamar a Carlos primero**]
+(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="42" name="Carlos Amable" tags="" position="3042,900" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por llamar a Carlos primero).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, corazón. Estuve preocupado. ¿Dónde estabas?*
 
-[[&quot;En la casa&quot;]]
-[[&quot;Por ahí&quot;]]
+[[─En la casa.|&quot;En la casa&quot;]]
+[[─Por ahí.|&quot;Por ahí&quot;]]
 (if: $inBed is true) [ [[&quot;En la cama&quot;]] ]
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="43" name="Carlos Agresivo" tags="" position="2172,909" size="100,100">(css: &quot;color: green;&quot;)[**Has demostrado favoritismo a Manuela,**] (css: &quot;color: red;&quot;) [**y a Carlos no le gusta esto.**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="43" name="Carlos Agresivo" tags="" position="2132,907" size="100,100">(css: &quot;color: green;&quot;)[**(Has demostrado favoritismo a Manuela,**] (css: &quot;color: red;&quot;) [**y a Carlos no le gusta esto).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¡Hasta que por fin! ¿Por qué no me contestas?*
 
-[[&quot;Estaba con resaca, ya sabes.&quot;]]
-[[&quot;Nada, me estaba alistando.&quot;]]
+[[─Estaba con resaca, ya sabes.|&quot;Estaba con resaca, ya sabes.&quot;]]
+[[─Nada, me estaba alistando.|&quot;Nada, me estaba alistando.&quot;]]
 (set: $puntosCarlos to $puntosCarlos - 1)
 (set: $puntosManuela to $puntosManuela + 1)</tw-passagedata><tw-passagedata pid="44" name="Bebes el jugo" tags="" position="3715,1380" size="100,100">(if: $itemGlass&#39;s isCarried is false)[ ¿Vas a tomarlo así no más como cavernícola?
 
-[[Tomar jugo igual]] ]
-(else:)[(set: $puntosCarisma to $puntosCarisma + 1) (css: &quot;color: green;&quot;)[**+1 punto por beber jugo sin manchar tu ropa**]
+[[Toma el jugo igual|Tomar jugo igual]] ]
+(else:)[(set: $puntosCarisma to $puntosCarisma + 1) (css: &quot;color: green;&quot;)[**(+1 punto por beber jugo sin manchar tu ropa).**]
 Llenas con jugo el vaso que recogiste del baño y lo bebes con delicadeza.
+
 Has saciado tu sed, y te has cuidado de no regar nada sobre tu camisa. ¡Bien hecho!
 (set: $hasDrunkJuice to true)]
-[[Ir a la cocina]]
+[[Ve a la cocina|Ir a la cocina]]
 
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="45" name="Comes el sánduche de algunos días" tags="" position="3903,1376" size="100,100">Has saciado tu hambre, pero empiezan a sonar unos ruidos extraños en tu estómago. Esperas no ir al baño después… por ahora. Aún sientes sed, pero ya es tarde para tomar algo. Hasta después.
 
-(css: &quot;color: red;&quot;)[**-1 punto por no pensar en tu salud**]
+(css: &quot;color: red;&quot;)[**(-1 punto por no pensar en tu salud).**]
 
-[[Ir a la cocina]]
+[[Ve a la cocina|Ir a la cocina]]
 (set: $puntosCarisma to $puntosCarisma - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma
-(set: $hasEatenSandwich to true)</tw-passagedata><tw-passagedata pid="46" name="Comes el pollo" tags="" position="4083,1379" size="100,100">(if: $hasDrunkJuice is false and $hasDrunkWater is false)[(set: $puntosCarisma to $puntosCarisma - 1) (css: &quot;color: red;&quot;)[**-1 punto por comer sin beber nada**] 
+(set: $hasEatenSandwich to true)</tw-passagedata><tw-passagedata pid="46" name="Comes el pollo" tags="" position="4083,1379" size="100,100">(if: $hasDrunkJuice is false and $hasDrunkWater is false)[(set: $puntosCarisma to $puntosCarisma - 1) (css: &quot;color: red;&quot;)[**(-1 punto por comer sin beber nada).**] 
 
 ¡Ese pollo supo a gloria! Pero te faltó pasarlo con algún líquido.]
-(else:)[(if: $hasDrunkJuice is true)[(set: $puntosCarisma to $puntosCarisma + 1) (css: &quot;color: green;&quot;)[**+1 punto por comer y beber**]] 
+(else:)[(if: $hasDrunkJuice is true)[(set: $puntosCarisma to $puntosCarisma + 1) (css: &quot;color: green;&quot;)[**(+1 punto por comer y beber).**]] 
 
 ¡Con ese pollo has recargado tu energía!] 
 
-[[Ir a la cocina]]
+[[Ve a la cocina|Ir a la cocina]]
 (set: $hasEatenChicken to true)
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="47" name="Destiéndela." tags="" position="522,518" size="100,100">(if: $itemWallet&#39;s isCarried is false)[
 Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
@@ -384,30 +387,30 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 ¡Qué bueno que no perdiste tus papeles o tu dinero! Parece que hay más pistas allí sobre anoche. 
 (if: $itemClothes&#39;s isCarried is false)[
 (css: &quot;color: lightblue;&quot;)[*Sería bueno si tuviera un bolsillo para traerla conmigo...*]]
-[[Mirar billetera]] (if: $itemClothes&#39;s isCarried is true)[
+[[Mira tu billetera.|Mirar billetera]] (if: $itemClothes&#39;s isCarried is true)[
 	  (link: &quot;Recoge la billetera&quot;)[(set: $selectedItem to $itemWallet)
 (set:$itemWallet&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)] 
 	  (link-goto: &quot;Busca más cosas en el cuarto&quot;, $previousPassage)
   ]
-]</tw-passagedata><tw-passagedata pid="48" name="Agáchate y mira." tags="" position="1100,536" size="100,100">Hay polvo y memorias debajo de la cama y... zapatos limpios. ¡Qué milagro!
-(if: (($hasBathed is true) or ($itemClothes&#39;s isCarried is true)) and ($itemShoes&#39;s isCarried is false))[ [[Ponerte los zapatos]] ]
-(else:)[ [[Mirar los zapatos]] ]
-(link-goto: &quot;Levántate&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Carlos indiferente" tags="" position="1768,617" size="100,100">(css: &quot;color: red;&quot;)[**-1 punto por no llamar a tu &quot;admirador&quot; antes**]
+]</tw-passagedata><tw-passagedata pid="48" name="Agáchate y mira." tags="" position="1103,532" size="100,100">Hay polvo y memorias debajo de la cama y... zapatos limpios. ¡Qué milagro!
+(if: (($hasBathed is true) or ($itemClothes&#39;s isCarried is true)) and ($itemShoes&#39;s isCarried is false))[ [[Ponte los zapatos|Ponerte los zapatos]] ]
+(else:)[ [[Mira los zapatos|Mirar los zapatos]] ]
+(link-goto: &quot;Levántate&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Carlos indiferente" tags="" position="1768,617" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no llamar a tu &quot;admirador&quot; antes).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:** *“Hola. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Hasta me dedicaste mi canción favorita. ¡Estoy ansiosa por contarles a todos que estamos juntos!”.*] 
 
-[[Responder mensaje]]
-[[No responder mensaje]]
+[[Responde el mensaje|Responder mensaje]]
+[[Deja el mensaje en visto|No responder mensaje]]
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="50" name="Mensaje Carlos amable" tags="" position="1964,621" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por llamar a Carlos primero**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="50" name="Mensaje Carlos amable" tags="" position="1964,621" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por llamar a Carlos primero).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**]*“¡Hola!. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Incluso me dedicaste mi canción favorita. Qué lindo. ¡Estoy ansiosa por contarles a todos que estamos juntos!”.* 
 
 (css: &quot;color: lightblue;&quot;)[*Claro. Esta es la confirmación de su capricho por mí. Ni Manuela ni nadie se puede enterar de esto. Incluso le dediqué una canción ¡Qué horror! ¡Debo parar esto ahora mismo!*]
 
-[[Dejar el teléfono]]
+[[Deja el teléfono|Dejar el teléfono]]
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="51" name="Fin del demo" tags="" position="2999,2220" size="100,100">(css: &quot;color: green;&quot;) [**Felicitaciones por descubrir el final del demo**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="51" name="Fin del demo" tags="" position="2999,2220" size="100,100">(css: &quot;color: green;&quot;) [**¡Felicitaciones por descubrir el final del demo!**]
 
 **HASTA AQUÍ LLEGA LA PRIMERA PARTE DE &quot;INTOCABLE&quot;.** Espera la versión completa para ver qué pasa contigo con Manuela y Carlos.
 
@@ -443,47 +446,47 @@ Jason Denney y Félix González - 2020
   ¡Carlos está loco! ¡Si hay evidencia de algo entre nosotros, hay que borrarla! Y ya.
 ]
 
-(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2136,1504" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por hacer valer tu punto de vista**]
+(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2136,1504" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por hacer valer tu punto de vista).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Bien, como digas. Te espero en media hora. No tienes excusa de llegar tarde. Chao.*
 
-(css: &quot;color: lightblue;&quot;)[*¿Qué tal esta mujer? Ni siquiera me dejó despedirme. En fin...*]
+(css: &quot;color: lightblue;&quot;)[*¿Qué tal este hombre? Ni siquiera me dejó despedirme. En fin...*]
 
 (if: $itemClothes&#39;s isCarried is true) [ [[Salir de la casa]] ]
 [[Dejar el teléfono]]
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
-(set: $dateLocation to &quot;Sitio&quot;)</tw-passagedata><tw-passagedata pid="53" name="El Sitio insistencia amable" tags="" position="2677,1400" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por hacer valer tu punto de vista**]
+(set: $dateLocation to &quot;Sitio&quot;)</tw-passagedata><tw-passagedata pid="53" name="El Sitio insistencia amable" tags="" position="2679,1399" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por hacer valer tu punto de vista).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Vale, cariño. Así quedamos. Te espero en media hora. Te quiero mucho. ¡Mua!*
 
 (css: &quot;color: lightblue;&quot;)[*Ya me mandó un beso. ¿Nos besamos acaso? Estoy ansioso por saber qué pasó.*]
 
-(if: $itemClothes&#39;s isCarried is true) [ [[Salir de la casa]] ]
-[[Dejar el teléfono]]
+(if: $itemClothes&#39;s isCarried is true) [ [[Sal de la casa|Salir de la casa]] ]
+[[Deja el teléfono|Dejar el teléfono]]
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
-(set: $dateLocation to &quot;Sitio&quot;)</tw-passagedata><tw-passagedata pid="54" name="Tomar agua" tags="" position="677,753" size="100,100">Llenas el vaso con agua del lavamanos y bebes como loco. Ya te sientes un poco mejor.(set:$hasDrunkWater to true)
+(set: $dateLocation to &quot;Sitio&quot;)</tw-passagedata><tw-passagedata pid="54" name="Tomar agua" tags="" position="677,753" size="100,100">Llenas el vaso con agua del lavamanos y bebes como si no hubiera mañana. Ya te sientes un poco mejor. (set:$hasDrunkWater to true)
 
-(css: &quot;color: green;&quot;)[**+1 punto por beber agua para el dolor de cabeza**]
+(css: &quot;color: green;&quot;)[**(+1 punto por beber agua para el dolor de cabeza).**]
 (set: $puntosCarisma to $puntosCarisma + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma
 
 [[¡Continúa con un sentimiento de frescura!|Ir al baño]]</tw-passagedata><tw-passagedata pid="55" name="Tomar jugo igual" tags="" position="3556,1382" size="100,100">(set: $puntosCarisma to $puntosCarisma - 1) 
 Has saciado tu sed, pero por el afán se ha regado parte del jugo en tu camisa. (css: &quot;color: lightblue;&quot;)[*No importa, sólo quiero salir de aquí*], te dices a ti mismo.
 
-(css: &quot;color: red;&quot;)[**-1 punto por manchar tu ropa**] 
+(css: &quot;color: red;&quot;)[**(-1 punto por manchar tu ropa).**] 
 
-[[Ir a la cocina]]
+[[Ve a la cocina|Ir a la cocina]]
 (set: $hasDrunkJuice to true)
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="56" name="Ir al baño" tags="" position="740,549" size="100,100">Estás en el baño.
 
 (if: $itemGlass&#39;s isCarried is false) [Hay un vaso en la gaveta.] (if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo.&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)] ]
 (if: (($itemGlass&#39;s isCarried is true) and ($hasDrunkWater is false)))[
-[[Tomar agua]]]
+[[Toma un poco de agua|Tomar agua]]]
 (if: ($hasBathed is false) and ($itemClothes&#39;s isCarried is false))[ Necesitas bañarte y cambiarte de ropa.
 
-[[Ir a ducharte]] ]
+[[Ve a ducharte|Ir a ducharte]] ]
 (link-goto: &quot;Regresar al cuarto para ponerte guapo&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="57" name="Ir a la sala" tags="" position="3476,576" size="100,100">Estás en la sala.
 
 (if: $calledCarlos is false) [¿Qué haces? ¿A dónde vas?  Tal vez debes hablar con alguien...]
@@ -496,7 +499,7 @@ Has saciado tu sed, pero por el afán se ha regado parte del jugo en tu camisa. 
 Ahora empiezas a recordar algo, pero no es muy claro. 
 
 (link-goto: &quot;Sigue pensando&quot;, $previousPassage)
-(set: $examinedWallet to true)</tw-passagedata><tw-passagedata pid="59" name="Ponerte los zapatos" tags="" position="1029,686" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por ponerte zapatos nuevos**]
+(set: $examinedWallet to true)</tw-passagedata><tw-passagedata pid="59" name="Ponerte los zapatos" tags="" position="1029,686" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por ponerte zapatos nuevos).**]
 
 Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: $selectedItem to $itemShoes)(set:$itemShoes&#39;s isCarried to true)] 
 
@@ -506,32 +509,31 @@ Ah, zapatos de la última moda. Te quedan muy bien, tal como lo pensaste.[(set: 
 
 (link-goto: &quot;Ve y alístate bien&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="61" name="Ve al armario." tags="" position="169,544" size="100,100">Ves una camisa a medio planchar, un pantalón y unos tenis más bien sucios. 
 
-[[Cambiarte de ropa]]
+[[Cámbiate de ropa|Cambiarte de ropa]]
 (link-goto: &quot;Explora más el cuarto&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="62" name="Revisa el teléfono." tags="" position="1596,103" size="100,100">(css: &quot;color: #187FF5;&quot;)[¡Carajo! Otra vez este internet de mierda... Debo hacer algo con eso. Sólo puedo mirar lo básico.]
 
 Tienes 1 mensaje no leído y 15 llamadas perdidas.
 
-[[Mirar las llamadas]]
+[[Mira las llamadas|Mirar las llamadas]]
 
-(if: $textedCarlos is false)[ [[Mirar mensaje]] ]
+(if: $textedCarlos is false)[ [[Mira el mensaje|Mirar mensaje]] ]
 
 (if: ($itemClothes&#39;s isCarried is true) and ($calledCarlos is true))[ (link:&quot;Llévate el teléfono&quot;)[ (set:$selectedItem to $itemPhone)(set:$itemPhone&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)]]
 
-(if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo.&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)] ]
-</tw-passagedata><tw-passagedata pid="63" name="&quot;Por ahí&quot;" tags="" position="2597,965" size="100,100">(css: &quot;color: red;&quot;)[**-2 puntos por evitar la pregunta**]
+(if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo.&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)] ]</tw-passagedata><tw-passagedata pid="63" name="&quot;Por ahí&quot;" tags="" position="2597,965" size="100,100">(css: &quot;color: red;&quot;)[**(-2 puntos por evitar la pregunta).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Dormiste bien? No estoy tan seguro... Mira, quiero verte para que hagamos planes juntos.*
 
-[[&quot;Vale, ¿qué te parece si nos reunimos en El Sitio?&quot; |El Sitio amable]]
-[[&quot;Ya, ¿pero planes de qué o qué?&quot;]]
-[[&quot;Sí, claro. Adonde tú quieras.&quot;]]
+[[─Vale, ¿qué te parece si nos reunimos en El Sitio?&quot;|El Sitio amable]]
+[[─Ya, ¿pero planes de qué o qué?|&quot;Ya, ¿pero planes de qué o qué?&quot;]]
+[[─Sí, claro. Adonde tú quieras.|&quot;Sí, claro. Adonde tú quieras.&quot;]]
 (set: $puntosCarlos to $puntosCarlos - 2)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="64" name="&quot;Supongo que podemos encontrar un lugar.&quot;" tags="" position="2643,1200" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *Vale.... ¿Por qué no vamos a El Sitio?*
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="64" name="&quot;Supongo que podemos encontrar un lugar.&quot;" tags="" position="2643,1200" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *Vale... ¿Por qué no vamos a El Sitio?*
 
-[[Sí, me suena bien.|El Sitio insistencia amable]]
-[[Prefiero el Café Tinta, que es mi favorito.|Café Tinta amable]]
-[[¿En serio? ¿Me sabes en verdad? Vamos al Cafe Tinta.  |Café Tinta agresiva]]
-[[La verdad quiero acostarme. Chao.]]</tw-passagedata><tw-passagedata pid="65" name="La verdad quiero acostarme. Chao." tags="" position="2664,2105" size="100,100">Te acuestas y mañana descubrirás las ruinas de tu vida. Es probable que hayas perdido la confianza de tu mejor amiga y habrá consecuencias.
+[[─Sí, me suena bien.|El Sitio insistencia amable]]
+[[─Prefiero el Café Tinta, que es mi favorito.|Café Tinta amable]]
+[[─¿En serio? ¡No! Más bien vámonos al Café Tinta.|Café Tinta agresiva]]
+[[─La verdad quiero acostarme. Chao.|La verdad quiero acostarme. Chao.]]</tw-passagedata><tw-passagedata pid="65" name="La verdad quiero acostarme. Chao." tags="" position="2664,2103" size="100,100">Te acuestas y mañana descubrirás las ruinas de tu vida. Es probable que hayas perdido la confianza de Carlos y de Manuela, y habrá consecuencias para nada agradables.
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
 
@@ -591,34 +593,28 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 (set: $hasEatenSandwich to $part2SavedState&#39;s hasEatenSandwich)
 
 &lt;!--- Usar para conversaciones: ─ --&gt;
-</tw-passagedata><tw-passagedata pid="67" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2574,2524" size="100,100">¡Bien! Pagaste la carrera completa. Pero te queda apenas para ir a ese otro sitio. Ya sabes… el más íntimo para encontrarte con Carlos. 
+</tw-passagedata><tw-passagedata pid="67" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2574,2524" size="100,100">¡Bien! Pagaste la carrera completa. Pero te queda apenas para ir a ese otro sitio. Ya sabes... el más íntimo para encontrarte con Carlos. 
 
-(if: $dateLocation is &quot;Sitio&quot;) [ [[Entrar a El Sitio|2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE]] ]
+(if: $dateLocation is &quot;Sitio&quot;) [ [[Entra a El Sitio|2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE]] ]
+(else:) [ [[Entra a El Sitio|2.2. CARLOS EN EL SITIO]] ]
+[[Trata de ir al Café Tinta |2.1.2. MANUELA CAMINA]] </tw-passagedata><tw-passagedata pid="68" name="2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE" tags="" position="2279,2559" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Hola, Manuela querida. ¿Todo bien?*]
 
-(else:) [ [[Entrar a El Sitio|2.2. CARLOS EN EL SITIO]] ]
-
-[[Tratar de ir al Café Tinta |2.1.2. MANUELA CAMINA]] </tw-passagedata><tw-passagedata pid="68" name="2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE" tags="" position="2279,2559" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Hola, Manuela querida. ¿Todo bien?*]
-
-(if: $hasPaidTaxi is true) [ [[Ven, que te invito a tomar lo que quieras.|2.1.1.1.A]] ] -si pagaste con tu dinero- (A)
-
-(elseif: $textedManuela is true) [ [[¿Viste mi mensaje?|2.1.1.1.B]] ]-si le dejaste mensaje a Manuela.- (B)
-
-(else:)[ [[Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.1.1.C]] ] (default C)
+(if: $hasPaidTaxi is true) [ [[─Ven, que te invito a tomar lo que quieras.|2.1.1.1.A]] ]
+(elseif: $textedManuela is true) [ [[─¿Viste mi mensaje?|2.1.1.1.B]] ]
+(else:)[ [[─Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.1.1.C]] ]
 
 Modo de prueba: 
 
 [[Ven, que te invito a tomar lo que quieras.|2.1.1.1.A]] -si pagaste con tu dinero- (A)
 [[¿Viste mi mensaje?|2.1.1.1.B]] -si le dejaste mensaje a Manuela.- (B)
-[[Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.1.1.C]] (default C)</tw-passagedata><tw-passagedata pid="69" name="2.1.2. MANUELA CAMINA" tags="" position="2797,2560" size="100,100">Mira quién viene caminando casualmente… ¡Es Manuela!
+[[Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.1.1.C]] (default C)</tw-passagedata><tw-passagedata pid="69" name="2.1.2. MANUELA CAMINA" tags="" position="2798,2559" size="100,100">Mira quién viene caminando casualmente… ¡Es Manuela!
 
 ¿Qué haces?
 
-(if: $hasPaidTaxi is false) [ [[Le pides prestado para el taxi |2.1.3. PEDIR PRESTADO A MANUELA]] ]
+(if: $hasPaidTaxi is false) [ [[Pídele prestado para el taxi|2.1.3. PEDIR PRESTADO A MANUELA]] ]
 (else:)[
-[[Habla con Manuela|2.1.5.A]]
-]
-
-[[Tratas de ignorarla |2.1.7. TRATAS DE IGNORARLA]] ] 
+[[Habla con Manuela|2.1.5.A]] ]
+[[Trata de ignorarla|2.1.7. TRATAS DE IGNORARLA]] ] 
 
 Modo de prueba:
 [[Le pides prestado para el taxi |2.1.3. PEDIR PRESTADO A MANUELA]] - has paid taxi
@@ -626,17 +622,14 @@ Modo de prueba:
 (css: &quot;color: red;&quot;) [**(-1 punto por pedirle prestado a Manuela).**]
 
 (if: $calledManuela is false) [
-	(css: &quot;color: orange;&quot;)[**Manuela:**] *Sólo estoy para favores, ¿no?*
-]
+	(css: &quot;color: orange;&quot;)[**Manuela:**] *Sólo estoy para favores, ¿no?*]
 (else:) [
   (if: $textedManuela is true) [
-  (css: &quot;color: orange;&quot;)[**Manuela:**] *¡Claro! Precisamente quería hablarte.*
-  ] 
+  (css: &quot;color: orange;&quot;)[**Manuela:**] *¡Claro! Precisamente quería hablarte.*] 
   (else:)[
-	(css: &quot;color: orange;&quot;)[**Manuela:**] *¿Y a ti qué carajos te pasó? Jajaja… sí que eres idiota.*
-  ]
+	(css: &quot;color: orange;&quot;)[**Manuela:**] *¿Y a ti qué carajos te pasó? Jajaja… sí que eres idiota.*]
 ]
-[[Paga el taxi.|2.1.4. TAXI CON DINERO DE MANUELA]]
+[[Paga el taxi|2.1.4. TAXI CON DINERO DE MANUELA]]
 
 (set: $puntosManuela to $puntosManuela - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
@@ -649,16 +642,15 @@ Modo de prueba:
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *Lo siento, cariño. Pero entenderás que no me tranquiliza tu supuesta amnesia. Llámalo, insisto.*
 
-[[Lo que tú digas.|2.1.5.3.2. LLAMADA DE EMERGENCIA A CARLOS]]
-[[Pues nada, ¿tengo otra opción?|2.1.5.3.1.1]]
+[[─Lo que tú digas.|2.1.5.3.2. LLAMADA DE EMERGENCIA A CARLOS]]
+[[─Pues nada, ¿tengo otra opción?|2.1.5.3.1.1]]
 
 (set: $puntosManuela to $puntosManuela - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="72" name="2.1.5.3.2. LLAMADA DE EMERGENCIA A CARLOS" tags="" position="2709,3547" size="100,100">(css: &quot;color: green;&quot;)[(**+1 punto por responder al desafío de Manuela.**)] 
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="72" name="2.1.5.3.2. LLAMADA DE EMERGENCIA A CARLOS" tags="" position="2709,3547" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder al desafío de Manuela.)**] 
 
 Llamas a Carlos y pones el teléfono en altavoz para que Manuela también escuche:
 
 [[─Hola, Carlos. Tiempo sin hablarte. Dile a tu hermana, por favor, que no estuviste conmigo anoche.|2.1.5.3.2.A]]
-
 [[─Hola, Carlos. Me alegra saludarte. Cuéntame qué hiciste anoche para aquí la tranquilidad de tu hermana.|2.1.5.3.2.B]]
 
 (set: $puntosManuela to $puntosManuela + 1)
@@ -666,22 +658,18 @@ Llamas a Carlos y pones el teléfono en altavoz para que Manuela también escuch
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *Espera, te acompaño. Con eso no te pierdes tanto como ahora viniendo tan de repente hasta acá.*
 
-[[Eres una buena amiga, Manuela. Te agradezco.|2.1.5.5.6.1. MANUELA TE ACOMPAÑA]] 
-
-[[No te preocupes. No quiero causarte más molestias.|2.1.1.5.5.6.2. MANUELA NO TE ACOMPAÑA]] 
+[[─Eres una buena amiga, Manuela. Te agradezco.|2.1.5.5.6.1. MANUELA TE ACOMPAÑA]] 
+[[─No te preocupes. No quiero causarte más molestias.|2.1.1.5.5.6.2. MANUELA NO TE ACOMPAÑA]] 
 
 (set: $puntosManuela to $puntosManuela - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="74" name="2.1.7. TRATAS DE IGNORARLA" tags="" position="2998,2649" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *¡Qué hubo! ¡No jodás que ahora no me vas a saludar, carajo! Eso sí no te lo perdono.* (if: $textedManuela)[
-  *¿Acaso no necesitabas hablar conmigo?* ](else:)[ *¿Dónde estabas anoche? Estaba bien preocupada.* ]
-
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="74" name="2.1.7. TRATAS DE IGNORARLA" tags="" position="2997,2648" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *¡Qué hubo! ¡No jodás que ahora no me vas a saludar, carajo! Eso sí no te lo perdono.* (if: $textedManuela)[*¿Acaso no necesitabas hablar conmigo?*](else:)[*¿Dónde estabas anoche? Estaba bien preocupada.*]
 
 (if: $textedManuela)[
-[[Lo sé, Manuela. Disculpa. Me distraje por un momento. ¿Sabes dónde pude haberme metido anoche?|2.1.5.B]]
+[[─Lo sé, Manuela. Disculpa. Me distraje por un momento. ¿Sabes dónde pude haberme metido anoche?|2.1.5.B]]
 ]
 (else:)[
-[[Disculpa, Manuela. La verdad no sé ni lo que estoy haciendo. Necesito saber qué hice anoche. ¿Me puedes ayudar?|2.1.5.C]]
+[[─Disculpa, Manuela. La verdad no sé ni lo que estoy haciendo. Necesito saber qué hice anoche. ¿Me puedes ayudar?|2.1.5.C]]
 ]
-
 (css: &quot;color: purple;&quot;)[ (Algo que hiciste en el pasado determinó esta interacción.) ]
 
 Modo de prueba:
@@ -691,24 +679,24 @@ Modo de prueba:
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Hola. Yo la verdad no entiendo por qué me hiciste venir a este sitio tan… ordinario.*
 
-[[Ya te dije, es mi favorito. Si no te gusta, pues allá tú.|2.2.1.A]]
-[[Si, lo es. Si me quieres conocer, conóceme donde me siento más cómodo.|2.2.1.B]] 
-[[¿Acaso me estás diciendo ordinario a mí? Muestra respeto a tus mayores, jajaja.|2.2.1.C]]</tw-passagedata><tw-passagedata pid="76" name="2.2.1.1. VES A MANUELA EN EL SITIO" tags="" position="1560,2921" size="100,100">Manuela está a lo lejos. Está distraída pidiendo un café al mesero. Ya sabes qué pasará si te ve con su querido hermanito. ¿Qué haces?
+[[─Ya te dije, es mi favorito. Si no te gusta, pues allá tú.|2.2.1.A]]
+[[─Si, lo es. Si me quieres conocer, conóceme donde me siento más cómodo.|2.2.1.B]] 
+[[─¿Acaso me estás diciendo ordinario a mí? Muestra respeto a tus mayores, jajaja.|2.2.1.C]]</tw-passagedata><tw-passagedata pid="76" name="2.2.1.1. VES A MANUELA EN EL SITIO" tags="" position="1560,2921" size="100,100">Manuela está a lo lejos. Está distraída pidiendo un café al mesero. Ya sabes qué pasará si te ve con su querido hermanito. ¿Qué haces?
 
 (css: &quot;color: #187FF5;&quot;)[*Carajo, Manuela está aquí. Vámonos de aquí. ¡Ya!*]
 
 (if: $puntosCarlos + $puntosCarisma &lt;= 6)[
-(css: &quot;color: white;&quot;)[**Carlos:**] *Wow, mira que sí es El Sitio favorito de ustedes dos. ¿Por qué le temes? ¿Qué ocultas? Hablemos todos. *
+(css: &quot;color: white;&quot;)[**Carlos:**] *Wow, mira que sí es El Sitio favorito de ustedes dos. ¿Por qué le temes? ¿Qué ocultas? Hablemos todos.*
 
-[[Prefiero evitar problemas. Te cuento luego donde tú quieras.|2.2.2. MANUELA TE SORPRENDE HUYENDO]]
-[[Vale, como quieras.|2.2.2.1. ENFRENTA CON CARLOS A MANUELA CON CONFIANZA]] 
-[[Oooook. Si tú insistes.|2.2.2.2. ENFRENTA CON CARLOS A MANUELA SIN CONFIANZA]] ]
+[[─Prefiero evitar problemas. Te cuento luego donde tú quieras.|2.2.2. MANUELA TE SORPRENDE HUYENDO]]
+[[─Vale, como quieras.|2.2.2.1. ENFRENTA CON CARLOS A MANUELA CON CONFIANZA]] 
+[[─Oooook. Si tú insistes.|2.2.2.2. ENFRENTA CON CARLOS A MANUELA SIN CONFIANZA]] ]
 
 (else:) [
 (css: &quot;color: white;&quot;)[**Carlos:**] *Mira quién está aquí si no es mi hermanita Manuela. Vaya que este es El Sitio de ustedes dos. Sería interesante conocer cómo eres con tu gran amiga.*
 
-[[Sí, claro. Pero después. Te cuento luego en el lugar donde tú quieras.|2.2.2. MANUELA TE SORPRENDE HUYENDO]] 
-[[Claro, totalmente. Sigamos entonces.|2.2.2.1. ENFRENTA CON CARLOS A MANUELA CON CONFIANZA]] ]</tw-passagedata><tw-passagedata pid="77" name="2.2.2. MANUELA TE SORPRENDE HUYENDO" tags="" position="1497,3092" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto Manuela por intentar huirle).**] 
+[[─Sí, claro. Pero después. Te cuento luego en el lugar donde tú quieras.|2.2.2. MANUELA TE SORPRENDE HUYENDO]] 
+[[─Claro, totalmente. Sigamos entonces.|2.2.2.1. ENFRENTA CON CARLOS A MANUELA CON CONFIANZA]] ]</tw-passagedata><tw-passagedata pid="77" name="2.2.2. MANUELA TE SORPRENDE HUYENDO" tags="" position="1497,3092" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto Manuela por intentar huirle).**] 
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás diciendo que me vaya? ¿O que entre a mi propio riesgo?*
 
@@ -720,11 +708,10 @@ Al ver la reacción de Manuela sales a correr como la persona cobarde que eres. 
 
 (set: $puntosManuela to $puntosManuela - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="3050,2453" size="100,100">El taxista te pide el dinero de tu recorrido. 
-(if: $itemWalletisCarried is true) [ [[Pagar carrera |2.1.1. TAXI CON MI DINERO EN EL SITIO]] ] 
-(else:) [
-Olvidaste tu billetera. ¡Qué mal!
+(if: $itemWalletisCarried is true) [ [[Paga la carrera |2.1.1. TAXI CON MI DINERO EN EL SITIO]] ] 
+(else:) [Olvidaste tu billetera. ¡Qué mal!
 
-[[Trata de encontrar a alguien de confianza y pedirle dinero prestado en El Sitio |2.1.3. PEDIR PRESTADO A MANUELA]]] 
+[[Pide dinero prestado en El Sitio|2.1.3. PEDIR PRESTADO A MANUELA]]] 
 
 Modo de prueba: 
 
@@ -736,7 +723,7 @@ Vuelves a tu casa y recuperas tu billetera.
 (if: $examinedWallet is false)[(link-goto: &quot;Examinar Billetera&quot;, &quot;Mirar billetera&quot;)
 (set: $previousPassage to &quot;2.1.5.7 RECUPERAR BILLETERA&quot;)
 ]
-[[Ir a Café Tinta|2.3.1. PAGAR TAXI AL CAFÉ TINTA]]
+[[Ve al Café Tinta|2.3.1. PAGAR TAXI AL CAFÉ TINTA]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
@@ -751,9 +738,9 @@ Sales rápidamente de El Sitio para tomar otro taxi.
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *Está bien. Disfruta tu día, querida.* 
 
-[[Tomar taxi para ir a Café Tinta.|2.3. LLEGAS AL CAFÉ TINTA]] 
+[[Toma un taxi para ir a Café Tinta.|2.3. LLEGAS AL CAFÉ TINTA]] 
 
-(if: $itemWalletisCarried is false)[ [[Ir a casa para recoger lo que te hace falta.|2.1.5.7 RECUPERAR BILLETERA]] ] 
+(if: $itemWalletisCarried is false)[ [[Ve a casa para recoger lo que te hace falta.|2.1.5.7 RECUPERAR BILLETERA]] ] 
 
 Modo de prueba:
 [[Tomar taxi para ir a Café Tinta.|2.3. LLEGAS AL CAFÉ TINTA]] -default-
@@ -761,9 +748,8 @@ Modo de prueba:
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, hermanita querida. ¿Cómo así que no puede ser?* 
 
-[[Sí puede ser. Me enamoré de tu hermana.|2.2.2.3. MANUELA SABE &#39;LA VERDAD&#39; DE TI]]
-
-[[Es que le hice una promesa a tu hermana de no estar contigo, Carlos. Lo siento.|2.2.2.4. CARLOS SABE &#39;LA VERDAD&#39; DE TI]] </tw-passagedata><tw-passagedata pid="83" name="2.2.1.2. CARLOS SE VA DE EL SITIO" tags="" position="1151,2717" size="100,100">(css: &quot;color: green;&quot;) [**(-1 punto por tratar a Carlos como si no importara nada).**]
+[[─Sí puede ser. Me enamoré de tu hermana.|2.2.2.3. MANUELA SABE &#39;LA VERDAD&#39; DE TI]]
+[[─Es que le hice una promesa a tu hermana de no estar contigo, Carlos. Lo siento.|2.2.2.4. CARLOS SABE &#39;LA VERDAD&#39; DE TI]] </tw-passagedata><tw-passagedata pid="83" name="2.2.1.2. CARLOS SE VA DE EL SITIO" tags="" position="1154,2717" size="100,100">(css: &quot;color: green;&quot;) [**(-1 punto por tratar a Carlos como si no importara nada).**]
 
 Pudiste haber tratado mejor a Carlos, pero está muy furioso y se va rápidamente. Entras a El Sitio, hablas con Manuela como si nada hubiera pasado. Pero Carlos decide publicar sus fotos contigo en sus redes. Manuela las ve y comienza a reclamarte para luego golpearte en el bar. Se arma un gran escándalo. Pierdes la confianza de ambos. Tu vida es horrible. 
 
@@ -820,26 +806,21 @@ Carlos muestra algunas fotos en las que lo acompañas a la fiesta de anoche. Alg
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="87" name="2.3. LLEGAS AL CAFÉ TINTA" tags="" position="3572,2459" size="100,100">El taxista te pide el dinero de tu recorrido. 
 
 (if: $itemWalletisCarried)[
-(if: $examinedWallet is false)[(link-goto: &quot;Examinar Billetera&quot;, &quot;Mirar billetera&quot;)
-(set: $previousPassage to &quot;2.3. LLEGAS AL CAFÉ TINTA&quot;)
+(if: $examinedWallet is false)[(link-goto: &quot;Examinar Billetera&quot;, &quot;Mirar billetera&quot;) (set: $previousPassage to &quot;2.3. LLEGAS AL CAFÉ TINTA&quot;)
 ]
-[[Pagar carrera|2.3.1. PAGAR TAXI AL CAFÉ TINTA]]
-]
+[[Paga la carrera|2.3.1. PAGAR TAXI AL CAFÉ TINTA]] ]
 (else:)[
 Olvidaste tu billetera y no tienes dinero para pagar. ¿Qué haces?  
 
-[[Pedirle prestado a Carlos en El Café Tinta|2.3.1.1. PEDIRLE PRESTADO A CARLOS]]
-]
+[[Pídele prestado a Carlos en El Café Tinta|2.3.1.1. PEDIRLE PRESTADO A CARLOS]] ]
 
 Modo de prueba:
 -si llevas la billetera- [[Pagar carrera|2.3.1. PAGAR TAXI AL CAFÉ TINTA]] : ir a 2.3.1.
 [[Pedirle prestado a Carlos en El Café Tinta|2.3.1.1. PEDIRLE PRESTADO A CARLOS]] -si olvidaste la billetera- : ir a 2.3.1.1.</tw-passagedata><tw-passagedata pid="88" name="2.3.1. PAGAR TAXI AL CAFÉ TINTA" tags="" position="3816,2527" size="100,100">¡Bien! Pagaste la carrera completa. 
-
-
-(if: $dateLocation is &quot;Sitio&quot;)[ [[Entrar al Café Tinta|2.3.3. SALUDO A CARLOS CUANDO FUISTE A EL SITIO]]
+(if: $dateLocation is &quot;Sitio&quot;)[ [[Entra al Café Tinta|2.3.3. SALUDO A CARLOS CUANDO FUISTE A EL SITIO]]
 ]
 (else:)[
-	[[Entrar al Café Tinta|2.3.2. SALUDO A CARLOS]] 
+	[[Entra al Café Tinta|2.3.2. SALUDO A CARLOS]] 
 ]
 
 
@@ -880,11 +861,9 @@ Modo de prueba:
 (if: $puntosCarlos + $puntosCarisma &lt;= 9)[
   (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y se hace difícil descubrir que pasó anoche.**]
 ]</tw-passagedata><tw-passagedata pid="90" name="2.3.2. SALUDO A CARLOS" tags="" position="3813,2695" size="100,100">(if: $puntosCarlos &lt;= 3 or $dateLocation is &quot;Sitio&quot;)[
-(css: &quot;color: #187FF5;&quot;)[*Disculpa el retraso. Ya sabes…*] (css: &quot;color: lightblue;&quot;)[*¿Qué digo aquí? ¿Qué digo? ¡Ya sé!*] (css: &quot;color: #187FF5;&quot;)[*la resaca.*] 
-]
+(css: &quot;color: #187FF5;&quot;)[*Disculpa el retraso. Ya sabes...*] (css: &quot;color: lightblue;&quot;)[*¿Qué digo aquí? ¿Qué digo? ¡Ya sé!*] (css: &quot;color: #187FF5;&quot;)[*la resaca.*] ]
 (else:)[
-(css: &quot;color: #187FF5;&quot;)[*Qué bueno verte.*] (css: &quot;color: #lightblue;&quot;)[*Vamos a ver qué tan bueno*].
-]
+(css: &quot;color: #187FF5;&quot;)[*Qué bueno verte.*] (css: &quot;color: #lightblue;&quot;)[*Vamos a ver qué tan bueno*] ]
 
 (css: &quot;color: lightblue&quot;)[*Un momento. Carlos no lleva chaqueta como de costumbre, pero sí esa mochila de felpa tan peculiar que tiene... Y tampoco tiene nada en los bolsillos. Si pudiera entrar a su teléfono que allí carga, podría encontrar más pistas sobre anoche sin hablarlo con él directamente.*]
 
@@ -901,18 +880,13 @@ Modo de prueba:
 -si Carlos agresivo- (css: &quot;color: #187FF5;&quot;)[*Disculpa el retraso. Ya sabes…*] (css: &quot;color: #lightblue;&quot;)[*¿Qué digo aquí? ¿Qué digo? ¡Ya sé!*] (css: &quot;color: #187FF5;&quot;)[*la resaca.*] 
 -si Carlos amable o neutral y si no fuiste a El Sitio- (css: &quot;color: #187FF5;&quot;)[*Qué bueno verte.*] (css: &quot;color: #lightblue;&quot;)[*Vamos a ver qué tan bueno*].</tw-passagedata><tw-passagedata pid="91" name="2.3.3. SALUDO A CARLOS CUANDO FUISTE A EL SITIO" tags="" position="4082,2592" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *¿Me puedes explicar qué fuiste a hacer al otro café? ¿Por qué me llama Manuela así con esa actitud tan horrible?*
 
-[[Manuela no puede enterarse de que tú y yo hablamos. Por eso fui, para que él no sospechara más de mí.|2.3.5.2.A]] 
-
-[[¿No lo sabes acaso? Hice un pacto con Manuela. Y acordamos en que tú y yo no debemos vernos. Por eso necesito hablarte.|2.3.5.2.C]] 
-
-[[Porque no podemos hablar más, Carlos. Si algo pasó entre tú y yo, olvídalo. No estaba en mis cabales anoche.|2.3.5.2.A]] </tw-passagedata><tw-passagedata pid="92" name="2.3.2.2. EN TU BOCA" tags="" position="3884,2874" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Carlos por hacerle pensar que lo quieres de verdad).**] (css: &quot;color: red;&quot;)[**(Eso a Manuela no le gustaría. -1 punto con ella).**]
+[[─Manuela no puede enterarse de que tú y yo hablamos. Por eso fui, para que él no sospechara más de mí.|2.3.5.2.A]] 
+[[─¿No lo sabes acaso? Hice un pacto con Manuela. Y acordamos en que tú y yo no debemos vernos. Por eso necesito hablarte.|2.3.5.2.C]] 
+[[─Porque no podemos hablar más, Carlos. Si algo pasó entre tú y yo, olvídalo. No estaba en mis cabales anoche.|2.3.5.2.A]] </tw-passagedata><tw-passagedata pid="92" name="2.3.2.2. EN TU BOCA" tags="" position="3881,2876" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Carlos por hacerle pensar que lo quieres de verdad).**] (css: &quot;color: red;&quot;)[**(Eso a Manuela no le gustaría. -1 punto con ella).**]
 
 (if: $puntosCarisma &lt;= 2 )[
-(css: &quot;color: white;&quot;)[**Carlos:**] *Hola.* 
-]
-(else:)[
-(css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño. Qué bueno verte y sentirte.* 
-]
+(css: &quot;color: white;&quot;)[**Carlos:**] *Hola.* ]
+(else:)[ (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño. Qué bueno verte y sentirte.* ]
 
 ¿Qué quieres tomar?
 
@@ -935,12 +909,9 @@ Modo de prueba:
 
 -si te bañaste- (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño. Qué bueno verte y sentirte.* </tw-passagedata><tw-passagedata pid="93" name="2.3.2.1. EN TU MEJILLA" tags="" position="3703,2876" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto Carlos por ser amable con Carlos aunque no muy cercano.)**] (css: &quot;color: green;&quot;)[**(A eso a Manuela le gustaría. +1 punto con ella.)**] 
 
-(if: $puntosCarisma &lt;= 2 )[
-(css: &quot;color: white;&quot;)[**Carlos:**] *Hola.*
-]
-(else:)[
-(css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño.*
-]
+(if: $puntosCarisma &lt;= 2 )[ (css: &quot;color: white;&quot;)[**Carlos:**] *Hola.* ]
+(else:)[ (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño.* ]
+
 ¿Qué quieres tomar?
 
 [[Un café|2.3.2.3. TOMAR CAFÉ]] : ir a 2.3.2.3.
@@ -969,16 +940,14 @@ Modo de prueba:
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Sí, es verdad. ¿Cómo estás?*
 
-[[Estoy bien. Con un poco de dolor de cabeza, y además no recuerdo todo sobre anoche.|2.3.4. NO RECUERDO TODO]] : ir a 2.3.4.
+[[─Estoy bien. Con un poco de dolor de cabeza, y además no recuerdo todo sobre anoche.|2.3.4. NO RECUERDO TODO]]
 ]
-(else:)[
-(css: &quot;color: lightblue;&quot;)[*¡Ay, no! El dolor de estómago es insoportable. Creo que debo ir al baño pronto.*]
+(else:)[(css: &quot;color: lightblue;&quot;)[*¡Ay, no! El dolor de estómago es insoportable. Creo que debo ir al baño pronto.*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás bien?* 
 
-[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : ir a 2.3.4.1.
+[[─Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : ir a 2.3.4.1.
 ]
-
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que comiste o bebiste...**]
 
@@ -988,21 +957,18 @@ Modo de prueba:
 -si comiste pollo y tomaste agua o jugo-
 [[Estoy bien. Con un poco de dolor de cabeza, y además no recuerdo todo sobre anoche.|2.3.4. NO RECUERDO TODO]] : ir a 2.3.4.
 -si comiste el sánduche o no has tomado nada-
-[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : ir a 2.3.4.1.</tw-passagedata><tw-passagedata pid="95" name="2.3.2.4. TOMAR AGUA" tags="" position="3880,3026" size="100,100">(if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
+[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : ir a 2.3.4.1.</tw-passagedata><tw-passagedata pid="95" name="2.3.2.4. TOMAR AGUA" tags="" position="3877,3028" size="100,100">(if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
 (css: &quot;color: lightblue;&quot;)[*Bueno, creo que ya se me está pasando el dolor de cabeza.*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Cómo estás?*
 
-[[Estoy bien. Con un poco de dolor de cabeza, y no recuerdo todo sobre anoche.|2.3.4. NO RECUERDO TODO]] : ir a 2.3.4.
+[[─Estoy bien. Con un poco de dolor de cabeza, y no recuerdo todo sobre anoche.|2.3.4. NO RECUERDO TODO]]
 ]
-(else:)[
-(css: &quot;color: lightblue;&quot;)[*Bueno, el dolor de estómago está pasando. Pero igual tendré que ir al baño pronto.*] 
+(else:)[(css: &quot;color: lightblue;&quot;)[*Bueno, el dolor de estómago está pasando. Pero igual tendré que ir al baño pronto.*] 
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás bien?*
 
-[[Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] 
-]
-
+[[─Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] ]
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que comiste o bebiste...**]
 
@@ -1018,16 +984,12 @@ si no comiste
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Qué no recuerdas exactamente? Es decir, ¿ni siquiera del concierto? ¿Nada?*
 
 (if: $itemWalletisCarried is true and $examinedWallet is false)[(link-goto: &quot;Examinar Billetera&quot;, &quot;Mirar billetera&quot;)
-(set: $previousPassage to &quot;2.3.4. NO RECUERDO TODO&quot;)
-]
-(if: $examinedWallet is true)[
-[[El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]]
-]
-(elseif: $dateLocation is &quot;Sitio&quot;)[ [[Ya. Fuimos a ver a “1919”? Tu banda favorita, ¿no?|2.3.4.2.1. LA BANDA “1919”]]
-]
-(else:)[
-[[Nada, en serio. Dime qué pasó, por favor.|BANDA SÚPER INCORRECTA]]
-]
+(set: $previousPassage to &quot;2.3.4. NO RECUERDO TODO&quot;)]
+(if: $examinedWallet is true)[ [[─El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]] ]
+
+(elseif: $dateLocation is &quot;Sitio&quot;)[ [[─Ya. Fuimos a ver a “1919”? Tu banda favorita, ¿no?|2.3.4.2.1. LA BANDA “1919”]] ]
+
+(else:)[ [[─Nada, en serio. Dime qué pasó, por favor.|BANDA SÚPER INCORRECTA]] ]
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que hiciste...**]
 (set: $puntosCarlos to $puntosCarlos + 1)
@@ -1047,14 +1009,10 @@ Modo de prueba:
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Ahora sí que estás desvariando, jajaja. Estabas en un concierto conmigo, ¿recuerdas?*
 
-(if: $examinedWallet is true)[
-[[El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]]
-]
+(if: $examinedWallet is true)[ [[─El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]] ]
 (elseif: $dateLocation is &quot;Sitio&quot;)[
-[[Ya. Fuimos a ver a “1919”. Tu banda favorita.|2.3.4.2.1. LA BANDA “1919”]]
-]
-(else:)[[[Sí, recuerdo algo. ¿Fuimos a ver a una banda, tal vez?|2.3.4.2. TU BANDA FAVORITA]]
-]
+[[─Ya. Fuimos a ver a “1919”. Tu banda favorita.|2.3.4.2.1. LA BANDA “1919”]] ]
+(else:)[[[─Sí, recuerdo algo. ¿Fuimos a ver a una banda, tal vez?|2.3.4.2. TU BANDA FAVORITA]] ]
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que hiciste...**]
 (set: $puntosCarlos to $puntosCarlos - 1)
@@ -1073,9 +1031,9 @@ Modo de prueba:
 -si has escuchado a Carlos en El Sitio- [[Ya. Fuimos a ver a “1919”. Tu banda favorita.|2.3.4.2.1. LA BANDA “1919”]] : ir a 2.3.4.2.1.
 -si no has mirado la billetera ni has escuchado a Carlos en El Sitio- [[Sí, recuerdo algo. ¿Fuimos a ver a una banda, tal vez?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.</tw-passagedata><tw-passagedata pid="98" name="2.3.4.2. TU BANDA FAVORITA" tags="" position="3697,3336" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *Bueno, la banda principal no es mi favorita. Pero sí era una de rock. A que no recuerdas su nombre.* (if: $itemWalletisCarried)[*Te di una boleta de recuerdo, ¿te acuerdas?*](else:)[*El año de la última pandemia.*]
 
-[[1349|2.3.4.2.A]]
-[[1653|2.3.4.2.B]]
-[[1919|2.3.4.2.1. LA BANDA “1919”]]
+[[─1349|2.3.4.2.A]]
+[[─1653|2.3.4.2.B]]
+[[─1919|2.3.4.2.1. LA BANDA “1919”]]
 
 (if: $examinedWallet is true)
 [[[Claro. Dame un momento para recordar.|Mirar billetera]]]
@@ -1095,17 +1053,15 @@ Modo de prueba:
 -si no tienes la billetera- *El año de la última peste.*
 -si has mirado la billetera- Claro. Dame un momento para recordar. (+opciones y “mirar billetera”)
 -si no has mirado la billetera- Ah, sí. A ver miro…</tw-passagedata><tw-passagedata pid="99" name="2.3.4.2.1. LA BANDA “1919”" tags="" position="3874,3335" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡1919! Bueno, no me gusta esa música tan pesada. Pero hice el esfuerzo por acompañarte. De resto, lo olvidé completamente.*]
-(css: &quot;color: green;&quot;)[**(+1 punto Carlos por recordar rápidamente el nombre de la banda).**]
+(css: &quot;color: green;&quot;)[**(+1 punto con Carlos por recordar rápidamente el nombre de la banda).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Ok, esa es la banda principal, pero a la que fui a ver fue la telonera. La de tributo noventera. En fin...
 
 No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al comienzo no lo creía. Pero luego me convenciste. Quiero asegurarme que es real lo que sientes por mí.*
 
-[[No, no es real. Nada de esto es real. Te pido que nos olvidemos de todo. No estaba en mí. Disculpa.|2.3.5.A]]
-
-[[Disculpa, pero no sé de lo que hablas. Para ya con todo esto, te lo pido.|2.3.5.B]]
-
-[[Aún no creo que hice todo eso. Creo que todo esto es un malentendido. Te pido por favor que me disculpes.|2.3.5.C]] 
+[[─No, no es real. Nada de esto es real. Te pido que nos olvidemos de todo. No estaba en mí. Disculpa.|2.3.5.A]]
+[[─Disculpa, pero no sé de lo que hablas. Para ya con todo esto, te lo pido.|2.3.5.B]]
+[[─Aún no creo que hice todo eso. Creo que todo esto es un malentendido. Te pido por favor que me disculpes.|2.3.5.C]] 
 
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="100" name="2.3.5.2.3. COME EN CAFÉ TINTA" tags="" position="4733,3784" size="100,100">Has comido algo, pero pierdes cinco minutos valiosos. 
@@ -1119,24 +1075,14 @@ No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al 
 
 (set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="102" name="2.4. EL TELÉFONO DE CARLOS" tags="" position="4660,4112" size="100,100">(set: $phoneCodeGuess to &quot;&quot;)
 
-(if: $segundosReloj &lt; 700)[
-Tienes a la mano tu billetera y teléfono y también el teléfono de Carlos.  ¿Qué quieres hacer?
+(if: $segundosReloj &lt; 700)[Tienes a la mano tu billetera y teléfono y también el teléfono de Carlos. ¿Qué quieres hacer?]
 
-	(if: $segundosReloj &gt; 500)[
-¡Ojo! ¡Carlos debe estar por llegar!  Date prisa.
-	]
+(if: $segundosReloj &gt; 500)[¡Ojo! ¡Carlos debe estar por llegar! Date prisa.]
 
-[[Mirar billetera]]
+[[Mira la billetera|Mirar billetera]]
 [[Ingresa la clave del teléfono de Carlos|2.4.1 Ingresa la clave del teléfono de Carlos]]
-  (if: $textedManuela is true or $calledManuela is true or $dateLocation is &quot;Sitio&quot;)[
-  [[Busca información en tu teléfono|2.4.2 Busca información en tu teléfono]]
-  ](else:)[
-  [[Busca información en tu teléfono|2.4.2.A Manuela te llama]]
-  ]
-]
-(else:)[
-¡Puedo ver que Carlos ya viene!
-]
+(if: $textedManuela is true or $calledManuela is true or $dateLocation is &quot;Sitio&quot;)[ [[Busca información en tu teléfono|2.4.2 Busca información en tu teléfono]] ](else:)[ [[Busca información en tu teléfono|2.4.2.A Manuela te llama]] ]
+(else:)[ ¡Puedo ver que Carlos ya viene! ]
 [[Habla con Carlos|2.4.3 Ríndete]]
  
 (set: $segundosReloj to $segundosReloj + 5)
@@ -1157,44 +1103,41 @@ Mike”.*
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás diciendo que me vaya? ¿O que entre a mi propio riesgo?*
 
-[[Pues vete si quieres. Nadie te obligó a venir.|2.2.1.2. CARLOS SE VA DE EL SITIO]]
+[[─Pues vete si quieres. Nadie te obligó a venir.|2.2.1.2. CARLOS SE VA DE EL SITIO]]
 
-[[No, dale, entremos y hablemos.|2.2.1.1. VES A MANUELA EN EL SITIO]]
+[[─No, dale, entremos y hablemos.|2.2.1.1. VES A MANUELA EN EL SITIO]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="105" name="2.2.1.B" tags="" position="1713,2717" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Carlos por ser honesto con él).**] 
 
-(css: &quot;color: white;&quot;)[**Carlos:**]*Me gusta tu confianza. Me siento más seguro contigo, cariño. Sigamos.* 
+(css: &quot;color: white;&quot;)[**Carlos:**] *Me gusta tu confianza. Me siento más seguro contigo, cariño. Sigamos.* 
 
 [[Entra a El Sitio.|2.2.2.1. ENFRENTA CON CARLOS A MANUELA CON CONFIANZA]] 
 
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="106" name="2.2.1.C" tags="" position="1900,2718" size="100,100">(css: &quot;color: red;&quot;)[**(+1 punto Carlos por bromear con él).**]
 
-(css: &quot;color: white;&quot;)[**Carlos:**] *Ja,... ja,... ja. Sí, qué gracia. Búrlate. Tu comedia es también ordinaria. Buena para El Sitio. ¿Vamos?*
+(css: &quot;color: white;&quot;)[**Carlos:**] *Ja,... ja,... ja. Sí, qué gracia. Búrlate. Tu comedia es también ordinaria. Justo para El Sitio. ¿Vamos?*
 
 [[Entra a El Sitio|2.2.1.1. VES A MANUELA EN EL SITIO]]
 
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="107" name="2.3.5.2.C" tags="" position="4742,3503" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por mostrar más lealtad a Manuela.)**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="107" name="2.3.5.2.C" tags="" position="4748,3495" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por mostrar más lealtad a Manuela).**]
 (css: &quot;color: red;&quot;)[**(-1 punto por mostrar menos lealtad a Carlos).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Un pacto? Bien, pues tengo que aclarar eso con ella ahora mismo. Debiste decírmelo antes de que me ilusionaras anoche.*
 
 Carlos toma su mochila, se va al baño y llama a Manuela.
 
-(if: $dateLocation is &quot;Sitio&quot; or $puntosManuela &lt;=4)[
-Sabes que ahora no tienes nada que hacer. Has perdido tu amistad con él. Pero como si fuera poco, has perdido la confianza de su hermana por no haberle dicho nada sobre el asunto. Nunca sabrás qué pasó anoche. 
+(if: $dateLocation is &quot;Sitio&quot; or $puntosManuela &lt;=4)[Sabes que ahora no tienes nada que hacer. Has perdido tu amistad con él. Pero como si fuera poco, has perdido la confianza de su hermana por no haberle dicho nada sobre el asunto. Nunca sabrás qué pasó anoche. 
 
 A menos que lo intentes de nuevo.]
 
-(else:)[
-Aunque Carlos trata de poner a su hermana en tu contra, ella aún confía en ti porque has sido firme con el pacto que has hecho. También habías discutido antes sobre el asunto, así que se considera superado el asunto.
+(else:)[Aunque Carlos trata de poner a su hermana en tu contra, ella aún confía en ti porque has sido firme con el pacto que has hecho. También habías discutido antes sobre el asunto, así que se considera superado el asunto.
 
 ¿Quieres saber en otra posibilidad de lo que pasó anoche?]
 
 [[Reiniciar el juego|Parte 2]] 
-
 
 (set: $puntosManuela to $puntosManuela + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
@@ -1204,14 +1147,9 @@ Aunque Carlos trata de poner a su hermana en tu contra, ella aún confía en ti 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Así son las cosas, ¿no? Yo no sé cómo son las cosas contigo. En serio. Tengo demasiado en la cabeza ahora mismo. Voy al baño. Ya vuelvo.*
 
 (if: ($puntosCarlos + $puntosCarisma) &gt;= 11)[
-	
-[[Bien, te espero acá. |Final con Manuela Feliz]]
-]
+[[─Bien, te espero acá.|Final con Manuela Feliz]] ]
 (elseif: ($puntosCarlos + $puntosCarisma) &gt;= 7)[
-[[Ah vale, te espero.|2.3.5.2.2. CARLOS DEJA SU MOCHILA EN LA MESA]]
-](else:)[
-[[Ah vale, tómate tu tiempo.|2.3.5.2.1. CARLOS SE LLEVA LA MOCHILA AL BAÑO]] 
-]
+[[─Ah vale, te espero.|2.3.5.2.2. CARLOS DEJA SU MOCHILA EN LA MESA]] ](else:)[ [[─Ah vale, tómate tu tiempo.|2.3.5.2.1. CARLOS SE LLEVA LA MOCHILA AL BAÑO]] ]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
@@ -1227,90 +1165,72 @@ si menos
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Qué sospecha? ¿Que estuviste conmigo anoche? Bueno, pues eso ya lo sabe. ¿Y qué con él, acaso?*
 
-[[Hicimos un pacto, Carlos. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]] 
-
-[[Hicimos un pacto, Carlos. Y mi amistad con ella es más importante.|2.3.5.2.C]]
-
-[[Hicimos un pacto, Carlos. Pero no me importa, quiero estar contigo.|2.3.6. Pre-obsesión con Carlos]]
-
+[[─Hicimos un pacto, Carlos. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]] 
+[[─Hicimos un pacto, Carlos. Y mi amistad con ella es más importante.|2.3.5.2.C]]
+[[─Hicimos un pacto, Carlos. Pero no me importa, quiero estar contigo.|2.3.6. Pre-obsesión con Carlos]]
 
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="110" name="2.1.5.1.A" tags="" position="2318,3082" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *¿No sabes nada? ¿No recuerdas nada? Eso es curioso porque ni siquiera mi hermano me contesta las llamadas desde anoche, precisamente.* 
 
 (css: &quot;color: red;&quot;) [**(-1 punto por contestar sin sinceridad).**]
 
-[[Debe ser que Carlos está con alguien, o algo. Como buena persona que soy, es claro que no sería capaz de traicionar tu confianza hablando con él.|2.1.5.2.A]]
-
-[[¿Carlos? No, si ni siquiera le hablo, como me dijiste. ¡Palabra que sí!|2.1.5.2.B]]
-
-[[Ah no, eso no. Segurísimo que Carlos no estaba ahí conmigo. Imagínate el problema. ¡Yo no sería capaz!|2.1.5.2.B]]
+[[─Debe ser que Carlos está con alguien, o algo. Como buena persona que soy, es claro que no sería capaz de traicionar tu confianza hablando con él.|2.1.5.2.A]]
+[[─¿Carlos? No, si ni siquiera le hablo, como me dijiste. ¡Palabra que sí!|2.1.5.2.B]]
+[[─Ah no, eso no. Segurísimo que Carlos no estaba ahí conmigo. Imagínate el problema. ¡Yo no sería capaz!|2.1.5.2.B]]
 
 (set: $puntosManuela to $puntosManuela - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="111" name="2.1.5.1.B" tags="" position="2549,3082" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *Sí que te emborrachaste. Hasta se te nota en la cara de idiota de siempre que llevas, jajaja. ¿Y de casualidad no estaba Carlos por ahí cerca?* 
 
 (css: &quot;color: green;&quot;)[**(+1 punto por contestar honestamente).**] 
 
-[[Debe ser que Carlos está con alguna amiga, o algo. De ninguna manera sería capaz de traicionar tu confianza hablando con ella.|2.1.5.2.A]]
-
-[[¿Carlos? No, si ni siquiera le hablo, como me dijiste. ¡Palabra que sí!|2.1.5.2.B]]
-
-[[Ah no, eso no. Segurísimo que Carlos no estaba ahí conmigo. Imagínate el problema. ¡Yo no sería capaz!|2.1.5.2.B]]
+[[─Debe ser que Carlos está con alguna amiga, o algo. De ninguna manera sería capaz de traicionar tu confianza hablando con ella.|2.1.5.2.A]]
+[[─¿Carlos? No, si ni siquiera le hablo, como me dijiste. ¡Palabra que sí!|2.1.5.2.B]]
+[[─Ah no, eso no. Segurísimo que Carlos no estaba ahí conmigo. Imagínate el problema. ¡Yo no sería capaz!|2.1.5.2.B]]
 
 (set: $puntosManuela to $puntosManuela + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="112" name="2.1.5.1.C" tags="" position="2757,3081" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *Ya, claro. ¿Y qué me hace pensar que no estuviste con él anoche si precisamente no recuerdas nada de anoche?* (css: &quot;color: red;&quot;)[**(-1 punto por decir lo que no debías).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="112" name="2.1.5.1.C" tags="" position="2757,3081" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *Ya, claro. ¿Y qué me hace pensar que no estuviste con él anoche si precisamente no recuerdas nada de anoche?* 
+(css: &quot;color: red;&quot;)[**(-1 punto por decir lo que no debías).**]
 
 [[─Debe ser que Carlos está con alguna amiga, o algo. Como buen amigo que soy, es claro que ni borracho sería capaz de traicionar tu confianza hablando con él.|2.1.5.2.A]]
-
 [[─¿Carlos? No, si ni siquiera le hablo, como me dijiste. ¡Palabra que sí!|2.1.5.2.B]]
-
 [[─Ah no, eso no. Segurísimo que Carlos no estaba ahí conmigo. Imagínate el problema. Borracho, sí. Pero mentiroso, no. ¡Yo no sería capaz!|2.1.5.2.B]] 
 
 (set: $puntosManuela to $puntosManuela - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="113" name="2.1.1.1.A" tags="" position="2250,2796" size="100,100">(css: &quot;color: green;&quot;)[**+1 punto por ofrecerle algo a Manuela.**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="113" name="2.1.1.1.A" tags="" position="2250,2796" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por ofrecerle algo a Manuela).**]
 (css: &quot;color: orange;&quot;)[**Manuela:**] *Gracias. ¿Y eso dónde estabas anoche?* 
 
-[[Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] 
-
-[[Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] 
-
-[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] 
+[[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] 
+[[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] 
+[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] 
 
 (set: $puntosManuela to $puntosManuela + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="114" name="2.1.1.1.B" tags="" position="2409,2713" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *Andas siempre por ahí. Sobre todo anoche.* 
 
-[[Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] 
+[[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] 
+[[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] 
+[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] </tw-passagedata><tw-passagedata pid="115" name="2.1.1.1.C" tags="" position="2584,2679" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!* (css: &quot;color: red;&quot;)[**(-1 punto por no llamar a Manuela).**]
 
-[[Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] 
-
-[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] </tw-passagedata><tw-passagedata pid="115" name="2.1.1.1.C" tags="" position="2584,2679" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!* (css: &quot;color: red;&quot;)[**-1 punto por no llamar a Manuela**]
-
-[[Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] 
-
-[[Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] 
-
-[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] 
+[[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] 
+[[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] 
+[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] 
 
 (set: $puntosManuela to $puntosManuela - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="116" name="2.1.5.2.A" tags="" position="2418,3374" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por respetar lo que acordaste con Manuela).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="116" name="2.1.5.2.A" tags="" position="2420,3364" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por respetar lo que acordaste con Manuela).**]
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *Bueno, menos mal. Y si no estaba contigo, ¿cómo es que vienes aquí con tanto afán en taxi y todo? ¿Con quién te vas a ver? ¿Tienes una cita? ¿Estás ocultando algo? ¡Ah! ¿Es que te vas a ver con él hoy? Llámalo ahora, a ver qué te dice.* 
 
-[[Yo no vine aquí a que me trates de esa manera. ¡A mí me respetas!|2.1.5.3.1]] 
-
-[[No, no es necesario. Porque aquí vine a obtener respuestas sobre lo que pasó anoche. E insisto en que no estuve con tu hermano anoche, ni nunca.|2.1.5.3. MANUELA PRUEBA TU VALENTÍA]]
-
-[[Está bien. Quien nada debe nada teme.|2.1.5.3.2. LLAMADA DE EMERGENCIA A CARLOS]]
+[[─Yo no vine aquí a que me trates de esa manera. ¡A mí me respetas!|2.1.5.3.1]] 
+[[─No, no es necesario. Porque aquí vine a obtener respuestas sobre lo que pasó anoche. E insisto en que no estuve con tu hermano anoche, ni nunca.|2.1.5.3. MANUELA PRUEBA TU VALENTÍA]]
+[[─Está bien. Quien nada debe nada teme.|2.1.5.3.2. LLAMADA DE EMERGENCIA A CARLOS]]
 
 (set: $puntosManuela to $puntosManuela + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="117" name="2.1.5.2.B" tags="" position="2655,3363" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por parecer que hablas con sinceridad, aunque no para Manuela).**] 
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *No, totalmente. Tú y tu borrachera son lo más creíble del mundo. Hasta viniendo así en taxi con gran afán. ¡Llama a Carlos ahora mismo!* 
 
-[[Yo no vine aquí a que me trates de esa manera. ¡A mí me respetas!|2.1.5.3.1]] 
-
-[[No, no es necesario. Porque aquí vine a obtener respuestas sobre lo que pasó anoche. E insisto en que no estuve con tu hermano anoche, ni nunca.|2.1.5.3. MANUELA PRUEBA TU VALENTÍA]]
-
-[[Está bien. Quien nada debe nada teme.|2.1.5.3.2. LLAMADA DE EMERGENCIA A CARLOS]] 
+[[─Yo no vine aquí a que me trates de esa manera. ¡A mí me respetas!|2.1.5.3.1]] 
+[[─No, no es necesario. Porque aquí vine a obtener respuestas sobre lo que pasó anoche. E insisto en que no estuve con tu hermano anoche, ni nunca.|2.1.5.3. MANUELA PRUEBA TU VALENTÍA]]
+[[─Está bien. Quien nada debe nada teme.|2.1.5.3.2. LLAMADA DE EMERGENCIA A CARLOS]] 
 
 (set: $puntosManuela to $puntosManuela - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="118" name="2.1.5.3.1" tags="" position="2215,3235" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder de manera poco delicada).**]
@@ -1336,11 +1256,9 @@ Aunque Manuela está muy disgustada contigo, agradece que no te ha querido matar
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, ¿cómo estás? Estaba en el concierto de mi banda favorita, esa de rock pesado. Y luego me fui a la casa de una amiga. Por eso no llegué a casa anoche. Perdón, hermanita.* 
 
-[[¡Qué bien! Genial que hayas pasado una buena noche en tu concierto.|2.1.3.5.2.1]] 
-
-[[Vale, Carlos. Sólo era eso. Me da pena contigo hacerte pasar por estas.|2.1.3.5.2.2]]
-
-[[Disculpa ponerte en estas, pero entiendes que tu hermana está preocupada. Nada más eso.|2.1.3.5.2.3]]
+[[─¡Qué bien! Genial que hayas pasado una buena noche en tu concierto.|2.1.3.5.2.1]] 
+[[─Vale, Carlos. Sólo era eso. Me da pena contigo hacerte pasar por estas.|2.1.3.5.2.2]]
+[[─Disculpa ponerte en estas, pero entiendes que tu hermana está preocupada. Nada más eso.|2.1.3.5.2.3]]
 
 (set: $puntosManuela to $puntosManuela - 1)
 (set: $puntosCarlos to $puntosCarlos + 1)
@@ -1349,11 +1267,9 @@ Aunque Manuela está muy disgustada contigo, agradece que no te ha querido matar
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, ¿cómo estás? Estaba en el concierto de mi banda favorita, esa de rock pesado. Y luego me fui a la casa de una amiga. Por eso no llegué a casa anoche. Perdón, hermanita.* 
 
-[[¡Qué bien! Me hace feliz que hayas pasado una buena noche en tu concierto.|2.1.3.5.2.1]]
-
-[[Vale, Carlos. Sólo era eso. Me da pena contigo hacerte pasar por estas.|2.1.3.5.2.2]]
-
-[[Disculpa ponerte en estas, pero entiendes que tu hermana está preocupada. Nada más eso.|2.1.3.5.2.3]]
+[[─¡Qué bien! Me hace feliz que hayas pasado una buena noche en tu concierto.|2.1.3.5.2.1]]
+[[─Vale, Carlos. Sólo era eso. Me da pena contigo hacerte pasar por estas.|2.1.3.5.2.2]]
+[[─Disculpa ponerte en estas, pero entiendes que tu hermana está preocupada. Nada más eso.|2.1.3.5.2.3]]
 
 (set: $puntosManuela to $puntosManuela + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="122" name="2.1.3.5.2.1" tags="" position="2221,3677" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser demasiado complaciente. Incluso Manuela sabe que detestas esa música).**]
@@ -1362,13 +1278,12 @@ Aunque Manuela está muy disgustada contigo, agradece que no te ha querido matar
 
 Eso te pasa por demostrar alegría por alguien a quien prometiste no amar.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="123" name="2.1.3.5.2.2" tags="" position="2224,3819" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser muy diplomático con Carlos cuando se supone ya no hablas con él).**] [puntos Manuela]
+[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="123" name="2.1.3.5.2.2" tags="" position="2224,3819" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser muy diplomático con Carlos cuando se supone ya no hablas con él).**]
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *Sé que eres muy amable con la gente. Pero recuerda quién está realmente preocupado por ella ahora.* 
 
-[[Discúlpame, Manuela. Tienes toda la razón. Ahora, ¿sabes qué pasó anoche?|2.1.3.5.2.4]]
-
-[[Lo sé bien, Manuela. Perdón. No quiero quitarte mucho tiempo. ¿Sabes qué pasó anoche?|2.1.3.5.2.5]]
+[[─Discúlpame, Manuela. Tienes toda la razón. Ahora, ¿sabes qué pasó anoche?|2.1.3.5.2.4]]
+[[─Lo sé bien, Manuela. Perdón. No quiero quitarte mucho tiempo. ¿Sabes qué pasó anoche?|2.1.3.5.2.5]]
 
 (set: $puntosManuela to $puntosManuela - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="124" name="2.1.3.5.2.3" tags="" position="2440,3834" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por recordar que para ti en ese momento Manuela es más importante que Carlos).**]
@@ -1377,63 +1292,59 @@ Eso te pasa por demostrar alegría por alguien a quien prometiste no amar.
 
 Más bien, ¿por qué no te vas a descansar a la casa? A lo mejor se te viene algo a la cabeza.* 
 
-[[¿Sabes que sí? Te pido disculpas de nuevo. Adiós, querida.|2.1.5.5.6. MANUELA OFRECE ACOMPAÑARTE]]
-
-[[Creo que puedo averiguar más en otra parte. A lo mejor encuentre respuestas.|2.1.1.5.5.6.2. MANUELA NO TE ACOMPAÑA]]
+[[─¿Sabes que sí? Te pido disculpas de nuevo. Adiós, querida.|2.1.5.5.6. MANUELA OFRECE ACOMPAÑARTE]]
+[[─Creo que puedo averiguar más en otra parte. A lo mejor encuentre respuestas.|2.1.1.5.5.6.2. MANUELA NO TE ACOMPAÑA]]
 
 (set: $puntosManuela to $puntosManuela + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="125" name="2.1.3.5.2.4" tags="" position="2376,4107" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser demasiado directo con Manuela).**] 
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *¡No tengo ni la más mínima idea! Eso sí. Asegúrate que la próxima vez pienses antes de tomar. Incluso te evitas perderte. Como ahora.* 
 
-[[Me da mucha pena contigo, querida. Más bien me voy a mi casa a descansar.|2.1.5.5.6. MANUELA OFRECE ACOMPAÑARTE]] 
-
-[[Vale. Disculpa todas las molestias, Manuela. Nos vemos.|2.1.1.5.5.6.2. MANUELA NO TE ACOMPAÑA]] 
+[[─Me da mucha pena contigo, querida. Más bien me voy a mi casa a descansar.|2.1.5.5.6. MANUELA OFRECE ACOMPAÑARTE]] 
+[[─Vale. Disculpa todas las molestias, Manuela. Nos vemos.|2.1.1.5.5.6.2. MANUELA NO TE ACOMPAÑA]] 
 
 (set: $puntosManuela to $puntosManuela - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="126" name="2.1.3.5.2.5" tags="" position="2641,4153" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por saber preguntar adecuadamente luego de tan incómoda situación).**] 
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *No, la verdad, no. Me da curiosidad que vengas así como tan de afán a hablarme. Creo que estás desvariando. Más bien devuélvete a tu casa, y descansa. Hablamos luego.* 
 
-[[Vale. Disculpa todas las molestias, Manuela. Nos vemos.|2.1.1.5.5.6.2. MANUELA NO TE ACOMPAÑA]] 
+[[─Vale. Disculpa todas las molestias, Manuela. Nos vemos.|2.1.1.5.5.6.2. MANUELA NO TE ACOMPAÑA]] 
 
 (set: $puntosManuela to $puntosManuela + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="127" name="2.1.5.A" tags="" position="2788,2724" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *¿Y tú qué? ¡Buenas! ¿Dónde estabas anoche?* 
 
-[[Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]]
+[[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]]
 
-[[Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]]
+[[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]]
 
-[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]</tw-passagedata><tw-passagedata pid="128" name="2.1.5.B" tags="" position="2859,2851" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *Andas siempre por ahí. Sobre todo anoche.* 
+[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]</tw-passagedata><tw-passagedata pid="128" name="2.1.5.B" tags="" position="2861,2850" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *Andas siempre por ahí. Sobre todo anoche.* 
 
-[[Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]]
+[[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]]
 
-[[Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]]
+[[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]]
 
-[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]</tw-passagedata><tw-passagedata pid="129" name="2.1.5.C" tags="" position="2986,2984" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!*
+[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]</tw-passagedata><tw-passagedata pid="129" name="2.1.5.C" tags="" position="2986,2984" size="100,100">(css: &quot;color: orange;&quot;)[**Manuela:**] *¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!*
 
 (css: &quot;color: red;&quot;)[**(-1 punto por no haber llamado a Manuela).**]
 
-[[Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]]
-
-[[Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]]
-
-[[Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]
+[[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]]
+[[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]]
+[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]
 
 (set: $puntosManuela to $puntosManuela - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="130" name="2.1.4. TAXI CON DINERO DE MANUELA" tags="" position="3138,2780" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Gracias, querida. Te debo una.*] 
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="130" name="2.1.4. TAXI CON DINERO DE MANUELA" tags="" position="3137,2782" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Gracias, querida. Te debo una.*] 
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *Me debes varias ya.* 
 
-(css: &quot;color: #187FF5;&quot;)[*Tienes razón. Te las pago todas pronto.* ]
+(css: &quot;color: #187FF5;&quot;)[*Tienes razón. Te las pago todas pronto.*]
 (if: $itemWalletisCarried is true) [
-[[Ven, siéntate, que te invito a tomar lo que quieras.|2.1.5.A]]
+[[─Ven, siéntate, que te invito a tomar lo que quieras.|2.1.5.A]]
 ]
 (if: $textedManuela is true) [
-[[¿Viste mi mensaje?|2.1.5.B]]
+[[─¿Viste mi mensaje?|2.1.5.B]]
 ]
 (if: $calledManuela is false) [
-[[Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.5.C]]
+[[─Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.5.C]]
 ]
 (else:)[
   (css: &quot;color: #187FF5;&quot;)[*Mira, vine a preguntarte algo...*]
@@ -1446,10 +1357,10 @@ Modo de prueba:
 [[¿Viste mi mensaje?|2.1.5.B]] -si le dejaste mensaje a Manuela.
 (B) 
 [[Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.5.C]] -si no llamaste a Manuela- (C) </tw-passagedata><tw-passagedata pid="131" name="2.3.4.2.A" tags="" position="3531,3556" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *¿En serio? En realidad estás mal. Bien mal. Te doy otra oportunidad.*
-(css: &quot;color: red;&quot;)[**(-1 punto por no recordar su banda favorita)**]
+(css: &quot;color: red;&quot;)[**(-1 punto por no recordar su banda favorita).**]
 
-[[1653|BANDA SÚPER INCORRECTA]]  
-[[1919|2.3.4.2.1. LA BANDA “1919”]] 
+[[─1653|BANDA SÚPER INCORRECTA]]  
+[[─1919|2.3.4.2.1. LA BANDA “1919”]] 
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
@@ -1457,8 +1368,8 @@ Modo de prueba:
 (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y se hace difícil descubrir que pasó anoche.**]]</tw-passagedata><tw-passagedata pid="132" name="2.3.4.2.B" tags="" position="3757,3538" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *¿En serio? En realidad estás mal, querido. Bien mal. Te doy otra oportunidad.*
 (css: &quot;color: red;&quot;)[**(-1 punto por no recordar su banda favorita).**]
 
-[[1349|BANDA SÚPER INCORRECTA]]
-[[1919|2.3.4.2.1. LA BANDA “1919”]] 
+[[─1349|BANDA SÚPER INCORRECTA]]
+[[─1919|2.3.4.2.1. LA BANDA “1919”]] 
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
@@ -1473,9 +1384,9 @@ Bueno, la verdad iba a ver a los teloneros, la banda tributo noventera. En fin..
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Ok. No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al comienzo no lo creía. Pero luego me convenciste. Quiero asegurarme que es real lo que sientes por mí.*
 
-[[No, no es real. Nada de esto es real. Te pido que nos olvidemos de todo. No estaba en mí. Disculpa.|2.3.5.A]]
-[[Disculpa, pero no sé de lo que hablas. Para ya con todo esto, te lo pido.|2.3.5.B]]
-[[Aún no creo que hice todo eso. Creo que todo esto es un malentendido. Te pido por favor que me disculpes.|2.3.5.C]]
+[[─No, no es real. Nada de esto es real. Te pido que nos olvidemos de todo. No estaba en mí. Disculpa.|2.3.5.A]]
+[[─Disculpa, pero no sé de lo que hablas. Para ya con todo esto, te lo pido.|2.3.5.B]]
+[[─Aún no creo que hice todo eso. Creo que todo esto es un malentendido. Te pido por favor que me disculpes.|2.3.5.C]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
@@ -1494,35 +1405,29 @@ Carlos sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con é
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *No tienes nada de qué disculparte. ¿Por qué hay que parar? ¿A qué le tienes miedo?*
 
-[[No es a qué sino a quién le tengo miedo. A Manuela, tu hermana. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]]
-
-[[¿No lo sabes acaso? Manuela no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]]
+[[─No es a qué sino a quién le tengo miedo. A Manuela, tu hermana. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]]
+[[─¿No lo sabes acaso? Manuela no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
 (if: $puntosCarlos + $puntosCarisma &lt;= 9)[
 (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y tal vez tendrás que hacer algo para descubrir por tus propios medios qué pasó anoche.**]
-]</tw-passagedata><tw-passagedata pid="136" name="2.3.5.C" tags="" position="4340,3374" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por ser vulnerable disculpándote).**]
+]</tw-passagedata><tw-passagedata pid="136" name="2.3.5.C" tags="" position="4346,3370" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por ser vulnerable disculpándote).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *No tienes nada de qué disculparte. ¿Por qué hay que parar? ¿A qué le tienes miedo?*
 
-[[No es a qué sino a quién le tengo miedo. A Manuela, tu hermana. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]] 
-
-[[¿No lo sabes acaso? Manuela no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]]
+[[─No es a qué sino a quién le tengo miedo. A Manuela, tu hermana. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]] 
+[[─¿No lo sabes acaso? Manuela no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]]
 
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
 (if: $puntosCarlos + $puntosCarisma &lt;= 9)[
-(css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y tal vez tendrás que hacer algo para descubrir por tus propios medios qué pasó anoche.**]
-]</tw-passagedata><tw-passagedata pid="137" name="2.3.5.1.A" tags="" position="4182,3663" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por decirle que temes la reacción de Manuela).**]  
+(css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Carlos y tal vez tendrás que hacer algo para descubrir por tus propios medios qué pasó anoche.**] ]</tw-passagedata><tw-passagedata pid="137" name="2.3.5.1.A" tags="" position="4182,3663" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por decirle que temes la reacción de Manuela).**]  
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Miedo de Manuela? ¡Ja! Si eso es así, yo hablo con ella, y ya. ¿Cuál es el problema?*
 
-(if: $dateLocation is &quot;Sitio&quot;)[
-[[Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] 
-]
-[[Hicimos un pacto, Carlos. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]] 
-[[Hicimos un pacto, Carlos. Y mi amistad con ella es más importante de lo que haya pasado entre tú y yo.|2.3.5.2.C]] 
+(if: $dateLocation is &quot;Sitio&quot;)[ [[─Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] ] [[─Hicimos un pacto, Carlos. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]] 
+[[─Hicimos un pacto, Carlos. Y mi amistad con ella es más importante de lo que haya pasado entre tú y yo.|2.3.5.2.C]] 
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
@@ -1532,21 +1437,15 @@ Carlos sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con é
 
 
 
-
-
-
 Modo de prueba:
 - si fuiste al sitio
-[[Ya viste cómo te habló. Está furioso, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] -A-</tw-passagedata><tw-passagedata pid="138" name="2.3.5.1.B" tags="" position="4303,3855" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por establecer con firmeza la razón de tu visita a Carlos.)**]
+[[Ya viste cómo te habló. Está furioso, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] -A-</tw-passagedata><tw-passagedata pid="138" name="2.3.5.1.B" tags="" position="4303,3855" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por establecer con firmeza la razón de tu visita a Carlos).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Le tienes miedo a Manuela? Tómalo con calma, que si yo hablo con ella, estoy seguro que entenderá.*
 
-(if: $dateLocation is &quot;Sitio&quot;)[
-[[Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]]
-]
-[[Ella y yo hicimos un pacto, Carlos. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]]
-[[Ella y yo hicimos un pacto, Carlos. Y mi amistad con ella es más importante de lo que haya pasado entre tú y yo.|2.3.5.2.C]]
-
+(if: $dateLocation is &quot;Sitio&quot;)[ [[─Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] ]
+[[─Ella y yo hicimos un pacto, Carlos. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]]
+[[─Ella y yo hicimos un pacto, Carlos. Y mi amistad con ella es más importante de lo que haya pasado entre tú y yo.|2.3.5.2.C]]
 
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
@@ -1555,18 +1454,14 @@ Modo de prueba:
 
 Modo de prueba:
 -si fuiste al Sitio
-[[Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] -A-</tw-passagedata><tw-passagedata pid="139" name="2.3.5.2.2. CARLOS DEJA SU MOCHILA EN LA MESA" tags="" position="4519,3678" size="100,100">Carlos está muy confundido, y de la prisa que tenía para aclarar su mente en el baño, dejó su mochila en la mesa.
+[[Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] -A-</tw-passagedata><tw-passagedata pid="139" name="2.3.5.2.2. CARLOS DEJA SU MOCHILA EN LA MESA" tags="" position="4553,3703" size="100,100">Carlos está muy confundido, y de la prisa que tenía para aclarar su mente en el baño, dejó su mochila en la mesa.
 
 (if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
-[[Toma la mochila.|2.3.5.2.2.1. TOMA LA MOCHILA]]
-]
+[[Toma la mochila.|2.3.5.2.2.1. TOMA LA MOCHILA]] ]
 
-(elseif: $hasEatenSandwich)[
-[[Toma la mochila y ve al baño.|2.3.5.2.2.1. TOMA LA MOCHILA]] 
-(set: $segundosReloj to $segundosReloj + 50)]
+(elseif: $hasEatenSandwich)[ [[Toma la mochila y ve al baño.|2.3.5.2.2.1. TOMA LA MOCHILA]] (set: $segundosReloj to $segundosReloj + 50)]
 
-(else:)[
-[[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]] (set: $segundosReloj to $segundosReloj + 30)] 
+(else:)[ [[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]] (set: $segundosReloj to $segundosReloj + 30) ] 
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que (no) comiste o bebiste...**]
 
@@ -1579,7 +1474,7 @@ Modo de prueba:
 
 Has perdido la oportunidad de hacerlo porque no tienes suficiente confianza con Carlos.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="141" name="2.4.1.1 Entra al teléfono de Carlos" tags="" position="4575,4843" size="100,100">Has accedido al teléfono de Carlos. ¿Qué quieres hacer?
+[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="141" name="2.4.1.1 Entra al teléfono de Carlos" tags="" position="4593,4839" size="100,100">Has accedido al teléfono de Carlos. ¿Qué quieres hacer?
 
 (if: $segundosReloj &gt; 500)[
 ¡Ojo! ¡Carlos debe estar por llegar!  Date prisa.
@@ -1588,7 +1483,7 @@ Has perdido la oportunidad de hacerlo porque no tienes suficiente confianza con 
 [[Mira sus mensajes de correo electrónico|2.4.1.4. Ver correo electrónico]]
 [[Entra a la aplicación de fotos|2.4.1.2. Entrar a la aplicación de fotos]]
 
-(set: $segundosReloj to $segundosReloj + 5)</tw-passagedata><tw-passagedata pid="142" name="2.4.1 Ingresa la clave del teléfono de Carlos" tags="" position="4599,4295" size="100,100">Es una clave numérica de cuatro dígitos. 
+(set: $segundosReloj to $segundosReloj + 5)</tw-passagedata><tw-passagedata pid="142" name="2.4.1 Ingresa la clave del teléfono de Carlos" tags="" position="4602,4289" size="100,100">Es una clave numérica de cuatro dígitos. 
 
 $phoneCodeGuess
 
@@ -1622,58 +1517,49 @@ $phoneCodeGuess
 ]
 (set: $phoneCodeGuess to &quot;&quot;)
 (set: $segundosReloj to $segundosReloj + 5)
-]</tw-passagedata><tw-passagedata pid="143" name="2.4.1.2. Entrar a la aplicación de fotos" tags="" position="4575,5065" size="100,100">Ves algunas fotos besándote con Carlos, y otras bailando muy sugestivamente con él. Y hay muchas otras de Carlos con otras personas que no te interesa ver.
+]</tw-passagedata><tw-passagedata pid="143" name="2.4.1.2. Entrar a la aplicación de fotos" tags="" position="4555,5065" size="100,100">Ves algunas fotos besándote con Carlos, y otras bailando muy sugestivamente con él. Y hay muchas otras de Carlos con otras personas que no te interesa ver.
 
 (css: &quot;color: lightblue&quot;)[*¡Ajá! Aquí está la prueba reina. Wow! Sí que no estaba en mí anoche. La verdad no recuerdo eso. Tengo que hacer algo con esto.*
 ]
 
 [[Confronta a Carlos sobre estas fotos|2.6. Confronta a Carlos sobre las fotos]]
-
 [[Borra todas las fotos del teléfono de Carlos|2.4.1.3. Borrar todas las fotos del teléfono de Carlos]]
-
 [[Borra sólo las fotos en las que apareces con Carlos|2.4.1.4. Borrar sólo las fotos en las que apareces con Carlos]]</tw-passagedata><tw-passagedata pid="144" name="2.4.1.3. Borrar todas las fotos del teléfono de Carlos" tags="" position="4385,5170" size="100,100">Has borrado todas las fotos del teléfono de Carlos. Probablemente sospechará de ti, así que debes pensar en una buena coartada. 
 
-(if: $segundosReloj &lt; 600)[
-(css: &quot;color: lightblue;&quot;)[*¡Mierda! Ahí viene Carlos.*]
+(if: $segundosReloj &lt; 600)[ [ (css: &quot;color: lightblue;&quot;)[*¡Mierda! Ahí viene Carlos.*]
 
 ¡Rápido! Apaga la pantalla del teléfono y:
 
-[[Déjalo sobre la mesa|2.4.1.6. dejas el teléfono en la mesa]]
-]
-(else:)[
-(css: &quot;color: lightblue;&quot;)[*¡Carajo! Viene Carlos. Ya se me ocurrirá algo, en caso de que sospeche de mí.*]
+[[déjalo sobre la mesa.|2.4.1.6. dejas el teléfono en la mesa]] ] ]
+(else:)[ [ (css: &quot;color: lightblue;&quot;)[*¡Carajo! Viene Carlos. Ya se me ocurrirá algo, en caso de que sospeche de mí.*]
 
 Apaga la pantalla del teléfono y: 
 
-[[Mételo en la mochila|2.4.1.5. metes el teléfono en la mochila]]
-]
-[[Escondes el teléfono y ríndete|2.4.3 Ríndete]]
+[[mételo en la mochila.|2.4.1.5. metes el teléfono en la mochila]] ]
+[[escóndelo debajo de una servilleta.|2.4.3 Ríndete]] 
 (set: $hasDeletedAllPhotos to true)</tw-passagedata><tw-passagedata pid="145" name="2.4.1.4. Borrar sólo las fotos en las que apareces con Carlos" tags="" position="4731,5166" size="100,100">Has borrado las fotos en las que apareces con Carlos. Esa es demasiada casualidad, y Carlos seguramente sospechará de ti. Debes pensar en una muy creativa coartada. 
 
 (if: $segundosReloj &lt; 600)[
 (css: &quot;color: lightblue;&quot;)[*¡Mierda! Ahí viene Carlos.*]
+
 Apaga la pantalla del teléfono y: 
 
-[[deja el teléfono en la mesa|2.4.1.6. dejas el teléfono en la mesa]])
+[[déjalo sobre la mesa.|2.4.1.6. dejas el teléfono en la mesa]])
 ]
-(else:)[
-(css: &quot;color: lightblue;&quot;)[*¡Carajo! Viene Carlos. Ya se me ocurrirá algo, en caso de que sospeche de mí.*]
+(else:)[(css: &quot;color: lightblue;&quot;)[*¡Carajo! Viene Carlos. Ya se me ocurrirá algo, en caso de que sospeche de mí.*]
+
 Apaga la pantalla del teléfono y: 
 
-[[mete el teléfono en la mochila|2.4.1.5. metes el teléfono en la mochila]])
-]
-[[Esconde el teléfono y habla con Carlos|2.4.3 Ríndete]]
-(set: $hasDeletedCarlosPhotos to true)</tw-passagedata><tw-passagedata pid="146" name="2.4.1.5. metes el teléfono en la mochila" tags="" position="4831,5365" size="100,100">(if: ($hasDeletedCarlosPhotos or $hasDeletedAllPhotos) is true)[
-Carlos vuelve resuelto a hablar contigo pero le interrumpes diciéndole con confianza: 
+[[mételo en la mochila.|2.4.1.5. metes el teléfono en la mochila]] ]
+[[escóndelo debajo de una servilleta.|2.4.3 Ríndete]]
+(set: $hasDeletedCarlosPhotos to true)</tw-passagedata><tw-passagedata pid="146" name="2.4.1.5. metes el teléfono en la mochila" tags="" position="4831,5365" size="100,100">(if: ($hasDeletedCarlosPhotos or $hasDeletedAllPhotos) is true)[Carlos vuelve resuelto a hablar contigo pero le interrumpes diciéndole con confianza: 
 
 (css: &quot;color: lightblue;&quot;)[*¿Cómo estás, Carlos?*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] Pues un poco inquieto por lo que me dijiste, la verdad. 
 
-[[Dices: &quot;¿Cómo inquieto?&quot;|2.5. El comienzo del fin]]
-](else:)[
-[[Habla con Carlos para aclarar lo de anoche.|2.4.3 Ríndete]]
-]</tw-passagedata><tw-passagedata pid="147" name="2.4.1.6. dejas el teléfono en la mesa" tags="" position="4204,5364" size="100,100">Carlos vuelve del baño desconcertado por ver su teléfono sobre la mesa. Sospecha que has tratado de espiarle, pero no tienes más remedio que admitirlo. 
+[[Dices: &quot;¿Cómo inquieto?&quot;|2.5. El comienzo del fin]] ]
+(else:)[ [[Habla con Carlos para aclarar lo de anoche.|2.4.3 Ríndete]] ]</tw-passagedata><tw-passagedata pid="147" name="2.4.1.6. dejas el teléfono en la mesa" tags="" position="4204,5364" size="100,100">Carlos vuelve del baño desconcertado por ver su teléfono sobre la mesa. Sospecha que has tratado de espiarle, pero no tienes más remedio que admitirlo. 
 
 Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con la total desconfianza de Manuela y Carlos, y tu vida se hace pedacitos. 
 
@@ -1682,7 +1568,6 @@ Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con l
 ¿Qué quieres hacer en tu teléfono?
 
 [[Mira tu correo electrónico para más pistas|2.4.2.1. Bandeja de entrada de tu correo electrónico]]
-
 [[Busca información en internet|2.4.2.2. Navegador de internet]]
 
 (set: $segundosReloj to $segundosReloj + 5)</tw-passagedata><tw-passagedata pid="149" name="2.4.2.1. Bandeja de entrada de tu correo electrónico" tags="" position="4603,4485" size="100,100">En tu correo ves que hay dos boletos para ir a ver a &quot;1919&quot; a nombre tuyo en el &quot;Poison Rock Bar&quot; ayer 30 de octubre a las 21 horas.
@@ -1695,14 +1580,12 @@ Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con l
 
 (set: $segundosReloj to $segundosReloj + 60)</tw-passagedata><tw-passagedata pid="150" name="2.4.2.2. Navegador de internet" tags="" position="4864,4488" size="100,100">(css: &quot;color: lightblue;&quot;)[*A ver. Para entrar al teléfono de Carlos necesito un número de cuatro cifras. ¿Sobre qué puede ser?*]
 
-(if: $examinedCarloswallet is true)[
-Tiene que ser relacionado con una década en específico. No sé cuál, pero puedo buscar: 
+(if: $examinedCarloswallet is true)[Tiene que ser alguna canción o banda relacionada con una década en específico. No sé cuál, pero puedo buscar: 
 
+[[“Canciones con números en su nombre&quot;|2.4.2.2.2 “Canciones con números en su nombre&quot;]]
 [[&quot;Bandas con números en su nombre”|2.4.2.2.1 “Bandas con números en su nombre”]]
-[[“Canciones con números en su nombre&quot;|2.4.2.2.2 “Canciones con números en su nombre&quot;]] 
 
 (set: $segundosReloj to $segundosReloj + 5)]
-
 
 (else:)
 [(link: &quot;Busca su fecha de cumpleaños en su perfil de Carelibro&quot;)[
@@ -1710,16 +1593,14 @@ Tiene que ser relacionado con una década en específico. No sé cuál, pero pue
 
 (set: $segundosReloj to $segundosReloj + 10) ]
 ]
+[[Aún no tengo pistas muy claras. Necesito buscar más información.|2.3.5.2.2.1. TOMA LA MOCHILA]]</tw-passagedata><tw-passagedata pid="151" name="2.4.2.1.1. Quiero preguntarle a Carlos más detalles. Esto me preocupa mucho." tags="" position="4591,4650" size="100,100">Ves que viene Carlos. Su teléfono está en tu mano. Apaga la pantalla y
 
-
-[[No puedo pensar claramente sin alguna pista clara. Necesito buscar más información.|2.3.5.2.2.1. TOMA LA MOCHILA]]</tw-passagedata><tw-passagedata pid="151" name="2.4.2.1.1. Quiero preguntarle a Carlos más detalles. Esto me preocupa mucho." tags="" position="4591,4650" size="100,100">Ves que viene Carlos. Su teléfono está en tu mano. Apaga la pantalla y
-
-[[mételo en su mochila|2.4.1.5. metes el teléfono en la mochila]]
-[[déjalo sobre la mesa|2.4.1.6. dejas el teléfono en la mesa]]
+[[mételo en su mochila.|2.4.1.5. metes el teléfono en la mochila]]
+[[déjalo sobre la mesa.|2.4.1.6. dejas el teléfono en la mesa]]
 
 (set: $segundosReloj to $segundosReloj + 5)</tw-passagedata><tw-passagedata pid="152" name="2.4.2.2.1 “Bandas con números en su nombre”" tags="" position="4748,4645" size="100,100">Encuentras la siguiente lista: 
 
-1) Doble U dos
+**1) Doble U dos
 2) Cero noventa y uno
 3) Granate cinco
 4) Los cinco hijos del hijo de Juan
@@ -1728,7 +1609,7 @@ Tiene que ser relacionado con una década en específico. No sé cuál, pero pue
 7) Treinta segundos para amarte
 8) Dos jaurías de empacar
 9) Cincuenta centavitos
-10) Cincuenta y dos abejas 
+10) Cincuenta y dos abejas** 
 
 (if: $examinedCarloswallet is true)[
 (css: &quot;color: lightblue&quot;)[*Algunas de estas bandas son de época, pero no me dice mucho. Voy a buscar ahora:*] 
@@ -1740,7 +1621,6 @@ Tiene que ser relacionado con una década en específico. No sé cuál, pero pue
 
 [[Mira la mochila de Carlos|2.3.5.2.2.1. TOMA LA MOCHILA]]
 ]
-
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que hiciste...**]
 
 (set: $segundosReloj to $segundosReloj + 120)
@@ -1753,7 +1633,7 @@ Has mirado
 [[2.3.5.2.2.2. LA BILLETERA DE CARLOS]]
 </tw-passagedata><tw-passagedata pid="153" name="2.4.2.2.2 “Canciones con números en su nombre&quot;" tags="" position="5042,4645" size="100,100">Encuentras la siguiente lista: 
 
-1) “Geny ocho seis siete cinco tres cero nueve”, Tomacito Tutono (1981)
+**1) “Geny ocho seis siete cinco tres cero nueve”, Tomacito Tutono (1981)
 2) “Dos mil trescientos cuarenta y ocho”, Prisa (1976)
 3) “La tierra de los mil bailes”, Voluntad hijo de estaca (1965)
 4) “Doce menos un minuto”, Rubiecita (1978)
@@ -1762,7 +1642,7 @@ Has mirado
 7) “1979”, Destrozando Ahuyamas (1996)
 8) “En el año de 2546”, Zaherir y Evaristo (1969)
 9) “Una pasando la 905”, Los cucarroncitos (1970)
-10) “2001 millas”, Los fingidores (1984)
+10) “2001 millas”, Los fingidores (1984)**
 
 Bueno, hay algo más de información. Pero debo saber cuáles de estas canciones son de: 
 
@@ -1771,11 +1651,11 @@ Bueno, hay algo más de información. Pero debo saber cuáles de estas canciones
 
 (set: $segundosReloj to $segundosReloj + 120)
 (set: $historialNavegadorPesado to (datamap:&quot;masViejo&quot;, false, &quot;masReciente&quot;, false, &quot;decada&quot;, false, &quot;repetida&quot;, false))
-(set: $historialNavegadorLigero to (datamap:&quot;masViejo&quot;, false, &quot;masReciente&quot;, false, &quot;decada&quot;, false, &quot;repetida&quot;, false))</tw-passagedata><tw-passagedata pid="154" name="2.4.2.2.2.1 Rock pesado" tags="" position="4824,4797" size="100,100">[**2) “Dos mil trescientos cuarenta y ocho”, Prisa (1976)
+(set: $historialNavegadorLigero to (datamap:&quot;masViejo&quot;, false, &quot;masReciente&quot;, false, &quot;decada&quot;, false, &quot;repetida&quot;, false))</tw-passagedata><tw-passagedata pid="154" name="2.4.2.2.2.1 Rock pesado" tags="" position="4824,4797" size="100,100">**2) “Dos mil trescientos cuarenta y ocho”, Prisa (1976)
 4) “Doce menos un minuto”, Rubiecita (1978)
 5) “1984”, Principito (1982)
 7) “1979”, Destrozando Tomates (1996)
-8) “En el año de 2546”, Zaherir y Evaristo (1969)**]
+8) “En el año de 2546”, Zaherir y Evaristo (1969)**
 
 Todas estas canciones son de distintas décadas. Puede ser que sea:
 
@@ -1858,7 +1738,7 @@ Bueno, esta puede ser la clave. Espero que funcione:
 [[Ver más bien las canciones de rock pesado |2.4.2.2.2.1 Rock pesado]]
 
 
-(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="156" name="2.4.1.3. Ver mensajes" tags="" position="4437,5032" size="100,100">En su historial más reciente de mensajes de texto te das cuenta que hay un mensaje que Carlos ha visto y otro que ha enviado esta mañana. 
+(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="156" name="2.4.1.3. Ver mensajes" tags="" position="4394,5009" size="100,100">En su historial más reciente de mensajes de texto te das cuenta que hay un mensaje que Carlos ha visto y otro que ha enviado esta mañana. 
 
 El que ha visto es de &#39;Mike&#39; y dice: 
 
@@ -1870,7 +1750,7 @@ El que Carlos ha enviado dice:
 
 [[Vuelve al menú anterior|2.4.1.1 Entra al teléfono de Carlos]]
 
-(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="157" name="2.4.1.4. Ver correo electrónico" tags="" position="4697,5029" size="100,100">En su historial más reciente de su correo electrónico ves un mensaje que ya  ha visto y otro que no ha visto. 
+(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="157" name="2.4.1.4. Ver correo electrónico" tags="" position="4700,5028" size="100,100">En su historial más reciente de su correo electrónico ves un mensaje que ya  ha visto y otro que no ha visto. 
 
 El que ya ha visto, enviado por el portal del &#39;Poison Rock Bar&#39;, dice: 
 
@@ -1910,14 +1790,13 @@ Pero no estoy dispuesto a rendirme tan fácilmente. Quiero luchar por nuestro am
 
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="159" name="2.3.6. Pre-obsesión con Carlos" tags="" position="5934,3636" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¿De verdad quieres estar conmigo? Dime la verdad.
 
-[[Que si te declaré mi amor, pues sí. Y que Manuela me cele todo el tiempo contigo, pues no. ¡Démonos una oportunidad, carajo!|Final con obsesión con Carlos]]
+[[─Que si te declaré mi amor, pues sí. Y que Manuela me cele todo el tiempo contigo, pues no. ¡Démonos una oportunidad, carajo!|Final con obsesión con Carlos]]
 
-[[Sí, quiero estar contigo, pero como amigo. Me disculpo por si te armé falsas expectativas. En verdad que lo siento mucho.|Final con Carlos destrozado]]
+[[─Sí, quiero estar contigo, pero como amigo. Me disculpo por si te armé falsas expectativas. En verdad que lo siento mucho.|Final con Carlos destrozado]]
 
-(if: $shownPhoto is true) [ [[Estás loco, Carlos. No sé qué podrías hacer si no me junto contigo. La verdad es que no recuerdo nada de eso que me muestras. Date cuenta de lo que estás haciendo conmigo.|2.3.6.3. Carlos puede ser consciente de lo que hará]] ]
+(if: $shownPhoto is true)[ [[─Estás loco, Carlos. No sé qué podrías hacer si no me junto contigo. La verdad es que no recuerdo nada de eso que me muestras. Date cuenta de lo que estás haciendo conmigo.|2.3.6.3. Carlos puede ser consciente de lo que hará]] ]
 
-(else:)[
-[[No tengo pruebas pero tampoco dudas de que me quieres. ¿Qué más da?|2.3.6.2. Carlos no cree en tu supuesto amor]] ]</tw-passagedata><tw-passagedata pid="160" name="2.3.6.2. Carlos no cree en tu supuesto amor" tags="" position="5820,4172" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Es la respuesta más mediocre que he escuchado jamás. Seguro que así serás con todo el mundo. No quiero verte nunca más, te lo digo. 
+(else:)[[[─No tengo pruebas pero tampoco dudas de que me quieres. ¿Qué más da?|2.3.6.2. Carlos no cree en tu supuesto amor]] ]</tw-passagedata><tw-passagedata pid="160" name="2.3.6.2. Carlos no cree en tu supuesto amor" tags="" position="5817,4172" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Es la respuesta más mediocre que he escuchado jamás. Seguro que así serás con todo el mundo. No quiero verte nunca más, te lo digo. 
 
 Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una relación de la cual no sabes nada en absoluto. Carlos, en venganza, le entera a su hermana Manuela de lo ocurrido. 
 
@@ -1930,37 +1809,36 @@ Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una rela
 ¡Esto pasó anoche! Estoy seguro que a tu amiguita Manuelita no le van a gustar estas fotos tan... nuestras. 
  
 (if: $takenPhoto is false)[
-[[Carlos, esto no es propio de ti. Sé que quieres estar conmigo y podríamos intentarlo. No es necesario ponernos en estas.|2.3.6. Pre-obsesión con Carlos]] 
+[[─Carlos, esto no es propio de ti. Sé que quieres estar conmigo y podríamos intentarlo. No es necesario ponernos en estas.|2.3.6. Pre-obsesión con Carlos]] 
 
-[[Entiende que Manuela no quiere que esté contigo. Me es imposible estar contigo aun si quisiera. Te pido por favor que borres esas fotos.|2.4.3.1.1. No convences a Carlos]]
+[[─Entiende que Manuela no quiere que esté contigo. Me es imposible estar contigo aun si quisiera. Te pido por favor que borres esas fotos.|2.4.3.1.1. No convences a Carlos]]
 
-[[No se te olvide que Manuela también es tu hermana. ¿No te importa lo que ella también siente por nosotros? ¿De veras quieres echarlo todo a perder?|2.3.6.3. Carlos puede ser consciente de lo que hará]] ]
+[[─No se te olvide que Manuela también es tu hermana. ¿No te importa lo que ella también siente por nosotros? ¿De veras quieres echarlo todo a perder?|2.3.6.3. Carlos puede ser consciente de lo que hará]] ]
 
-(else:) [ [[Sé que me manipulaste, Carlos. Y eso es gravísimo. He visto el mensaje de tu amiguito Mike. ¡Explícame ahora mismo qué pasó anoche, carajo!|2.3.6.1. Sobre el correo de Mike]] ]
+(else:) [ [[─Sé que me manipulaste, Carlos. Y eso es gravísimo. He visto el mensaje de tu amiguito Mike. ¡Explícame ahora mismo qué pasó anoche, carajo!|2.3.6.1. Sobre el correo de Mike]] ]
 
-(set: $shownPhoto to true)</tw-passagedata><tw-passagedata pid="162" name="2.4.3.1.1. No convences a Carlos" tags="" position="5511,3717" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responderle a Carlos de una manera demasiado contundente)**]
+(set: $shownPhoto to true)</tw-passagedata><tw-passagedata pid="162" name="2.4.3.1.1. No convences a Carlos" tags="" position="5511,3717" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responderle a Carlos de una manera demasiado contundente).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] No creas que me voy a rendir tan fácilmente. Después de todo lo que he sacrificado por ti. Es hora de que tú también hagas un sacrificio, y te olvides de Manuela.
 
-[[No quiero que Manuela me mate por esto. Debemos irnos lejos de aquí, Carlos.|2.3.6.2. Fuga resignada con Carlos]]
-[[¡De eso nunca! Manuela podrá ser como es. Pero un pacto es un pacto, y lo respetaré siempre.|Final con Manuela Sospechosa]]</tw-passagedata><tw-passagedata pid="163" name="2.3.6.3. Carlos puede ser consciente de lo que hará" tags="" position="5954,3823" size="100,100">(css: &quot;color: red;&quot;)[**(+1 punto por responderle con honestidad y firmeza).**]
+[[─No quiero que Manuela me mate por esto. Debemos irnos lejos de aquí, Carlos.|2.3.6.2. Fuga resignada con Carlos]]
+[[─¡De eso nunca! Manuela podrá ser como es. Pero un pacto es un pacto, y lo respetaré siempre.|Final con Manuela Sospechosa]]</tw-passagedata><tw-passagedata pid="163" name="2.3.6.3. Carlos puede ser consciente de lo que hará" tags="" position="5954,3823" size="100,100">(css: &quot;color: red;&quot;)[**(+1 punto por responderle con honestidad y firmeza).**]
 
 (if: ($puntosCarlos) &gt;= 4) [
 (css: &quot;color: white;&quot;)[**Carlos:**] La verdad no soy quién para obligarte a hacer algo que no quieres hacer. Ni mucho menos para perjudicar a mi hermana. Perdóname, te lo ruego. Y no le cuentes nada a Manuela, por favor. 
 
-[[Está bien, Carlos. Olvidemos esto y dejémoslo en el pasado. Por el bien de todos.|Final con Manuela Sospechosa]] ]
+[[─Está bien, Carlos. Olvidemos esto y dejémoslo en el pasado. Por el bien de todos.|Final con Manuela Sospechosa]] ]
 
 (else:)[
 (css: &quot;color: white;&quot;)[**Carlos:**] No creas que me voy a rendir tan fácilmente. Después de todo lo que he sacrificado por ti. Es hora de que tú también hagas un sacrificio, y te olvides de Manuela.
 
-[[No quiero que Manuela me mate por esto. Debemos irnos lejos de aquí, Carlos.|2.3.6.2. Fuga resignada con Carlos]]
+[[─No quiero que Manuela me mate por esto. Debemos irnos lejos de aquí, Carlos.|2.3.6.2. Fuga resignada con Carlos]]
 
-[[¡De eso nunca! Manuela podrá ser como es. Pero un pacto es un pacto, y lo respetaré siempre.|Final con Manuela Sospechosa]] ]</tw-passagedata><tw-passagedata pid="164" name="2.3.6.2. Fuga resignada con Carlos" tags="" position="6136,4143" size="100,100">Vas rápidamente a tu casa, alistas lo poco que puedes llevar antes de que Manuela te llame, o incluso te visite de sorpresa este fin de semana. 
+[[─¡De eso nunca! Manuela podrá ser como es. Pero un pacto es un pacto, y lo respetaré siempre.|Final con Manuela Sospechosa]] ]</tw-passagedata><tw-passagedata pid="164" name="2.3.6.2. Fuga resignada con Carlos" tags="" position="6136,4143" size="100,100">Vas rápidamente a tu casa, alistas lo poco que puedes llevar antes de que Manuela te llame, o incluso te visite de sorpresa este fin de semana. 
 
 Te fugas con Carlos y se van de viaje por algunos días. Esa obsesión suya no durará mucho, a menos que luches por su amor. 
 
-(if: ($puntosManuela) &lt;= 4)[
-Tratas de que Manuela no te denuncie por secuestro. O peor, que les encuentre. No hay muchas personas tan desconfiadas como ella...]
+(if: ($puntosManuela) &lt;= 4)[Tratas de que Manuela no te denuncie por secuestro. O peor, que les encuentre. No hay muchas personas tan desconfiadas como ella...]
 
 (else:) [Manuela está preocupada por ustedes dos. Les llama insistentemente durante dos días seguidos. Sospechará de ustedes, pero tiene la ilusión de que no estén juntos... aún.]
 
@@ -1972,23 +1850,15 @@ Ya aclaradas las cosas con Carlos, él ha borrado cualquier evidencia de lo que 
 (else:)[
 Ya que sabes qué pasó anoche y que has hecho las paces con Carlos, es hora de volver con tu amistad con Manuela. Ella te conoce muy bien. Tu mirada no miente. Sabes que tu amistad con ella ya no podrá ser igual. 
 ]
-
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="166" name="Final con Manuela Feliz" tags="" position="4119,4064" size="100,100">Has decidido respetar el pacto que tienes con Manuela, tu mejor amiga que has tenido jamás. 
+[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="166" name="Final con Manuela Feliz" tags="" position="4135,3998" size="100,100">Has decidido respetar el pacto que tienes con Manuela, tu mejor amiga que has tenido jamás. 
 
-(if: $textedManuela is true or $calledManuela is true or $dateLocation is &quot;Sitio&quot; or $puntosManuela &gt;= 5)[
-  Manuela y tú siguen con una gran amistad durante toda la vida.  
-]
-(else:)[
-  Manuela y tú siguen con una buena amistad pero no mantienen mucho contacto por las ocupaciones de la vida.
-]
+(if: $textedManuela is true or $calledManuela is true or $dateLocation is &quot;Sitio&quot; or $puntosManuela &gt;= 5)[Manuela y tú siguen con una gran amistad durante toda la vida.]
+(else:)[Manuela y tú siguen con una buena amistad, pero no mantienen mucho contacto por las ocupaciones de la vida.]
 
-(if: ($hasDeletedCarlosPhotos or $hasDeletedAllPhotos) is true)[
-A Carlos no le cayes bien, pero sientes un satisfaccion que has aventajado a Carlos y no hay nada que pueda hacer.   
-](else:)[
-También has razonado con Carlos al respecto, y él entiende las razones de tu pacto y lo respeta. 
-]
+(if: ($hasDeletedCarlosPhotos or $hasDeletedAllPhotos) is true)[A Carlos no le caes bien, pero sientes una satisfacción que has aventajado a Carlos, y no hay nada que él pueda hacer.]
+(else:)[También has razonado con Carlos al respecto, y él entiende las razones de tu pacto y lo respeta.]
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
@@ -2015,17 +1885,15 @@ La más importante de todas: perder la amistad de Manuela, tu mejor amiga.
 
 Te muestra algunas fotos tuyas con él bastante comprometedoras. 
 
-[[Debes creerme cuando te digo que no recuerdo nada de lo que pasó anoche. Piensa en lo que vas a hacer, Carlos, te lo pido.|2.3.6.3. Carlos puede ser consciente de lo que hará]]
+[[─Debes creerme cuando te digo que no recuerdo nada de lo que pasó anoche. Piensa en lo que vas a hacer, Carlos, te lo pido.|2.3.6.3. Carlos puede ser consciente de lo que hará]]
 
-[[Piensa también en tu hermana, en Manuela. ¿De verdad quieres arruinarlo todo para todos? Te exijo que borres esas fotos ya mismo.|2.4.3.1.1. No convences a Carlos]]</tw-passagedata><tw-passagedata pid="170" name="2.4.3.3. Tratas de querer a Carlos" tags="" position="5611,4283" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Porque sabes que nadie te ha demostrado más lealtad que yo, corazón. Esto es diferente porque soy diferente. Date cuenta que somos tal para cual, cariño. 
+[[─Piensa también en tu hermana, en Manuela. ¿De verdad quieres arruinarlo todo para todos? Te exijo que borres esas fotos ya mismo.|2.4.3.1.1. No convences a Carlos]]</tw-passagedata><tw-passagedata pid="170" name="2.4.3.3. Tratas de querer a Carlos" tags="" position="5611,4283" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Porque sabes que nadie te ha demostrado más lealtad que yo, corazón. Esto es diferente porque soy diferente. Date cuenta que somos tal para cual, cariño. 
 
 ¿Reconoces el amor que te he tenido siempre?
 
-[[Totalmente, Carlos. Sé que tu amor ha sido verdadero desde siempre. Y quiero amarte en todo momento.|Final amando a Carlos]]
-
-[[No tengo pruebas pero tampoco dudas de que me quieres. ¿Qué más da?|2.3.6.2. Carlos no cree en tu supuesto amor]]
-
-[[Sí, quiero estar contigo, pero como amigo. Me disculpo por si te armé falsas expectativas. En verdad que lo siento mucho.|Final con Carlos destrozado]]</tw-passagedata><tw-passagedata pid="171" name="2.4.1.4.1. Ver el mensaje completo" tags="" position="4918,5031" size="100,100">&#39;Mike Polainas&#39; le escribió a Carlos lo siguiente: 
+[[─Totalmente, Carlos. Sé que tu amor ha sido verdadero desde siempre. Y quiero amarte en todo momento.|Final amando a Carlos]]
+[[─No tengo pruebas pero tampoco dudas de que me quieres. ¿Qué más da?|2.3.6.2. Carlos no cree en tu supuesto amor]]
+[[─Sí, quiero estar contigo, pero como amigo. Me disculpo por si te armé falsas expectativas. En verdad que lo siento mucho.|Final con Carlos destrozado]]</tw-passagedata><tw-passagedata pid="171" name="2.4.1.4.1. Ver el mensaje completo" tags="" position="4918,5031" size="100,100">&#39;Mike Polainas&#39; le escribió a Carlos lo siguiente: 
 
 (css: &quot;color: yellow&quot;)[**&quot;Llevarás a tu nueva pareja al concierto. ¿Estás seguro que le agradará venir a vernos? Ni que le obligues va a venir. A menos que de verdad hagas lo que me dijiste el otro día... Ojo con eso, querido.&quot;**]
 
@@ -2068,23 +1936,19 @@ Hablas con Manuela como si nada, pero ella aún sospecha de ti. Quiere preguntar
 
 (css: &quot;color: white;&quot;)[**Carlos:**] ¡¿Entraste a mi teléfono, acaso?! Eso sí que es absurdo!! Te voy a denunciar por acoso. ¡Te voy a hundir, ¿me oíste?!
 
-(if: $takenPhoto is true)[
-Con mucho gusto te leeré lo que dice: &quot;...&quot;. 
+(if: $takenPhoto is true)[Con mucho gusto te leeré lo que dice: &quot;...&quot;. 
 
-[[Dime la verdad y haremos de cuenta que aquí no ha pasado nada.|Final neutro diplomático]]
+[[─Dime la verdad y haremos de cuenta que aquí no ha pasado nada.|Final neutro diplomático]]
 
-[[Ven conmigo a la estación de policía, y ahí les explicarás todo. ¡Quien te va a hundir soy yo, desgraciado!|Final caótico de Carlos]]
-]
+[[─Ven conmigo a la estación de policía, y ahí les explicarás todo. ¡Quien te va a hundir soy yo, desgraciado!|Final caótico de Carlos]] ]
 
-(else:)[
-(css: &quot;color: #187FF5;&quot;)[*Mike te decía que tenías una nueva pareja, que supongo soy yo, y que ibas a hacer algo que le dijiste el otro día que harías. Explícate, Carlos.*] 
+(else:)[(css: &quot;color: #187FF5;&quot;)[*Mike te decía que tenías una nueva pareja, que supongo soy yo, y que ibas a hacer algo que le dijiste el otro día que harías. Explícate, Carlos.*] 
 
 Carlos manipula su teléfono enfrente tuyo. 
 
 (css: &quot;color: white;&quot;)[**Carlos:**] Ya está. No hay pruebas de lo que me dices. Pero ya te he dicho que te voy a hundir. 
 
-[[¿Ah, sí? ¿Cómo más entonces? Cobarde que eres|Final con Carlos destrozado]]
-]</tw-passagedata><tw-passagedata pid="175" name="2.6. Confronta a Carlos sobre las fotos" tags="" position="4509,5366" size="100,100">Cuando Carlos vuelve, tú no te aguantas las ganas de reclamarle por esas fotos tan sugestivas que tiene contigo en su teléfono. Aún si hubieras conservado una copia de ellas para denunciarle ante la policía por una supuesta manipulación, él te contrademandaría por invasión de la privacidad de su teléfono. 
+[[─¿Ah, sí? ¿Cómo más entonces? Cobarde que eres.|Final con Carlos destrozado]] ]</tw-passagedata><tw-passagedata pid="175" name="2.6. Confronta a Carlos sobre las fotos" tags="" position="4509,5366" size="100,100">Cuando Carlos vuelve, tú no te aguantas las ganas de reclamarle por esas fotos tan sugestivas que tiene contigo en su teléfono. Aún si hubieras conservado una copia de ellas para denunciarle ante la policía por una supuesta manipulación, él te contrademandaría por invasión de la privacidad de su teléfono. 
 
 Sería un proceso de palabra de una parte contra la otra, pierdes a tu amiga y posiblemente pierdes la libertad. ¡El desastre de tu vida!
 
@@ -2107,20 +1971,18 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 [[Espera que Carlos saque su teléfono|2.5.1. Carlos descubre que no hay fotos]]</tw-passagedata><tw-passagedata pid="178" name="2.4.2.A Manuela te llama" tags="" position="4925,4112" size="100,100">Manuela te llama y no tienes opción sino responder.
 
-(css: &quot;color: orange;&quot;)[**Manuela:**] *¡Carajo! ¿Por qué no me contestas?  ¿Dónde estuviste?  ¿Qué pasó anoche?* 
+(css: &quot;color: orange;&quot;)[**Manuela:**] *¡Carajo! ¿Por qué no me contestas? ¿Dónde estuviste? ¿Qué pasó anoche?* 
 
 (link: &quot;&#39;Lo siento, pero estaba con mucho trabajo y no podía responder. Te llamo pronto.&#39; Corta la llamada y sigue buscando información.&quot;)[(set: $calledManuela to true)(set: $segundosReloj to $segundosReloj + 50)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosManuela to $puntosManuela - 1)
 ]
 
 (link: &quot;Corta la llamada sin decir nada y sigue buscando información.&quot;)[(set: $segundosReloj to $segundosReloj + 10)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosManuela to $puntosManuela - 2)]
 
-(css: &quot;color: red;&quot;)[**(Pierdes algunos puntos por no darle ninguna explicación a Manuela. Tal vez ella comienza a sospechar de ti).**]
+(css: &quot;color: red;&quot;)[**(Pierdes algunos puntos con Manuela por no darle mayores explicaciones. Tal vez ella comienza a sospechar de ti).**]
 
-(css: &quot;color: purple;&quot;)[**Esta interacción pasó por no hablar con Manuela antes.**]</tw-passagedata><tw-passagedata pid="179" name="2.5.1. Carlos descubre que no hay fotos" tags="" position="5016,5514" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Pero, ¡¿qué carajos?! ¿Dónde están mis fotos?
+(css: &quot;color: purple;&quot;)[**Esta interacción pasó por no hablar antes con Manuela.**]</tw-passagedata><tw-passagedata pid="179" name="2.5.1. Carlos descubre que no hay fotos" tags="" position="5016,5514" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Pero, ¡¿qué carajos?! ¿Dónde están mis fotos?
 
-(if: $hasDeletedCarlosPhotos is true)[
-
-(css: &quot;color: #187FF5;&quot;)[*¿Cómo? ¿No están?*]
+(if: $hasDeletedCarlosPhotos is true)[ (css: &quot;color: #187FF5;&quot;)[*¿Cómo? ¿No están?*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] Todas las fotos de anoche... borradas. ¿Cómo es posible? 
 
@@ -2128,16 +1990,13 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] A ver, un momento... Hiciste algo, ¿verdad? ¡Debiste ser tú!
 
-[[¿No hay copia de respaldo en la nube?|2.5.2 Respuesta sobre la nube]]
+[[─¿No hay copia de respaldo en la nube?|2.5.2 Respuesta sobre la nube]]
 
-[[¿Por qué lo piensas, Carlos? ¿Qué pruebas tienes?|2.5.1.1 Acusa a Carlos de calumnioso]]
+[[─¿Por qué lo piensas, Carlos? ¿Qué pruebas tienes?|2.5.1.1 Acusa a Carlos de calumnioso]]
 
-[[Estás loco, Carlos. A mí no me interesa hacerte daño.|2.5.1.2 Carlos te acusa de ladrón]]
+[[─Estás loco, Carlos. A mí no me interesa hacerte daño.|2.5.1.2 Carlos te acusa de ladrón]] ]
 
-]
-(else:)[
-
-(css: &quot;color: #187FF5;&quot;)[*¿Cómo asi? ¿Qué pasó?*]
+(else:)[ (css: &quot;color: #187FF5;&quot;)[*¿Cómo asi? ¿Qué pasó?*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] La verdad es que no lo entiendo. Todas mis fotos del teléfono... se perdieron. ¡Esto no puede ser!
 
@@ -2145,23 +2004,21 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] ¡No me digas! Me están hackeando. No habrás sido tú, ¿verdad?
 
-[[¿No hay copia de respaldo en la nube?|2.5.2 Respuesta sobre la nube]]
+[[─¿No hay copia de respaldo en la nube?|2.5.2 Respuesta sobre la nube]]
 
-[[Jajaja... la cara de hacker que tengo yo ahora. ¡Lo que me faltaba!|2.5.2.3 Ríete de Carlos a la cara]] 
+[[─Jajaja... la cara de hacker que tengo yo ahora. ¡Lo que me faltaba!|2.5.2.3 Ríete de Carlos a la cara]] 
 
-[[Estás loco, Carlos. A mí no me interesa hacerte daño.|2.5.1.2 Carlos te acusa de ladrón]]
-
-]</tw-passagedata><tw-passagedata pid="180" name="2.5.2 Respuesta sobre la nube" tags="" position="4873,5667" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¡Carajo! Yo pensé que las fotos ya estaban vinculadas a la nube. 
+[[─Estás loco, Carlos. A mí no me interesa hacerte daño.|2.5.1.2 Carlos te acusa de ladrón]] ]</tw-passagedata><tw-passagedata pid="180" name="2.5.2 Respuesta sobre la nube" tags="" position="4882,5658" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¡Carajo! Yo pensé que las fotos ya estaban vinculadas a la nube. 
 
 (css: &quot;color: #187FF5;&quot;)[*Tú sabes que a veces la tecnología es caprichosa. Lo lamento mucho.*] 
 
 (css: &quot;color: white;&quot;)[**Carlos:**] Sí, pero no paro de pensar que es tremenda casualidad.
 
-[[Dices: &quot;Pues nada. Así son las cosas. Oye, debo salir, no puedo procesar todo esto ahora.  Si, debo salir.&quot;, y huyes de todo.|2.5.2.1 Huir de Carlos]]
+[[─Pues nada. Así son las cosas. Oye, debo salir, no puedo procesar todo esto ahora. Sí, debo salir. (Y huyes de todo).|2.5.2.1 Huir de Carlos]]
 
-[[Dices: &quot;Bueno, puede ser. Pero como no me has dicho qué pasó anoche, creo que ya no quiero tener nada que ver contigo.&quot;, y terminas con Carlos sin más.|2.5.2.2 Termina con Carlos sin explicaciones]]
+[[─Bueno, puede ser. Pero como no me has dicho qué pasó anoche, creo que ya no quiero tener nada que ver contigo. (Y terminas con Carlos sin más).|2.5.2.2 Termina con Carlos sin explicaciones]]
 
-[[Dices: &quot;Sí, es que los hackers son tremendos pillos, ¿no? Mala suerte, querido.&quot;, y disfruta verlo sufrir.|2.5.2.3 Ríete de Carlos a la cara]]</tw-passagedata><tw-passagedata pid="181" name="2.5.2.1 Huir de Carlos" tags="" position="4733,5825" size="100,100">Huyes rápidamente del lugar, y Carlos se queda sorprendido por tu reacción. Con más veras sospecha de ti, pero sabe que no tiene pruebas para acusarte de entrar a su teléfono. 
+[[─Sí, es que los hackers son tremendos pillos, ¿no? Mala suerte, querido. (Y disfruta verlo sufrir).|2.5.2.3 Ríete de Carlos a la cara]]</tw-passagedata><tw-passagedata pid="181" name="2.5.2.1 Huir de Carlos" tags="" position="4733,5825" size="100,100">Huyes rápidamente del lugar, y Carlos se queda sorprendido por tu reacción. Con más veras sospecha de ti, pero sabe que no tiene pruebas para acusarte de entrar a su teléfono. 
 
 Sin las cosas aclaradas con Carlos, es imposible volver con Manuela de la misma manera. Con el tiempo pierdes también su amistad. Aprendes que no debes meterte con esta clase de personas tan manipuladoras. Huyes de todos y de todo. 
 
@@ -2175,11 +2032,9 @@ Intenta completar el juego otra vez:
 
 Sin querer aclarar nada, así se enrarece todo en tu vida. Cuando sales del lugar, Carlos, resentido, llama a Manuela a contarle la situación. Nunca le has importado. Con ello también arruina tu amistad con Manuela, y así pierdes el favor de ambos. 
 
-(if: ($puntosManuela) &gt;= 4)[
-Estás triste de perder tu amistad con Manuela, pero sigues con tu vida y encuentras más amigos que llenan ese vacío. A veces durante las fechas especiales todavía piensas en ella.
-](else:)[
-En realidad, estás más feliz sin ellos. Tu vida sigue con menos drama y complicaciones y menos estrés. Tal vez es un poquito más aburrido, pero lo prefieres así.  
-]
+(if: ($puntosManuela) &gt;= 4)[Estás triste de perder tu amistad con Manuela, pero sigues con tu vida y encuentras más amigos que llenan ese vacío. A veces durante las fechas especiales todavía piensas en ella.]
+
+(else:)[En realidad, estás más feliz sin ellos. Tu vida sigue con menos drama y complicaciones y menos estrés. Tal vez es un poquito más aburrido, pero lo prefieres así.]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.**
@@ -2196,10 +2051,9 @@ Intenta completar el juego otra vez:
 
 Jajajaja!! Se ve que no eres nada, Carlos. ¡Chaíto!*]
 
-Has logrado verle la verdadera cara a Carlos jugándole por donde más le duele: manipulándole como lo ha hecho contigo. Vuelves con Manuela, mantienes tu pacto y relación con ella. Y disfrutas de la impunidad de tus actos. Eso no dura para siempre, ¿pero qué más da? Has ganado ahora, y eso es lo importante. 
+Has logrado verle la verdadera cara a Carlos jugándole por donde más le duele: manipulándole como lo ha hecho contigo. Vuelves con Manuela, mantienes tu pacto y relación con ella. Y disfrutas de la impunidad de tus actos. Eso no dura para siempre, ¿pero qué más da? Has ganado ahora, y eso es lo importante.]
 
-](else:)[
-(css: &quot;color: #187FF5;&quot;)[*Ya te lo dije, Carlos. Nadie te creerá. Y es claro que quien oculta algo eres tú. Es patético ver cómo te retuerces de la rabia, suficiente prueba para pensar que sí que eres un manipulador. Jajaja!! Eres una vileza de ser humano. Esa es la verdad. Nos vemos.*]
+(else:)[(css: &quot;color: #187FF5;&quot;)[*Ya te lo dije, Carlos. Nadie te creerá. Y es claro que quien oculta algo eres tú. Es patético ver cómo te retuerces de la rabia, suficiente prueba para pensar que sí que eres un manipulador. Jajaja!! Eres una vileza de ser humano. Esa es la verdad. Nos vemos.*]
 
 Tú también sabes que no tienes nada para protegerte de una eventual venganza de Carlos, salvo tus palabras y la humillación que le causa tu rechazo. Así las cosas, Carlos decide publicar las fotos comprometedoras en las que apareces con él.
 
@@ -2207,10 +2061,8 @@ Tú también sabes que no tienes nada para protegerte de una eventual venganza d
 
 (else:) [Manuela no da crédito a sus ojos. Se enloquece. Te reclama. Se pelea contigo. No lo puede creer. Y aunque siempre ha sabido de lo que su hermano es capaz de hacer para tener lo que quiere, aún así te sigue reclamando. No aguantas más la situación y decides separarte de ella, y cambiar de casa, de ambiente. A lo mejor es lo que finalmente mereces.] ]
 
-
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.  Este final es uno de los más difíciles para llegar.**
-
 
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="184" name="2.5.1.1 Acusa a Carlos de calumnioso" tags="" position="5314,5665" size="100,100">(if: ($puntosCarlos) &gt;= 6)[
@@ -2228,7 +2080,6 @@ A ver si entre rejas Carlos aprende a no manipular a nadie nunca más.
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.  Este final es uno de los más difíciles para llegar.**
-
 
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]
@@ -2248,10 +2099,9 @@ Como Carlos no tiene más pruebas sino su propia rabia, decides denunciarle ante
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.  Este final es uno de los más difíciles para llegar.**
 
-
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]
-]</tw-passagedata><tw-passagedata pid="185" name="2.5.1.2 Carlos te acusa de ladrón" tags="" position="5165,5670" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¡Sí, cómo no! Es que todo es tan casual, en serio. No tienes verguenza en mentirme a la cara. ¡Eres una porquería!
+]</tw-passagedata><tw-passagedata pid="185" name="2.5.1.2 Carlos te acusa de ladrón" tags="" position="5177,5663" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¡Sí, cómo no! Es que todo es tan casual, en serio. No tienes verguenza en mentirme a la cara. ¡Eres una porquería!
 
 Carlos no tiene más pruebas de su acusación que su propia rabia. Te denuncia ante la policía por robo, pero la denuncia es rápidamente invalidada porque al estimar el caso como de típicos celos, no amerita para revisar alguna manipulación del teléfono. 
 
