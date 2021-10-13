@@ -192,16 +192,19 @@ Necesitas comer y beber algo. Ves el refrigerador entreabierto, y el comedor con
 	(if: $itemPhone&#39;s isCarried is false or $itemWallet&#39;s isCarried is false)[
  (css: &quot;color: yellow;&quot;)[¿Estás seguro que tienes todo lo que necesitas?]
  [[Ve a la habitación|Salir de la cama]]
-]
-	[[Fin del demo]] ]
+      ]
+
+&lt;!--Do this before starting part 2 -
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
+
+	[[Sal de la casa|Fin de Parte 1]] ]
 (else:)[Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
 
 No hablaste con nadie, así que es imposible saber qué pasó anoche.
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
 
-&lt;!--Do this before starting part 2 -&gt;
-(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela ))
+
 
 (link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;) ]</tw-passagedata><tw-passagedata pid="27" name="&quot;En la casa&quot;" tags="" position="2965,1104" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder lo que él espera de ti).**]
 
@@ -410,15 +413,11 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 
 [[Deja el teléfono|Dejar el teléfono]]
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="51" name="Fin del demo" tags="" position="2999,2220" size="100,100">(css: &quot;color: green;&quot;) [**¡Felicitaciones por descubrir el final del demo!**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="51" name="Fin de Parte 1" tags="" position="2621,2191" size="100,100">(css: &quot;color: green;&quot;) [**¡Te has alistado para salir de la casa!**]
 
-**HASTA AQUÍ LLEGA LA PRIMERA PARTE DE &quot;INTOCABLE&quot;.** Espera la versión completa para ver qué pasa contigo con Manuela y Carlos.
+**HASTA AQUÍ LLEGA LA PRIMERA PARTE DE &quot;INTOCABLE&quot;.** Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aquí.
 
-¡Gracias por jugar! Si tienes comentarios nos envías un correo a drawingboardgames2020@gmail.com. También, visítanos en nuestra página web: https://drawingboard.games 
-
-Jason Denney y Félix González - 2020
-
-(css: &quot;color: yellow;&quot;)[**Qué tan bien lo hiciste:**]
+(css: &quot;color: yellow;&quot;)[**Qué tan bien lo hiciste hasta ahora:**]
 
 **Carlos** - (if: $puntosCarlos &gt;=3) [*Estás en buena relación con él.*](else:) [*Está molesto contigo.*]
 
@@ -446,7 +445,10 @@ Jason Denney y Félix González - 2020
   ¡Carlos está loco! ¡Si hay evidencia de algo entre nosotros, hay que borrarla! Y ya.
 ]
 
-(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2136,1504" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por hacer valer tu punto de vista).**]
+
+
+[[Continúa a la Parte 2|Parte 2]]
+(link-goto: &quot;Juega otra vez desde el inicio&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2136,1504" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por hacer valer tu punto de vista).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Bien, como digas. Te espero en media hora. No tienes excusa de llegar tarde. Chao.*
 
@@ -533,7 +535,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 [[─Sí, me suena bien.|El Sitio insistencia amable]]
 [[─Prefiero el Café Tinta, que es mi favorito.|Café Tinta amable]]
 [[─¿En serio? ¡No! Más bien vámonos al Café Tinta.|Café Tinta agresiva]]
-[[─La verdad quiero acostarme. Chao.|La verdad quiero acostarme. Chao.]]</tw-passagedata><tw-passagedata pid="65" name="La verdad quiero acostarme. Chao." tags="" position="2664,2103" size="100,100">Te acuestas y mañana descubrirás las ruinas de tu vida. Es probable que hayas perdido la confianza de Carlos y de Manuela, y habrá consecuencias para nada agradables.
+[[─La verdad quiero acostarme. Chao.|La verdad quiero acostarme. Chao.]]</tw-passagedata><tw-passagedata pid="65" name="La verdad quiero acostarme. Chao." tags="" position="2627,2040" size="100,100">Te acuestas y mañana descubrirás las ruinas de tu vida. Es probable que hayas perdido la confianza de Carlos y de Manuela, y habrá consecuencias para nada agradables.
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
 
@@ -542,40 +544,9 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 [[Vas a El Sitio|2.1. Llegas a El Sitio]]
 [[Vas al Café Tinta|2.3. LLEGAS AL CAFÉ TINTA]]
 
-
-
-
-
-
-
-&lt;!-- delete this later once connected to part 1, for testing part 2 --&gt;
-
-
-(set: $puntosCarisma to 1)
-(set: $puntosCarlos to 0)
-(set: $puntosManuela to 0)
-(set: $hasDrunkWater to false)
-(set: $hasDrunkJuice to false)
-(set: $hasEatenChicken to false)
-(set: $hasEatenSandwich to false)
-(set: $calledManuela to false)
-(set: $calledCarlos to true)
-(set: $textedManuela to false)
-(set: $textedCarlos to true)
-(set: $hasPaidTaxi to false)
-(set: $examinedCarloswallet to false)
-(set: $takenPhoto to false)
-(set: $shownPhoto to false)
-(set: $hasViewedCarlosEmail to false)
-(set: $phoneCodeGuess to &quot;&quot;)
-(set: $itemWallet to (datamap:&quot;name&quot;, &quot;wallet&quot;, &quot;description&quot;, &quot;Es una billetera&quot;, &quot;pickupText&quot;, &quot;Tienes la billetera en tu bolsillo.&quot;, &quot;isCarried&quot;, false))
-(set: $previousPassage to &quot;Parte 2&quot;)
-
-
-
 &lt;!--- is typically saved at the end of part1, but copied here for testing --&gt;
 
-(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
+
 
 &lt;!-- Use this when restarting part 2 --&gt;
 (set: $segundosReloj to 0)
@@ -2118,7 +2089,33 @@ Gracias por jugar.**
 
 
 Intenta completar el juego otra vez:
-[[REINICIAR JUEGO|Despierta]]</tw-passagedata></tw-storydata>
+[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="186" name="Modo de Prueba: Start Part 2" tags="" position="2313,2153.5" size="100,100">(set: $puntosCarisma to 1)
+(set: $puntosCarlos to 0)
+(set: $puntosManuela to 0)
+(set: $hasDrunkWater to false)
+(set: $hasDrunkJuice to false)
+(set: $hasEatenChicken to false)
+(set: $hasEatenSandwich to false)
+(set: $calledManuela to false)
+(set: $calledCarlos to true)
+(set: $textedManuela to false)
+(set: $textedCarlos to true)
+(set: $hasPaidTaxi to false)
+(set: $examinedCarloswallet to false)
+(set: $takenPhoto to false)
+(set: $shownPhoto to false)
+(set: $hasViewedCarlosEmail to false)
+(set: $phoneCodeGuess to &quot;&quot;)
+(set: $itemWallet to (datamap:&quot;name&quot;, &quot;wallet&quot;, &quot;description&quot;, &quot;Es una billetera&quot;, &quot;pickupText&quot;, &quot;Tienes la billetera en tu bolsillo.&quot;, &quot;isCarried&quot;, false))
+(set: $previousPassage to &quot;Parte 2&quot;)
+
+
+
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
+
+[[Parte 2]]</tw-passagedata><tw-passagedata pid="187" name="Créditos" tags="" position="2171,2194.5" size="100,100">¡Gracias por jugar! Si tienes comentarios nos envías un correo a drawingboardgames2020@gmail.com. También, visítanos en nuestra página web: https://drawingboard.games 
+
+Jason Denney y Félix González - 2020</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
