@@ -193,10 +193,6 @@ Necesitas comer y beber algo. Ves el refrigerador entreabierto, y el comedor con
  (css: &quot;color: yellow;&quot;)[¿Estás seguro que tienes todo lo que necesitas?]
  [[Ve a la habitación|Salir de la cama]]
       ]
-
-&lt;!--Do this before starting part 2 -
-(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
-
 	[[Sal de la casa|Fin de Parte 1]] ]
 (else:)[Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
 
@@ -415,7 +411,7 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="51" name="Fin de Parte 1" tags="" position="2621,2191" size="100,100">(css: &quot;color: green;&quot;) [**¡Te has alistado para salir de la casa!**]
 
-**HASTA AQUÍ LLEGA LA PRIMERA PARTE DE &quot;INTOCABLE&quot;.** Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aquí.
+Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aquí.
 
 (css: &quot;color: yellow;&quot;)[**Qué tan bien lo hiciste hasta ahora:**]
 
@@ -425,7 +421,7 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 
 **Preparación para la cita** - (if: $puntosCarisma &gt;=3) [*¡Te ves increíble!*](elseif: $puntosCarisma &gt;0) [*Puedes hacerlo mejor la próxima vez.*](else:) [¿*Quién es este cavernícola? Hueles muy mal.*]
 
-**Tu Actitud**
+**Tu Actitud Con Carlos**
 (if: $puntosCarlos + $puntosCarisma &gt;= 11)[
 	Bueno, lo que tengo que hacer es hablar con sinceridad con Carlos, a ver qué pasa. Pero debo tener claro también si quiero tener la confianza de Manuela. ¿Qué puedo hacer ahora?
 ]
@@ -445,10 +441,11 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
   ¡Carlos está loco! ¡Si hay evidencia de algo entre nosotros, hay que borrarla! Y ya.
 ]
 
+[[Continúa la historia|Parte 2]]
+(link-goto: &quot;O juega otra vez desde el inicio&quot;, &quot;Despierta&quot;)
 
-
-[[Continúa a la Parte 2|Parte 2]]
-(link-goto: &quot;Juega otra vez desde el inicio&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2136,1504" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por hacer valer tu punto de vista).**]
+&lt;!--Do this before starting part 2 -
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2136,1504" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por hacer valer tu punto de vista).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Bien, como digas. Te espero en media hora. No tienes excusa de llegar tarde. Chao.*
 
@@ -2035,7 +2032,7 @@ Tú también sabes que no tienes nada para protegerte de una eventual venganza d
 (else:) [Manuela no da crédito a sus ojos. Se enloquece. Te reclama. Se pelea contigo. No lo puede creer. Y aunque siempre ha sabido de lo que su hermano es capaz de hacer para tener lo que quiere, aún así te sigue reclamando. No aguantas más la situación y decides separarte de ella, y cambiar de casa, de ambiente. A lo mejor es lo que finalmente mereces.] ]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
-Gracias por jugar.  Este final es uno de los más difíciles para llegar.**
+Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="184" name="2.5.1.1 Acusa a Carlos de calumnioso" tags="" position="5314,5665" size="100,100">(if: ($puntosCarlos) &gt;= 6)[
@@ -2052,7 +2049,7 @@ A ver si entre rejas Carlos aprende a no manipular a nadie nunca más.
 (else:)[A Manuela le duele mucho que Carlos haya hecho eso. Sí, entraste a su teléfono y todo. Pero esa desconfianza que has mostrado es solamente equiparable a la que ella siente por ti. Sabes que una amistad así es insostenible, y decides irte. Por el bien común.]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
-Gracias por jugar.  Este final es uno de los más difíciles para llegar.**
+Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]
@@ -2070,7 +2067,7 @@ Como Carlos no tiene más pruebas sino su propia rabia, decides denunciarle ante
 (else:)[Le aseguraste a Manuela que no había pasado nada entre ustedes. Resultaste en un juego de palabra contra palabra no una ¡sino dos veces! Para Manuela eso es lo más patético que ha conocido de ti, y decide terminar su amistad contigo. Y decides irte. Por tu bien.]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
-Gracias por jugar.  Este final es uno de los más difíciles para llegar.**
+Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]
@@ -2089,7 +2086,7 @@ Gracias por jugar.**
 
 
 Intenta completar el juego otra vez:
-[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="186" name="Modo de Prueba: Start Part 2" tags="" position="2313,2153.5" size="100,100">(set: $puntosCarisma to 1)
+[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="186" name="Modo de Prueba: Start Part 2" tags="" position="2313,2153" size="100,100">(set: $puntosCarisma to 1)
 (set: $puntosCarlos to 0)
 (set: $puntosManuela to 0)
 (set: $hasDrunkWater to false)
@@ -2113,7 +2110,7 @@ Intenta completar el juego otra vez:
 
 (set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
 
-[[Parte 2]]</tw-passagedata><tw-passagedata pid="187" name="Créditos" tags="" position="2171,2194.5" size="100,100">¡Gracias por jugar! Si tienes comentarios nos envías un correo a drawingboardgames2020@gmail.com. También, visítanos en nuestra página web: https://drawingboard.games 
+[[Parte 2]]</tw-passagedata><tw-passagedata pid="187" name="Créditos" tags="" position="2171,2194" size="100,100">¡Gracias por jugar! Si tienes comentarios nos envías un correo a **drawingboardgames2020@gmail.com**. También, visítanos en nuestra página web: &lt;a style=&quot;color:lightblue&quot; href=&quot;https://drawingboard.games&quot;&gt;drawingboard.games&lt;/a&gt; 
 
 Jason Denney y Félix González - 2020</tw-passagedata></tw-storydata>
 
