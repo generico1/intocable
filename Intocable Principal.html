@@ -48,7 +48,9 @@ Te despiertas, tienes dolor de cabeza y de estómago. ¿Qué haces?
 (set: $selectedItem to &quot;&quot;)
 (set: $previousPassage to &quot;Despierta&quot;)
 (set: $itemShoes to (datamap:&quot;name&quot;, &quot;shoes&quot;, &quot;description&quot;, &quot;Son unos zapatos más casuales, pero más apropiados.&quot;, &quot;pickupText&quot;, &quot;Ahora tienes puestos los zapatos.&quot;, &quot;isCarried&quot;, false))
-(set: $dateLocation to &quot;None&quot;)</tw-passagedata><tw-passagedata pid="2" name="Item Acquired" tags="" position="724,4" size="100,100">(print: $selectedItem&#39;s pickupText)
+(set: $dateLocation to &quot;None&quot;)
+
+&lt;!-- test --&gt;</tw-passagedata><tw-passagedata pid="2" name="Item Acquired" tags="" position="724,4" size="100,100">(print: $selectedItem&#39;s pickupText)
 
 (link-goto: &quot;Listo&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="3" name="Item&#39;s Description" tags="" position="854,6" size="100,100">(print: $selectedItem&#39;s description)
 
