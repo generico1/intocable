@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -52,7 +52,7 @@ Te despiertas, tienes dolor de cabeza y de estómago. ¿Qué haces?
 
 (link-goto: &quot;Listo&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="3" name="Item&#39;s Description" tags="" position="854,6" size="100,100">(print: $selectedItem&#39;s description)
 
-(link-goto: &quot;Listo&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="4" name="Mira alrededor" tags="" position="358,356" size="100,100">Estás acostado en la cama de tu habitación. Ves tu teléfono en la mesa de noche. 
+(link-goto: &quot;Listo&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="4" name="Mira alrededor" tags="" position="358,356" size="100,100">Estás en la cama de tu habitación. Ves tu teléfono en la mesa de noche. 
 
 [[Mira tu teléfono|un teléfono]]
 [[Revisa el teléfono|Revisa el teléfono]]
@@ -67,17 +67,17 @@ Te despiertas, tienes dolor de cabeza y de estómago. ¿Qué haces?
 
 (css: &quot;color: #187FF5;&quot;)[¡Uy, qué resaca! ¿qué pasó anoche, dónde estaba?]
 
-(link-goto: &quot;Averigua qué pasó&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="8" name="Sal de la cama" tags="" position="809,349" size="100,100">Estás en tu cuarto. (if: $itemClothes&#39;s isCarried is false) [No te diste cuenta que te dormiste vestido. 
+(link-goto: &quot;Averigua qué pasó&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="8" name="Sal de la cama" tags="" position="809,349" size="100,100">Estás en tu cuarto. (if: $itemClothes&#39;s isCarried is false) [No te diste cuenta que te dormiste con ropa. 
 
-Hay ropa limpia en el armario. [[Ve al armario.]] ]
+Hay ropa limpia en el armario. [[Ve al armario]] ]
 
 (if: $itemPhone&#39;s isCarried is false) [Tu teléfono está encima de la mesa de noche. [[Revisa el teléfono]] ] 
 
 Tu cama está muy destendida. (if: $itemWallet&#39;s isCarried is false)[Hay algo debajo de las sábanas. [[Destiéndela]] ]
 
-(if: $itemShoes&#39;s isCarried is false)[ Hay algo debajo de la cama. [[Agáchate y mira.]] ] 
+(if: $itemShoes&#39;s isCarried is false)[ Hay algo debajo de la cama. [[Agáchate y mira]] ] 
 
-Hay dos puertas, una al baño y la otra a la sala. [[Ve al baño.|Ve al baño]] [[Ve a la sala.|Ve a la sala]]
+Hay dos puertas, una al baño y la otra a la sala. [[Ve al baño]] o [[Ve a la sala.|Ve a la sala]]
 
 (set: $inBed to false)
 (set: $previousPassage to &quot;Sal de la cama&quot;)</tw-passagedata><tw-passagedata pid="9" name="Cámbiate de ropa" tags="" position="171,715" size="100,100">(if: $itemClothes&#39;s isCarried is false and $hasBathed is false)[  
@@ -109,7 +109,7 @@ Pero... por alguna razón, todavía te sientes un poquito... sucio.
 (set: $hasBathed to true)</tw-passagedata><tw-passagedata pid="12" name="Mira el mensaje" tags="" position="1867,449" size="100,100">(if: $calledCarlos is true) [ (goto: &quot;Mensaje Carlos amable&quot;) [[Mensaje Carlos amable]] ]
 
 (else:) [ (goto: &quot;Mensaje Carlos indiferente&quot;) [[Mensaje Carlos indiferente]] ]</tw-passagedata><tw-passagedata pid="13" name="Responde el mensaje" tags="" position="1616,772" size="100,100">(set: $textedCarlos to true)
-(css: &quot;color: lightblue;&quot;)[*¿“Mi amor”? ¿“Anoche fue increíble”? Ni Manuela ni nadie se puede enterar de esto. Y hasta le dediqué una canción. ¡Qué horror!*]
+(css: &quot;color: lightblue;&quot;)[*¿“Mi amor”? ¿“Anoche fue increíble”? Ni Manuela ni nadie se puede enterar de esto. Pasé la noche con él aunque no me gustaba la banda. ¡Qué horror!*]
 
 No recuerdas absolutamente nada de lo que pasó anoche. ¿Qué haces? 
 
@@ -392,12 +392,12 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 (set:$itemWallet&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)] 
 	  (link-goto: &quot;Busca más cosas en el cuarto&quot;, $previousPassage)
   ]
-]</tw-passagedata><tw-passagedata pid="48" name="Agáchate y mira." tags="" position="1103,532" size="100,100">Hay polvo y memorias debajo de la cama y... zapatos limpios. ¡Qué milagro!
+]</tw-passagedata><tw-passagedata pid="48" name="Agáchate y mira" tags="" position="1103,532" size="100,100">Hay polvo y memorias debajo de la cama y... zapatos limpios. ¡Qué milagro!
 (if: (($hasBathed is true) or ($itemClothes&#39;s isCarried is true)) and ($itemShoes&#39;s isCarried is false))[ [[Ponte los zapatos|Ponte los zapatos]] ]
 (else:)[ [[Mira los zapatos|Mira los zapatos]] ]
 (link-goto: &quot;Levántate&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Carlos indiferente" tags="" position="1768,617" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no llamar a tu &quot;admirador&quot; antes).**]
 
-(css: &quot;color: white;&quot;)[**Carlos:** *“Hola. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Hasta me dedicaste mi canción favorita. ¡Estoy ansiosa por contarles a todos que estamos juntos!”.*] 
+(css: &quot;color: white;&quot;)[**Carlos:** *“Hola. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Me importa mucho que viniste aunque la banda no te guste tanto. Anoche fue increíble. ¡Estoy ansioso por contarle al mundo que nuestro amor es real!”.*] 
 
 [[Responde el mensaje|Responde el mensaje]]
 [[Deja el mensaje en visto|No respondas el mensaje]]
@@ -507,7 +507,7 @@ Ah, zapatos de la última moda. Te quedan muy bien. Es tu estilo. [(set: $select
 (set: $puntosCarisma to $puntosCarisma + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="60" name="Mira los zapatos" tags="" position="1192,691" size="100,100">Son zapatos más casuales, pero más apropiados. Debes vestirte bien para lucirlos.
 
-(link-goto: &quot;Ve y alístate bien&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="61" name="Ve al armario." tags="" position="169,544" size="100,100">Ves una camisa a medio planchar, un pantalón y unos tenis más bien sucios. 
+(link-goto: &quot;Ve y alístate bien&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="61" name="Ve al armario" tags="" position="169,544" size="100,100">Ves una camisa a medio planchar, un pantalón y unos tenis más bien sucios. 
 
 [[Cámbiate de ropa|Cámbiate de ropa]]
 (link-goto: &quot;Explora más el cuarto&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="62" name="Revisa el teléfono" tags="" position="1596,103" size="100,100">(css: &quot;color: #187FF5;&quot;)[¡Carajo! Otra vez este internet de mierda... ]
@@ -2114,7 +2114,7 @@ Intenta completar el juego otra vez:
 
 [[Parte 2]]</tw-passagedata><tw-passagedata pid="187" name="Créditos" tags="" position="2171,2194" size="100,100">¡Gracias por jugar! Si tienes comentarios nos envías un correo a **drawingboardgames2020@gmail.com**. También, visítanos en nuestra página web: &lt;a style=&quot;color:lightblue&quot; href=&quot;https://drawingboard.games&quot;&gt;drawingboard.games&lt;/a&gt; 
 
-Jason Denney y Félix González - 2020</tw-passagedata></tw-storydata>
+Jason Denney y Félix González - 2020</tw-passagedata><tw-passagedata pid="188" name="Untitled Passage" tags="" position="620,349" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
