@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -87,7 +87,7 @@ Hay dos puertas, una al baño y la otra a la sala. [[Ve al baño]] o [[Ve a la s
 (link-goto: &quot;Encuentra un baño si eres listo&quot;, $previousPassage)] 
 (else:)[(css: &quot;color: green;&quot;) [**(+1 punto por vestirte luego de bañarte).**] [¡Uy! ¡Quien te ve la guapura! (set:$itemClothes&#39;s isCarried to true) 
 ] (set: $puntosCarisma to $puntosCarisma + 1)]
-(link-goto: &quot;Ve a ponerte más guapo aún&quot;, $previousPassage)
+(link-goto: &quot;Ve a ponerte con aún mejor pinta&quot;, $previousPassage)
 
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="10" name="cámbiate de ropa sucio" tags="" position="167,853" size="100,100">(set:$itemClothes&#39;s isCarried to true) (css: &quot;color: red;&quot;)[**(-1 punto por ponerte ropa sin bañarte).**]
 
@@ -145,8 +145,6 @@ Ahora, a aliviar esa resaca. ]
 (else:)[ [[Da una vuelta por el cuarto|Sal de la cama]] ]</tw-passagedata><tw-passagedata pid="19" name="Mira las llamadas" tags="" position="1365,1230" size="100,100">**Tienes 13 llamadas perdidas de Carlos.**
 **Tienes 2 llamadas perdidas de Manuela.**
 
-(css: &quot;color: lightblue;&quot;)[*Manuela es mi mejor amiga. Carlos es su hermano. Manuela me ha ayudado mucho en mis momentos más difíciles y hasta ahora había establecido un contacto tan estrecho con Carlos. Él también me quiere (?). Tengo que averiguarlo.*]
-
 Uh oh. A tu mejor amiga no le va a gustar que Carlos te llamara. Ella específicamente te dijo que nunca le tocaras, ni siquiera le hablaras. Nunca. Carajo, ¿qué hiciste?
 
 (if: $calledManuela is false)[ [[Llama a Manuela]] ]
@@ -198,9 +196,14 @@ Vas afuera de la casa y todas las miradas están sobre ti. Tal vez, esta toalla 
 ]
 (else:)[
 (if: $calledCarlos is true) [
-	(if: $itemPhone&#39;s isCarried is false or $itemWallet&#39;s isCarried is false)[
- (css: &quot;color: yellow;&quot;)[¿Estás seguro que tienes todo lo que necesitas?]
- [[Ve a la habitación|Sal de la cama]]
+	(if: $itemPhone&#39;s isCarried is false) [(css: &quot;color: yellow;&quot;)[Es inconcebible salir en estos tiempos sin teléfono.]]
+	
+	(if: $itemWallet&#39;s isCarried is false)
+	[(css: &quot;color: yellow;&quot;)[¿Puedes pagar cualquier gasto fuera?]]
+	
+	(if: $itemPhone&#39;s isCarried is false or $itemWallet&#39;s isCarried is false)[¿Quieres salir así igual?
+	
+ [[Ve a la habitación|Sal de la cama]] 
       ]
 	[[Sal de la casa|Fin de Parte 1]] ]
 (else:)[Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
@@ -208,8 +211,6 @@ Vas afuera de la casa y todas las miradas están sobre ti. Tal vez, esta toalla 
 No hablaste con nadie para enterarte qué pasó anoche, así que es imposible saber qué pasó.
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
-
-
 
 (link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;) ]
 ]</tw-passagedata><tw-passagedata pid="27" name="&quot;En la casa&quot;" tags="" position="2965,1104" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder lo que él espera de ti).**]
@@ -272,7 +273,7 @@ No hablaste con nadie para enterarte qué pasó anoche, así que es imposible sa
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Ay, no. ¡Arriba ese ánimo! Que la resaca no te pegue tan duro ahora. Jajaja… Nos vemos en media hora. ¡Te amo!.*
 
-(css: &quot;color: lightblue;&quot;)[*Arriba ese ánimo, mis pelotas. En fin, ya me tocó ir a ver qué es lo que quiere. ¡A ponerlo en su sitio! Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay que borrarla como sea.*]
+(css: &quot;color: lightblue;&quot;)[*En fin, ya me tocó ir a ver qué es lo que quiere. ¡A ponerlo en su sitio! Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay que borrarla como sea.*]
 
 (if: $itemClothes&#39;s isCarried is true) [ [[Sal de la casa|Sal de la casa]] ]
 [[Deja el teléfono|Deja el teléfono]]
@@ -280,7 +281,7 @@ No hablaste con nadie para enterarte qué pasó anoche, así que es imposible sa
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
 (set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="34" name="&quot;Sí, me parece bien. No hay problema.&quot;" tags="" position="3363,1445" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder de buena gana).**]
 
-(css: &quot;color: white;&quot;)[**Carlos:**] *¡Qué bien, querido! Tengo unas ganas enormes de estar contigo en todo instante. ¡Te quiero! Chao.* 
+(css: &quot;color: white;&quot;)[**Carlos:**] *¡Qué bien! Tengo unas ganas enormes de estar contigo en todo instante. ¡Te quiero! Chao.* 
 
 (css: &quot;color: lightblue;&quot;)[*¿Tienes ganas? ¡¿Me tienes ganas?! Eso no es para nada bueno. Ahora sí que estoy en la inmunda. Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay que borrarla como sea.*] 
 
@@ -355,7 +356,7 @@ Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay
 
 [[─En la casa.|&quot;En la casa&quot;]]
 [[─Por ahí.|&quot;Por ahí&quot;]]
-(if: $inBed is true) [ [[&quot;En la cama&quot;]] ]
+(if: $inBed is true) [ [[─En la cama.|&quot;En la cama&quot;]] ]
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="43" name="Carlos Agresivo" tags="" position="2132,907" size="100,100">(css: &quot;color: green;&quot;)[**(Has demostrado favoritismo a Manuela,**] (css: &quot;color: red;&quot;) [**y a Carlos no le gusta esto).**]
 
@@ -396,7 +397,7 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 ¡Qué bueno que no perdiste tus papeles o tu dinero! Parece que hay más pistas allí sobre anoche. 
 (if: $itemClothes&#39;s isCarried is false)[
 (css: &quot;color: lightblue;&quot;)[*Sería bueno si tuviera un bolsillo para traerla conmigo...*]]
-[[Mira tu billetera.|Mira la billetera]] (if: $itemClothes&#39;s isCarried is true)[
+[[Mira tu billetera|Mira la billetera]] (if: $itemClothes&#39;s isCarried is true)[
 	  (link: &quot;Recoge la billetera&quot;)[(set: $selectedItem to $itemWallet)
 (set:$itemWallet&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)] 
 	  (link-goto: &quot;Busca más cosas en el cuarto&quot;, $previousPassage)
@@ -404,12 +405,12 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 ]</tw-passagedata><tw-passagedata pid="48" name="Agáchate y mira" tags="" position="1103,532" size="100,100">Hay polvo y memorias debajo de la cama y... zapatos limpios. ¡Qué milagro!
 (if: (($hasBathed is true) or ($itemClothes&#39;s isCarried is true)) and ($itemShoes&#39;s isCarried is false))[ [[Ponte los zapatos|Ponte los zapatos]] ]
 (else:)[ [[Mira los zapatos|Mira los zapatos]] ]
-(link-goto: &quot;Levántate&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Carlos indiferente" tags="" position="1768,617" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto con Carlos por no llamarle a tu &quot;admirador&quot; antes).**]
-
-(css: &quot;color: white;&quot;)[**Carlos:** *“Hola. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Me importa mucho que viniste aunque la banda no te guste tanto. Anoche fue increíble. ¡Estoy ansioso por contarle al mundo que nuestro amor es real!”.*] 
+(link-goto: &quot;Levántate&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Carlos indiferente" tags="" position="1768,617" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:** *“Hola. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Me importa mucho que viniste aunque la banda no te guste tanto. Anoche fue increíble. ¡Estoy ansioso por contarle al mundo que nuestro amor es real!”.*] 
 
 [[Responde el mensaje|Responde el mensaje]]
 [[Deja el mensaje en visto|No respondas el mensaje]]
+
+(css: &quot;color: red;&quot;)[**(-1 punto con Carlos por no llamarle antes).**]
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="50" name="Mensaje Carlos amable" tags="" position="1964,621" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por llamar a Carlos primero).**]
 
@@ -490,7 +491,7 @@ Has saciado tu sed, pero porque lo bebiste muy rápido, se ha regado parte del j
 (set: $hasDrunkJuice to true)
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="56" name="Ve al baño" tags="" position="770,512" size="100,100">Estás en el baño.
 
-(if: $itemGlass&#39;s isCarried is false) [Hay un vaso en la gaveta.] (if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo.&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)] ]
+(if: $itemGlass&#39;s isCarried is false) [Hay un vaso en la gaveta.] (if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)] ]
 (if: (($itemGlass&#39;s isCarried is true) and ($hasDrunkWater is false)))[
 [[Bebe un poco de agua|Bebe agua]]]
 (if: ($hasBathed is false) and ($itemClothes&#39;s isCarried is false))[ Necesitas bañarte y cambiarte de ropa.
@@ -522,15 +523,17 @@ Ah, zapatos de la última moda. Te quedan muy bien. Es tu estilo. [(set: $select
 (link-goto: &quot;Explora más el cuarto&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="62" name="Revisa el teléfono" tags="" position="1596,103" size="100,100">(css: &quot;color: #187FF5;&quot;)[¡Carajo! Otra vez este internet de mierda... ]
 (css: &quot;color: lightblue;&quot;)[*Debo hacer algo con eso. Sólo puedo mirar lo básico.*]
 
-Tienes 1 mensaje no leído y 15 llamadas perdidas.
+Tienes 1 mensaje no leído y 15 llamadas perdidas. La mayoría aparece con el nombre de Carlos, y otras a nombre de Manuela.
 
-[[Mira las llamadas|Mira las llamadas]]
+(css: &quot;color: lightblue;&quot;)[*Manuela es mi mejor amiga. Carlos es su hermano. Manuela me ha ayudado mucho en mis momentos más difíciles y hasta ahora había establecido un contacto tan estrecho con Carlos. Él también me quiere (?). Tengo que averiguarlo.*]
 
-(if: $textedCarlos is false)[ [[Mira el mensaje|Mira el mensaje]] ]
+[[Mira las llamadas]]
+
+(if: $textedCarlos is false)[ [[Mira el mensaje]] ]
 
 (if: ($itemClothes&#39;s isCarried is true) and ($calledCarlos is true))[ (link:&quot;Llévate el teléfono&quot;)[ (set:$selectedItem to $itemPhone)(set:$itemPhone&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)]]
 
-(if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo.&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)] ]</tw-passagedata><tw-passagedata pid="63" name="&quot;Por ahí&quot;" tags="" position="2600,962" size="100,100">(css: &quot;color: red;&quot;)[**(-2 puntos por evitar la pregunta).**]
+(if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)] ]</tw-passagedata><tw-passagedata pid="63" name="&quot;Por ahí&quot;" tags="" position="2600,962" size="100,100">(css: &quot;color: red;&quot;)[**(-2 puntos por evitar la pregunta).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Dormiste bien? No estoy tan seguro... Mira, quiero verte para que hagamos planes juntos.*
 
@@ -2123,7 +2126,7 @@ Intenta completar el juego otra vez:
 
 [[Parte 2]]</tw-passagedata><tw-passagedata pid="187" name="Créditos" tags="" position="2171,2194" size="100,100">¡Gracias por jugar! Si tienes comentarios nos envías un correo a **drawingboardgames2020@gmail.com**. También, visítanos en nuestra página web: &lt;a style=&quot;color:lightblue&quot; href=&quot;https://drawingboard.games&quot;&gt;drawingboard.games&lt;/a&gt; 
 
-Jason Denney y Félix González - 2020</tw-passagedata><tw-passagedata pid="188" name="Untitled Passage" tags="" position="620,349" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+Jason Denney y Félix González - 2020</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
