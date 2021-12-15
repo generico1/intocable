@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -48,7 +48,8 @@ Te despiertas, tienes dolor de cabeza y de estómago. ¿Qué haces?
 (set: $selectedItem to &quot;&quot;)
 (set: $previousPassage to &quot;Despierta&quot;)
 (set: $itemShoes to (datamap:&quot;name&quot;, &quot;shoes&quot;, &quot;description&quot;, &quot;Son unos zapatos más casuales, pero más apropiados.&quot;, &quot;pickupText&quot;, &quot;Ahora tienes puestos los zapatos.&quot;, &quot;isCarried&quot;, false))
-(set: $dateLocation to &quot;None&quot;)</tw-passagedata><tw-passagedata pid="2" name="Item Acquired" tags="" position="724,4" size="100,100">(print: $selectedItem&#39;s pickupText)
+(set: $dateLocation to &quot;None&quot;)
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))</tw-passagedata><tw-passagedata pid="2" name="Item Acquired" tags="" position="724,4" size="100,100">(print: $selectedItem&#39;s pickupText)
 
 (link-goto: &quot;Listo&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="3" name="Item&#39;s Description" tags="" position="854,6" size="100,100">(print: $selectedItem&#39;s description)
 
@@ -160,7 +161,7 @@ No contesta. ¿Qué haces?
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
 (set: $calledManuela to true)</tw-passagedata><tw-passagedata pid="21" name="Déjale un mensaje" tags="" position="1374,1497" size="100,100">(css: &quot;color: white;&quot;)[**“Hola, Manuela. Tengo un dolor de cabeza horrible, y no sé qué pasó anoche. Llámame cuando puedas”.**] 
 
-(css: &quot;color: lightblue;&quot;)[*¿Será que sabe algo? ¿Que estuve con su hermano? No tengo cabeza para pensar ahora.*]
+(css: &quot;color: lightblue;&quot;)[*¿Será que sabe algo? No tengo cabeza para pensar ahora.*]
 
 [[Deja el teléfono|Deja el teléfono]]
 (set: $textedManuela to true)</tw-passagedata><tw-passagedata pid="22" name="No le dejes ningún mensaje" tags="" position="1239,1378" size="100,100">Probablemente ella vuelve a llamar más tarde. Tu cabeza está que estalla. 
@@ -205,7 +206,7 @@ Vas afuera de la casa y todas las miradas están sobre ti. Tal vez, esta toalla 
 	
  [[Ve a la habitación|Sal de la cama]] 
       ]
-	[[Sal de la casa|Fin de Parte 1]] ]
+	[[Reúnete con Carlos|Fin de Parte 1]] ]
 (else:)[Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
 
 No hablaste con nadie para enterarte qué pasó anoche, así que es imposible saber qué pasó.
@@ -304,9 +305,11 @@ No hablaste con nadie para enterarte qué pasó anoche, así que es imposible sa
 [[─Claro. ¿Qué tal si nos vemos en El Sitio?|El Sitio agresiva]]
 [[─Como siempre, disponible para ti.|Como siempre, disponible para ti.]]
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="37" name="&quot;Ya, ¿pero planes de qué o qué?&quot;" tags="" position="1819,1235" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder sin diplomacia a Carlos).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="37" name="&quot;Ya, ¿pero planes de qué o qué?&quot;" tags="" position="1808,1171" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder sin diplomacia a Carlos).**]
 
 (css: &quot;color: white;&quot;) [**Carlos:**] *Pues el plan para anunciar nuestro amor a todo el mundo. Espero que me estés tomando en serio, ¿no?*
+
+(css: &quot;color: lightblue;&quot;)[*¿Cómo así? ¿Nuestro amor? Debo descubrir si lo quiero o no, o por lo menos saber qué pasó anoche.*]
 
 [[─Tienes razón. Hablemos por acá cerca en El Sitio.|El Sitio agresiva]]
 [[─Total. Veámonos en el Café Tinta, que es un poco más distanciado.|Café Tinta agresiva]]  
@@ -336,7 +339,7 @@ No hablaste con nadie para enterarte qué pasó anoche, así que es imposible sa
 
 Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay que borrarla como sea.*]
 
-(if: $itemClothes&#39;s isCarried is true) [ [[Sal de la casa|Sal de la casa]] ]
+(if: $itemClothes&#39;s isCarried is true) [ [[Deja el teléfono y sal de la casa|Sal de la casa]] ]
 [[Deja el teléfono|Deja el teléfono]]
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
@@ -397,11 +400,8 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 ¡Qué bueno que no perdiste tus papeles o tu dinero! Parece que hay más pistas allí sobre anoche. 
 (if: $itemClothes&#39;s isCarried is false)[
 (css: &quot;color: lightblue;&quot;)[*Sería bueno si tuviera un bolsillo para traerla conmigo...*]]
-[[Mira tu billetera|Mira la billetera]] (if: $itemClothes&#39;s isCarried is true)[
-	  (link: &quot;Recoge la billetera&quot;)[(set: $selectedItem to $itemWallet)
-(set:$itemWallet&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)] 
-	  (link-goto: &quot;Busca más cosas en el cuarto&quot;, $previousPassage)
-  ]
+[[Mira tu billetera|Mira la billetera]]
+(link-goto: &quot;Busca más cosas en el cuarto&quot;, $previousPassage)
 ]</tw-passagedata><tw-passagedata pid="48" name="Agáchate y mira" tags="" position="1103,532" size="100,100">Hay polvo y memorias debajo de la cama y... zapatos limpios. ¡Qué milagro!
 (if: (($hasBathed is true) or ($itemClothes&#39;s isCarried is true)) and ($itemShoes&#39;s isCarried is false))[ [[Ponte los zapatos|Ponte los zapatos]] ]
 (else:)[ [[Mira los zapatos|Mira los zapatos]] ]
@@ -432,23 +432,18 @@ Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aqu�
 
 **Preparación para la cita** - (if: $puntosCarisma &gt;=3) [*¡Te ves increíble!*](elseif: $puntosCarisma &gt;0) [*Puedes hacerlo mejor la próxima vez.*](else:) [¿*Quién es este cavernícola? Hueles muy mal.*]
 
-**Tu Actitud Con Carlos**
+**Tu Actitud Con Carlos** -
 (if: $puntosCarlos + $puntosCarisma &gt;= 11)[
 	Bueno, lo que tengo que hacer es hablar con sinceridad con Carlos, a ver qué pasa. Pero debo tener claro también si quiero tener la confianza de Manuela. ¿Qué puedo hacer ahora?
-]
-(elseif: $puntosCarlos + $puntosCarisma &gt;= 9)[
+](elseif: $puntosCarlos + $puntosCarisma &gt;= 9)[
 	Vale. Una de dos: o termino con Carlos y sigo firme con Manuela, o todo se puede ir al traste. Igual tengo que hablar con Carlos con firmeza y sinceridad. Seguro que podemos arreglar algo.
-]
-(elseif: $puntosCarlos + $puntosCarisma &gt;= 5)[
+](elseif: $puntosCarlos + $puntosCarisma &gt;= 5)[
     Bien. Sé que esto no puede ser o estar con Carlos, o mantener mi amistad con Manuela. Tiene que haber algo para estar todos contentos. Si juego bien mis cartas, seguro habrá una solución justa. Veremos…
-]
-(elseif: $puntosCarlos + $puntosCarisma &gt;= 2)[
+](elseif: $puntosCarlos + $puntosCarisma &gt;= 2)[
 	¡Aaaaah! ¿Por qué todo tiene que reducirse a esto? Me molesta muchísimo todo esto. Que Carlos, que Manuela, que esto, que lo otro. ¡Estoy harto! Si no juego bien mis cartas, todo esto se va a la mismísima mierda.
-]
-(elseif: $puntosCarlos + $puntosCarisma &gt;= 0)[
+](elseif: $puntosCarlos + $puntosCarisma &gt;= 0)[
 	Bueno. Puedo llegar, hablarle a Carlos con firmeza, y aquí nada ha pasado. Claro, y borrar la evidencia si hay alguna. Simple.	
-]
-(else:)[
+](else:)[
   ¡Carlos está loco! ¡Si hay evidencia de algo entre nosotros, hay que borrarla! Y ya.
 ]
 
@@ -462,7 +457,7 @@ Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aqu�
 
 (css: &quot;color: lightblue;&quot;)[*¿Qué tal este hombre? Ni siquiera me dejó despedirme. En fin...*]
 
-(if: $itemClothes&#39;s isCarried is true) [ [[Sal de la casa]] ]
+(if: $itemClothes&#39;s isCarried is true) [ [[Deja el teléfono y sal de la casa|Sal de la casa]] ]
 [[Deja el teléfono]]
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
@@ -496,8 +491,10 @@ Has saciado tu sed, pero porque lo bebiste muy rápido, se ha regado parte del j
 [[Bebe un poco de agua|Bebe agua]]]
 (if: ($hasBathed is false) and ($itemClothes&#39;s isCarried is false))[ Necesitas bañarte y cambiarte de ropa.
 
-[[Ve a ducharte|Ve a ducharte]] ]
-(link-goto: &quot;Regresa al cuarto para ponerte de mejor pinta&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="57" name="Ve a la sala" tags="" position="3476,576" size="100,100">Estás en la sala.
+[[Ve a ducharte]] ]
+(if: ($hasBathed is true) and ($itemClothes&#39;s isCarried is false))[
+(link-goto: &quot;Regresa al cuarto para ponerte de mejor pinta&quot;, $previousPassage)
+](else:)[(link-goto: &quot;Regresa al cuarto&quot;, $previousPassage)]</tw-passagedata><tw-passagedata pid="57" name="Ve a la sala" tags="" position="3476,576" size="100,100">Estás en la sala.
 
 (if: $calledCarlos is false) [¿Qué haces? ¿A dónde vas?  Tal vez debes hablar con alguien...]
 (else:)[Tienes un poco de hambre, pero tampoco quieres estar mucho tiempo en casa.]
@@ -508,6 +505,10 @@ Has saciado tu sed, pero porque lo bebiste muy rápido, se ha regado parte del j
 
 Ahora empiezas a recordar algo, pero no es muy claro. 
 
+(if: $itemClothes&#39;s isCarried is true)[
+	  (link: &quot;Recoge la billetera&quot;)[(set: $selectedItem to $itemWallet)
+(set:$itemWallet&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)] 
+  ]
 (link-goto: &quot;Sigue pensando&quot;, $previousPassage)
 (set: $examinedWallet to true)</tw-passagedata><tw-passagedata pid="59" name="Ponte los zapatos" tags="" position="1038,690" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por ponerte zapatos nuevos).**]
 
@@ -531,9 +532,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas. La mayoría aparece con el no
 
 (if: $textedCarlos is false)[ [[Mira el mensaje]] ]
 
-(if: ($itemClothes&#39;s isCarried is true) and ($calledCarlos is true))[ (link:&quot;Llévate el teléfono&quot;)[ (set:$selectedItem to $itemPhone)(set:$itemPhone&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)]]
-
-(if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)] ]</tw-passagedata><tw-passagedata pid="63" name="&quot;Por ahí&quot;" tags="" position="2600,962" size="100,100">(css: &quot;color: red;&quot;)[**(-2 puntos por evitar la pregunta).**]
+(if: ($itemClothes&#39;s isCarried is true) and ($calledCarlos is true))[ (link:&quot;Llévate el teléfono&quot;)[ (set:$selectedItem to $itemPhone)(set:$itemPhone&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)]]</tw-passagedata><tw-passagedata pid="63" name="&quot;Por ahí&quot;" tags="" position="2600,962" size="100,100">(css: &quot;color: red;&quot;)[**(-2 puntos por evitar la pregunta).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Dormiste bien? No estoy tan seguro... Mira, quiero verte para que hagamos planes juntos.*
 
