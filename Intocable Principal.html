@@ -16,7 +16,7 @@
 }
 tw-sidebar tw-icon.undo {
  display: none;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Inicio" color="green"></tw-tag><tw-passagedata pid="1" name="Despierta" tags="Inicio" position="392,56" size="100,100">(css: &quot;color: gray;&quot;)[Intocable - Versión: 1.1]
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Inicio" color="green"></tw-tag><tw-passagedata pid="1" name="Despierta" tags="Inicio" position="396,47" size="100,100">(css: &quot;color: gray;&quot;)[Intocable - Versión: 1.1]
 
 
 Te despiertas, tienes dolor de cabeza y de estómago. ¿Qué haces?
@@ -24,6 +24,7 @@ Te despiertas, tienes dolor de cabeza y de estómago. ¿Qué haces?
 [[Mira alrededor]]
 [[Medita]]
 [[Piensa]]
+
 
 
 (set: $puntosCarisma to 0)
@@ -420,9 +421,13 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 
 [[Deja el teléfono|Deja el teléfono]]
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="51" name="Fin de Parte 1" tags="" position="2621,2191" size="100,100">(css: &quot;color: green;&quot;) [**¡Te has alistado para salir de la casa!**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="51" name="Fin de Parte 1" tags="" position="2621,2192" size="100,100">(css: &quot;color: green;&quot;)[**¡Te has alistado para salir de la casa!**]
 
 Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aquí.
+
+&lt;!--Do this before starting part 2 --&gt;
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
+
 
 (css: &quot;color: yellow;&quot;)[**Qué tan bien lo hiciste hasta ahora:**]
 
@@ -450,8 +455,7 @@ Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aqu�
 [[Continúa la historia|Parte 2]]
 (link-goto: &quot;O juega otra vez desde el inicio&quot;, &quot;Despierta&quot;)
 
-&lt;!--Do this before starting part 2 -
-(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2136,1504" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por hacer valer tu punto de vista).**]
+</tw-passagedata><tw-passagedata pid="52" name="El Sitio insistencia agresiva" tags="" position="2136,1504" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por hacer valer tu punto de vista).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Bien, como digas. Te espero en media hora. No tienes excusa de llegar tarde. Chao.*
 
