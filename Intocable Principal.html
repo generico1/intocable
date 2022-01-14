@@ -580,9 +580,17 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas. La mayoría aparece con el no
 &lt;!--- Usar para conversaciones: ─ --&gt;
 </tw-passagedata><tw-passagedata pid="67" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2574,2524" size="100,100">¡Bien! Pagaste la carrera completa. Pero te queda apenas para ir a ese otro sitio. Ya sabes... el más íntimo para encontrarte con Carlos. 
 
-(if: $dateLocation is &quot;Sitio&quot;) [ [[Entra a El Sitio|2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE]] ]
-(else:) [ [[Entra a El Sitio|2.2. CARLOS EN EL SITIO]] ]
-[[Trata de ir al Café Tinta |2.1.2. MANUELA CAMINA]] </tw-passagedata><tw-passagedata pid="68" name="2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE" tags="" position="2279,2559" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Hola, Manuela querida. ¿Todo bien?*]
+(if: $dateLocation is &quot;Sitio&quot;) [ [[Entra a El Sitio|2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE]] 
+[[Trata de ir más bien al Café Tinta |2.1.2. MANUELA CAMINA]] ]
+(else:) [
+[[Entra a El Sitio igual|2.2. CARLOS EN EL SITIO]] 
+[[Ve al Café Tinta|2.3.1. PAGAR TAXI AL CAFÉ TINTA]]
+]
+
+
+</tw-passagedata><tw-passagedata pid="68" name="2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE" tags="" position="2279,2559" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Hola, Manuela querida. ¡Qué casualidad!*]
+
+(css: &quot;color: orange;&quot;)[**Manuela:**] *¿Qué casualidad? Venimos aquí casi todos los días...*
 
 (if: $hasPaidTaxi is true) [ [[─Ven, que te invito a tomar lo que quieras.|2.1.1.1.A]] ]
 (elseif: $textedManuela is true) [ [[─¿Viste mi mensaje?|2.1.1.1.B]] ]
@@ -599,7 +607,7 @@ Modo de prueba:
 (if: $hasPaidTaxi is false) [ [[Pídele prestado para el taxi|2.1.3. PEDIR PRESTADO A MANUELA]] ]
 (else:)[
 [[Habla con Manuela|2.1.5.A]] ]
-[[Trata de ignorarla|2.1.7. TRATAS DE IGNORARLA]] ] 
+[[Trata de ignorarla|2.1.7. TRATAS DE IGNORARLA]]
 
 Modo de prueba:
 [[Le pides prestado para el taxi |2.1.3. PEDIR PRESTADO A MANUELA]] - has paid taxi
