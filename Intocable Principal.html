@@ -198,7 +198,7 @@ Vas afuera de la casa y todas las miradas están sobre ti. Tal vez, esta toalla 
 ]
 (else:)[
 (if: $calledCarlos is true) [
-	(if: $itemPhone&#39;s isCarried is false) [(css: &quot;color: yellow;&quot;)[Es inconcebible salir en estos tiempos sin teléfono.]]
+	(if: $itemPhone&#39;s isCarried is false) [(css: &quot;color: yellow;&quot;)[Es poco común salir en estos tiempos sin teléfono.]]
 	
 	(if: $itemWallet&#39;s isCarried is false)
 	[(css: &quot;color: yellow;&quot;)[¿Puedes pagar cualquier gasto fuera?]]
@@ -553,7 +553,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas. La mayoría aparece con el no
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
 
-(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="66" name="Parte 2" tags="" position="2599,2336" size="100,100">Intocable - Parte 2 ((link-goto: &quot;Ve al inicio (pierdes tu progreso hasta ahora)&quot;, &quot;Despierta&quot;))
+(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="66" name="Parte 2" tags="" position="2599,2336" size="100,100">Intocable - Parte 2 |(link-goto: &quot;Ve al inicio (pierdes tu progreso hasta ahora)&quot;, &quot;Despierta&quot;)|
 
 [[Ve a El Sitio|2.1. Llegas a El Sitio]]
 [[Ve al Café Tinta|2.3. LLEGAS AL CAFÉ TINTA]]
@@ -592,9 +592,11 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas. La mayoría aparece con el no
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *¿Qué casualidad? Venimos aquí casi todos los días...*
 
+(css: &quot;color: #187FF5;&quot;)[*Sí, jaja! Por supuesto... uhh, esa es la broma, ¿no?]
+
 (if: $hasPaidTaxi is true) [ [[─Ven, que te invito a tomar lo que quieras.|2.1.1.1.A]] ]
 (elseif: $textedManuela is true) [ [[─¿Viste mi mensaje?|2.1.1.1.B]] ]
-(else:)[ [[─Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.1.1.C]] ]
+(else:)[ [[─Oye, yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.1.1.C]] ]
 
 Modo de prueba: 
 
@@ -1229,7 +1231,7 @@ si menos
 [[─Está bien. Quien nada debe nada teme.|2.1.5.3.2. LLAMADA DE EMERGENCIA A CARLOS]] 
 
 (set: $puntosManuela to $puntosManuela - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="118" name="2.1.5.3.1" tags="" position="2215,3235" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder de manera poco delicada).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="118" name="2.1.5.3.1" tags="" position="2155,3208" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder de manera poco delicada).**]
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *No. ¡Quien me tiene que respetar ahora eres tú! Ya sé todo lo que quería saber.*
 
@@ -1261,7 +1263,15 @@ Aunque Manuela está muy disgustada contigo, agradece que no te ha querido matar
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="121" name="2.1.5.3.2.B" tags="" position="2568,3668" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por recordar que la llamada es para asegurar la tranquilidad de Manuela).**]
 
+(if: $puntosCarlos &gt;= 4)[
+(css: &quot;color: white;&quot;)[**Carlos:**] *Hola, ¿cómo estás? Estaba en el concierto de mi banda favorita, esa de covers noventeros. Y luego me fui a la casa de una amiga. Por eso no llegué a casa anoche. Perdón, hermanita.* 
+](else:)[
 (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, ¿cómo estás? Estaba en el concierto de mi banda favorita, esa de rock pesado. Y luego me fui a la casa de una amiga. Por eso no llegué a casa anoche. Perdón, hermanita.* 
+
+(css: &quot;color: orange;&quot;)[**Manuela:**] *¿En serio, rock pesado?...*
+
+(css: &quot;color: white;&quot;)[**Carlos:**] *¡Ah, perdón! La banda de covers noventeros es mi favorita...*
+]
 
 [[─¡Qué bien! Me hace feliz que hayas pasado una buena noche en tu concierto.|2.1.3.5.2.1]]
 [[─Vale, Carlos. Sólo era eso. Me da pena contigo hacerte pasar por estas.|2.1.3.5.2.2]]
