@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -131,7 +131,7 @@ Tú escribes: (css: &quot;color: white;&quot;)[**“Hola, Carlos. Tengo mucho do
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="16" name="Responde con un insulto" tags="" position="1701,920" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder de manera poco diplomática).**]
 
-Tú escribes: (css: &quot;color: white;&quot;)[**“Hola, Carlos. En serio que estoy muy cansado ahora. Te llamo después.**]
+Tú escribes: (css: &quot;color: white;&quot;)[**&quot;Hola, Carlos. En serio que estoy muy cansado ahora. Te llamo después&quot;.**]
 
 Parece que a él no le agradó, y empieza a llamar muchas veces. Aún no tienes cabeza para responder a nadie. Te duele mucho.
 
@@ -169,7 +169,7 @@ No contesta. ¿Qué haces?
 
 [[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="23" name="Ve a la cocina" tags="" position="3680,1006" size="100,100">Estás en la cocina.
 
-(if: ($hasDrunkJuice is false and $hasDrunkWater is false) or ($hasEatenSandwich is false and $hasEatenChicken is false))[Necesitas comer o beber algo.]
+(if: $hasDrunkJuice is false and $hasDrunkWater is false)[Necesitas beber algo.](if: $hasEatenSandwich is false and $hasEatenChicken is false)[Necesitas comer algo.]
 
 (if: $hasDrunkJuice is false or $hasEatenSandwich is false )[Ves el refrigerador entreabierto. [[Abre el refrigerador]]]
 (if: $hasEatenChicken is false)[Ves el comedor con alguna comida cubierta con una servilleta. [[Ve al comedor]]]
@@ -184,9 +184,9 @@ No contesta. ¿Qué haces?
 
 (if: $hasDrunkJuice is false)[ [[Bebe el jugo]] ] 
 (if: $hasEatenSandwich is false)[ [[Come el sánduche igual]] ] 
-(link-goto: &quot;Busca otra comida&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="25" name="Ve al comedor" tags="" position="4180,1007" size="100,100">Levantas la servilleta y ves que... (if: $hasEatenChicken is false)[hay dos presas de pollo rostizado que pediste ayer en la tarde, y que no comiste por andar de borrachera.](else:)[ no hay nada qué comer.]
+(link-goto: &quot;Busca otra comida&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="25" name="Ve al comedor" tags="" position="4180,1007" size="100,100">Levantas la servilleta y ves que... (if: $hasEatenChicken is false)[hay dos tajadas de pan que dejaste ayer en la tarde, y que no comiste por andar de borrachera.](else:)[ no hay nada qué comer.]
 
-[[Come el pollo]]
+[[Come el pan]]
 [[Ve al refrigerador|Abre el refrigerador]]
 (link-goto: &quot;Da una vuelta por la cocina&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="26" name="Sal de la casa" tags="" position="2997,2069" size="100,100">(if: $itemClothes&#39;s isCarried is false and $hasBathed is true) [
 
@@ -348,7 +348,7 @@ No hablaste con nadie para enterarte qué pasó anoche, así que es imposible sa
 [[Deja el teléfono|Deja el teléfono]]
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
-(set: $dateLocation to &quot;Sitio&quot;)</tw-passagedata><tw-passagedata pid="41" name="Café Tinta agresiva" tags="" position="2403,1521" size="100,100">(css: &quot;color: green;&quot;)[**(-1 punto por querer ir al lugar que Carlos no esperaba).**]
+(set: $dateLocation to &quot;Sitio&quot;)</tw-passagedata><tw-passagedata pid="41" name="Café Tinta agresiva" tags="" position="2403,1521" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por querer ir al lugar que Carlos no esperaba).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Claro, con eso no quieres que nadie nos vea... Bueno, nos vemos en media hora, ¡sin falta! Chao.* 
 
@@ -391,12 +391,12 @@ Has saciado tu sed, y te has cuidado de no regar nada sobre tu camisa. ¡Bien he
 [[Ve a la cocina|Ve a la cocina]]
 (set: $puntosCarisma to $puntosCarisma - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma
-(set: $hasEatenSandwich to true)</tw-passagedata><tw-passagedata pid="46" name="Come el pollo" tags="" position="4083,1377" size="100,100">(if: $hasDrunkJuice is false and $hasDrunkWater is false)[(set: $puntosCarisma to $puntosCarisma - 1) (css: &quot;color: red;&quot;)[**(-1 punto por comer sin beber nada).**] 
+(set: $hasEatenSandwich to true)</tw-passagedata><tw-passagedata pid="46" name="Come el pan" tags="" position="4083,1377" size="100,100">(if: $hasDrunkJuice is false and $hasDrunkWater is false)[(set: $puntosCarisma to $puntosCarisma - 1) (css: &quot;color: red;&quot;)[**(-1 punto por comer sin beber nada).**] 
 
-¡Ese pollo supo a gloria! Pero te faltó pasarlo con algún líquido.]
+¡Ese pan supo a gloria! Pero te faltó pasarlo con algún líquido.]
 (else:)[(if: $hasDrunkJuice is true)[(set: $puntosCarisma to $puntosCarisma + 1) (css: &quot;color: green;&quot;)[**(+1 punto por comer y beber).**]] 
 
-¡Con ese pollo has recargado tu energía!] 
+¡Con ese pan has recargado algo de energía!] 
 
 [[Ve a la cocina|Ve a la cocina]]
 (set: $hasEatenChicken to true)
@@ -444,17 +444,17 @@ Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aqu�
 
 **Tu Actitud Con Carlos** -
 (if: $puntosCarlos + $puntosCarisma &gt;= 11)[
-	Bueno, lo que tengo que hacer es hablar con sinceridad con Carlos, a ver qué pasa. Pero debo tener claro también si quiero tener la confianza de Manuela. ¿Qué puedo hacer ahora?
+	(css: &quot;color: lightblue;&quot;)[*Bueno, lo que tengo que hacer es hablar con sinceridad con Carlos, a ver qué pasa. Pero debo tener claro también si quiero tener la confianza de Manuela. ¿Qué puedo hacer ahora?*]
 ](elseif: $puntosCarlos + $puntosCarisma &gt;= 9)[
-	Vale. Una de dos: o termino con Carlos y sigo firme con Manuela, o todo se puede ir al traste. Igual tengo que hablar con Carlos con firmeza y sinceridad. Seguro que podemos arreglar algo.
+	(css: &quot;color: lightblue;&quot;)[*Vale. Una de dos: o termino con Carlos y sigo firme con Manuela, o todo se puede ir al traste. Igual tengo que hablar con Carlos con firmeza y sinceridad. Seguro que podemos arreglar algo.*]
 ](elseif: $puntosCarlos + $puntosCarisma &gt;= 5)[
-    Bien. Sé que esto no puede ser o estar con Carlos, o mantener mi amistad con Manuela. Tiene que haber algo para estar todos contentos. Si juego bien mis cartas, seguro habrá una solución justa. Veremos…
+    (css: &quot;color: lightblue;&quot;)[*Bien. Sé que esto no puede ser o estar con Carlos, o mantener mi amistad con Manuela. Tiene que haber algo para estar todos contentos. Si juego bien mis cartas, seguro habrá una solución justa. Veremos…*]
 ](elseif: $puntosCarlos + $puntosCarisma &gt;= 2)[
-	¡Aaaaah! ¿Por qué todo tiene que reducirse a esto? Me molesta muchísimo todo esto. Que Carlos, que Manuela, que esto, que lo otro. ¡Ya basta! Si no juego bien mis cartas, todo esto se va a la mismísima mierda.
+	(css: &quot;color: lightblue;&quot;)[*¡Aaaaah! ¿Por qué todo tiene que reducirse a esto? Me molesta muchísimo todo esto. Que Carlos, que Manuela, que esto, que lo otro. ¡Ya basta! Si no juego bien mis cartas, todo esto se va a la mismísima mierda.*]
 ](elseif: $puntosCarlos + $puntosCarisma &gt;= 0)[
-	Bueno. Puedo llegar, hablarle a Carlos con firmeza, y aquí nada ha pasado. Claro, y descubrir si hay evidencia y borrarla. Simple.	
+	(css: &quot;color: lightblue;&quot;)[*Bueno. Puedo llegar, hablarle a Carlos con firmeza, y aquí nada ha pasado. Claro, y descubrir si hay evidencia y borrarla. Simple.*]
 ](else:)[
-  ¡Carlos está loco! ¡Si hay evidencia de algo entre nosotros, hay que borrarla! Y ya.
+  (css: &quot;color: lightblue;&quot;)[*¡Carlos está loco! ¡Si hay evidencia de algo entre nosotros, hay que borrarla! Y ya.*]
 ]
 
 [[Continúa la historia|Parte 2]]
@@ -506,7 +506,16 @@ Has saciado tu sed, pero porque lo bebiste muy rápido, se ha regado parte del j
 ](else:)[(link-goto: &quot;Regresa al cuarto&quot;, $previousPassage)]</tw-passagedata><tw-passagedata pid="57" name="Ve a la sala" tags="" position="3476,576" size="100,100">Estás en la sala.
 
 (if: $calledCarlos is false) [¿Qué haces? ¿A dónde vas?  Tal vez debes hablar con alguien...]
-(else:)[Tienes un poco de hambre, pero tampoco quieres estar mucho tiempo en casa.]
+(else:)[
+
+(if: $hasEatenChicken is false)[
+Tienes un poco de hambre.]
+(if: $hasEatenSandwich is true)[Te sientes un poquito mal de estómago y deseas no haber comido el sánduche.]
+(if: $hasDrunkWater is false or $hasDrunkJuice is false)[
+Sería bueno beber algo.]
+
+No quieres estar mucho tiempo en casa.
+]
 
 [[Volver a la habitación |Sal de la cama]]
 [[Ve a la cocina]]
@@ -1196,7 +1205,7 @@ A menos que lo intentes de nuevo.]
 (set: $puntosManuela to $puntosManuela + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="108" name="2.3.5.2.B" tags="" position="4516,3917" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por decirle la verdad de una manera poco delicada).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="108" name="2.3.5.2.B" tags="" position="4506,3915" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por decirle la verdad de una manera poco delicada).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Así son las cosas, ¿no? Yo no sé cómo son las cosas contigo. En serio. Tengo demasiado en la cabeza ahora mismo. Voy al baño. Ya vuelvo.*
 
@@ -1537,11 +1546,16 @@ Modo de prueba:
 -si has comido pollo y tomado algo- [[Toma el bolso.|2.3.5.2.2.1. TOMA LA MOCHILA]]
 -si has comido el sánduche y/o no has tomado nada- [[Toma el bolso y ve al baño.|2.3.5.2.2.1. TOMA LA MOCHILA]] 
 -si no has comido nada o default- 
-[[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]]  </tw-passagedata><tw-passagedata pid="140" name="2.3.5.2.1. CARLOS SE LLEVA LA MOCHILA AL BAÑO" tags="" position="4709,4146" size="100,100">Carlos está muy confundido, y se lleva su mochila al baño. Ahí estaba su teléfono móvil, lo único que te podía decir qué pasó anoche. 
+[[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]]  </tw-passagedata><tw-passagedata pid="140" name="2.3.5.2.1. CARLOS SE LLEVA LA MOCHILA AL BAÑO" tags="" position="4708,4142" size="100,100">Carlos está muy confundido, y se lleva su mochila al baño. Ahí estaba su teléfono móvil, lo único que te podía decir qué pasó anoche. 
 
 Has perdido la oportunidad de hacerlo porque no te has preparado lo suficiente para la cita con Carlos, ni tienes suficiente confianza con él.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="141" name="2.4.1.1 Entra al teléfono de Carlos" tags="" position="4583,5325" size="100,100">Has accedido al teléfono de Carlos. ¿Qué quieres hacer?
+**Fin del juego:**
+[[Reiniciar desde el punto de control|Parte 2]]
+(if: $puntosCarisma &lt;= 2)[
+Sería mejor si te preparas para la cita...
+[[Reiniciar desde el principio|Despierta]]
+]</tw-passagedata><tw-passagedata pid="141" name="2.4.1.1 Entra al teléfono de Carlos" tags="" position="4583,5325" size="100,100">Has accedido al teléfono de Carlos. ¿Qué quieres hacer?
 
 (if: $segundosReloj &gt; 500)[
 ¡Ojo! ¡Carlos debe estar por llegar!  Date prisa.
