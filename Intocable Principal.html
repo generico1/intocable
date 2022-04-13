@@ -169,7 +169,7 @@ No contesta. ¿Qué haces?
 
 [[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="23" name="Ve a la cocina" tags="" position="3680,1006" size="100,100">Estás en la cocina.
 
-(if: $hasDrunkJuice is false and $hasDrunkWater is false)[Necesitas beber algo.](if: $hasEatenSandwich is false and $hasEatenChicken is false)[Necesitas comer algo.]
+(if: $hasDrunkJuice is false and $hasDrunkWater is false)[Necesitas beber algo. ](if: $hasEatenSandwich is false and $hasEatenChicken is false)[Necesitas comer algo.]
 
 (if: $hasDrunkJuice is false or $hasEatenSandwich is false )[Ves el refrigerador entreabierto. [[Abre el refrigerador]]]
 (if: $hasEatenChicken is false)[Ves el comedor con alguna comida cubierta con una servilleta. [[Ve al comedor]]]
@@ -183,18 +183,16 @@ No contesta. ¿Qué haces?
 (if: $hasEatenSandwich is false)[... un sánduche de algunos días.]
 
 (if: $hasDrunkJuice is false)[ [[Bebe el jugo]] ] 
-(if: $hasEatenSandwich is false)[ [[Come el sánduche igual]] ] 
-(link-goto: &quot;Busca otra comida&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="25" name="Ve al comedor" tags="" position="4180,1007" size="100,100">Levantas la servilleta y ves que... (if: $hasEatenChicken is false)[hay dos tajadas de pan que dejaste ayer en la tarde, y que no comiste por andar de borrachera.](else:)[ no hay nada qué comer.]
+(if: $hasEatenSandwich is false and $hasEatenChicken is false)[ [[Come el sánduche igual]] ] 
+(link-goto: &quot;Busca otra comida&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="25" name="Ve al comedor" tags="" position="4184,1044" size="100,100">Levantas la servilleta y ves que... (if: $hasEatenChicken is false)[hay dos tajadas de pan que olvidaste ayer por andar de borrachera.](else:)[ no hay nada qué comer.]
 
-[[Come el pan]]
+(if: $hasEatenChicken is false and $hasEatenSandwich is false)[ [[Come el pan]] ]
 [[Ve al refrigerador|Abre el refrigerador]]
 (link-goto: &quot;Da una vuelta por la cocina&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="26" name="Sal de la casa" tags="" position="2997,2069" size="100,100">(if: $itemClothes&#39;s isCarried is false and $hasBathed is true) [
+¿Crees que es seguro salir así?
 
-Vas afuera de la casa y todas las miradas están sobre ti. Tal vez, esta toalla no cubre todo. No hace falta mucho para que la policía te arreste por conducta indecente.
- 
-(css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
-
-(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)
+[[Salir igual|Fin de Parte 1 desnudo]]
+[[Ve a la habitación|Sal de la cama]]
 ]
 (else:)[
 (if: $calledCarlos is true) [
@@ -208,13 +206,13 @@ Vas afuera de la casa y todas las miradas están sobre ti. Tal vez, esta toalla 
  [[Ve a la habitación|Sal de la cama]] 
       ]
 	[[Reúnete con Carlos|Fin de Parte 1]] ]
-(else:)[Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
+(else:)[
+¿Crees que es seguro salir sin saber qué hacer?
 
-No hablaste con nadie para enterarte qué pasó anoche, así que es imposible saber qué pasó.
+[[Salir igual|Fin de Parte 1 Despistado]]
+[[Ve a la habitación|Sal de la cama]]
 
-(css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
-
-(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;) ]
+ ]
 ]</tw-passagedata><tw-passagedata pid="27" name="&quot;En la casa&quot;" tags="" position="2965,1104" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder lo que él espera de ti).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Eso está muy bien. Espero hayas llegado bien.*
@@ -374,7 +372,7 @@ No hablaste con nadie para enterarte qué pasó anoche, así que es imposible sa
 [[─Nada, me estaba alistando.|&quot;Nada, me estaba alistando.&quot;]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
-(set: $puntosManuela to $puntosManuela + 1)</tw-passagedata><tw-passagedata pid="44" name="Bebe el jugo" tags="" position="3715,1380" size="100,100">(if: $itemGlass&#39;s isCarried is false)[¿Vas a tomarlo así no más como cavernícola?
+(set: $puntosManuela to $puntosManuela + 1)</tw-passagedata><tw-passagedata pid="44" name="Bebe el jugo" tags="" position="3715,1380" size="100,100">(if: $itemGlass&#39;s isCarried is false)[¿Vas a tomarlo directamente de la caja como simple adolescente?
 
 [[Bebe el jugo igual|Bebe el jugo igual]] ]
 (else:)[(set: $puntosCarisma to $puntosCarisma + 1) (css: &quot;color: green;&quot;)[**(+1 punto por beber jugo sin manchar tu ropa).**]
@@ -384,7 +382,7 @@ Has saciado tu sed, y te has cuidado de no regar nada sobre tu camisa. ¡Bien he
 (set: $hasDrunkJuice to true)]
 [[Ve a la cocina|Ve a la cocina]]
 
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="45" name="Come el sánduche igual" tags="" position="3903,1376" size="100,100">Has saciado tu hambre, pero empiezan a sonar unos ruidos extraños en tu estómago. Esperas no ir al baño después… por ahora. Aún sientes sed, pero ya es tarde para tomar algo. Hasta después.
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="45" name="Come el sánduche igual" tags="" position="3903,1376" size="100,100">Has saciado tu hambre, pero empiezan a sonar unos ruidos extraños en tu estómago. Esperas no ir al baño después… (if: !($hasDrunkJuice or $hasDrunkWater))[Todavía tienes sed, pero no será digerible.]
 
 (css: &quot;color: red;&quot;)[**(-1 punto por no pensar en tu salud).**]
 
@@ -2254,7 +2252,17 @@ Con esa incertidumbre, no es posible obtener más información por ahora.
 [[─Manuela no puede enterarse de que tú y yo hablamos. Hicimos un pacto, y mi amistad con ella es muy importante para mí.|2.3.5.2.C]] 
 [[─Hice un pacto con Manuela. Y acordamos en que tú y yo no debemos vernos. Pero también quiero saber qué pasó anoche entre nosotros.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]]
 [[─Acordé con tu hermana en un pacto en que ni siquiera podía hablarte. Discúlpame, pero temo por lo que pueda pasar si Manuela se entera.|2.3.5.1.A]]
-[[─Sí tienes que ver, y te traigo aquí, Carlos, para decirte que no podemos hablar más. Si algo pasó entre tú y yo, olvídalo. No estaba en mí anoche.|2.3.5.A]] </tw-passagedata></tw-storydata>
+[[─Sí tienes que ver, y te traigo aquí, Carlos, para decirte que no podemos hablar más. Si algo pasó entre tú y yo, olvídalo. No estaba en mí anoche.|2.3.5.A]] </tw-passagedata><tw-passagedata pid="191" name="Fin de Parte 1 desnudo" tags="" position="3204,2153.5" size="100,100">Vas afuera de la casa y todas las miradas están sobre ti. Tal vez, esta toalla no cubre todo. No hace falta mucho para que la policía te arreste por conducta indecente.
+ 
+(css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
+
+(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="192" name="Fin de Parte 1 Despistado" tags="" position="3332,2148.5" size="100,100">Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
+
+No hablaste con nadie para enterarte qué pasó anoche, así que es imposible saber qué pasó.
+
+(css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
+
+(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
