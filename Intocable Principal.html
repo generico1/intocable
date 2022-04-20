@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -152,7 +152,7 @@ Uh oh. A tu mejor amiga no le va a gustar que Carlos te llamara. Ella específic
 (if: $calledManuela is false)[ [[Llama a Manuela]] ]
 (if: $calledCarlos is false)[ [[Llama a Carlos]] ]
 
-[[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="20" name="Llama a Manuela" tags="" position="1518,1360" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con tu amiga por llamarla).**]
+[[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="20" name="Llama a Manuela" tags="" position="1519,1359" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con tu amiga por llamarla).**]
 
 No contesta. ¿Qué haces?
 
@@ -364,7 +364,7 @@ No contesta. ¿Qué haces?
 [[─Por ahí.|&quot;Por ahí&quot;]]
 (if: $inBed is true) [ [[─En la cama.|&quot;En la cama&quot;]] ]
 (set: $puntosCarlos to $puntosCarlos + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="43" name="Carlos Agresivo" tags="" position="2132,907" size="100,100">(css: &quot;color: green;&quot;)[**(Has demostrado favoritismo a Manuela,**] (css: &quot;color: red;&quot;) [**y a Carlos no le gusta esto).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="43" name="Carlos Agresivo" tags="" position="2131,910" size="100,100">(css: &quot;color: green;&quot;)[**(Has demostrado favoritismo a Manuela,**] (css: &quot;color: red;&quot;) [**y a Carlos no le gusta esto).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¡Por fin contestas! ¿Qué pasó?*
 
@@ -372,7 +372,10 @@ No contesta. ¿Qué haces?
 [[─Nada, me estaba alistando.|&quot;Nada, me estaba alistando.&quot;]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
-(set: $puntosManuela to $puntosManuela + 1)</tw-passagedata><tw-passagedata pid="44" name="Bebe el jugo" tags="" position="3715,1380" size="100,100">(if: $itemGlass&#39;s isCarried is false)[¿Vas a tomarlo directamente de la caja como simple adolescente?
+(set: $puntosManuela to $puntosManuela + 1)
+
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="44" name="Bebe el jugo" tags="" position="3715,1380" size="100,100">(if: $itemGlass&#39;s isCarried is false)[¿Vas a tomarlo directamente de la caja como simple adolescente?
 
 [[Bebe el jugo igual|Bebe el jugo igual]] ]
 (else:)[(set: $puntosCarisma to $puntosCarisma + 1) (css: &quot;color: green;&quot;)[**(+1 punto por beber jugo sin manchar tu ropa).**]
@@ -407,6 +410,7 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 [[Mira tu billetera|Mira la billetera]]
 (link-goto: &quot;Busca más cosas en el cuarto&quot;, $previousPassage)
 ]</tw-passagedata><tw-passagedata pid="48" name="Agáchate y mira" tags="" position="1103,532" size="100,100">Hay polvo y memorias debajo de la cama y... zapatos limpios. ¡Qué milagro!
+
 (if: (($hasBathed is true) or ($itemClothes&#39;s isCarried is true)) and ($itemShoes&#39;s isCarried is false))[ [[Ponte los zapatos|Ponte los zapatos]] ]
 (else:)[ [[Mira los zapatos|Mira los zapatos]] ]
 (link-goto: &quot;Levántate&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Carlos indiferente" tags="" position="1768,617" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:** *“Hola. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Me importa mucho que viniste aunque la banda no te guste tanto. Anoche fue increíble. ¡Estoy ansioso por contarle al mundo que nuestro amor es real!”.*] 
@@ -418,7 +422,7 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="50" name="Mensaje Carlos amable" tags="" position="1964,621" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por llamar a Carlos primero).**]
 
-(css: &quot;color: white;&quot;)[**Carlos:**]*“¡Hola!. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Incluso me dedicaste mi canción favorita. Qué lindo. ¡Estoy ansioso por contarles a todos que estamos juntos!”.* 
+(css: &quot;color: white;&quot;)[**Carlos:**] *“¡Hola! Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Incluso me dedicaste mi canción favorita. Qué lindo. ¡Estoy ansioso por contarles a todos que estamos juntos!”.* 
 
 (css: &quot;color: lightblue;&quot;)[*Claro. Esta es la confirmación de su capricho por mí. Ni Manuela ni nadie se puede enterar de esto. Incluso le dediqué una canción ¡Qué horror! ¡Debo parar esto ahora mismo!*]
 
@@ -468,7 +472,7 @@ Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aqu�
 [[Deja el teléfono]]
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
-(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="53" name="El Sitio amable" tags="" position="2679,1398" size="100,100">(css: &quot;color: green;&quot;)[**(-1 punto por ver qué pasa sin medir las consecuencias).**]
+(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="53" name="El Sitio amable" tags="" position="2679,1398" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ver qué pasa sin medir las consecuencias).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *Vale, cariño. Así quedamos. Te espero en media hora. Te quiero mucho. ¡Mua!*
 
@@ -552,7 +556,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas. La mayoría aparece con el no
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Dormiste bien? No estoy tan seguro... Mira, quiero verte para que hagamos planes juntos.*
 
-[[─Vale, ¿qué te parece si nos reunimos en El Sitio?&quot;|El Sitio insistencia amable]]
+[[─Vale, ¿qué te parece si nos reunimos en El Sitio?|El Sitio insistencia amable]]
 [[─Ya, ¿pero planes de qué o qué?|&quot;Ya, ¿pero planes de qué o qué?&quot;]]
 [[─Sí, claro. Adonde tú quieras.|&quot;Sí, claro. Adonde tú quieras.&quot;]]
 (set: $puntosCarlos to $puntosCarlos - 2)
@@ -2252,11 +2256,11 @@ Con esa incertidumbre, no es posible obtener más información por ahora.
 [[─Manuela no puede enterarse de que tú y yo hablamos. Hicimos un pacto, y mi amistad con ella es muy importante para mí.|2.3.5.2.C]] 
 [[─Hice un pacto con Manuela. Y acordamos en que tú y yo no debemos vernos. Pero también quiero saber qué pasó anoche entre nosotros.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]]
 [[─Acordé con tu hermana en un pacto en que ni siquiera podía hablarte. Discúlpame, pero temo por lo que pueda pasar si Manuela se entera.|2.3.5.1.A]]
-[[─Sí tienes que ver, y te traigo aquí, Carlos, para decirte que no podemos hablar más. Si algo pasó entre tú y yo, olvídalo. No estaba en mí anoche.|2.3.5.A]] </tw-passagedata><tw-passagedata pid="191" name="Fin de Parte 1 desnudo" tags="" position="3204,2153.5" size="100,100">Vas afuera de la casa y todas las miradas están sobre ti. Tal vez, esta toalla no cubre todo. No hace falta mucho para que la policía te arreste por conducta indecente.
+[[─Sí tienes que ver, y te traigo aquí, Carlos, para decirte que no podemos hablar más. Si algo pasó entre tú y yo, olvídalo. No estaba en mí anoche.|2.3.5.A]] </tw-passagedata><tw-passagedata pid="191" name="Fin de Parte 1 desnudo" tags="" position="3204,2153" size="100,100">Vas afuera de la casa y todas las miradas están sobre ti. Tal vez, esta toalla no cubre todo. No hace falta mucho para que la policía te arreste por conducta indecente.
  
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
 
-(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="192" name="Fin de Parte 1 Despistado" tags="" position="3332,2148.5" size="100,100">Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
+(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="192" name="Fin de Parte 1 Despistado" tags="" position="3332,2148" size="100,100">Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
 
 No hablaste con nadie para enterarte qué pasó anoche, así que es imposible saber qué pasó.
 
