@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -442,7 +442,7 @@ Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aqu�
 
 **Manuela** - (if: $puntosManuela &gt;=1) [*Estás en buena relación con ella.*](else:) [*Está molesta contigo.*]
 
-**Preparación para la cita** - (if: $puntosCarisma &gt;=3) [*¡Te ves increíble!*](elseif: $puntosCarisma &gt;0) [*Puedes hacerlo mejor la próxima vez.*](else:) [¿*Quién es este cavernícola? Hueles muy mal.*]
+**Preparación para la cita** - (if: $puntosCarisma &gt;=3) [*¡Te ves increíble!*](elseif: $puntosCarisma &gt;0) [*Puedes hacerlo mejor la próxima vez.*](else:) [*Pareces cavernícola. Hueles muy mal.*]
 
 **Tu Actitud Con Carlos** -
 (if: $puntosCarlos + $puntosCarisma &gt;= 11)[
@@ -575,6 +575,8 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas. La mayoría aparece con el no
 
 [[Ve a El Sitio|2.1. Llegas a El Sitio]]
 [[Ve al Café Tinta|2.3. LLEGAS AL CAFÉ TINTA]]
+
+
 
 &lt;!--- is typically saved at the end of part1, but copied here for testing --&gt;
 
@@ -739,7 +741,11 @@ Modo de prueba:
 
 Al ver la reacción de Manuela sales a correr como la persona cobarde que eres. Carlos queda desconcertado y desilusionado contigo. Mientras tanto, Manuela se enloquece, te persigue, se siente muy ofendida. Pierdes la confianza de ambos, y te quedarás sin saber qué fue lo que pasó en realidad anoche. 
 
-[[Fin del juego - Reiniciar|Parte 2]]
+Fin del juego.  
+
+¿Quieres descubrir otra posibilidad de la historia?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]
 
 (set: $puntosManuela to $puntosManuela - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="2525,2524" size="100,100">El taxista te pide el dinero de tu recorrido. 
@@ -771,7 +777,11 @@ Vuelves a tu casa y recuperas tu billetera.
 (set: $itemWalletisCarried to true)
 (set: $segundosReloj to $segundosReloj + 100)</tw-passagedata><tw-passagedata pid="80" name="2.1.5.5.6.1. MANUELA TE ACOMPAÑA" tags="" position="3121,4366" size="100,100">Ahora ya no puedes inventar una excusa plausible para que ella se aparte de ti. Evitarás ir al Café Tinta, y con eso, pierdes la oportunidad de saber qué pasó entre Carlos y tú.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="81" name="2.1.1.5.5.6.2. MANUELA NO TE ACOMPAÑA" tags="" position="2900,4160" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con Manuela por considerar que ella puede tener otros planes).**]
+Fin del juego.
+
+¿Quieres descubrir otra posibilidad de la historia?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]</tw-passagedata><tw-passagedata pid="81" name="2.1.1.5.5.6.2. MANUELA NO TE ACOMPAÑA" tags="" position="2900,4160" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con Manuela por considerar que ella puede tener otros planes).**]
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *Sabes que no es molestia. Vamos, pues.* 
 
@@ -798,7 +808,9 @@ Modo de prueba:
 
 Pudiste haber tratado mejor a Carlos, pero está muy furioso y se va rápidamente. Carlos decide publicar sus fotos contigo en sus redes. Manuela las ve y comienza a reclamarte para luego golpearte cuando te vea. Se arma un gran escándalo. Pierdes la confianza de ambos. Tu vida se vuelve horrible.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="84" name="2.2.2.2. ENFRENTA CON CARLOS A MANUELA SIN CONFIANZA" tags="" position="1523,3544" size="100,100">Manuela les ve y se acerca.
+¿Quieres intentarlo otra vez?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]</tw-passagedata><tw-passagedata pid="84" name="2.2.2.2. ENFRENTA CON CARLOS A MANUELA SIN CONFIANZA" tags="" position="1523,3544" size="100,100">Manuela les ve y se acerca.
 
 (css: &quot;color: red;&quot;)[**(-1 punto con Carlos y Manuela por revelar la mucha duda que tienes).**]
 
@@ -806,7 +818,11 @@ Pudiste haber tratado mejor a Carlos, pero está muy furioso y se va rápidament
 
 Por más que intentas reducir la importancia de estar con Carlos, pierdes la confianza de ambos. Manuela comienza a golpearte en el bar. Se arma un escándalo. Y el indignado Carlos también te abandona. Tu vida es horrible y pagas todos los daños en el restaurante, que son muchísimos. 
 
-[[Fin del juego - Reiniciar|Parte 2]]
+Fin del juego.
+
+¿Quieres descubrir otra posibilidad de la historia?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (set: $puntosManuela to $puntosManuela - 1)
@@ -825,7 +841,11 @@ Al salir de El Sitio, Carlos te dice:
 
 Te decidiste por estar con Carlos, pero aún no tienes claro por qué. Él está tan enamorado de ti que sólo quiere saber de tu promesa con ella, y nunca sabrás qué pasó realmente anoche. 
 
-[[Fin del juego - Reiniciar|Parte 2]]
+Fin del juego.
+
+¿Quieres descubrir otra posibilidad de la historia?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]
 
 (set: $puntosCarlos to $puntosCarlos + 1)
 (set: $puntosManuela to $puntosManuela - 1)
@@ -837,13 +857,19 @@ Te decidiste por estar con Carlos, pero aún no tienes claro por qué. Él está
 
 Al salir Carlos, indignado y dolido, sube las pruebas de que lo acompañaste  a la fiesta de anoche. Esto Manuela no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes la confianza de ambos. Tu vida se vuelve terrible. 
 
-[[Fin del juego - Reiniciar|Parte 2]]]
+]
 
 (else:)[(css: &quot;color: white;&quot;)[**Carlos:**] *¡Ah, claro! Para ti es muy fácil olvidarlo todo y ya. La cobardía tuya no tiene límites. Manuelita, mírame estas fotos y dime si todo esto es mentira.* 
 
 Carlos muestra algunas fotos en las que lo acompañas a la fiesta de anoche. Algunas revelan la mucha cercanía que tuvieron. Manuela no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes la confianza de ambos. Tu vida se vuelve terrible. 
 
-[[Fin del juego - Reiniciar|Parte 2]]]
+]
+
+Fin del juego.
+
+¿Quieres descubrir otra posibilidad de la historia?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (set: $puntosManuela to $puntosManuela + 1)
@@ -1010,7 +1036,7 @@ Modo de prueba:
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás bien?* 
 
-[[─Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : ir a 2.3.4.1.
+[[─Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]]
 ]
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió o porque no comiste o porque comiste algo malo.**]
@@ -1194,15 +1220,20 @@ Mike”.*
 
 Carlos toma su mochila, se va al baño y llama a Manuela.
 
-(if: $dateLocation is &quot;Sitio&quot; or $puntosManuela &lt;=4)[Sabes que ahora no tienes nada que hacer. Has perdido tu amistad con él. Pero como si fuera poco, has perdido la confianza de su hermana por no haberle dicho nada sobre el asunto. Nunca sabrás qué pasó anoche. 
+(if: $dateLocation is &quot;Sitio&quot; or $puntosManuela &lt;=3)[Sabes que ahora no tienes nada que hacer. Has perdido tu amistad con él. Pero como si fuera poco, has perdido la confianza de su hermana por no haberle dicho nada sobre el asunto. Nunca sabrás qué pasó anoche. 
+
+Fin del juego.
 
 A menos que lo intentes de nuevo.]
 
 (else:)[Aunque Carlos trata de poner a su hermana en tu contra, ella aún confía en ti porque has sido firme con el pacto que has hecho. También habías discutido antes sobre el asunto, así que se considera superado el asunto.
 
+Fin del juego.
+
 ¿Quieres saber en otra posibilidad de lo que pasó anoche?]
 
-[[Reiniciar el juego|Parte 2]] 
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]] 
 
 (set: $puntosManuela to $puntosManuela + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela
@@ -1304,7 +1335,9 @@ si menos
 
 Has perdido la confianza de Manuela. Y nada tiene sentido sino salvar tu vida de lo que te hará tu ahora ex-mejor amiga, si no huyes rápidamente de ese lugar. Pudiste haber mostrado más honestidad con ella (o mentir mejor).
 
-[[Fin del juego - Reiniciar|Parte 2]]
+¿Quieres intentarlo otra vez?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]
 
 (set: $puntosManuela to $puntosManuela - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="119" name="2.1.5.3.1.1" tags="" position="2859,3914" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por dudar de la solicitud de Manuela).**]
@@ -1313,7 +1346,11 @@ Has perdido la confianza de Manuela. Y nada tiene sentido sino salvar tu vida de
 
 Aunque Manuela está muy disgustada contigo, agradece que no te ha querido matar. Le has lastimado el corazón. Y ahora sigue tu vida, pero lejos de Manuela y de su hermano. Pudiste haber tratado el tema que le interesaba a Manuela en vez de tratarla como un trapo viejo.
 
-[[Fin del juego - Reiniciar|Parte 2]]
+Fin del juego.
+
+¿Quieres descubrir otra posibilidad de la historia?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]
 
 (set: $puntosManuela to $puntosManuela - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="120" name="2.1.5.3.2.A" tags="" position="2441,4033" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser muy directo con Carlos. A Manuela no le gusta eso).**]
@@ -1355,7 +1392,9 @@ Aunque Manuela está muy disgustada contigo, agradece que no te ha querido matar
 
 Eso te pasa por demostrar alegría por alguien a quien prometiste no amar.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="123" name="2.1.3.5.2.2" tags="" position="2214,4305" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser muy diplomático con Carlos cuando se supone ya no hablas con él).**]
+¿Quieres intentarlo otra vez?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]</tw-passagedata><tw-passagedata pid="123" name="2.1.3.5.2.2" tags="" position="2214,4305" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser muy diplomático con Carlos cuando se supone ya no hablas con él).**]
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *Sé que eres muy amable con la gente. Pero recuerda quién está realmente preocupada por ella ahora.* 
 
@@ -1473,7 +1512,9 @@ Bueno, la verdad iba a ver a los teloneros, la banda tributo noventera. En fin..
 
 Carlos sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con él. Le contará todo a Manuela con todo el odio y rencor que te tiene, y ella probablemente te matará por herir a su hermano así.
 
-[[Fin del juego - Reiniciar|Parte 2]]
+¿Quieres intentarlo otra vez?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="135" name="2.3.5.B" tags="" position="4171,3877" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser vulnerable sin disculparte sinceramente).**]
@@ -1552,8 +1593,9 @@ Modo de prueba:
 
 Has perdido la oportunidad de hacerlo porque no te has preparado lo suficiente para la cita con Carlos, ni tienes suficiente confianza con él.
 
-**Fin del juego:**
-[[Reiniciar desde el punto de control|Parte 2]]
+¿Quieres intentarlo otra vez?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]
 (if: $puntosCarisma &lt;= 2)[
 Sería mejor si te preparas para la cita...
 [[Reiniciar desde el principio|Despierta]]
@@ -1646,7 +1688,9 @@ Apaga la pantalla del teléfono y:
 
 Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con la total desconfianza de Manuela y Carlos, y tu vida se hace pedacitos. 
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="148" name="2.4.2 Busca información en tu teléfono" tags="" position="4846,4773" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Por fin el wifi funciona en este teléfono de mierda!*] 
+¿Quieres intentarlo otra vez?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]</tw-passagedata><tw-passagedata pid="148" name="2.4.2 Busca información en tu teléfono" tags="" position="4846,4773" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Por fin el wifi funciona en este teléfono de mierda!*] 
 
 ¿Qué quieres hacer en tu teléfono?
 
@@ -1887,7 +1931,11 @@ Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una rela
 
 (else:)[Si bien le habías enterado a Manuela sobre tu encuentro con Carlos, es evidente que tiene sospechas. Tendrás que esforzarte mucho para salvar una amistad que está ya casi rota.]
 
-[[Fin del juego - Reiniciar|Parte 2]]]</tw-passagedata><tw-passagedata pid="161" name="2.4.3.1. Convencer a Carlos de no mostrar las fotos" tags="" position="5262,4765" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¿De verdad quieres saber qué pasó anoche? 
+Fin del juego.
+
+¿Quieres descubrir otra posibilidad de la historia?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]</tw-passagedata><tw-passagedata pid="161" name="2.4.3.1. Convencer a Carlos de no mostrar las fotos" tags="" position="5262,4765" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¿De verdad quieres saber qué pasó anoche? 
 
 ¡Esto pasó anoche! Estoy seguro que a tu amiguita Manuelita no le van a gustar estas fotos tan... nuestras. 
  
@@ -2035,7 +2083,11 @@ Carlos manipula su teléfono enfrente tuyo.
 
 Sería un proceso de palabra de una parte contra la otra, pierdes a tu amiga y posiblemente pierdes la libertad. ¡El desastre de tu vida!
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="176" name="Final amando a Carlos" tags="" position="5753,4858" size="100,100">Has decidido amar a Carlos. Le consideras como el amor de tu vida, y eso te hace muy feliz. 
+Fin del juego.
+
+¿Quieres descubrir otra posibilidad de la historia?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]]</tw-passagedata><tw-passagedata pid="176" name="Final amando a Carlos" tags="" position="5753,4858" size="100,100">Has decidido amar a Carlos. Le consideras como el amor de tu vida, y eso te hace muy feliz. 
 
 Ya no crees que Carlos sea el &quot;intocable&quot; hermano de Manuela, y aunque pierdas la amistad de tu mejor amiga, harás lo posible para luchar por tu amor por él. 
 
