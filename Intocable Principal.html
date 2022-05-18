@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -975,8 +975,10 @@ Modo de prueba:
 [[─Porque no podemos hablar más, Carlos. Si algo pasó entre tú y yo, olvídalo. No estaba en mí anoche.|2.3.5.A]] </tw-passagedata><tw-passagedata pid="92" name="2.3.2.2. EN TU BOCA" tags="" position="3871,3362" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con Carlos por hacerle pensar que lo quieres de verdad).**] (css: &quot;color: red;&quot;)[**(Eso a Manuela no le gustaría. -1 punto con ella).**]
 
 (if: $puntosCarisma &lt;= 2 )[
-(css: &quot;color: white;&quot;)[**Carlos:**] *Hola.* ]
-(else:)[ (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño. Qué bueno verte y sentirte.* ]
+(css: &quot;color: white;&quot;)[**Carlos:**] *Hola.* 
+(else:)[ (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño. Qué bueno verte, supongo...* 
+
+(css: &quot;color: orange;&quot;)[Carlos hace un gesto de taparse la nariz.]
 
 ¿Qué quieres tomar?
 
@@ -990,17 +992,15 @@ Modo de prueba:
 
 
 
-
-
-
-
 Modo de prueba:
 - si no te bañaste- (css: &quot;color: white;&quot;)[**Carlos:**] *Hola.* 
 
 -si te bañaste- (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño. Qué bueno verte y sentirte.* </tw-passagedata><tw-passagedata pid="93" name="2.3.2.1. EN TU MEJILLA" tags="" position="3693,3362" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto con Carlos por ser amable aunque no muy cercano con él.)**] (css: &quot;color: green;&quot;)[**(A eso a Manuela le gustaría. +1 punto con ella.)**] 
 
-(if: $puntosCarisma &lt;= 2 )[ (css: &quot;color: white;&quot;)[**Carlos:**] *Hola.* ]
-(else:)[ (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño.* ]
+(if: $puntosCarisma &lt;= 2 )[ (css: &quot;color: white;&quot;)[**Carlos:**] *Hola. Qué bueno verte, supongo...* 
+
+(css: &quot;color: orange;&quot;)[Carlos hace un gesto de taparse la nariz.] ]
+(else:) [(css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño.]
 
 ¿Qué quieres tomar?
 
@@ -1257,7 +1257,7 @@ Modo de prueba:
 (Si tienes 7 puntos Carlos+Carisma o mas)
 [[Voy al baño. Ya vuelvo.|2.3.5.2.2. CARLOS DEJA SU MOCHILA EN LA MESA]]
 si menos
-[[(css: &quot;color: #187FF5;&quot;)[¿Qué pasa?|2.3.5.2.1. CARLOS SE LLEVA LA MOCHILA AL BAÑO]] </tw-passagedata><tw-passagedata pid="109" name="2.3.5.2.A" tags="" position="4146,3693" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder por qué fuiste a El Sitio).**]
+[[¿Qué pasa?|2.3.5.2.1. CARLOS SE LLEVA LA MOCHILA AL BAÑO]] </tw-passagedata><tw-passagedata pid="109" name="2.3.5.2.A" tags="" position="4146,3693" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder por qué fuiste a El Sitio).**]
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Qué sospecha? ¿Que estuviste conmigo anoche? Bueno, pues eso ya lo intuye. ¿Y qué con ella, acaso?*
 
@@ -1589,17 +1589,17 @@ Modo de prueba:
 -si has comido pollo y tomado algo- [[Toma el bolso.|2.3.5.2.2.1. TOMA LA MOCHILA]]
 -si has comido el sánduche y/o no has tomado nada- [[Toma el bolso y ve al baño.|2.3.5.2.2.1. TOMA LA MOCHILA]] 
 -si no has comido nada o default- 
-[[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]]  </tw-passagedata><tw-passagedata pid="140" name="2.3.5.2.1. CARLOS SE LLEVA LA MOCHILA AL BAÑO" tags="" position="4708,4142" size="100,100">Carlos está muy confundido, y se lleva su mochila al baño. Ahí estaba su teléfono móvil, lo único que te podía decir qué pasó anoche. 
+[[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]]  </tw-passagedata><tw-passagedata pid="140" name="2.3.5.2.1. CARLOS SE LLEVA LA MOCHILA AL BAÑO" tags="" position="4709,4140" size="100,100">Carlos está muy confundido, y se lleva su mochila al baño. Ahí estaba su teléfono móvil, lo único que te podía decir qué pasó anoche. 
 
 Has perdido la oportunidad de hacerlo porque no te has preparado lo suficiente para la cita con Carlos, ni tienes suficiente confianza con él.
 
-¿Quieres intentarlo otra vez?
-[[Reiniciar el juego desde el inicio|Despierta]]
-[[Reiniciar el juego desde la Parte 2|Parte 2]]
 (if: $puntosCarisma &lt;= 2)[
 Sería mejor si te preparas para la cita...
-[[Reiniciar desde el principio|Despierta]]
-]</tw-passagedata><tw-passagedata pid="141" name="2.4.1.1 Entra al teléfono de Carlos" tags="" position="4583,5325" size="100,100">Has accedido al teléfono de Carlos. ¿Qué quieres hacer?
+[[Reiniciar desde el principio|Despierta]] ]
+
+(else:) [¿Quieres intentarlo otra vez?
+[[Reiniciar el juego desde el inicio|Despierta]]
+[[Reiniciar el juego desde la Parte 2|Parte 2]] ]</tw-passagedata><tw-passagedata pid="141" name="2.4.1.1 Entra al teléfono de Carlos" tags="" position="4583,5325" size="100,100">Has accedido al teléfono de Carlos. ¿Qué quieres hacer?
 
 (if: $segundosReloj &gt; 500)[
 ¡Ojo! ¡Carlos debe estar por llegar!  Date prisa.
