@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -433,7 +433,7 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aquí.
 
 &lt;!--Do this before starting part 2 --&gt;
-(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;itemPhoneisCarried&quot;, $itemPhone&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
 
 
 (css: &quot;color: yellow;&quot;)[**Qué tan bien lo hiciste hasta ahora:**]
@@ -584,11 +584,13 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas. La mayoría aparece con el no
 
 &lt;!-- Use this when restarting part 2 --&gt;
 (set: $segundosReloj to 0)
+(set: $hasPaidTaxi to false)
 (set: $puntosCarisma to $part2SavedState&#39;s puntosCarisma)
 (set: $puntosCarlos to $part2SavedState&#39;s puntosCarlos)
 (set: $puntosManuela to $part2SavedState&#39;s puntosManuela)
 (set: $dateLocation to $part2SavedState&#39;s dateLocation)
 (set: $itemWalletisCarried to $part2SavedState&#39;s itemWalletisCarried)
+(set: $itemPhoneisCarried to $part2SavedState&#39;s itemPhoneisCarried)
 (set: $examinedWallet to $part2SavedState&#39;s examinedWallet)
 (set: $textedManuela to $part2SavedState&#39;s textedManuela)
 (set: $calledManuela to $part2SavedState&#39;s calledManuela)
@@ -608,7 +610,9 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas. La mayoría aparece con el no
 (else:) [
 [[Entra a El Sitio igual|2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE]] 
 [[Ve al Café Tinta|2.3.1. PAGAR TAXI AL CAFÉ TINTA]]
-]</tw-passagedata><tw-passagedata pid="68" name="2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE" tags="" position="2299,2920" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Hola, Manuela querida. ¡Qué casualidad!*]
+]
+
+(set: $hasPaidTaxi to true)</tw-passagedata><tw-passagedata pid="68" name="2.1.1.1. EL SITIO CON MANUELA DIRECTAMENTE" tags="" position="2299,2920" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Hola, Manuela querida. ¡Qué casualidad!*]
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *¿Qué casualidad? Venimos aquí casi todos los días...*
 
@@ -903,7 +907,7 @@ Modo de prueba:
 	
 ]
 
-
+(set: $hasPaidTaxi to true)
 
 
 
@@ -974,11 +978,12 @@ Modo de prueba:
 [[─¿No lo sabes acaso? Hice un pacto con Manuela. Y acordamos en que tú y yo no debemos vernos. Por eso necesito hablarte.|2.3.5.2.C]] 
 [[─Porque no podemos hablar más, Carlos. Si algo pasó entre tú y yo, olvídalo. No estaba en mí anoche.|2.3.5.A]] </tw-passagedata><tw-passagedata pid="92" name="2.3.2.2. EN TU BOCA" tags="" position="3871,3362" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con Carlos por hacerle pensar que lo quieres de verdad).**] (css: &quot;color: red;&quot;)[**(Eso a Manuela no le gustaría. -1 punto con ella).**]
 
-(if: $puntosCarisma &lt;= 2 )[
+(if: $puntosCarisma &gt;= 3 )[
 (css: &quot;color: white;&quot;)[**Carlos:**] *Hola.* 
-(else:)[ (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño. Qué bueno verte, supongo...* 
+](else:)[ (css: &quot;color: white;&quot;)[**Carlos:**] *Hola, cariño. Qué bueno verte, supongo...* 
 
 (css: &quot;color: orange;&quot;)[Carlos hace un gesto de taparse la nariz.]
+]
 
 ¿Qué quieres tomar?
 
@@ -1058,9 +1063,12 @@ Modo de prueba:
 
 (css: &quot;color: white;&quot;)[**Carlos:**] *¿Estás bien?*
 
-[[─Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] ]
+[[─Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] 
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió o porque no comiste o porque comiste algo malo.**]
+]
+
+
 
 
 
@@ -1079,9 +1087,12 @@ si no comiste
 
 (elseif: $dateLocation is &quot;Sitio&quot;)[ [[─Ya. Fuimos a ver a “1919”? Tu banda favorita, ¿no?|2.3.4.2.1. LA BANDA “1919”]] ]
 
-(else:)[ [[─Nada, en serio. Dime qué pasó, por favor.|BANDA SÚPER INCORRECTA]] ]
+(else:)[ [[─Nada, en serio. Dime qué pasó, por favor.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]]
 
-(css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que hiciste...**]
+(css: &quot;color: purple;&quot;)[**Esta interacción cambió por una decisión que has tomado recientemente...**]
+]
+
+
 (set: $puntosCarlos to $puntosCarlos + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
 
@@ -1121,17 +1132,19 @@ Modo de prueba:
 Modo de prueba:
 -si has mirado la billetera- [[El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.
 -si has escuchado a Carlos en El Sitio- [[Ya. Fuimos a ver a “1919”. Tu banda favorita.|2.3.4.2.1. LA BANDA “1919”]] : ir a 2.3.4.2.1.
--si no has mirado la billetera ni has escuchado a Carlos en El Sitio- [[Sí, recuerdo algo. ¿Fuimos a ver a una banda, tal vez?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.</tw-passagedata><tw-passagedata pid="98" name="2.3.4.2. TU BANDA FAVORITA" tags="" position="3687,3822" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *Bueno, la banda principal no es mi favorita. Pero sí era una de rock. A que no recuerdas su nombre.* (if: $itemWalletisCarried)[*Te di una boleta de recuerdo, ¿te acuerdas?*](else:)[*El año de la última pandemia.*]
+-si no has mirado la billetera ni has escuchado a Carlos en El Sitio- [[Sí, recuerdo algo. ¿Fuimos a ver a una banda, tal vez?|2.3.4.2. TU BANDA FAVORITA]] : ir a 2.3.4.2.</tw-passagedata><tw-passagedata pid="98" name="2.3.4.2. TU BANDA FAVORITA" tags="" position="3615,3788" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] *Bueno, la banda principal no es mi favorita. Pero sí era una de rock. A que no recuerdas su nombre.* (if: $itemWalletisCarried)[*Te di una boleta de recuerdo, ¿te acuerdas?*](else:)[*El año de la última pandemia.*]
 
 [[─1349|2.3.4.2.A]]
 [[─1653|2.3.4.2.B]]
 [[─1919|2.3.4.2.1. LA BANDA “1919”]]
 
-(if: $examinedWallet is true)
+(if: $itemWalletisCarried is true)[
+  (if: $examinedWallet is true)
 [[[Claro. Dame un momento para recordar.|Mira la billetera]]]
-(else:)
+  (else:)
 [[[Ah, sí. A ver miro en mi billetera.|Mira la billetera]]]
-(set: $previousPassage to &quot;2.3.4.2. TU BANDA FAVORITA&quot;)
+  (set: $previousPassage to &quot;2.3.4.2. TU BANDA FAVORITA&quot;)
+]
 
 
 
@@ -1167,13 +1180,20 @@ No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al 
 
 (set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="102" name="2.4. EL TELÉFONO DE CARLOS" tags="" position="4650,4598" size="100,100">(set: $phoneCodeGuess to &quot;&quot;)
 
-(if: $segundosReloj &lt; 700)[Tienes a la mano tu billetera y teléfono y también el teléfono de Carlos. ¿Qué quieres hacer?]
+(if: $segundosReloj &lt; 700)[Tienes a la mano:
+(if: $itemWalletisCarried is true)[tu billetera]
+(if: $itemPhoneisCarried is true)[tu teléfono]
+el teléfono de Carlos
+
+¿Qué quieres hacer?]
 
 (if: $segundosReloj &gt; 500)[¡Ojo! ¡Carlos debe estar por llegar! Date prisa.]
 
-[[Mira la billetera|Mira la billetera]]
 [[Ingresa la clave del teléfono de Carlos|2.4.1 Ingresa la clave del teléfono de Carlos]]
-(if: $textedManuela is true or $calledManuela is true or $dateLocation is &quot;Sitio&quot;)[ [[Busca información en tu teléfono|2.4.2 Busca información en tu teléfono]] ](else:)[ [[Busca información en tu teléfono|2.4.2.A Manuela te llama]] ]
+(if: $itemWalletisCarried is true)[[[Mira la billetera|Mira la billetera]]]
+(if: $itemPhoneisCarried is true)[
+  (if: $textedManuela is true or $calledManuela is true or $dateLocation is &quot;Sitio&quot;)[ [[Busca información en tu teléfono|2.4.2 Busca información en tu teléfono]] ](else:)[ [[Busca información en tu teléfono|2.4.2.A Manuela te llama]] ]
+ ]
 (else:)[ ¡Puedo ver que Carlos ya viene! ]
 [[Habla con Carlos|2.4.3 Ríndete]]
  
@@ -1578,11 +1598,16 @@ Modo de prueba:
 (if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
 [[Toma la mochila.|2.3.5.2.2.1. TOMA LA MOCHILA]] ]
 
-(elseif: $hasEatenSandwich)[ [[Toma la mochila y ve al baño.|2.3.5.2.2.1. TOMA LA MOCHILA]] (set: $segundosReloj to $segundosReloj + 50)]
+(elseif: $hasEatenSandwich)[ [[Toma la mochila y ve al baño.|2.3.5.2.2.1. TOMA LA MOCHILA]] (set: $segundosReloj to $segundosReloj + 50)
 
-(else:)[ [[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]] (set: $segundosReloj to $segundosReloj + 30) ] 
+(css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que comiste...**]
+]
 
-(css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que (no) comiste o bebiste...**]
+(else:)[ [[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]] (set: $segundosReloj to $segundosReloj + 30)
+
+(css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que no comiste ni bebiste...**]
+] 
+
 
 
 Modo de prueba:
@@ -2251,17 +2276,20 @@ Gracias por jugar.**
 
 
 Intenta completar el juego otra vez:
-[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="186" name="Modo de Prueba: Start Part 2" tags="" position="2313,2153" size="100,100">(set: $puntosCarisma to 1)
-(set: $puntosCarlos to 0)
+[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="186" name="Modo de Prueba: Start Part 2" tags="" position="2313,2153" size="100,100">(set: $dateLocation to &quot;Tinta&quot;)
+(set: $puntosCarisma to 3)
+Minimo 3
+(set: $puntosCarlos to 3)
 (set: $puntosManuela to 0)
 (set: $hasDrunkWater to false)
-(set: $hasDrunkJuice to false)
-(set: $hasEatenChicken to false)
+(set: $hasDrunkJuice to true)
+(set: $hasEatenChicken to true)
 (set: $hasEatenSandwich to false)
 (set: $calledManuela to false)
+Siempre true
 (set: $calledCarlos to true)
 (set: $textedManuela to false)
-(set: $textedCarlos to true)
+(set: $textedCarlos to false)
 (set: $hasPaidTaxi to false)
 (set: $examinedCarloswallet to false)
 (set: $takenPhoto to false)
@@ -2269,11 +2297,12 @@ Intenta completar el juego otra vez:
 (set: $hasViewedCarlosEmail to false)
 (set: $phoneCodeGuess to &quot;&quot;)
 (set: $itemWallet to (datamap:&quot;name&quot;, &quot;wallet&quot;, &quot;description&quot;, &quot;Es una billetera&quot;, &quot;pickupText&quot;, &quot;Tienes la billetera en tu bolsillo.&quot;, &quot;isCarried&quot;, false))
+(set: $examinedWallet to false)
 (set: $previousPassage to &quot;Parte 2&quot;)
 
 
 
-(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCarlos&quot;, $puntosCarlos, &quot;puntosManuela&quot;, $puntosManuela, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;itemPhoneisCarried&quot;, $itemPhone&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedManuela&quot;, $textedManuela, &quot;calledManuela&quot;, $calledManuela, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
 
 [[Parte 2]]</tw-passagedata><tw-passagedata pid="187" name="Créditos" tags="" position="2171,2194" size="100,100">¡Gracias por jugar! Si tienes comentarios nos envías un correo a **drawingboardgames2020@gmail.com**. También, visítanos en nuestra página web: &lt;a style=&quot;color:lightblue&quot; href=&quot;https://drawingboard.games&quot;&gt;drawingboard.games&lt;/a&gt; 
 
