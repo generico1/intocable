@@ -190,11 +190,16 @@ No contesta. ¿Qué haces?
 [[Come el pollo|Come el pollo]] ]
 [[Ve al refrigerador|Abre el refrigerador]]
 (link-goto: &quot;Da una vuelta por la cocina&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="26" name="Sal de la casa" tags="" position="2997,2069" size="100,100">(if: $calledCarlos is true) [
-	(if: $itemPhone&#39;s isCarried is false or $itemWallet&#39;s isCarried is false)[
- (css: &quot;color: yellow;&quot;)[¿Estás seguro que tienes todo lo que necesitas?]
- [[Ve a la habitación|Sal de la cama]]
+	(if: $itemWallet&#39;s isCarried is false)[
+ (css: &quot;color: yellow;&quot;)[¿Tienes todo lo que necesitas?]
+    [[Búscalo en la habitación|Sal de la cama]]
       ]
+	(if: $itemPhone&#39;s isCarried is true)[   
 	[[Sal de la casa|Fin de Parte 1]] ]
+	(else:)[
+	  Sin teléfono, ¿cómo vas a estar en contacto con tus amistades?
+	  [[Ve a la habitación|Sal de la cama]]
+	]
 (else:)[Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
 
 No hablaste con nadie, así que es imposible saber qué pasó anoche.
@@ -961,7 +966,7 @@ si no comiste
 
 (elseif: $dateLocation is &quot;Sitio&quot;)[ [[─Ya. Fuimos a ver a “1919”? Tu banda favorita, ¿no?|2.3.4.2.1. LA BANDA “1919”]] ]
 
-(else:)[ [[─Nada, en serio. Dime qué pasó, por favor.|BANDA SÚPER INCORRECTA]] ]
+(else:)[ [[─Nada, en serio. Dime qué pasó, por favor.|2.3.4.2. TU BANDA FAVORITA]] ]
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que hiciste...**]
 (set: $puntosCarlos to $puntosCarlos + 1)
@@ -1044,19 +1049,24 @@ No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al 
 
 [[Toma su teléfono|2.4. EL TELÉFONO DE CARLOS]]
 [[Toma su billetera|2.3.5.2.2.2. LA BILLETERA DE CARLOS]]
+[[Déjala y espera hasta que regrese.|2.4.3 Ríndete]]
 
 (set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="102" name="2.4. EL TELÉFONO DE CARLOS" tags="" position="4660,4112" size="100,100">(set: $phoneCodeGuess to &quot;&quot;)
 
-(if: $segundosReloj &lt; 700)[Tienes a la mano su billetera y teléfono y también tu teléfono. ¿Qué quieres hacer?]
+(if: $segundosReloj &lt; 700)[Tienes a la mano su billetera y teléfono y también tu teléfono. ¿Qué quieres hacer?
 
 (if: $segundosReloj &gt; 500)[¡Ojo! ¡Carlos debe estar por llegar! Date prisa.]
 
 [[Mira la billetera|Mira la billetera]]
 [[Ingresa la clave del teléfono de Carlos|2.4.1 Ingresa la clave del teléfono de Carlos]]
-(if: $textedManuela is true or $calledManuela is true or $dateLocation is &quot;Sitio&quot;)[ [[Busca información en tu teléfono|2.4.2 Busca información en tu teléfono]] ](else:)[ [[Busca información en tu teléfono|2.4.2.A Manuela te llama]] ]
-(else:)[ ¡Puedo ver que Carlos ya viene! ]
+(if: $textedManuela is true or $calledManuela is true or $dateLocation is &quot;Sitio&quot;)[ [[Busca información en tu teléfono|2.4.2 Busca información en tu teléfono]] ]
+(else:)[[[Busca información en tu teléfono|2.4.2.A Manuela te llama]] ]
+]
+(else:)[ ¡Puedo ver que Carlos ya viene! 
 [[Habla con Carlos|2.4.3 Ríndete]]
- 
+]
+
+
 (set: $segundosReloj to $segundosReloj + 5)
 (set: $previousPassage to &quot;2.4. EL TELÉFONO DE CARLOS&quot;)</tw-passagedata><tw-passagedata pid="103" name="2.3.5.2.2.2. LA BILLETERA DE CARLOS" tags="" position="4817,3907" size="100,100">Ves que tiene una boleta del concierto de rock al que fuiste anoche. Pero tiene un autógrafo que dice: 
 
@@ -1069,6 +1079,8 @@ Mike”.*
 ¿La mejor década? Hmm… yo lo dudo mucho, pero bueno. Entre gustos no hay disgustos...*].
 
 [[Mira la mochila|2.3.5.2.2.1. TOMA LA MOCHILA]]
+[[Más bien, deja todo como estaba y espera hasta que Carlos regrese.|2.4.3 Ríndete]]
+
 
 (set: $segundosReloj to $segundosReloj + 30)
 (set: $examinedCarloswallet to true)</tw-passagedata><tw-passagedata pid="104" name="2.2.1.A" tags="" position="1552,2726" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto Carlos por ser grosero con él).**] 
@@ -1434,6 +1446,8 @@ Modo de prueba:
 (elseif: $hasEatenSandwich)[ [[Toma la mochila y ve al baño.|2.3.5.2.2.1. TOMA LA MOCHILA]] (set: $segundosReloj to $segundosReloj + 50)]
 
 (else:)[ [[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]] (set: $segundosReloj to $segundosReloj + 30) ] 
+
+[[Espera hasta que regrese.|2.4.3 Ríndete]]
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que (no) comiste o bebiste...**]
 
@@ -2088,14 +2102,14 @@ Gracias por jugar.**
 
 
 Intenta completar el juego otra vez:
-[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="186" name="Modo de Prueba: Start Part 2" tags="" position="2313,2153" size="100,100">(set: $puntosCarisma to 1)
+[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="186" name="Modo de Prueba: Start Part 2" tags="" position="2313,2153" size="100,100">(set: $puntosCarisma to 3)
 (set: $puntosCarlos to 4)
-(set: $puntosManuela to 0)
-(set: $hasDrunkWater to false)
+(set: $puntosManuela to 2)
+(set: $hasDrunkWater to true)
 (set: $hasDrunkJuice to false)
-(set: $hasEatenChicken to false)
+(set: $hasEatenChicken to true)
 (set: $hasEatenSandwich to false)
-(set: $calledManuela to false)
+(set: $calledManuela to true)
 (set: $calledCarlos to true)
 (set: $textedManuela to false)
 (set: $textedCarlos to true)
