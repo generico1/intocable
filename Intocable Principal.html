@@ -1055,7 +1055,7 @@ No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al 
 
 (set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="102" name="2.4. EL TELÉFONO DE CARLOS" tags="" position="4660,4112" size="100,100">(set: $phoneCodeGuess to &quot;&quot;)
 
-(if: $segundosReloj &lt; 700)[Tienes a la mano su billetera y teléfono y también tu teléfono(if:$itemWalletisCarried is true)[ y tu billetera]. ¿Qué quieres hacer?
+(if: $segundosReloj &lt; 700)[Tienes a la mano su billetera y teléfono, y también tu teléfono(if:$itemWalletisCarried is true)[ y tu billetera]. ¿Qué quieres hacer?
 
 (if: $segundosReloj &gt; 500)[¡Ojo! ¡Carlos debe estar por llegar! Date prisa.]
 
@@ -1525,22 +1525,25 @@ Apaga la pantalla del teléfono y:
 
 [[mételo en la mochila.|2.4.1.5. metes el teléfono en la mochila]] ]
 [[escóndelo debajo de una servilleta.|2.4.3 Ríndete]] 
-(set: $hasDeletedAllPhotos to true)</tw-passagedata><tw-passagedata pid="145" name="2.4.1.4. Borrar sólo las fotos en las que apareces con Carlos" tags="" position="4731,5166" size="100,100">Has borrado las fotos en las que apareces con Carlos. Esa es demasiada casualidad, y Carlos seguramente sospechará de ti. Debes pensar en una muy creativa coartada. 
-
-(if: $segundosReloj &lt; 600)[
+(set: $hasDeletedAllPhotos to true)</tw-passagedata><tw-passagedata pid="145" name="2.4.1.4. Borrar sólo las fotos en las que apareces con Carlos" tags="" position="4690,5164" size="100,100">(if: $segundosReloj &gt; 600)[
 (css: &quot;color: lightblue;&quot;)[*¡Mierda! Ahí viene Carlos.*]
 
-Apaga la pantalla del teléfono y: 
-
-[[déjalo sobre la mesa.|2.4.1.6. dejas el teléfono en la mesa]])
-]
-(else:)[(css: &quot;color: lightblue;&quot;)[*¡Carajo! Viene Carlos. Ya se me ocurrirá algo, en caso de que sospeche de mí.*]
+No había tiempo para borrar las fotos.
 
 Apaga la pantalla del teléfono y: 
-
-[[mételo en la mochila.|2.4.1.5. metes el teléfono en la mochila]] ]
+[[déjalo sobre la mesa.|2.4.1.6. dejas el teléfono en la mesa]]
 [[escóndelo debajo de una servilleta.|2.4.3 Ríndete]]
-(set: $hasDeletedCarlosPhotos to true)</tw-passagedata><tw-passagedata pid="146" name="2.4.1.5. metes el teléfono en la mochila" tags="" position="4831,5365" size="100,100">(if: $hasDeletedCarlosPhotos is true or $hasDeletedAllPhotos is true)[Carlos vuelve resuelto a hablar contigo pero le interrumpes diciéndole con confianza: 
+]
+(else:)[
+Has borrado las fotos en las que apareces con Carlos. Esa es demasiada casualidad, y Carlos seguramente sospechará de ti. Debes pensar en una muy creativa coartada.
+
+(css: &quot;color: lightblue;&quot;)[
+*¡Carajo! Viene Carlos. Ya se me ocurrirá algo, en caso de que sospeche de mí.*]
+ 
+[[Apaga la pantalla del teléfono y mételo en la mochila.|2.4.1.5. metes el teléfono en la mochila]]
+(set: $hasDeletedCarlosPhotos to true)
+]
+</tw-passagedata><tw-passagedata pid="146" name="2.4.1.5. metes el teléfono en la mochila" tags="" position="4831,5365" size="100,100">(if: $hasDeletedCarlosPhotos is true or $hasDeletedAllPhotos is true)[Carlos vuelve resuelto a hablar contigo pero le interrumpes diciéndole con confianza: 
 
 (css: &quot;color: lightblue;&quot;)[*¿Cómo estás, Carlos?*]
 
@@ -1970,7 +1973,9 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 (css: &quot;color: red;&quot;)[**(Pierdes algunos puntos con Manuela por no darle mayores explicaciones. Tal vez ella comienza a sospechar de ti).**]
 
-(css: &quot;color: purple;&quot;)[**Esta interacción pasó por no hablar antes con Manuela.**]</tw-passagedata><tw-passagedata pid="179" name="2.5.1. Carlos descubre que no hay fotos" tags="" position="5016,5514" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Pero, ¡¿qué carajos?! ¿Dónde están mis fotos?
+(css: &quot;color: purple;&quot;)[**Esta interacción pasó por no hablar antes con Manuela.**]
+
+(set: $segundosReloj to $segundosReloj + 15)</tw-passagedata><tw-passagedata pid="179" name="2.5.1. Carlos descubre que no hay fotos" tags="" position="5016,5514" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Pero, ¡¿qué carajos?! ¿Dónde están mis fotos?
 
 (if: $hasDeletedCarlosPhotos is true)[ (css: &quot;color: #187FF5;&quot;)[*¿Cómo? ¿No están?*]
 
@@ -2108,12 +2113,12 @@ Gracias por jugar.**
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="186" name="Modo de Prueba: Start Part 2" tags="" position="2313,2153" size="100,100">(set: $puntosCarisma to 4)
 (set: $puntosCarlos to 5)
-(set: $puntosManuela to 2)
+(set: $puntosManuela to 0)
 (set: $hasDrunkWater to true)
 (set: $hasDrunkJuice to false)
 (set: $hasEatenChicken to true)
 (set: $hasEatenSandwich to false)
-(set: $calledManuela to true)
+(set: $calledManuela to false)
 (set: $calledCarlos to true)
 (set: $textedManuela to false)
 (set: $textedCarlos to true)
