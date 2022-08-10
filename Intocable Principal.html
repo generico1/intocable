@@ -1756,7 +1756,7 @@ Te sientes con algo de curiosidad con este último mensaje. ¿Qué quieres hacer
 [[Lee el correo completo|2.4.1.4.1. Ver el mensaje completo]]
 [[Vuelve al menú principal del teléfono|2.4.1.1 Entra al teléfono de Carlos]]
 
-(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="158" name="2.4.3 Ríndete" tags="" position="5263,3959" size="100,100">Carlos llega del baño, ahora muy pensativo. 
+(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="158" name="2.4.3 Ríndete" tags="" position="5269,3978" size="100,100">Carlos llega del baño, ahora muy pensativo. 
 
 (css: &quot;color: #187FF5;&quot;)[*¿Estás bien?*]
 
@@ -1818,12 +1818,12 @@ Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una rela
 [[─¡De eso nunca! Manuela podrá ser como es. Pero un pacto es un pacto, y lo respetaré siempre.|Final con Manuela Sospechosa]]</tw-passagedata><tw-passagedata pid="163" name="2.3.6.3. Carlos puede ser consciente de lo que hará" tags="" position="5954,3823" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responderle con honestidad y firmeza).**]
 
 (if: ($puntosCarlos) &gt;= 4) [
-(css: &quot;color: white;&quot;)[**Carlos:**] La verdad no soy quién para obligarte a hacer algo que no quieres hacer. Ni mucho menos para perjudicar a mi hermana. Perdóname, te lo ruego. Y no le cuentes nada a Manuela, por favor. 
+(css: &quot;color: white;&quot;)[**Carlos:**] Tal vez... tienes razón... la verdad no soy quién para obligarte a hacer algo que no quieres hacer. Ni mucho menos para perjudicar a mi hermana. Perdóname, te lo ruego. Y no le cuentes nada a Manuela, por favor. 
 
 [[─Está bien, Carlos. Olvidemos esto y dejémoslo en el pasado. Por el bien de todos.|Final con Manuela Sospechosa]] ]
 
 (else:)[
-(css: &quot;color: white;&quot;)[**Carlos:**] No creas que me voy a rendir tan fácilmente. Después de todo lo que he sacrificado por ti. Es hora de que tú también hagas un sacrificio, y te olvides de Manuela.
+(css: &quot;color: white;&quot;)[**Carlos:**] ¿Tú crees que estoy loco? ¿Loco por ti, acaso? No es justo que me digas eso después de todo lo que he sacrificado por ti. Es hora de que tú también hagas un sacrificio, y te olvides de Manuela.
 
 [[─No quiero que Manuela me mate por esto. Debemos irnos lejos de aquí, Carlos.|2.3.6.2. Fuga resignada con Carlos]]
 
@@ -1908,6 +1908,9 @@ Te muestra algunas fotos tuyas con él bastante comprometedoras.
 
 (else:) [Vuelves a tener una amistad con Manuela, pero sólo por un tiempo porque desconfía mucho de ti. Y decides separarte de ella. El recuerdo de esa familia te rompe el corazón. Tal vez sea lo mejor para ti, quién sabe.]
 
+**¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
+Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
+
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
 [[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="173" name="Final neutro diplomático" tags="" position="5350,4579" size="100,100">Carlos se humilla ante ti y tiene que confesarte que te ha manipulado para ir al concierto contigo. 
@@ -1921,6 +1924,10 @@ Mantienes tu relación con Manuela, y nada ha pasado. Se aman muchísimo mientra
 Hablas con Manuela como si nada, pero ella aún sospecha de ti. Quiere preguntarle a Carlos qué pasa, pero él la evade todo el tiempo. La relación está enrarecida. Sabes que no va a volver a ser igual.
 ]
 
+**¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
+Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
+
+
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
 [[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="174" name="2.3.6.1. Sobre el correo de Mike" tags="" position="5369,4418" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] ¿Manipulación? Estás fuera de ti, en serio. Lo que me faltaba. Que me acuses de algo que sería yo incapaz de hacerle a nadie.
@@ -1929,7 +1936,7 @@ Hablas con Manuela como si nada, pero ella aún sospecha de ti. Quiere preguntar
 
 (css: &quot;color: white;&quot;)[**Carlos:**] ¡¿Entraste a mi teléfono, acaso?! Eso sí que es absurdo!! Te voy a denunciar por acoso. ¡Te voy a hundir, ¿me oíste?!
 
-(if: $takenPhoto is true)[Con mucho gusto te leeré lo que dice: &quot;...&quot;. 
+(if: $takenPhoto is true)[ 
 
 [[─Dime la verdad y haremos de cuenta que aquí no ha pasado nada.|Final neutro diplomático]]
 
