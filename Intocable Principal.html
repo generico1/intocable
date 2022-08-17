@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -299,7 +299,7 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 [[─Claro. ¿Qué tal si nos vemos en El Sitio?|El Sitio agresiva]]
 [[─Como siempre, disponible para ti.|Como siempre, disponible para ti.]]
 (set: $puntosCarlos to $puntosCarlos - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="37" name="&quot;Ya, ¿pero planes de qué o qué?&quot;" tags="" position="1819,1235" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder sin diplomacia a Carlos).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="37" name="&quot;Ya, ¿pero planes de qué o qué?&quot;" tags="" position="1819,1234" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder sin diplomacia a Carlos).**]
 
 (css: &quot;color: white;&quot;) [**Carlos:**] *Pues el plan para anunciar nuestro amor a todo el mundo. Espero que me estés tomando en serio, ¿no?*
 
@@ -1047,11 +1047,11 @@ No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al 
 
 (set: $segundosReloj to $segundosReloj + 150)
 
-[[Toma la mochila|2.3.5.2.2.1. TOMA LA MOCHILA]]</tw-passagedata><tw-passagedata pid="101" name="2.3.5.2.2.1. TOMA LA MOCHILA" tags="" position="4603,3909" size="100,100">Ves el interior de la mochila de Carlos.
+[[Toma la mochila|2.3.5.2.2.1. TOMA LA MOCHILA]]</tw-passagedata><tw-passagedata pid="101" name="2.3.5.2.2.1. TOMA LA MOCHILA" tags="" position="4604,3907" size="100,100">Ves el interior de la mochila de Carlos.
 
 [[Toma su teléfono|2.4. EL TELÉFONO DE CARLOS]]
 [[Toma su billetera|2.3.5.2.2.2. LA BILLETERA DE CARLOS]]
-[[Déjala y espera hasta que regrese.|2.4.3 Ríndete]]
+[[Déjala y espera hasta que regrese|2.4.3 Ríndete]]
 
 (set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="102" name="2.4. EL TELÉFONO DE CARLOS" tags="" position="4660,4112" size="100,100">(set: $phoneCodeGuess to &quot;&quot;)
 
@@ -1081,7 +1081,7 @@ Mike”.*
 ¿La mejor década? Hmm… yo lo dudo mucho, pero bueno. Entre gustos no hay disgustos...*].
 
 [[Mira la mochila|2.3.5.2.2.1. TOMA LA MOCHILA]]
-[[Más bien, deja todo como estaba y espera hasta que Carlos regrese.|2.4.3 Ríndete]]
+[[Más bien, deja todo como estaba y espera hasta que Carlos regrese|2.4.3 Ríndete]]
 
 
 (set: $segundosReloj to $segundosReloj + 30)
@@ -1130,7 +1130,7 @@ A menos que lo intentes de nuevo.]
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos</tw-passagedata><tw-passagedata pid="108" name="2.3.5.2.B" tags="" position="4527,3430" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por decirle la verdad de una manera poco delicada).**]
 
-(css: &quot;color: white;&quot;)[**Carlos:**] *Así son las cosas, ¿no? Yo no sé cómo son las cosas contigo. En serio. Tengo demasiado en la cabeza ahora mismo. Voy al baño. Ya vuelvo.*
+(css: &quot;color: white;&quot;)[**Carlos:**] *Así son las cosas, ¿no? Hmm... tengo demasiado en la cabeza ahora mismo. Voy al baño. Ya vuelvo.*
 
 (if: ($puntosCarlos + $puntosCarisma) &gt;= 8)[
 [[─Ah vale, te espero.|2.3.5.2.2. CARLOS DEJA SU MOCHILA EN LA MESA]] ](else:)[ [[─Ah vale, tómate tu tiempo.|2.3.5.2.1. CARLOS SE LLEVA LA MOCHILA AL BAÑO]] ]
@@ -1443,13 +1443,13 @@ Modo de prueba:
 [[Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] -A-</tw-passagedata><tw-passagedata pid="139" name="2.3.5.2.2. CARLOS DEJA SU MOCHILA EN LA MESA" tags="" position="4553,3703" size="100,100">Carlos está muy confundido, y de la prisa que tenía para aclarar su mente en el baño, dejó su mochila en la mesa.
 
 (if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
-[[Toma la mochila.|2.3.5.2.2.1. TOMA LA MOCHILA]] ]
+[[Toma la mochila|2.3.5.2.2.1. TOMA LA MOCHILA]] ]
 
-(elseif: $hasEatenSandwich)[ [[Toma la mochila y ve al baño.|2.3.5.2.2.1. TOMA LA MOCHILA]] (set: $segundosReloj to $segundosReloj + 50)]
+(elseif: $hasEatenSandwich)[ [[Toma la mochila y ve al baño|2.3.5.2.2.1. TOMA LA MOCHILA]] (set: $segundosReloj to $segundosReloj + 50)]
 
-(else:)[ [[Pide algo de comer para darte claridad de mente.|2.3.5.2.3. COME EN CAFÉ TINTA]] (set: $segundosReloj to $segundosReloj + 30) ] 
+(else:)[ [[Pide algo de comer para darte claridad de mente|2.3.5.2.3. COME EN CAFÉ TINTA]] (set: $segundosReloj to $segundosReloj + 30) ] 
 
-[[Espera hasta que regrese.|2.4.3 Ríndete]]
+[[Espera hasta que regrese|2.4.3 Ríndete]]
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que (no) comiste o bebiste...**]
 
@@ -1514,7 +1514,7 @@ $phoneCodeGuess
 [[Borra todas las fotos del teléfono de Carlos|2.4.1.3. Borrar todas las fotos del teléfono de Carlos]]
 [[Borra sólo las fotos en las que apareces con Carlos|2.4.1.4. Borrar sólo las fotos en las que apareces con Carlos]]</tw-passagedata><tw-passagedata pid="144" name="2.4.1.3. Borrar todas las fotos del teléfono de Carlos" tags="" position="4385,5170" size="100,100">Has borrado todas las fotos del teléfono de Carlos. Probablemente sospechará de ti, así que debes pensar en una buena coartada. 
 
-(if: $segundosReloj &lt; 600)[ [ (css: &quot;color: lightblue;&quot;)[*¡Mierda! Ahí viene Carlos.*]
+(if: $segundosReloj &gt; 600)[ [ (css: &quot;color: lightblue;&quot;)[*¡Mierda! Ahí viene Carlos.*]
 
 ¡Rápido! Apaga la pantalla del teléfono y:
 
@@ -1523,8 +1523,9 @@ $phoneCodeGuess
 
 Apaga la pantalla del teléfono y: 
 
-[[mételo en la mochila.|2.4.1.5. metes el teléfono en la mochila]] ]
-[[escóndelo debajo de una servilleta.|2.4.3 Ríndete]] 
+[[mételo en la mochila.|2.4.1.5. metes el teléfono en la mochila]]
+[[déjalo sobre la mesa.|2.4.1.6. dejas el teléfono en la mesa]]]
+[[déjalo a un lado y confronta a Carlos.|2.4.1.6. dejas el teléfono en la mesa]] 
 (set: $hasDeletedAllPhotos to true)</tw-passagedata><tw-passagedata pid="145" name="2.4.1.4. Borrar sólo las fotos en las que apareces con Carlos" tags="" position="4690,5164" size="100,100">(if: $segundosReloj &gt; 600)[
 (css: &quot;color: lightblue;&quot;)[*¡Mierda! Ahí viene Carlos.*]
 
@@ -1550,11 +1551,19 @@ Has borrado las fotos en las que apareces con Carlos. Esa es demasiada casualida
 (css: &quot;color: white;&quot;)[**Carlos:**] Pues un poco inquieto por lo que me dijiste, la verdad. 
 
 [[─¿Cómo inquieto?|2.5. El comienzo del fin]] ]
-(else:)[ [[Habla con Carlos para aclarar lo de anoche.|2.4.3 Ríndete]] ]</tw-passagedata><tw-passagedata pid="147" name="2.4.1.6. dejas el teléfono en la mesa" tags="" position="4204,5364" size="100,100">Carlos vuelve del baño desconcertado por ver su teléfono sobre la mesa. Sospecha que has tratado de espiarle, pero no tienes más remedio que admitirlo. 
+(else:)[ [[Habla con Carlos para aclarar lo de anoche.|2.4.3 Ríndete]] ]</tw-passagedata><tw-passagedata pid="147" name="2.4.1.6. dejas el teléfono en la mesa" tags="" position="4204,5364" size="100,100">(if: $takenPhoto is false or $hasDeletedAllPhotos is false)[
+
+Carlos vuelve del baño desconcertado por ver su teléfono sobre la mesa. Sospecha que has tratado de espiarle, pero no tienes más remedio que admitirlo. 
 
 Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con la total desconfianza de Manuela y Carlos, y tu vida se hace pedacitos. 
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="148" name="2.4.2 Busca información en tu teléfono" tags="" position="4856,4287" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Por fin el wifi funciona en este teléfono de mierda!*] 
+[[Fin del juego - Reiniciar|Parte 2]]]
+
+(else:) [Carlos vuelve del baño desconcertado por ver su teléfono sobre la mesa. Aunque tienes evidencia de la manipulación de Carlos contra ti, no puedes acusarle de nada ante nadie porque él sabe que has ingresado a su teléfono sin autorización, y eso también es un delito. 
+
+Eventualmente tendrás problemas con la policía, y tendrás que aclarar tu situación legal. Manuela está muy desilusionada contigo, y pierdes su amistad y posiblemente hasta tu libertad.
+
+[[Fin del juego - Reiniciar|Parte 2]]]</tw-passagedata><tw-passagedata pid="148" name="2.4.2 Busca información en tu teléfono" tags="" position="4856,4287" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Por fin el wifi funciona en este teléfono de mierda!*] 
 
 ¿Qué quieres hacer en tu teléfono?
 
@@ -1739,6 +1748,8 @@ El que Carlos ha enviado dice:
 
 (css: &quot;color: blue&quot;)[**Nos encontraremos hoy como nueva pareja. Qué emoción!! :)) Pero a veces me desconcierta. No sé si de verdad quiere estar conmigo. Estoy seguro que le seduciré. Seguro. ;)**]
 
+(css: &quot;color: lightblue&quot;)[¿Por qué él está tan seguro? Todo esto me parece muy raro...]
+
 [[Vuelve al menú anterior|2.4.1.1 Entra al teléfono de Carlos]]
 
 (set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="157" name="2.4.1.4. Ver correo electrónico" tags="" position="4700,5028" size="100,100">En su historial más reciente de su correo electrónico ves un mensaje que ya  ha visto y otro que no ha visto. 
@@ -1808,7 +1819,8 @@ Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una rela
 
 [[─No se te olvide que Manuela también es tu hermana. ¿No te importa lo que ella también siente por nosotros? ¿De veras quieres echarlo todo a perder?|2.3.6.3. Carlos puede ser consciente de lo que hará]] ]
 
-(else:) [ [[─Sé que me manipulaste, Carlos. Y eso es gravísimo. He visto el mensaje de tu amiguito Mike. ¡Explícame ahora mismo qué pasó anoche, carajo!|2.3.6.1. Sobre el correo de Mike]] ]
+(else:) [ 
+[[─Sé que me manipulaste, Carlos. Y eso es gravísimo. He visto el mensaje de tu amiguito Mike. ¡Explícame ahora mismo qué pasó anoche, carajo!|2.3.6.1. Sobre el correo de Mike]] ]
 
 (set: $shownPhoto to true)</tw-passagedata><tw-passagedata pid="162" name="2.4.3.1.1. No convences a Carlos" tags="" position="5511,3717" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responderle a Carlos de una manera demasiado contundente).**]
 
@@ -1886,19 +1898,19 @@ Te muestra algunas fotos tuyas con él bastante comprometedoras.
 
 [[─Totalmente, Carlos. Sé que tu amor ha sido verdadero desde siempre. Y quiero amarte en todo momento.|Final amando a Carlos]]
 [[─No tengo pruebas pero tampoco dudas de que me quieres. ¿Qué más da?|2.3.6.2. Carlos no cree en tu supuesto amor]]
-[[─Sí, quiero estar contigo, pero como amigo. Me disculpo por si te armé falsas expectativas. En verdad que lo siento mucho.|Final con Carlos destrozado]]</tw-passagedata><tw-passagedata pid="171" name="2.4.1.4.1. Ver el mensaje completo" tags="" position="4918,5031" size="100,100">&#39;Mike Polainas&#39; le escribió a Carlos lo siguiente: 
+[[─Sí, quiero estar contigo, pero como amigo. Me disculpo por si te armé falsas expectativas. En verdad que lo siento mucho.|Final con Carlos destrozado]]</tw-passagedata><tw-passagedata pid="171" name="2.4.1.4.1. Ver el mensaje completo" tags="" position="4918,5029" size="100,100">&#39;Mike Polainas&#39; le escribió a Carlos lo siguiente: 
 
 (css: &quot;color: yellow&quot;)[**&quot;Llevarás a tu nueva pareja al concierto. ¿Estás seguro que le agradará venir a vernos? Ni que le obligues va a venir. A menos que de verdad hagas lo que me dijiste el otro día... Ojo con eso, querido.&quot;**]
 
 (css: &quot;color: lightblue&quot;)[*¡¿Qué es esto?! De veras aquí hay algo muy oscuro. Pero si le pregunto a Carlos directamente, él sospechará de mí. ¿Qué hago?*]
 
-[[Síguele el juego a Carlos para preguntarle luego.|2.4.3 Ríndete]] 
+[[Síguele el juego a Carlos para preguntarle luego|2.4.3 Ríndete]] 
 (if: $takenPhoto is false)[
-(link: &quot;Tómale foto al mensaje.&quot;)[(set: $segundosReloj to $segundosReloj + 10)(set: $takenPhoto to true)(goto:&quot;2.4.1.4.1. Ver el mensaje completo&quot;)]
+(link: &quot;Tómale foto al mensaje&quot;)[(set: $segundosReloj to $segundosReloj + 10)(set: $takenPhoto to true)(goto:&quot;2.4.1.4.1. Ver el mensaje completo&quot;)]
 ]
-(link: &quot;Marca el correo como no visto y sigue explorando su teléfono.&quot;)[(set: $segundosReloj to $segundosReloj + 5)(set: $hasViewedCarlosEmail to false)(goto:&quot;2.4.1.1 Entra al teléfono de Carlos&quot;)]
+(link: &quot;Marca el correo como no visto y sigue explorando su teléfono&quot;)[(set: $segundosReloj to $segundosReloj + 5)(set: $hasViewedCarlosEmail to false)(goto:&quot;2.4.1.1 Entra al teléfono de Carlos&quot;)]
 
-[[Vuelve al menú anterior del teléfono.|2.4.1.1 Entra al teléfono de Carlos]]
+[[Vuelve al menú anterior del teléfono|2.4.1.1 Entra al teléfono de Carlos]]
 
 (set: $segundosReloj to $segundosReloj + 60)
 (set: $hasViewedCarlosEmail to true)
@@ -1973,10 +1985,10 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *¡Carajo! ¿Por qué no me contestas? ¿Dónde estuviste? ¿Qué pasó anoche?* 
 
-(link: &quot;&#39;Lo siento, pero estaba con mucho trabajo y no podía responder. Te llamo pronto.&#39; Corta la llamada y sigue buscando información.&quot;)[(set: $calledManuela to true)(set: $segundosReloj to $segundosReloj + 50)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosManuela to $puntosManuela - 1)
+(link: &quot;&#39;Lo siento, pero estaba con mucho trabajo y no podía responder. Te llamo pronto&#39;&quot;. Corta la llamada y sigue buscando información)[(set: $calledManuela to true)(set: $segundosReloj to $segundosReloj + 50)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosManuela to $puntosManuela - 1)
 ]
 
-(link: &quot;Corta la llamada sin decir nada y sigue buscando información.&quot;)[(set: $segundosReloj to $segundosReloj + 10)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosManuela to $puntosManuela - 2)]
+(link: &quot;Corta la llamada sin decir nada y sigue buscando información&quot;)[(set: $segundosReloj to $segundosReloj + 10)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosManuela to $puntosManuela - 2)]
 
 (css: &quot;color: red;&quot;)[**(Pierdes algunos puntos con Manuela por no darle mayores explicaciones. Tal vez ella comienza a sospechar de ti).**]
 
