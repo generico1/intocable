@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -1512,7 +1512,7 @@ $phoneCodeGuess
 
 [[Confronta a Carlos sobre estas fotos|2.6. Confronta a Carlos sobre las fotos]]
 [[Borra todas las fotos del teléfono de Carlos|2.4.1.3. Borrar todas las fotos del teléfono de Carlos]]
-[[Borra sólo las fotos en las que apareces con Carlos|2.4.1.4. Borrar sólo las fotos en las que apareces con Carlos]]</tw-passagedata><tw-passagedata pid="144" name="2.4.1.3. Borrar todas las fotos del teléfono de Carlos" tags="" position="4385,5170" size="100,100">Has borrado todas las fotos del teléfono de Carlos. Probablemente sospechará de ti, así que debes pensar en una buena coartada. 
+[[Borra sólo las fotos en las que apareces con Carlos|2.4.1.4. Borrar sólo las fotos en las que apareces con Carlos]]</tw-passagedata><tw-passagedata pid="144" name="2.4.1.3. Borrar todas las fotos del teléfono de Carlos" tags="" position="4362,5151" size="100,100">Has borrado todas las fotos del teléfono de Carlos. Probablemente sospechará de ti, así que debes pensar en una buena coartada. 
 
 (if: $segundosReloj &gt; 600)[ [ (css: &quot;color: lightblue;&quot;)[*¡Mierda! Ahí viene Carlos.*]
 
@@ -1524,16 +1524,15 @@ $phoneCodeGuess
 Apaga la pantalla del teléfono y: 
 
 [[mételo en la mochila.|2.4.1.5. metes el teléfono en la mochila]]
-[[déjalo sobre la mesa.|2.4.1.6. dejas el teléfono en la mesa]]]
-[[déjalo a un lado y confronta a Carlos.|2.4.1.6. dejas el teléfono en la mesa]] 
+[[déjalo sobre la mesa.|2.4.1.6. dejas el teléfono en la mesa]]] 
 (set: $hasDeletedAllPhotos to true)</tw-passagedata><tw-passagedata pid="145" name="2.4.1.4. Borrar sólo las fotos en las que apareces con Carlos" tags="" position="4690,5164" size="100,100">(if: $segundosReloj &gt; 600)[
 (css: &quot;color: lightblue;&quot;)[*¡Mierda! Ahí viene Carlos.*]
 
 No había tiempo para borrar las fotos.
 
-Apaga la pantalla del teléfono y: 
+Apaga la pantalla del teléfono y:
 [[déjalo sobre la mesa.|2.4.1.6. dejas el teléfono en la mesa]]
-[[escóndelo debajo de una servilleta.|2.4.3 Ríndete]]
+[[huye.|2.5.2.1 Huir de Carlos]]
 ]
 (else:)[
 Has borrado las fotos en las que apareces con Carlos. Esa es demasiada casualidad, y Carlos seguramente sospechará de ti. Debes pensar en una muy creativa coartada.
@@ -1960,7 +1959,7 @@ Carlos manipula su teléfono enfrente tuyo.
 
 (css: &quot;color: white;&quot;)[**Carlos:**] Ya está. No hay pruebas de lo que me dices. Pero ya te he dicho que te voy a hundir. 
 
-[[─¿Ah, sí? ¿Cómo más entonces? Cobarde que eres.|Final con Carlos destrozado]] ]</tw-passagedata><tw-passagedata pid="175" name="2.6. Confronta a Carlos sobre las fotos" tags="" position="4509,5366" size="100,100">Cuando Carlos vuelve, tú no te aguantas las ganas de reclamarle por esas fotos tan sugestivas que tiene contigo en su teléfono. Aún si hubieras conservado una copia de ellas para denunciarle ante la policía por una supuesta manipulación, él te contrademandaría por invasión de la privacidad de su teléfono. 
+[[─¿Ah, sí? ¿Cómo más entonces? Cobarde que eres.|Final con Carlos destrozado]] ]</tw-passagedata><tw-passagedata pid="175" name="2.6. Confronta a Carlos sobre las fotos" tags="" position="4503,5378" size="100,100">Cuando Carlos vuelve, tú no te aguantas las ganas de reclamarle por esas fotos tan sugestivas que tiene contigo en su teléfono. Aún si hubieras conservado una copia de ellas para denunciarle ante la policía por una supuesta manipulación, él te contrademandaría por invasión de la privacidad de su teléfono. 
 
 Sería un proceso de palabra de una parte contra la otra, pierdes a tu amiga y posiblemente pierdes la libertad. ¡El desastre de tu vida!
 
@@ -2048,7 +2047,7 @@ Sin querer aclarar nada, así se enrarece todo en tu vida. Cuando sales del luga
 
 (if: ($puntosManuela) &gt;= 4)[Estás triste de perder tu amistad con Manuela, pero sigues con tu vida y encuentras más amigos que llenan ese vacío. A veces durante las fechas especiales todavía piensas en ella.]
 
-(else:)[En realidad, estás más feliz sin ellos. Tu vida sigue con menos drama y complicaciones y menos estrés. Tal vez es un poquito más aburrido, pero lo prefieres así.]
+(else:)[En realidad, estás más feliz sin ellos. Tu vida sigue con menos drama, estrés, y complicaciones. Tal vez es un poquito más aburrida, pero lo prefieres así.]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.**
@@ -2061,9 +2060,11 @@ Intenta completar el juego otra vez:
 (css: &quot;color: white;&quot;)[**Carlos:**] Lo pagarás caro. ¡Te acordarás de mí!
 
 (if: $takenPhoto is true)[
-(css: &quot;color: #187FF5;&quot;)[*¿Y qué? Yo sí soy quien tiene pruebas para hundirte, a-mor-ci-to. Más te vale tener cuidado.
+(css: &quot;color: #187FF5;&quot;)[*¿Y qué? Yo sí soy quien tiene pruebas para hundirte, a-mor-ci-to. Más te vale tener cuidado.*]
 
-Jajajaja!! Se ve que no eres nada, Carlos. ¡Chaíto!*]
+Le muestras la foto del correo de Mike.
+
+(css: &quot;color: #187FF5;&quot;)[Jajajaja!! Se ve que no eres nada, Carlos. ¡Chaíto!*]
 
 Has logrado verle la verdadera cara a Carlos jugándole por donde más le duele: manipulándole como lo ha hecho contigo. Vuelves con Manuela, mantienes tu pacto y relación con ella. Y disfrutas de la impunidad de tus actos. Eso no dura para siempre, ¿pero qué más da? Has ganado ahora, y eso es lo importante.]
 
