@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -183,11 +183,11 @@ No contesta. ¿Qué haces?
 
 (if: $hasDrunkJuice is false)[ [[Bebe el jugo]] ] 
 (if: $hasEatenSandwich is false)[ [[Come el sánduche igual]] ] 
-(link-goto: &quot;Busca otra comida&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="25" name="Ve al comedor" tags="" position="4181,1025" size="100,100">Levantas la servilleta y ves que... (if: $hasEatenChicken is false)[hay dos presas de pollo rostizado que pediste ayer en la tarde, y que no comiste por andar de borrachera.
+(link-goto: &quot;Busca otra comida&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="25" name="Ve al comedor" tags="" position="4181,1025" size="100,100">Levantas la servilleta y ves que... (if: $hasEatenChicken is false)[hay dos presas de pollo rostizado que pediste ayer en la tarde, y que no comiste por andar de borrachera.]
 
-(else:) [ no hay nada qué comer. :(( ]
+(else:) [no hay nada qué comer.]
 
-[[Come el pollo|Come el pollo]] ]
+[[Come el pollo|Come el pollo]]
 [[Ve al refrigerador|Abre el refrigerador]]
 (link-goto: &quot;Da una vuelta por la cocina&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="26" name="Sal de la casa" tags="" position="2997,2069" size="100,100">(if: $calledCarlos is true) [
 	(if: $itemWallet&#39;s isCarried is false)[
@@ -200,13 +200,12 @@ No contesta. ¿Qué haces?
 	  Sin teléfono, ¿cómo vas a estar en contacto con tus amistades?
 	  [[Ve a la habitación|Sal de la cama]]
 	]
-(else:)[Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
+	
+](else:)[Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa. Pero tu mejor amiga viene a darte una golpiza y probablemente matarte. Pero, igual, no te importa nada. 
 
 No hablaste con nadie, así que es imposible saber qué pasó anoche.
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
-
-
 
 (link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;) ]</tw-passagedata><tw-passagedata pid="27" name="&quot;En la casa&quot;" tags="" position="2965,1104" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder lo que él espera de ti).**]
 
