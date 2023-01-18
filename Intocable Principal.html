@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -532,7 +532,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
 
-(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="66" name="Parte 2" tags="" position="2599,2336" size="100,100">Intocable - Parte 2
+(link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="66" name="Parte 2" tags="" position="2622.3333333333335,2361" size="100,100">Intocable - Parte 2
 
 [[Vas a El Sitio|2.1. Llegas a El Sitio]]
 [[Vas al Café Tinta|2.3. LLEGAS AL CAFÉ TINTA]]
@@ -567,7 +567,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 (else:)[
 [[Habla con Manuela|2.1.5.A]] ]
 [[Trata de ignorarla|2.1.7. TRATAS DE IGNORARLA]] ] 
-</tw-passagedata><tw-passagedata pid="70" name="2.1.3. PEDIR PRESTADO A MANUELA" tags="" position="2897,2356" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Manuela! ¡Qué bueno verte! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota.*] 
+</tw-passagedata><tw-passagedata pid="70" name="2.1.3. PEDIR PRESTADO A MANUELA" tags="" position="2870.3333333333335,2397.6666666666665" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Manuela! ¡Qué bueno verte! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota.*] 
 (css: &quot;color: red;&quot;) [**(-1 punto por pedirle prestado a Manuela).**]
 
 (if: $calledManuela is false) [
@@ -687,9 +687,9 @@ Sales rápidamente de El Sitio para tomar otro taxi.
 
 Pudiste haber tratado mejor a Carlos, pero está muy furioso y se va rápidamente. Carlos decide publicar sus fotos contigo en sus redes. Manuela las ve y comienza a reclamarte para luego golpearte cuando te vea. Se arma un gran escándalo. Pierdes la confianza de ambos. Tu vida se vuelve horrible.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="84" name="2.2.2.2. ENFRENTA CON CARLOS A MANUELA SIN CONFIANZA" tags="" position="1694,3091" size="100,100">Manuela les ve y se acerca.
+[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="84" name="2.2.2.2. ENFRENTA CON CARLOS A MANUELA SIN CONFIANZA" tags="" position="1694,3091" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto con Carlos y Manuela por revelar la mucha duda que tienes).**]
 
-(css: &quot;color: red;&quot;)[**(-1 punto con Carlos y Manuela por revelar la mucha duda que tienes).**]
+(if: $textedManuela is true)[Manuela les ve y se acerca.]
 
 (css: &quot;color: orange;&quot;)[**Manuela:**] *¡Buenas, buenas! Uy, Carlitos, querido. ¡Qué sorpresa! No me digan que están juntos. Porque eso no puede ser.*
 
