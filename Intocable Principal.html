@@ -576,7 +576,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 (else:)[
 [[Habla con Manuela|2.1.5.A]] ]
 [[Trata de ignorarla|2.1.7. TRATAS DE IGNORARLA]]
-</tw-passagedata><tw-passagedata pid="70" name="2.1.3. PEDIR PRESTADO A MANUELA" tags="" position="2946.6666666666665,2360.3333333333335" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Manuela! ¡Qué bueno verte! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota.*] 
+</tw-passagedata><tw-passagedata pid="70" name="2.1.3. PEDIR PRESTADO A MANUELA" tags="" position="2946,2360" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Manuela! ¡Qué bueno verte! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota.*] 
 (css: &quot;color: red;&quot;) [**(-1 punto por pedirle prestado a Manuela).**]
 
 (if: $calledManuela is false) [
@@ -672,7 +672,7 @@ Al ver la reacción de Manuela sales a correr como la persona cobarde que eres. 
 
 Vuelves a tu casa y recuperas tu billetera.  
 
-(if: $examinedWallet is false)[(link-goto: &quot;Examinar Billetera&quot;, &quot;Mirar billetera&quot;)
+(if: $examinedWallet is false)[(link-goto: &quot;Revisa la billetera&quot;, &quot;Mira la billetera&quot;)
 (set: $previousPassage to &quot;2.1.5.7 RECUPERAR BILLETERA&quot;)
 ]
 [[Ve al Café Tinta|2.3.1. PAGAR TAXI AL CAFÉ TINTA]]
@@ -754,7 +754,7 @@ Carlos muestra algunas fotos en las que lo acompañas a la fiesta de anoche. Alg
 (set: $puntosCarlos to $puntosCarlos - 1)
 (set: $puntosManuela to $puntosManuela + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
-(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="87" name="2.3. LLEGAS AL CAFÉ TINTA" tags="" position="3572,2430.6666666666665" size="100,100">El taxista te pide el dinero de tu recorrido. 
+(css: &quot;color: yellow;&quot;)[**Puntos con Manuela:**] $puntosManuela</tw-passagedata><tw-passagedata pid="87" name="2.3. LLEGAS AL CAFÉ TINTA" tags="" position="3572,2430" size="100,100">El taxista te pide el dinero de tu recorrido. 
 
 (if: $itemWalletisCarried)[
 (if: $examinedWallet is false)[(link-goto: &quot;Examinar Billetera&quot;, &quot;Mira la billetera&quot;) (set: $previousPassage to &quot;2.3. LLEGAS AL CAFÉ TINTA&quot;)
@@ -769,26 +769,26 @@ Olvidaste tu billetera y no tienes dinero para pagar. ¿Qué haces?
 (else:)[
 [[Pídele prestado a Carlos en El Café Tinta|2.3.1.1. PEDIRLE PRESTADO A CARLOS]]] ]
 
-(set: $visitedTinta to true)</tw-passagedata><tw-passagedata pid="88" name="2.3.1. PAGAR TAXI AL CAFÉ TINTA" tags="" position="3819.3333333333335,2487" size="100,100">¡Bien! Pagaste la carrera completa. 
+(set: $visitedTinta to true)</tw-passagedata><tw-passagedata pid="88" name="2.3.1. PAGAR TAXI AL CAFÉ TINTA" tags="" position="3819,2487" size="100,100">¡Bien! Pagaste la carrera completa. 
 (if: $dateLocation is &quot;Sitio&quot;)[ 
 
 No ves a Carlos ni a nadie que conozcas. 
 
 (css: &quot;color: lightblue;&quot;)[**¡Qué idiota! Hice planes para reunirme con Carlos en El Sitio. Debo ir allí pronto.**]
 
-[[Ve a El Sitio|2.1.1. TAXI CON MI DINERO EN EL SITIO]]]
+[[Ve a El Sitio|2.1.1. TAXI CON MI DINERO EN EL SITIO]]
 
 (set: $puntosCarlos to $puntosCarlos - 1)
 (css: &quot;color: red;&quot;)[**(-1 punto Carlos por llegar tarde a la cita).**]
 (css: &quot;color: yellow;&quot;)[**Puntos con Carlos:**] $puntosCarlos
-(else:)[
-(if: $visitedElSitio is true)[
-    [[Entra al Café Tinta|2.3.3. SALUDO A CARLOS CUANDO FUISTE A EL SITIO]]
 ](else:)[
-	[[Entra al Café Tinta|2.3.2. SALUDO A CARLOS]] 
+  (if: $visitedElSitio is true)[
+	  [[Entra al Café Tinta|2.3.3. SALUDO A CARLOS CUANDO FUISTE A EL SITIO]]
+  ](else:)[
+	  [[Entra al Café Tinta|2.3.2. SALUDO A CARLOS]] 
+  ]
 ]
-]
-(set: $visitedTinta to true)</tw-passagedata><tw-passagedata pid="89" name="2.3.1.1. PEDIRLE PRESTADO A CARLOS" tags="" position="3680.6666666666665,2587" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Hola, Carlos! Disculpa, olvidé mi billetera y no tengo para pagar el taxi. ¿Me puedes prestar algo?*]
+(set: $visitedTinta to true)</tw-passagedata><tw-passagedata pid="89" name="2.3.1.1. PEDIRLE PRESTADO A CARLOS" tags="" position="3680,2587" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Hola, Carlos! Disculpa, olvidé mi billetera y no tengo para pagar el taxi. ¿Me puedes prestar algo?*]
 
 (css: &quot;color: red;&quot;)[**(-1 punto por pedirle dinero prestado a Carlos).**]
 
@@ -1656,7 +1656,7 @@ Pero no estoy dispuesto a rendirme tan fácilmente. Quiero luchar por nuestro am
 
 (if: $shownPhoto is true)[ [[─Estás loco, Carlos. No sé qué podrías hacer si no me junto contigo. La verdad es que no recuerdo nada de eso que me muestras. Date cuenta de lo que estás haciendo conmigo.|2.3.6.3. Carlos puede ser consciente de lo que hará]] ]
 
-(else:)[[[─No tengo pruebas pero tampoco dudas de que me quieres. ¿Qué más da?|2.3.6.2. Carlos no cree en tu supuesto amor]] ]</tw-passagedata><tw-passagedata pid="160" name="2.3.6.2. Carlos no cree en tu supuesto amor" tags="" position="5808.666666666667,4163.666666666667" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Es la respuesta más mediocre que he escuchado jamás. Seguro que así serás con todo el mundo. No quiero verte nunca más, te lo digo. 
+(else:)[[[─No tengo pruebas pero tampoco dudas de que me quieres. ¿Qué más da?|2.3.6.2. Carlos no cree en tu supuesto amor]] ]</tw-passagedata><tw-passagedata pid="160" name="2.3.6.2. Carlos no cree en tu supuesto amor" tags="" position="5808,4163" size="100,100">(css: &quot;color: white;&quot;)[**Carlos:**] Es la respuesta más mediocre que he escuchado jamás. Seguro que así serás con todo el mundo. No quiero verte nunca más, te lo digo. 
 
 Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una relación de la cual no sabes nada en absoluto. Carlos, en venganza, le entera a su hermana Manuela de lo ocurrido. 
 
