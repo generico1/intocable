@@ -116,14 +116,14 @@ No recuerdas absolutamente nada de lo que pasó anoche. ¿Qué haces?
 [[Responde amable|Respondes amigablemente]]
 [[Responde distante|Respondes con un insulto]]</tw-passagedata><tw-passagedata pid="14" name="No responder mensaje" tags="" position="1886,774" size="100,100">(css: &quot;color: lightblue;&quot;)[*¿En serio, Cris?*] La verdad no te acuerdas de nada de lo que pasó anoche. 
 
-Tienes ganas de responderle, pero es muy extraño que él sea tan confianzudo contigo. ¿Será que sí pasó algo entre ustedes?
+Tienes ganas de responderle, pero es muy extraño que Cris tenga tanta confianza contigo. ¿Será que sí pasó algo entre ustedes?
 
 [[Responde el mensaje|Responder mensaje]]
 [[Ignora todo por ahora|Sal de la cama]]</tw-passagedata><tw-passagedata pid="15" name="Respondes amigablemente" tags="" position="1499,926" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder amigablemente).**]
 
 Tú escribes: (css: &quot;color: white;&quot;)[**“Hola, Cris. Tengo mucho dolor de cabeza, y no recuerdo bien qué pasó anoche. ¿Me llamas más tarde y hablamos?”.**]
 
-Él comienza a llamar insistentemente, pero ahora no tienes cabeza para responderle. 
+Cris comienza a llamar insistentemente, pero ahora no tienes cabeza para responderle. 
 
 [[Deja el teléfono|Deja el teléfono]]
 (set: $puntosCris to $puntosCris + 1)
@@ -131,7 +131,7 @@ Tú escribes: (css: &quot;color: white;&quot;)[**“Hola, Cris. Tengo mucho dolo
 
 Tú escribes: (css: &quot;color: white;&quot;)[**“Hola, Cris. En serio que estoy con mucho cansancio ahora. Te llamo después”.**]
 
-Parece que a él no le agradó, y empieza a llamar muchas veces. Aún no tienes cabeza para responder a nadie. Te duele mucho.
+Parece que a Cris no le agradó, y empieza a llamar muchas veces. Aún no tienes cabeza para responder a nadie. Te duele mucho.
 
 [[Deja el teléfono|Deja el teléfono]]
 (set: $puntosCris to $puntosCris - 1)
@@ -145,9 +145,9 @@ Ahora, a aliviar esa resaca. ]
 (else:)[ [[Da una vuelta por la habitación|Sal de la cama]] ]</tw-passagedata><tw-passagedata pid="19" name="Mira las llamadas" tags="" position="1365,1230" size="100,100">**Tienes 13 llamadas perdidas de Cris.**
 **Tienes 2 llamadas perdidas de Juli.**
 
-(css: &quot;color: lightblue;&quot;)[*Juli es mi mejor amiga. Cris es su hermano. Juli me ha ayudado mucho en mis momentos más difíciles y hasta ahora había establecido un contacto tan estrecho con Cris. Él también me quiere (?). Tengo que averiguarlo.*]
+(css: &quot;color: lightblue;&quot;)[*Juli es mi mejor amiga y con Cris tiene una relación muy cercana, como de hermandad. Juli me ha ayudado mucho en mis momentos más difíciles y hasta ahora había establecido un contacto así de estrecho con Cris. Cris también me quiere (?). Tengo que averiguarlo.*]
 
-Uh oh. A tu mejor amiga no le va a gustar que Cris te llamara. Ella específicamente te dijo que nunca le tocaras, ni siquiera le hablaras. Nunca. Carajo, ¡¿qué hiciste?!
+Uh oh. A tu mejor amiga no le va a gustar que Cris te llamara. Ella específicamente te dijo que nunca le tocaras. Nunca. Carajo, ¡¿qué hiciste?!
 
 (if: $calledJuli is false)[ [[Llama a Juli]] ]
 (if: $calledCris is false)[ [[Llama a Cris]] ]
@@ -162,10 +162,10 @@ No contesta. ¿Qué haces?
 (css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli
 (set: $calledJuli to true)</tw-passagedata><tw-passagedata pid="21" name="Dejarle un mensaje" tags="" position="1374,1498" size="100,100">(css: &quot;color: white;&quot;)[**“Hola, Juli. Tengo un dolor de cabeza horrible, y no sé qué pasó anoche. Llámame cuando puedas”.**] 
 
-(css: &quot;color: lightblue;&quot;)[*¿Será que sabe algo? ¿Que estuve con su hermano? No tengo cabeza para pensar ahora.*]
+(css: &quot;color: lightblue;&quot;)[*¿Será que sabe algo? ¿Que estuve con Cris? No tengo cabeza para pensar ahora.*]
 
 [[Deja el teléfono|Deja el teléfono]]
-(set: $textedJuli to true)</tw-passagedata><tw-passagedata pid="22" name="No dejarle ningún mensaje" tags="" position="1239,1378" size="100,100">Probablemente ella vuelve a llamar más tarde. Tu cabeza está que estalla. 
+(set: $textedJuli to true)</tw-passagedata><tw-passagedata pid="22" name="No dejarle ningún mensaje" tags="" position="1239,1378" size="100,100">Probablemente Juli vuelve a llamar más tarde. Tu cabeza está que estalla. 
 
 [[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="23" name="Ve a la cocina" tags="" position="3680,1006" size="100,100">Estás en la cocina.
 
@@ -403,16 +403,16 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 
 (if: (($hasBathed is true) or ($itemClothes&#39;s isCarried is true)) and ($itemShoes&#39;s isCarried is false))[ [[Ponte los zapatos|Ponte los zapatos]] ]
 (else:)[ [[Mira los zapatos|Mirar los zapatos]] ]
-(link-goto: &quot;Levántate&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Cris indiferente" tags="" position="1768,617" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no llamar a tu &quot;admirador&quot; antes).**]
+(link-goto: &quot;Levántate&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Cris indiferente" tags="" position="1768,617" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no llamar antes).**]
 
-(css: &quot;color: white;&quot;)[**Cris:** *“Hola. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Hasta me dedicaste mi canción favorita. ¡Estoy ansioso por contarle a todo el mundo de nuestra relación!”.*] 
+(css: &quot;color: white;&quot;)[**Cris:** *“Hola. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Hasta me dedicaste mi canción favorita. ¡Tengo ganas de contarle a todo el mundo de nuestra relación!”.*] 
 
 [[Responde el mensaje|Responder mensaje]]
 [[Deja el mensaje en visto|No responder mensaje]]
 (set: $puntosCris to $puntosCris - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="50" name="Mensaje Cris amable" tags="" position="1960,620" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por llamar a Cris primero).**]
 
-(css: &quot;color: white;&quot;)[**Cris:**]*“¡Hola!. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Incluso me dedicaste mi canción favorita. Eso fue muy especial. ¡Estoy ansioso por contarles a todas mis amistades que estamos juntos!”.* 
+(css: &quot;color: white;&quot;)[**Cris:**]*“¡Hola!. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Incluso me dedicaste mi canción favorita. Eso fue muy especial. ¡Quiero contarles a todas mis amistades que estamos juntos!”.* 
 
 (css: &quot;color: lightblue;&quot;)[*Claro. Esta es la confirmación de su capricho por mí. Ni Juli ni nadie se puede enterar de esto. Incluso le dediqué una canción. ¡Qué horror! ¡Debo parar esto ahora mismo!*]
 
