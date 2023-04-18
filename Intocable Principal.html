@@ -28,16 +28,16 @@ Te despiertas, tienes dolor de cabeza y de estómago. ¿Qué haces?
 
 (set: $puntosCarisma to 0)
 (set: $puntosGuadalupe to 0)
-(set: $puntosCris to 0)
+(set: $puntosJuli to 0)
 
 (set: $hasBathed to false)
 (set: $hasDrunkWater to false)
 (set: $hasDrunkJuice to false)
 (set: $hasEatenChicken to false)
 (set: $hasEatenSandwich to false)
-(set: $calledCris to false)
+(set: $calledJuli to false)
 (set: $calledGuadalupe to false)
-(set: $textedCris to false)
+(set: $textedJuli to false)
 (set: $textedGuadalupe to false)
 (set: $inBed to true)
 (set: $itemPhone to (datamap:&quot;name&quot;, &quot;phone&quot;, &quot;description&quot;, &quot;Pagaste demasiado por este smartphone.&quot;, &quot;pickupText&quot;, &quot;Tienes el teléfono en el bolsillo.&quot;, &quot;isCarried&quot;, false))
@@ -109,7 +109,7 @@ Pero... por alguna razón, todavía te sientes un poquito...
 (set: $hasBathed to true)</tw-passagedata><tw-passagedata pid="12" name="Mira el mensaje" tags="" position="1867,449" size="100,100">(if: $calledGuadalupe is true) [ (goto: &quot;Mensaje Guadalupe amable&quot;) [[Mensaje Guadalupe amable]] ]
 
 (else:) [ (goto: &quot;Mensaje Guadalupe indiferente&quot;) [[Mensaje Guadalupe indiferente]] ]</tw-passagedata><tw-passagedata pid="13" name="Responder mensaje" tags="" position="1616,772" size="100,100">(set: $textedGuadalupe to true)
-(css: &quot;color: lightblue;&quot;)[*¿“Mi amor”? ¿“Anoche fue increíble”? Ni Cris ni nadie se puede enterar de esto. Y hasta le dediqué una canción. ¡Qué horror!*]
+(css: &quot;color: lightblue;&quot;)[*¿“Mi amor”? ¿“Anoche fue increíble”? Ni Juli ni nadie se puede enterar de esto. Y hasta le dediqué una canción. ¡Qué horror!*]
 
 No recuerdas absolutamente nada de lo que pasó anoche. ¿Qué haces? 
 
@@ -136,36 +136,36 @@ Parece que a él no le agradó, y empieza a llamar muchas veces. Aún no tienes 
 [[Deja el teléfono|Deja el teléfono]]
 (set: $puntosGuadalupe to $puntosGuadalupe - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="17" name="Llama a Guadalupe" tags="" position="2449,766" size="100,100">(set: $calledGuadalupe to true)
-(if: $calledCris is false) [ (goto: &quot;Guadalupe Amable&quot;) [[Guadalupe Amable]] ]
+(if: $calledJuli is false) [ (goto: &quot;Guadalupe Amable&quot;) [[Guadalupe Amable]] ]
 (else:)[ (goto: &quot;Guadalupe Agresivo&quot;) [[Guadalupe Agresivo]] ]</tw-passagedata><tw-passagedata pid="18" name="Deja el teléfono" tags="" position="997,1444" size="100,100">(if: ($itemClothes&#39;s isCarried is false) and (($hasDrunkWater is false) or ($hasDrunkJuice is false) or ($hasEatenChicken is false)) )[
 Ahora, a aliviar esa resaca. ]
 (else:)[Sigue averiguando más sobre anoche.]
 
 (if: $inBed is true)[ [[Levántate|Sal de la cama]] ]
 (else:)[ [[Da una vuelta por la habitación|Sal de la cama]] ]</tw-passagedata><tw-passagedata pid="19" name="Mira las llamadas" tags="" position="1365,1230" size="100,100">**Tienes 13 llamadas perdidas de Guadalupe.**
-**Tienes 2 llamadas perdidas de Cris.**
+**Tienes 2 llamadas perdidas de Juli.**
 
-(css: &quot;color: lightblue;&quot;)[*Cris es mi mejor amiga. Guadalupe es su hermano. Cris me ha ayudado mucho en mis momentos más difíciles y hasta ahora había establecido un contacto tan estrecho con Guadalupe. Él también me quiere (?). Tengo que averiguarlo.*]
+(css: &quot;color: lightblue;&quot;)[*Juli es mi mejor amiga. Guadalupe es su hermano. Juli me ha ayudado mucho en mis momentos más difíciles y hasta ahora había establecido un contacto tan estrecho con Guadalupe. Él también me quiere (?). Tengo que averiguarlo.*]
 
 Uh oh. A tu mejor amiga no le va a gustar que Guadalupe te llamara. Ella específicamente te dijo que nunca le tocaras, ni siquiera le hablaras. Nunca. Carajo, ¡¿qué hiciste?!
 
-(if: $calledCris is false)[ [[Llama a Cris]] ]
+(if: $calledJuli is false)[ [[Llama a Juli]] ]
 (if: $calledGuadalupe is false)[ [[Llama a Guadalupe]] ]
 
-[[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="20" name="Llama a Cris" tags="" position="1517,1381" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con tu amiga por llamarla).**]
+[[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="20" name="Llama a Juli" tags="" position="1517,1381" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con tu amiga por llamarla).**]
 
 No contesta. ¿Qué haces?
 
 [[Déjale un mensaje|Dejarle un mensaje]]
 [[No le dejes ningún mensaje|No dejarle ningún mensaje]]
-(set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
-(set: $calledCris to true)</tw-passagedata><tw-passagedata pid="21" name="Dejarle un mensaje" tags="" position="1374,1498" size="100,100">(css: &quot;color: white;&quot;)[**“Hola, Cris. Tengo un dolor de cabeza horrible, y no sé qué pasó anoche. Llámame cuando puedas”.**] 
+(set: $puntosJuli to $puntosJuli + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli
+(set: $calledJuli to true)</tw-passagedata><tw-passagedata pid="21" name="Dejarle un mensaje" tags="" position="1374,1498" size="100,100">(css: &quot;color: white;&quot;)[**“Hola, Juli. Tengo un dolor de cabeza horrible, y no sé qué pasó anoche. Llámame cuando puedas”.**] 
 
 (css: &quot;color: lightblue;&quot;)[*¿Será que sabe algo? ¿Que estuve con su hermano? No tengo cabeza para pensar ahora.*]
 
 [[Deja el teléfono|Deja el teléfono]]
-(set: $textedCris to true)</tw-passagedata><tw-passagedata pid="22" name="No dejarle ningún mensaje" tags="" position="1239,1378" size="100,100">Probablemente ella vuelve a llamar más tarde. Tu cabeza está que estalla. 
+(set: $textedJuli to true)</tw-passagedata><tw-passagedata pid="22" name="No dejarle ningún mensaje" tags="" position="1239,1378" size="100,100">Probablemente ella vuelve a llamar más tarde. Tu cabeza está que estalla. 
 
 [[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="23" name="Ve a la cocina" tags="" position="3680,1006" size="100,100">Estás en la cocina.
 
@@ -355,14 +355,14 @@ Igual, tengo que hablar con él y ver qué sabe. Si hay evidencia de anoche, hay
 [[─Por ahí.|&quot;Por ahí&quot;]]
 (if: $inBed is true) [ [[─En la cama.|&quot;En la cama&quot;]] ]
 (set: $puntosGuadalupe to $puntosGuadalupe + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="43" name="Guadalupe Agresivo" tags="" position="2132,907" size="100,100">(css: &quot;color: green;&quot;)[**(Has demostrado favoritismo a Cris,**] (css: &quot;color: red;&quot;) [**y a Guadalupe no le gusta esto).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="43" name="Guadalupe Agresivo" tags="" position="2132,907" size="100,100">(css: &quot;color: green;&quot;)[**(Has demostrado favoritismo a Juli,**] (css: &quot;color: red;&quot;) [**y a Guadalupe no le gusta esto).**]
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *¡Hasta que por fin! ¿Por qué no me contestas?*
 
 [[─Estaba con resaca, ya sabes.|&quot;Estaba con resaca, ya sabes.&quot;]]
 [[─Nada, me estaba alistando.|&quot;Nada, me estaba alistando.&quot;]]
 (set: $puntosGuadalupe to $puntosGuadalupe - 1)
-(set: $puntosCris to $puntosCris + 1)</tw-passagedata><tw-passagedata pid="44" name="Bebe el jugo" tags="" position="3715,1380" size="100,100">(if: $itemGlass&#39;s isCarried is false)[ ¿Vas a tomarlo así no más como cavernícola?
+(set: $puntosJuli to $puntosJuli + 1)</tw-passagedata><tw-passagedata pid="44" name="Bebe el jugo" tags="" position="3715,1380" size="100,100">(if: $itemGlass&#39;s isCarried is false)[ ¿Vas a tomarlo así no más como cavernícola?
 
 [[Toma el jugo igual|Toma jugo igual]] ]
 (else:)[(set: $puntosCarisma to $puntosCarisma + 1) (css: &quot;color: green;&quot;)[**(+1 punto por beber jugo sin manchar tu ropa).**]
@@ -414,7 +414,7 @@ Hay algo debajo de las sábanas... ¡Uy! ¡Tu billetera!
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**]*“¡Hola!. Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Incluso me dedicaste mi canción favorita. Eso fue muy especial. ¡Estoy ansioso por contarles a todas mis amistades que estamos juntos!”.* 
 
-(css: &quot;color: lightblue;&quot;)[*Claro. Esta es la confirmación de su capricho por mí. Ni Cris ni nadie se puede enterar de esto. Incluso le dediqué una canción. ¡Qué horror! ¡Debo parar esto ahora mismo!*]
+(css: &quot;color: lightblue;&quot;)[*Claro. Esta es la confirmación de su capricho por mí. Ni Juli ni nadie se puede enterar de esto. Incluso le dediqué una canción. ¡Qué horror! ¡Debo parar esto ahora mismo!*]
 
 [[Deja el teléfono|Deja el teléfono]]
 (set: $puntosGuadalupe to $puntosGuadalupe + 1)
@@ -426,15 +426,15 @@ Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aqu�
 
 **Guadalupe** - (if: $puntosGuadalupe &gt;= 3) [*Estás en buena relación con él.*](else:) [*Está molesto contigo.*]
 
-**Cris** - (if: $puntosCris &gt;= 1) [*Estás en buena relación con ella.*](else:) [*Está molesta contigo.*]
+**Juli** - (if: $puntosJuli &gt;= 1) [*Estás en buena relación con ella.*](else:) [*Está molesta contigo.*]
 
 **Preparación para la cita** - (if: $puntosCarisma &gt;= 3) [*¡Te ves increíble!*](elseif: $puntosCarisma &gt; 0) [*Puedes hacerlo mejor la próxima vez.*](else:) [*¿Eres cavernícola? Hueles muy mal.*]
 
 **Tu actitud con Guadalupe** - (if: $puntosGuadalupe + $puntosCarisma &gt;= 11)[
-	Bueno, lo que tengo que hacer es hablar con sinceridad con Guadalupe, a ver qué pasa. Pero debo tener claro también si quiero tener la confianza de Cris. ¿Qué puedo hacer ahora?](elseif: $puntosGuadalupe + $puntosCarisma &gt;= 9)[
-	Vale. Una de dos: o termino con Guadalupe y sigo firme con Cris, o todo se puede ir al traste. Igual tengo que hablar con Guadalupe con firmeza y sinceridad. Seguro que podemos arreglar algo.](elseif: $puntosGuadalupe + $puntosCarisma &gt;= 5)[
-    Bien. Sé que esto no puede ser o estar con Guadalupe, o mantener mi amistad con Cris. Tiene que haber algo para estar todos contentos. Si juego bien mis cartas, seguro habrá una solución justa. Veremos…](elseif: $puntosGuadalupe + $puntosCarisma &gt;= 2)[
-	¡Aaaaah! ¿Por qué todo tiene que reducirse a esto? Me molesta muchísimo todo esto. Que Guadalupe, que Cris, que esto, que lo otro. ¡Qué fastidio! Si no juego bien mis cartas, todo esto se va a la mismísima mierda.](elseif: $puntosGuadalupe + $puntosCarisma &gt;= 0)[
+	Bueno, lo que tengo que hacer es hablar con sinceridad con Guadalupe, a ver qué pasa. Pero debo tener claro también si quiero tener la confianza de Juli. ¿Qué puedo hacer ahora?](elseif: $puntosGuadalupe + $puntosCarisma &gt;= 9)[
+	Vale. Una de dos: o termino con Guadalupe y sigo firme con Juli, o todo se puede ir al traste. Igual tengo que hablar con Guadalupe con firmeza y sinceridad. Seguro que podemos arreglar algo.](elseif: $puntosGuadalupe + $puntosCarisma &gt;= 5)[
+    Bien. Sé que esto no puede ser o estar con Guadalupe, o mantener mi amistad con Juli. Tiene que haber algo para estar todos contentos. Si juego bien mis cartas, seguro habrá una solución justa. Veremos…](elseif: $puntosGuadalupe + $puntosCarisma &gt;= 2)[
+	¡Aaaaah! ¿Por qué todo tiene que reducirse a esto? Me molesta muchísimo todo esto. Que Guadalupe, que Juli, que esto, que lo otro. ¡Qué fastidio! Si no juego bien mis cartas, todo esto se va a la mismísima mierda.](elseif: $puntosGuadalupe + $puntosCarisma &gt;= 0)[
 	Bueno. Puedo llegar, hablarle a Guadalupe con firmeza, y aquí nada ha pasado. Claro, y borrar la evidencia si hay alguna. Simple.	](else:)[
   ¡Guadalupe está loco! ¡Si hay evidencia de algo entre nosotros, hay que borrarla! Y ya.]
 
@@ -442,7 +442,7 @@ Ahora es tu punto de control y si tienes que reiniciar, vas a empezar desde aqu�
 (link-goto: &quot;O juega otra vez desde el inicio&quot;, &quot;Despierta&quot;)
 
 &lt;!-- Do this before starting part 2 --&gt;
-(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosGuadalupe&quot;, $puntosGuadalupe, &quot;puntosCris&quot;, $puntosCris, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedCris&quot;, $textedCris, &quot;calledCris&quot;, $calledCris, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))</tw-passagedata><tw-passagedata pid="52" name="Café Tinta insistencia agresiva" tags="" position="2136,1504" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por hacer valer tu punto de vista).**]
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosGuadalupe&quot;, $puntosGuadalupe, &quot;puntosJuli&quot;, $puntosJuli, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedJuli&quot;, $textedJuli, &quot;calledJuli&quot;, $calledJuli, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))</tw-passagedata><tw-passagedata pid="52" name="Café Tinta insistencia agresiva" tags="" position="2136,1504" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por hacer valer tu punto de vista).**]
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *Bien, como digas. Te espero en media hora. No tienes excusa de llegar tarde. Chao.*
 
@@ -528,7 +528,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 [[─Sí, me suena bien.|El Sitio amable]]
 [[─Prefiero el Café Tinta, que es más privado.|Café Tinta insistencia amable]]
 [[─¿En serio? Vayamos allá como todo el mundo. Pues, está bien. No me importa tanto.|El Sitio agresiva]]
-[[─La verdad quiero acostarme. Chao.|La verdad quiero acostarme. Chao.]]</tw-passagedata><tw-passagedata pid="65" name="La verdad quiero acostarme. Chao." tags="" position="2627,2040" size="100,100">Te acuestas y mañana descubrirás las ruinas de tu vida. Es probable que hayas perdido la confianza de Guadalupe y de Cris, y habrá consecuencias para nada agradables.
+[[─La verdad quiero acostarme. Chao.|La verdad quiero acostarme. Chao.]]</tw-passagedata><tw-passagedata pid="65" name="La verdad quiero acostarme. Chao." tags="" position="2627,2040" size="100,100">Te acuestas y mañana descubrirás las ruinas de tu vida. Es probable que hayas perdido la confianza de Guadalupe y de Juli, y habrá consecuencias para nada agradables.
 
 (css: &quot;color: red;&quot;)[**FIN DEL JUEGO**]
 
@@ -542,12 +542,12 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 (set: $segundosReloj to 0)
 (set: $puntosCarisma to $part2SavedState&#39;s puntosCarisma)
 (set: $puntosGuadalupe to $part2SavedState&#39;s puntosGuadalupe)
-(set: $puntosCris to $part2SavedState&#39;s puntosCris)
+(set: $puntosJuli to $part2SavedState&#39;s puntosJuli)
 (set: $dateLocation to $part2SavedState&#39;s dateLocation)
 (set: $itemWalletisCarried to $part2SavedState&#39;s itemWalletisCarried)
 (set: $examinedWallet to $part2SavedState&#39;s examinedWallet)
-(set: $textedCris to $part2SavedState&#39;s textedCris)
-(set: $calledCris to $part2SavedState&#39;s calledCris)
+(set: $textedJuli to $part2SavedState&#39;s textedJuli)
+(set: $calledJuli to $part2SavedState&#39;s calledJuli)
 (set: $hasDrunkWater to $part2SavedState&#39;s hasDrunkWater)
 (set: $hasDrunkJuice to $part2SavedState&#39;s hasDrunkJuice)
 (set: $hasEatenChicken to $part2SavedState&#39;s hasEatenChicken)
@@ -557,71 +557,71 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
  [[Entra a El Sitio|2.2. Guadalupe EN EL SITIO]]
 ](else:) [ 
 
-(if: $calledCris is true or $textedCris is true)[
-[[Entra a El Sitio|2.1.1.1. EL SITIO CON Cris DIRECTAMENTE]]]
-(else:)[ [[Trata de ir al Café Tinta |2.1.2. Cris CAMINA]]]
+(if: $calledJuli is true or $textedJuli is true)[
+[[Entra a El Sitio|2.1.1.1. EL SITIO CON Juli DIRECTAMENTE]]]
+(else:)[ [[Trata de ir al Café Tinta |2.1.2. Juli CAMINA]]]
 ]
 
 
-(set: $visitedElSitio to true)</tw-passagedata><tw-passagedata pid="68" name="2.1.1.1. EL SITIO CON Cris DIRECTAMENTE" tags="" position="2287,2575" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Hola, Cris querida. ¿Todo bien?*]
+(set: $visitedElSitio to true)</tw-passagedata><tw-passagedata pid="68" name="2.1.1.1. EL SITIO CON Juli DIRECTAMENTE" tags="" position="2287,2575" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Hola, Juli querida. ¿Todo bien?*]
 
 (if: $hasPaidTaxi is true) [ [[─Ven, que te invito a tomar lo que quieras.|2.1.1.1.A]] ]
-(elseif: $textedCris is true) [ [[─¿Viste mi mensaje?|2.1.1.1.B]] ]
+(elseif: $textedJuli is true) [ [[─¿Viste mi mensaje?|2.1.1.1.B]] ]
 (else:)[ [[─Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.1.1.C]] ]
-</tw-passagedata><tw-passagedata pid="69" name="2.1.2. Cris CAMINA" tags="" position="2788,2569" size="100,100">Mira quién viene caminando casualmente… ¡Es Cris!
+</tw-passagedata><tw-passagedata pid="69" name="2.1.2. Juli CAMINA" tags="" position="2788,2569" size="100,100">Mira quién viene caminando casualmente… ¡Es Juli!
 
 ¿Qué haces?
 
-(if: $hasPaidTaxi is false) [ [[Pídele prestado para el taxi|2.1.3. PEDIR PRESTADO A Cris]] ]
+(if: $hasPaidTaxi is false) [ [[Pídele prestado para el taxi|2.1.3. PEDIR PRESTADO A Juli]] ]
 (else:)[
-[[Habla con Cris|2.1.5.A]] ]
+[[Habla con Juli|2.1.5.A]] ]
 [[Trata de ignorarla|2.1.7. TRATAS DE IGNORARLA]]
-</tw-passagedata><tw-passagedata pid="70" name="2.1.3. PEDIR PRESTADO A Cris" tags="" position="2946,2360" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Cris! ¡Qué bueno verte! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota.*] 
-(css: &quot;color: red;&quot;) [**(-1 punto por pedirle prestado a Cris).**]
+</tw-passagedata><tw-passagedata pid="70" name="2.1.3. PEDIR PRESTADO A Juli" tags="" position="2946,2360" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Juli! ¡Qué bueno verte! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota.*] 
+(css: &quot;color: red;&quot;) [**(-1 punto por pedirle prestado a Juli).**]
 
-(if: $calledCris is false) [
-	(css: &quot;color: orange;&quot;)[**Cris:**] *Sólo estoy para favores, ¿no?*]
+(if: $calledJuli is false) [
+	(css: &quot;color: orange;&quot;)[**Juli:**] *Sólo estoy para favores, ¿no?*]
 (else:) [
-  (if: $textedCris is true) [
-  (css: &quot;color: orange;&quot;)[**Cris:**] *¡Claro! Precisamente quería hablarte.*] 
+  (if: $textedJuli is true) [
+  (css: &quot;color: orange;&quot;)[**Juli:**] *¡Claro! Precisamente quería hablarte.*] 
   (else:)[
-	(css: &quot;color: orange;&quot;)[**Cris:**] *¿Y a ti qué carajos te pasó? Jajaja… sí que eres idiota.*]
+	(css: &quot;color: orange;&quot;)[**Juli:**] *¿Y a ti qué carajos te pasó? Jajaja… sí que eres idiota.*]
 ]
-[[Paga el taxi|2.1.4. TAXI CON DINERO DE Cris]]
+[[Paga el taxi|2.1.4. TAXI CON DINERO DE Juli]]
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
-</tw-passagedata><tw-passagedata pid="71" name="2.1.5.3. Cris PRUEBA TU VALENTÍA" tags="" position="2869,3194" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por evadir el tema que le interesa a Cris).**]  
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli
+</tw-passagedata><tw-passagedata pid="71" name="2.1.5.3. Juli PRUEBA TU VALENTÍA" tags="" position="2869,3194" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por evadir el tema que le interesa a Juli).**]  
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *Lo siento, cariño. Pero entenderás que no me tranquiliza tu supuesta amnesia. Llámalo, insisto.*
+(css: &quot;color: orange;&quot;)[**Juli:**] *Lo siento, cariño. Pero entenderás que no me tranquiliza tu supuesta amnesia. Llámalo, insisto.*
 
 [[─Lo que tú digas.|2.1.5.3.2. LLAMADA DE EMERGENCIA A Guadalupe]]
 [[─Pues nada, ¿tengo otra opción?|2.1.5.3.1.1]]
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="72" name="2.1.5.3.2. LLAMADA DE EMERGENCIA A Guadalupe" tags="" position="2709,3547" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder al desafío de Cris.)**] 
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="72" name="2.1.5.3.2. LLAMADA DE EMERGENCIA A Guadalupe" tags="" position="2709,3547" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder al desafío de Juli.)**] 
 
-Llamas a Guadalupe y pones el teléfono en altavoz para que Cris también escuche:
+Llamas a Guadalupe y pones el teléfono en altavoz para que Juli también escuche:
 
 [[─Hola, Guadalupe. Tiempo sin hablarte. Dile a tu hermana, por favor, que no estuviste conmigo anoche.|2.1.5.3.2.A]]
 [[─Hola, Guadalupe. Me alegra saludarte. Cuéntame qué hiciste anoche para aquí la tranquilidad de tu hermana.|2.1.5.3.2.B]]
 
-(set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="73" name="2.1.5.5.6. Cris OFRECE ACOMPAÑARTE" tags="" position="2897,4016" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por decir en voz alta lo que no debías).**]
+(set: $puntosJuli to $puntosJuli + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="73" name="2.1.5.5.6. Juli OFRECE ACOMPAÑARTE" tags="" position="2897,4016" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por decir en voz alta lo que no debías).**]
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *Espera, te acompaño. Con eso no te pierdes tanto como ahora viniendo tan de repente hasta acá.*
+(css: &quot;color: orange;&quot;)[**Juli:**] *Espera, te acompaño. Con eso no te pierdes tanto como ahora viniendo tan de repente hasta acá.*
 
-[[─Eres una buena amiga, Cris. Te agradezco.|2.1.5.5.6.1. Cris TE ACOMPAÑA]] 
-[[─No te preocupes. No quiero causarte más molestias.|2.1.1.5.5.6.2. Cris NO TE ACOMPAÑA]] 
+[[─Eres una buena amiga, Juli. Te agradezco.|2.1.5.5.6.1. Juli TE ACOMPAÑA]] 
+[[─No te preocupes. No quiero causarte más molestias.|2.1.1.5.5.6.2. Juli NO TE ACOMPAÑA]] 
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="74" name="2.1.7. TRATAS DE IGNORARLA" tags="" position="2997,2648" size="100,100">(css: &quot;color: orange;&quot;)[**Cris:**] *¡Qué hubo! ¡No jodás que ahora no me vas a saludar, carajo! Eso sí no te lo perdono.* (if: $textedCris)[*¿Acaso no necesitabas hablar conmigo?*](else:)[*¿Dónde estabas anoche? Estaba bien preocupada.*]
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="74" name="2.1.7. TRATAS DE IGNORARLA" tags="" position="2997,2648" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *¡Qué hubo! ¡No jodás que ahora no me vas a saludar, carajo! Eso sí no te lo perdono.* (if: $textedJuli)[*¿Acaso no necesitabas hablar conmigo?*](else:)[*¿Dónde estabas anoche? Estaba bien preocupada.*]
 
-(if: $textedCris)[
-[[─Lo sé, Cris. Disculpa. Me distraje por un momento. ¿Sabes dónde pude haberme metido anoche?|2.1.5.B]]
+(if: $textedJuli)[
+[[─Lo sé, Juli. Disculpa. Me distraje por un momento. ¿Sabes dónde pude haberme metido anoche?|2.1.5.B]]
 ]
 (else:)[
-[[─Disculpa, Cris. La verdad no sé ni lo que estoy haciendo. Necesito saber qué hice anoche. ¿Me puedes ayudar?|2.1.5.C]]
+[[─Disculpa, Juli. La verdad no sé ni lo que estoy haciendo. Necesito saber qué hice anoche. ¿Me puedes ayudar?|2.1.5.C]]
 ]
 (css: &quot;color: purple;&quot;)[ (Algo que hiciste en el pasado determinó esta interacción.) ]
 </tw-passagedata><tw-passagedata pid="75" name="2.2. Guadalupe EN EL SITIO" tags="" position="1887,2478" size="100,100">Guadalupe te invita a entrar a El Sitio.
@@ -636,37 +636,37 @@ Llamas a Guadalupe y pones el teléfono en altavoz para que Cris también escuch
 
 (set: $visitedElSitio to true)
 
-</tw-passagedata><tw-passagedata pid="76" name="2.2.1.1. VES A Cris EN EL SITIO" tags="" position="1560,2921" size="100,100">¡Ojo! Cris está cerca, pero no te ve. Está distraída pidiendo un café al mesero. Ya sabes qué pasará si te ve con su querido hermanito. ¿Qué haces?
+</tw-passagedata><tw-passagedata pid="76" name="2.2.1.1. VES A Juli EN EL SITIO" tags="" position="1560,2921" size="100,100">¡Ojo! Juli está cerca, pero no te ve. Está distraída pidiendo un café al mesero. Ya sabes qué pasará si te ve con su querido hermanito. ¿Qué haces?
 
-(css: &quot;color: #187FF5;&quot;)[*Carajo, Cris está aquí. Vámonos de aquí. ¡Ya!*]
+(css: &quot;color: #187FF5;&quot;)[*Carajo, Juli está aquí. Vámonos de aquí. ¡Ya!*]
 
 (if: $puntosGuadalupe + $puntosCarisma &lt;= 6)[
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *Wow, mira que sí es El Sitio favorito de ustedes dos. ¿Por qué le temes? ¿Qué ocultas? Hablemos todos.*
 
-[[─Prefiero evitar problemas. Te cuento luego donde tú quieras.|2.2.2. Cris TE SORPRENDE HUYENDO]]
-[[─Vale, como quieras.|2.2.2.1. ENFRENTA CON Guadalupe A Cris CON CONFIANZA]] 
-[[─Oooook. Si tú insistes.|2.2.2.2. ENFRENTA CON Guadalupe A Cris SIN CONFIANZA]] ]
+[[─Prefiero evitar problemas. Te cuento luego donde tú quieras.|2.2.2. Juli TE SORPRENDE HUYENDO]]
+[[─Vale, como quieras.|2.2.2.1. ENFRENTA CON Guadalupe A Juli CON CONFIANZA]] 
+[[─Oooook. Si tú insistes.|2.2.2.2. ENFRENTA CON Guadalupe A Juli SIN CONFIANZA]] ]
 
 (else:) [
-(css: &quot;color: white;&quot;)[**Guadalupe:**] *Mira quién está aquí si no es mi hermanita Cris. Vaya que este es El Sitio de ustedes dos. Sería interesante conocer cómo eres con tu gran amiga.*
+(css: &quot;color: white;&quot;)[**Guadalupe:**] *Mira quién está aquí si no es mi hermanita Juli. Vaya que este es El Sitio de ustedes dos. Sería interesante conocer cómo eres con tu gran amiga.*
 
-[[─Sí, claro. Pero después. Te cuento luego en el lugar donde tú quieras.|2.2.2. Cris TE SORPRENDE HUYENDO]] 
-[[─Claro, totalmente. Sigamos entonces.|2.2.2.1. ENFRENTA CON Guadalupe A Cris CON CONFIANZA]] ]</tw-passagedata><tw-passagedata pid="77" name="2.2.2. Cris TE SORPRENDE HUYENDO" tags="" position="1531,3096" size="100,100">Cris te ve tratando de huir.
+[[─Sí, claro. Pero después. Te cuento luego en el lugar donde tú quieras.|2.2.2. Juli TE SORPRENDE HUYENDO]] 
+[[─Claro, totalmente. Sigamos entonces.|2.2.2.1. ENFRENTA CON Guadalupe A Juli CON CONFIANZA]] ]</tw-passagedata><tw-passagedata pid="77" name="2.2.2. Juli TE SORPRENDE HUYENDO" tags="" position="1531,3096" size="100,100">Juli te ve tratando de huir.
 
-(css: &quot;color: red;&quot;)[**(-1 punto Cris por intentar huirle).**] 
+(css: &quot;color: red;&quot;)[**(-1 punto Juli por intentar huirle).**] 
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *¿Guadalupe? ¡Carlitos, hermanito, qué sorpresa! Ven y siéntate. ¿Y con quién estás ahora? ¡Aaaahhh! ¿Qué es esto? ¿Qué está pasando? ¡Que alguien me explique!*
+(css: &quot;color: orange;&quot;)[**Juli:**] *¿Guadalupe? ¡Carlitos, hermanito, qué sorpresa! Ven y siéntate. ¿Y con quién estás ahora? ¡Aaaahhh! ¿Qué es esto? ¿Qué está pasando? ¡Que alguien me explique!*
 
-Al ver la reacción de Cris sales a correr como la persona cobarde que eres. Guadalupe queda desconcertado y desilusionado contigo. Mientras tanto, Cris se enloquece, te persigue, se siente muy ofendida. Pierdes la confianza de ambos, y te quedarás sin saber qué fue lo que pasó en realidad anoche. 
+Al ver la reacción de Juli sales a correr como la persona cobarde que eres. Guadalupe queda desconcertado y desilusionado contigo. Mientras tanto, Juli se enloquece, te persigue, se siente muy ofendida. Pierdes la confianza de ambos, y te quedarás sin saber qué fue lo que pasó en realidad anoche. 
 
 [[Fin del juego - Reiniciar|Parte 2]]
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="2379,2261" size="100,100">El taxista te pide el dinero de tu recorrido. 
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="2379,2261" size="100,100">El taxista te pide el dinero de tu recorrido. 
 (if: $itemWalletisCarried is true) [ [[Paga la carrera |2.1.1. TAXI CON MI DINERO EN EL SITIO]] ] 
 (else:) [Olvidaste tu billetera. ¡Qué mal!
 
-[[Pide dinero prestado en El Sitio|2.1.3. PEDIR PRESTADO A Cris]]] 
+[[Pide dinero prestado en El Sitio|2.1.3. PEDIR PRESTADO A Juli]]] 
 
 (set: $visitedElSitio to true)</tw-passagedata><tw-passagedata pid="79" name="2.1.5.7 RECUPERAR BILLETERA" tags="" position="3224,3675" size="100,100">(css: &quot;color: red;&quot;) [**(Has perdido mucho tiempo y pierdes 1 punto con Guadalupe porque se impacienta por verte).**]
 
@@ -680,52 +680,52 @@ Vuelves a tu casa y recuperas tu billetera.
 (set: $puntosGuadalupe to $puntosGuadalupe - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe
 (set: $itemWalletisCarried to true)
-(set: $segundosReloj to $segundosReloj + 100)</tw-passagedata><tw-passagedata pid="80" name="2.1.5.5.6.1. Cris TE ACOMPAÑA" tags="" position="3131,3880" size="100,100">Ahora ya no puedes inventar una excusa plausible para que ella se aparte de ti. Evitarás ir al Café Tinta, y con eso, pierdes la oportunidad de saber qué pasó entre Guadalupe y tú.
+(set: $segundosReloj to $segundosReloj + 100)</tw-passagedata><tw-passagedata pid="80" name="2.1.5.5.6.1. Juli TE ACOMPAÑA" tags="" position="3131,3880" size="100,100">Ahora ya no puedes inventar una excusa plausible para que ella se aparte de ti. Evitarás ir al Café Tinta, y con eso, pierdes la oportunidad de saber qué pasó entre Guadalupe y tú.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="81" name="2.1.1.5.5.6.2. Cris NO TE ACOMPAÑA" tags="" position="2910,3674" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por considerar que ella puede tener otros planes).**]
+[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="81" name="2.1.1.5.5.6.2. Juli NO TE ACOMPAÑA" tags="" position="2910,3674" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Juli por considerar que ella puede tener otros planes).**]
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *Sabes que no es molestia. Vamos, pues.* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *Sabes que no es molestia. Vamos, pues.* 
 
 Sales rápidamente de El Sitio para tomar otro taxi.
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *Está bien. Disfruta tu día, querida.* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *Está bien. Disfruta tu día, querida.* 
 
 [[Toma un taxi para ir a Café Tinta.|2.3. LLEGAS AL CAFÉ TINTA]] 
 
 (if: $itemWalletisCarried is false)[ [[Ve a casa para recoger lo que te hace falta.|2.1.5.7 RECUPERAR BILLETERA]] ] 
-</tw-passagedata><tw-passagedata pid="82" name="2.2.2.1. ENFRENTA CON Guadalupe A Cris CON CONFIANZA" tags="" position="1934,2914" size="100,100">Cris se acerca.
+</tw-passagedata><tw-passagedata pid="82" name="2.2.2.1. ENFRENTA CON Guadalupe A Juli CON CONFIANZA" tags="" position="1934,2914" size="100,100">Juli se acerca.
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *¡Buenas, buenas! Uy, Carlitos, querido. ¡Qué sorpresa! No me digan que están juntos. Porque eso no puede ser.*
+(css: &quot;color: orange;&quot;)[**Juli:**] *¡Buenas, buenas! Uy, Carlitos, querido. ¡Qué sorpresa! No me digan que están juntos. Porque eso no puede ser.*
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *Hola, hermanita querida. ¿Cómo así que no puede ser?* 
 
-[[─Sí puede ser, Cris. Me enamoré de tu hermano.|2.2.2.3. Cris SABE &#39;LA VERDAD&#39; DE TI]]
+[[─Sí puede ser, Juli. Me enamoré de tu hermano.|2.2.2.3. Juli SABE &#39;LA VERDAD&#39; DE TI]]
 [[─Es que le hice una promesa a tu hermana de no estar contigo, Guadalupe. Lo siento.|2.2.2.4. Guadalupe SABE &#39;LA VERDAD&#39; DE TI]] </tw-passagedata><tw-passagedata pid="83" name="2.2.1.2. Guadalupe SE VA DE EL SITIO" tags="" position="1154,2717" size="100,100">(css: &quot;color: red;&quot;) [**(-1 punto por tratar a Guadalupe como si no importara nada).**]
 
-Pudiste haber tratado mejor a Guadalupe, pero está muy furioso y se va rápidamente. Guadalupe decide publicar sus fotos contigo en sus redes. Cris las ve y comienza a reclamarte para luego golpearte cuando te vea. Se arma un gran escándalo. Pierdes la confianza de ambos. Tu vida se vuelve horrible.
+Pudiste haber tratado mejor a Guadalupe, pero está muy furioso y se va rápidamente. Guadalupe decide publicar sus fotos contigo en sus redes. Juli las ve y comienza a reclamarte para luego golpearte cuando te vea. Se arma un gran escándalo. Pierdes la confianza de ambos. Tu vida se vuelve horrible.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="84" name="2.2.2.2. ENFRENTA CON Guadalupe A Cris SIN CONFIANZA" tags="" position="1694,3091" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto con Guadalupe y Cris por revelar la mucha duda que tienes).**]
+[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="84" name="2.2.2.2. ENFRENTA CON Guadalupe A Juli SIN CONFIANZA" tags="" position="1694,3091" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto con Guadalupe y Juli por revelar la mucha duda que tienes).**]
 
-(if: $textedCris is true)[Cris les ve y se acerca.]
+(if: $textedJuli is true)[Juli les ve y se acerca.]
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *¡Buenas, buenas! Uy, Carlitos, querido. ¡Qué sorpresa! No me digan que están juntos. Porque eso no puede ser.*
+(css: &quot;color: orange;&quot;)[**Juli:**] *¡Buenas, buenas! Uy, Carlitos, querido. ¡Qué sorpresa! No me digan que están juntos. Porque eso no puede ser.*
 
-Por más que intentas reducir la importancia de estar con Guadalupe, pierdes la confianza de ambos. Cris comienza a golpearte en el bar. Se arma un escándalo. Y el indignado Guadalupe también te abandona. Tu vida es horrible y pagas todos los daños en el restaurante, que son muchísimos. 
+Por más que intentas reducir la importancia de estar con Guadalupe, pierdes la confianza de ambos. Juli comienza a golpearte en el bar. Se arma un escándalo. Y el indignado Guadalupe también te abandona. Tu vida es horrible y pagas todos los daños en el restaurante, que son muchísimos. 
 
 [[Fin del juego - Reiniciar|Parte 2]]
 
 (set: $puntosGuadalupe to $puntosGuadalupe - 1)
-(set: $puntosCris to $puntosCris - 1)
+(set: $puntosJuli to $puntosJuli - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="85" name="2.2.2.3. Cris SABE &#39;LA VERDAD&#39; DE TI" tags="" position="1847,3092" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Guadalupe por decidirte por él).**]
-(css: &quot;color: red;&quot;)[**(-1 punto Cris por decidirte por Guadalupe).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="85" name="2.2.2.3. Juli SABE &#39;LA VERDAD&#39; DE TI" tags="" position="1847,3092" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Guadalupe por decidirte por él).**]
+(css: &quot;color: red;&quot;)[**(-1 punto Juli por decidirte por Guadalupe).**]
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *Muy bien. Ya que te has decidido, entonces no cuentes más conmigo. Y tú, Guadalupe, también me has traicionado. Por más que digan algo, no me convencerán de que esto no es un adefesio. ¡Fuera de mi vista!*
+(css: &quot;color: orange;&quot;)[**Juli:**] *Muy bien. Ya que te has decidido, entonces no cuentes más conmigo. Y tú, Guadalupe, también me has traicionado. Por más que digan algo, no me convencerán de que esto no es un adefesio. ¡Fuera de mi vista!*
 
 Al salir de El Sitio, Guadalupe te dice:
 
 (if: $puntosGuadalupe + $puntosCarisma &gt;= 6)[
-(css: &quot;color: white;&quot;)[**Guadalupe:**] *Has mostrado valentía, amor mío. Te admiro muchísimo. Sea lo que sea que haya pasado entre ustedes, sé que nuestro amor es más fuerte, y Cris tendrá que entrar en razón.*]
+(css: &quot;color: white;&quot;)[**Guadalupe:**] *Has mostrado valentía, amor mío. Te admiro muchísimo. Sea lo que sea que haya pasado entre ustedes, sé que nuestro amor es más fuerte, y Juli tendrá que entrar en razón.*]
  
 (else:)[(css: &quot;color: white;&quot;)[**Guadalupe:**] *¿Pero esto qué significa? ¿A qué viene esa actitud de mi hermana? Explícame porque no entiendo nada.*]
 
@@ -734,27 +734,27 @@ Te decidiste por estar con Guadalupe, pero aún no tienes claro por qué. Él es
 [[Fin del juego - Reiniciar|Parte 2]]
 
 (set: $puntosGuadalupe to $puntosGuadalupe + 1)
-(set: $puntosCris to $puntosCris - 1)
+(set: $puntosJuli to $puntosJuli - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="86" name="2.2.2.4. Guadalupe SABE &#39;LA VERDAD&#39; DE TI" tags="" position="2007,3092" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con Cris por decidirte por ella).**]
-(css: &quot;color: red;&quot;)[**(-1 punto con Guadalupe por decidirte por Cris).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="86" name="2.2.2.4. Guadalupe SABE &#39;LA VERDAD&#39; DE TI" tags="" position="2007,3092" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con Juli por decidirte por ella).**]
+(css: &quot;color: red;&quot;)[**(-1 punto con Guadalupe por decidirte por Juli).**]
 
-(if: $puntosGuadalupe + $puntosCarisma &lt;= 6)[(css: &quot;color: white;&quot;)[**Guadalupe:**] *¿Y aún así te metiste conmigo anoche? No sé ni qué pensar de ti. Te maldigo. Y a ti también, Cris. ¿Qué le haces prometer a quien creía que me amaba con locura? Esto es absurdo.*
+(if: $puntosGuadalupe + $puntosCarisma &lt;= 6)[(css: &quot;color: white;&quot;)[**Guadalupe:**] *¿Y aún así te metiste conmigo anoche? No sé ni qué pensar de ti. Te maldigo. Y a ti también, Juli. ¿Qué le haces prometer a quien creía que me amaba con locura? Esto es absurdo.*
 
-Al salir Guadalupe, indignado y dolido, sube las pruebas de que lo acompañaste  a la fiesta de anoche a las redes sociales. Esto Cris no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes la confianza de ambos. Tu vida se vuelve terrible. 
+Al salir Guadalupe, indignado y dolido, sube las pruebas de que lo acompañaste  a la fiesta de anoche a las redes sociales. Esto Juli no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes la confianza de ambos. Tu vida se vuelve terrible. 
 
 [[Fin del juego - Reiniciar|Parte 2]]]
 
 (else:)[(css: &quot;color: white;&quot;)[**Guadalupe:**] *¡Ah, claro! Para ti es muy fácil olvidarlo todo y ya. La cobardía tuya no tiene límites. Manuelita, mírame estas fotos y dime si todo esto es mentira.* 
 
-Guadalupe muestra algunas fotos en las que lo acompañas a la fiesta de anoche. Algunas revelan la mucha cercanía que tuvieron. Cris no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes la confianza de ambos. Tu vida se vuelve terrible. 
+Guadalupe muestra algunas fotos en las que lo acompañas a la fiesta de anoche. Algunas revelan la mucha cercanía que tuvieron. Juli no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes la confianza de ambos. Tu vida se vuelve terrible. 
 
 [[Fin del juego - Reiniciar|Parte 2]]]
 
 (set: $puntosGuadalupe to $puntosGuadalupe - 1)
-(set: $puntosCris to $puntosCris + 1)
+(set: $puntosJuli to $puntosJuli + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="87" name="2.3. LLEGAS AL CAFÉ TINTA" tags="" position="3572,2430" size="100,100">El taxista te pide el dinero de tu recorrido. 
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="87" name="2.3. LLEGAS AL CAFÉ TINTA" tags="" position="3572,2430" size="100,100">El taxista te pide el dinero de tu recorrido. 
 
 (if: $itemWalletisCarried)[
 (if: $examinedWallet is false)[(link-goto: &quot;Examinar Billetera&quot;, &quot;Mira la billetera&quot;) (set: $previousPassage to &quot;2.3. LLEGAS AL CAFÉ TINTA&quot;)
@@ -819,11 +819,11 @@ No ves a Guadalupe ni a nadie que conozcas.
 Guadalupe intenta besarte. Le permites hacerlo:
 
 [[En tu boca|2.3.2.2. EN TU BOCA]]
-[[En tu mejilla|2.3.2.1. EN TU MEJILLA]]</tw-passagedata><tw-passagedata pid="91" name="2.3.3. SALUDO A Guadalupe CUANDO FUISTE A EL SITIO" tags="" position="4082,2592" size="100,100">(css: &quot;color: white;&quot;)[**Guadalupe:**] *¿Me puedes explicar qué fuiste a hacer al otro café? ¿Por qué me llama Cris así con esa actitud tan horrible?*
+[[En tu mejilla|2.3.2.1. EN TU MEJILLA]]</tw-passagedata><tw-passagedata pid="91" name="2.3.3. SALUDO A Guadalupe CUANDO FUISTE A EL SITIO" tags="" position="4082,2592" size="100,100">(css: &quot;color: white;&quot;)[**Guadalupe:**] *¿Me puedes explicar qué fuiste a hacer al otro café? ¿Por qué me llama Juli así con esa actitud tan horrible?*
 
-[[─Cris no puede enterarse de que tú y yo hablamos. Por eso fui, para que él no sospechara más de mí.|2.3.5.2.A]] 
-[[─¿No lo sabes acaso? Hice un pacto con Cris. Y acordamos en que tú y yo no debemos vernos. Por eso necesito hablarte.|2.3.5.2.C]] 
-[[─Porque no podemos hablar más, Guadalupe. Si algo pasó entre tú y yo, olvídalo. No estaba en mis cabales anoche.|2.3.5.2.A]] </tw-passagedata><tw-passagedata pid="92" name="2.3.2.2. EN TU BOCA" tags="" position="3881,2876" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Guadalupe por hacerle pensar que lo quieres de verdad).**] (css: &quot;color: red;&quot;)[**(Eso a Cris no le gustaría. -1 punto con ella).**]
+[[─Juli no puede enterarse de que tú y yo hablamos. Por eso fui, para que él no sospechara más de mí.|2.3.5.2.A]] 
+[[─¿No lo sabes acaso? Hice un pacto con Juli. Y acordamos en que tú y yo no debemos vernos. Por eso necesito hablarte.|2.3.5.2.C]] 
+[[─Porque no podemos hablar más, Guadalupe. Si algo pasó entre tú y yo, olvídalo. No estaba en mis cabales anoche.|2.3.5.2.A]] </tw-passagedata><tw-passagedata pid="92" name="2.3.2.2. EN TU BOCA" tags="" position="3881,2876" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Guadalupe por hacerle pensar que lo quieres de verdad).**] (css: &quot;color: red;&quot;)[**(Eso a Juli no le gustaría. -1 punto con ella).**]
 
 (if: $puntosCarisma &lt;= 2 )[
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *Hola.* ]
@@ -836,9 +836,9 @@ Guadalupe intenta besarte. Le permites hacerlo:
 
 (set: $puntosGuadalupe to $puntosGuadalupe + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
-</tw-passagedata><tw-passagedata pid="93" name="2.3.2.1. EN TU MEJILLA" tags="" position="3703,2876" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto Guadalupe por ser amable con Guadalupe aunque no muy cercano.)**] (css: &quot;color: green;&quot;)[**(A eso a Cris le gustaría. +1 punto con ella.)**] 
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli
+</tw-passagedata><tw-passagedata pid="93" name="2.3.2.1. EN TU MEJILLA" tags="" position="3703,2876" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto Guadalupe por ser amable con Guadalupe aunque no muy cercano.)**] (css: &quot;color: green;&quot;)[**(A eso a Juli le gustaría. +1 punto con ella.)**] 
 
 (if: $puntosCarisma &lt;= 2 )[ (css: &quot;color: white;&quot;)[**Guadalupe:**] *Hola.* ]
 (else:)[ (css: &quot;color: white;&quot;)[**Guadalupe:**] *Hola, cariño.* ]
@@ -850,8 +850,8 @@ Guadalupe intenta besarte. Le permites hacerlo:
 
 (set: $puntosGuadalupe to $puntosGuadalupe - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe
-(set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
+(set: $puntosJuli to $puntosJuli + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli
 (if: $puntosGuadalupe + $puntosCarisma &lt;= 9)[
   (css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Guadalupe y se hace difícil descubrir que pasó anoche.**]
 ]
@@ -955,8 +955,8 @@ No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al 
 
 (if: $itemWalletisCarried is true)[ [[Mira la billetera|Mira la billetera]] ]
 [[Ingresa la clave del teléfono de Guadalupe|2.4.1 Ingresa la clave del teléfono de Guadalupe]]
-(if: $textedCris is true or $calledCris is true or $dateLocation is &quot;Sitio&quot;)[ [[Busca información en tu teléfono|2.4.2 Busca información en tu teléfono]] ]
-(else:)[[[Busca información en tu teléfono|2.4.2.A Cris te llama]] ]
+(if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot;)[ [[Busca información en tu teléfono|2.4.2 Busca información en tu teléfono]] ]
+(else:)[[[Busca información en tu teléfono|2.4.2.A Juli te llama]] ]
 ]
 (else:)[ ¡Puedo ver que Guadalupe ya viene! 
 [[Habla con Guadalupe|2.4.3 Ríndete]]
@@ -985,31 +985,31 @@ Mike”.**
 
 [[─Pues vete si quieres. Nadie te obligó a venir.|2.2.1.2. Guadalupe SE VA DE EL SITIO]]
 
-[[─No, dale, entremos y hablemos.|2.2.1.1. VES A Cris EN EL SITIO]]
+[[─No, dale, entremos y hablemos.|2.2.1.1. VES A Juli EN EL SITIO]]
 
 (set: $puntosGuadalupe to $puntosGuadalupe - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="105" name="2.2.1.B" tags="" position="1703,2709" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Guadalupe por ser honesto con él).**] 
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *Me gusta tu confianza. Me siento más seguro contigo, cariño. Sigamos.* 
 
-[[Entra a El Sitio.|2.2.1.1. VES A Cris EN EL SITIO]] 
+[[Entra a El Sitio.|2.2.1.1. VES A Juli EN EL SITIO]] 
 
 (set: $puntosGuadalupe to $puntosGuadalupe + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="106" name="2.2.1.C" tags="" position="1900,2718" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Guadalupe por bromear con él).**]
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *Ja,... ja,... ja. Sí, qué gracia. Búrlate. Tu comedia es también ordinaria. Justo para El Sitio. ¿Vamos?*
 
-[[Entra a El Sitio|2.2.1.1. VES A Cris EN EL SITIO]]
+[[Entra a El Sitio|2.2.1.1. VES A Juli EN EL SITIO]]
 
 (set: $puntosGuadalupe to $puntosGuadalupe + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="107" name="2.3.5.2.C" tags="" position="4748,3495" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por mostrar más lealtad a Cris).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="107" name="2.3.5.2.C" tags="" position="4748,3495" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por mostrar más lealtad a Juli).**]
 (css: &quot;color: red;&quot;)[**(-1 punto por mostrar menos lealtad a Guadalupe).**]
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *¿Un pacto? Bien, pues tengo que aclarar eso con ella ahora mismo. Debiste decírmelo antes de que me ilusionaras anoche.*
 
-Guadalupe toma su mochila, se va al baño y llama a Cris.
+Guadalupe toma su mochila, se va al baño y llama a Juli.
 
-(if: $dateLocation is &quot;Sitio&quot; or $puntosCris &lt;=4)[Sabes que ahora no tienes nada que hacer. Has perdido tu amistad con él. Pero como si fuera poco, has perdido la confianza de su hermana por no haberle dicho nada sobre el asunto. Nunca sabrás qué pasó anoche. 
+(if: $dateLocation is &quot;Sitio&quot; or $puntosJuli &lt;=4)[Sabes que ahora no tienes nada que hacer. Has perdido tu amistad con él. Pero como si fuera poco, has perdido la confianza de su hermana por no haberle dicho nada sobre el asunto. Nunca sabrás qué pasó anoche. 
 
 A menos que lo intentes de nuevo.]
 
@@ -1019,8 +1019,8 @@ A menos que lo intentes de nuevo.]
 
 [[Reiniciar el juego|Parte 2]] 
 
-(set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
+(set: $puntosJuli to $puntosJuli + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli
 (set: $puntosGuadalupe to $puntosGuadalupe - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="108" name="2.3.5.2.B" tags="" position="4527,3430" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por decirle la verdad de una manera poco delicada).**]
 
@@ -1028,8 +1028,8 @@ A menos que lo intentes de nuevo.]
 
 (if: ($puntosGuadalupe + $puntosCarisma) &gt;= 8)[
 [[─Ah vale, te espero.|2.3.5.2.2. Guadalupe DEJA SU MOCHILA EN LA MESA]] ](else:)[ [[─Ah vale, tómate tu tiempo.|2.3.5.2.1. Guadalupe SE LLEVA LA MOCHILA AL BAÑO]] ]
-(if: ($puntosCris + $puntosCarisma) &gt;= 6)[
-[[─Huye del restaurante y encuéntrate con Cris|Final con Cris Feliz]] ]
+(if: ($puntosJuli + $puntosCarisma) &gt;= 6)[
+[[─Huye del restaurante y encuéntrate con Juli|Final con Juli Feliz]] ]
 
 (set: $puntosGuadalupe to $puntosGuadalupe - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe
@@ -1042,7 +1042,7 @@ A menos que lo intentes de nuevo.]
 [[─Hicimos un pacto, Guadalupe. Pero no me importa, quiero estar contigo.|2.3.6. Pre-obsesión con Guadalupe]]
 
 (set: $puntosGuadalupe to $puntosGuadalupe + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="110" name="2.1.5.1.A" tags="" position="2318,3082" size="100,100">(css: &quot;color: orange;&quot;)[**Cris:**] *¿No sabes nada? ¿No recuerdas nada? Eso es curioso porque ni siquiera mi hermano me contesta las llamadas desde anoche, precisamente.* 
+(css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="110" name="2.1.5.1.A" tags="" position="2318,3082" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *¿No sabes nada? ¿No recuerdas nada? Eso es curioso porque ni siquiera mi hermano me contesta las llamadas desde anoche, precisamente.* 
 
 (css: &quot;color: red;&quot;) [**(-1 punto por contestar sin sinceridad).**]
 
@@ -1050,8 +1050,8 @@ A menos que lo intentes de nuevo.]
 [[─¿Guadalupe? No, si ni siquiera le hablo, como me dijiste. ¡Palabra que sí!|2.1.5.2.B]]
 [[─Ah no, eso no. Segurísimo que Guadalupe no estaba ahí conmigo. Imagínate el problema. ¡Yo no sería capaz!|2.1.5.2.B]]
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="111" name="2.1.5.1.B" tags="" position="2549,3082" size="100,100">(css: &quot;color: orange;&quot;)[**Cris:**] *Sí que te emborrachaste. Hasta se te nota en la cara de idiota de siempre que llevas, jajaja. ¿Y de casualidad no estaba Guadalupe por ahí cerca?* 
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="111" name="2.1.5.1.B" tags="" position="2549,3082" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *Sí que te emborrachaste. Hasta se te nota en la cara de idiota de siempre que llevas, jajaja. ¿Y de casualidad no estaba Guadalupe por ahí cerca?* 
 
 (css: &quot;color: green;&quot;)[**(+1 punto por contestar honestamente).**] 
 
@@ -1059,71 +1059,71 @@ A menos que lo intentes de nuevo.]
 [[─¿Guadalupe? No, si ni siquiera le hablo, como me dijiste. ¡Palabra que sí!|2.1.5.2.B]]
 [[─Ah no, eso no. Segurísimo que Guadalupe no estaba ahí conmigo. Imagínate el problema. ¡Yo no sería capaz!|2.1.5.2.B]]
 
-(set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="112" name="2.1.5.1.C" tags="" position="2757,3081" size="100,100">(css: &quot;color: orange;&quot;)[**Cris:**] *Ya, claro. ¿Y qué me hace pensar que no estuviste con él anoche si precisamente no recuerdas nada de anoche?* 
+(set: $puntosJuli to $puntosJuli + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="112" name="2.1.5.1.C" tags="" position="2757,3081" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *Ya, claro. ¿Y qué me hace pensar que no estuviste con él anoche si precisamente no recuerdas nada de anoche?* 
 (css: &quot;color: red;&quot;)[**(-1 punto por decir lo que no debías).**]
 
 [[─Debe ser que Guadalupe está con alguna amiga, o algo. Como buen amigo que soy, es claro que ni borracho sería capaz de traicionar tu confianza hablando con él.|2.1.5.2.A]]
 [[─¿Guadalupe? No, si ni siquiera le hablo, como me dijiste. ¡Palabra que sí!|2.1.5.2.B]]
 [[─Ah no, eso no. Segurísimo que Guadalupe no estaba ahí conmigo. Imagínate el problema. Borracho, sí. Pero mentiroso, no. ¡Yo no sería capaz!|2.1.5.2.B]] 
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="113" name="2.1.1.1.A" tags="" position="2250,2796" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por ofrecerle algo a Cris).**]
-(css: &quot;color: orange;&quot;)[**Cris:**] *Gracias. ¿Y eso dónde estabas anoche?* 
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="113" name="2.1.1.1.A" tags="" position="2250,2796" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por ofrecerle algo a Juli).**]
+(css: &quot;color: orange;&quot;)[**Juli:**] *Gracias. ¿Y eso dónde estabas anoche?* 
 
 [[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] 
 [[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] 
 [[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] 
 
-(set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="114" name="2.1.1.1.B" tags="" position="2409,2713" size="100,100">(css: &quot;color: orange;&quot;)[**Cris:**] *Andas siempre por ahí. Sobre todo anoche.* 
+(set: $puntosJuli to $puntosJuli + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="114" name="2.1.1.1.B" tags="" position="2409,2713" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *Andas siempre por ahí. Sobre todo anoche.* 
 
 [[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] 
 [[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] 
-[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] </tw-passagedata><tw-passagedata pid="115" name="2.1.1.1.C" tags="" position="2584,2679" size="100,100">(css: &quot;color: orange;&quot;)[**Cris:**] *¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!* (css: &quot;color: red;&quot;)[**(-1 punto por no llamar a Cris).**]
+[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] </tw-passagedata><tw-passagedata pid="115" name="2.1.1.1.C" tags="" position="2584,2679" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!* (css: &quot;color: red;&quot;)[**(-1 punto por no llamar a Juli).**]
 
 [[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]] 
 [[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]] 
 [[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]] 
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="116" name="2.1.5.2.A" tags="" position="2420,3364" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por respetar lo que acordaste con Cris).**]
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="116" name="2.1.5.2.A" tags="" position="2420,3364" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por respetar lo que acordaste con Juli).**]
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *Bueno, menos mal. Y si no estaba contigo, ¿cómo es que vienes aquí con tanto afán en taxi y todo? ¿Con quién te vas a ver? ¿Tienes una cita? ¿Estás ocultando algo? ¡Ah! ¿Es que te vas a ver con él hoy? Llámalo ahora, a ver qué te dice.* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *Bueno, menos mal. Y si no estaba contigo, ¿cómo es que vienes aquí con tanto afán en taxi y todo? ¿Con quién te vas a ver? ¿Tienes una cita? ¿Estás ocultando algo? ¡Ah! ¿Es que te vas a ver con él hoy? Llámalo ahora, a ver qué te dice.* 
 
 [[─Yo no vine aquí a que me trates de esa manera. ¡A mí me respetas!|2.1.5.3.1]] 
-[[─No, no es necesario. Porque aquí vine a obtener respuestas sobre lo que pasó anoche. E insisto en que no estuve con tu hermano anoche, ni nunca.|2.1.5.3. Cris PRUEBA TU VALENTÍA]]
+[[─No, no es necesario. Porque aquí vine a obtener respuestas sobre lo que pasó anoche. E insisto en que no estuve con tu hermano anoche, ni nunca.|2.1.5.3. Juli PRUEBA TU VALENTÍA]]
 [[─Está bien. Quien nada debe nada teme.|2.1.5.3.2. LLAMADA DE EMERGENCIA A Guadalupe]]
 
-(set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="117" name="2.1.5.2.B" tags="" position="2655,3363" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por parecer que hablas con sinceridad, aunque no para Cris).**] 
+(set: $puntosJuli to $puntosJuli + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="117" name="2.1.5.2.B" tags="" position="2655,3363" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por parecer que hablas con sinceridad, aunque no para Juli).**] 
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *No, totalmente. Tú y tu borrachera son lo más creíble del mundo. Hasta viniendo así en taxi con gran afán. ¡Llama a Guadalupe ahora mismo!* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *No, totalmente. Tú y tu borrachera son lo más creíble del mundo. Hasta viniendo así en taxi con gran afán. ¡Llama a Guadalupe ahora mismo!* 
 
 [[─Yo no vine aquí a que me trates de esa manera. ¡A mí me respetas!|2.1.5.3.1]] 
-[[─No, no es necesario. Porque aquí vine a obtener respuestas sobre lo que pasó anoche. E insisto en que no estuve con tu hermano anoche, ni nunca.|2.1.5.3. Cris PRUEBA TU VALENTÍA]]
+[[─No, no es necesario. Porque aquí vine a obtener respuestas sobre lo que pasó anoche. E insisto en que no estuve con tu hermano anoche, ni nunca.|2.1.5.3. Juli PRUEBA TU VALENTÍA]]
 [[─Está bien. Quien nada debe nada teme.|2.1.5.3.2. LLAMADA DE EMERGENCIA A Guadalupe]] 
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="118" name="2.1.5.3.1" tags="" position="2215,3235" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder de manera poco delicada).**]
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="118" name="2.1.5.3.1" tags="" position="2215,3235" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder de manera poco delicada).**]
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *No. ¡Quien me tiene que respetar ahora eres tú! Ya sé todo lo que quería saber.*
+(css: &quot;color: orange;&quot;)[**Juli:**] *No. ¡Quien me tiene que respetar ahora eres tú! Ya sé todo lo que quería saber.*
 
-Has perdido la confianza de Cris. Y nada tiene sentido sino salvar tu vida de lo que te hará tu ahora ex-mejor amiga, si no huyes rápidamente de ese lugar. Pudiste haber mostrado más honestidad con ella (o mentir mejor).
-
-[[Fin del juego - Reiniciar|Parte 2]]
-
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="119" name="2.1.5.3.1.1" tags="" position="2869,3428" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por dudar de la solicitud de Cris).**]
-
-(css: &quot;color: orange;&quot;)[**Cris:**] *Sí, tienes otra opción. ¡No ser cobarde! Vienes a “saber qué pasó anoche” cuando cuestionas nuestro acuerdo. ¡Eres de lo peor! ¡Sal de mi vista!*
-
-Aunque Cris está muy disgustada contigo, agradece que no te ha querido matar. Le has lastimado el corazón. Y ahora sigue tu vida, pero lejos de Cris y de su hermano. Pudiste haber tratado el tema que le interesaba a Cris en vez de tratarla como un trapo viejo.
+Has perdido la confianza de Juli. Y nada tiene sentido sino salvar tu vida de lo que te hará tu ahora ex-mejor amiga, si no huyes rápidamente de ese lugar. Pudiste haber mostrado más honestidad con ella (o mentir mejor).
 
 [[Fin del juego - Reiniciar|Parte 2]]
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="120" name="2.1.5.3.2.A" tags="" position="2451,3547" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser muy directo con Guadalupe. A Cris no le gusta eso).**]
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="119" name="2.1.5.3.1.1" tags="" position="2869,3428" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por dudar de la solicitud de Juli).**]
+
+(css: &quot;color: orange;&quot;)[**Juli:**] *Sí, tienes otra opción. ¡No ser cobarde! Vienes a “saber qué pasó anoche” cuando cuestionas nuestro acuerdo. ¡Eres de lo peor! ¡Sal de mi vista!*
+
+Aunque Juli está muy disgustada contigo, agradece que no te ha querido matar. Le has lastimado el corazón. Y ahora sigue tu vida, pero lejos de Juli y de su hermano. Pudiste haber tratado el tema que le interesaba a Juli en vez de tratarla como un trapo viejo.
+
+[[Fin del juego - Reiniciar|Parte 2]]
+
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="120" name="2.1.5.3.2.A" tags="" position="2451,3547" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser muy directo con Guadalupe. A Juli no le gusta eso).**]
 (css: &quot;color: green;&quot;)[**(+1 punto por dar una pista a Guadalupe para construir una historia juntos).**]
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *Hola, ¿cómo estás? Estaba en el concierto de mi banda favorita, esa de rock pesado. Y luego me fui a la casa de una amiga. Por eso no llegué a casa anoche. Perdón, hermanita.* 
@@ -1132,10 +1132,10 @@ Aunque Cris está muy disgustada contigo, agradece que no te ha querido matar. L
 [[─Vale, Guadalupe. Sólo era eso. Me da pena contigo hacerte pasar por estas.|2.1.3.5.2.2]]
 [[─Disculpa ponerte en estas, pero entiendes que tu hermana está preocupada. Nada más eso.|2.1.3.5.2.3]]
 
-(set: $puntosCris to $puntosCris - 1)
+(set: $puntosJuli to $puntosJuli - 1)
 (set: $puntosGuadalupe to $puntosGuadalupe + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
-(css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="121" name="2.1.5.3.2.B" tags="" position="2568,3668" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por recordar que la llamada es para asegurar la tranquilidad de Cris).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli
+(css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="121" name="2.1.5.3.2.B" tags="" position="2568,3668" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por recordar que la llamada es para asegurar la tranquilidad de Juli).**]
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *Hola, ¿cómo estás? Estaba en el concierto de mi banda favorita, esa de rock pesado. Y luego me fui a la casa de una amiga. Por eso no llegué a casa anoche. Perdón, hermanita.* 
 
@@ -1143,86 +1143,86 @@ Aunque Cris está muy disgustada contigo, agradece que no te ha querido matar. L
 [[─Vale, Guadalupe. Sólo era eso. Me da pena contigo hacerte pasar por estas.|2.1.3.5.2.2]]
 [[─Disculpa ponerte en estas, pero entiendes que tu hermana está preocupada. Nada más eso.|2.1.3.5.2.3]]
 
-(set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="122" name="2.1.3.5.2.1" tags="" position="2221,3677" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser demasiado complaciente. Incluso Cris sabe que detestas esa música).**]
+(set: $puntosJuli to $puntosJuli + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="122" name="2.1.3.5.2.1" tags="" position="2221,3677" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser demasiado complaciente. Incluso Juli sabe que detestas esa música).**]
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *Huh. No sabía que tenías esas confiancitas con él. No me creas tan imbécil, noté que le mostraste mucho afecto cuando hablaste con él. ¡Sal de mi vista antes de que me arrepienta! ¡Largo!*
+(css: &quot;color: orange;&quot;)[**Juli:**] *Huh. No sabía que tenías esas confiancitas con él. No me creas tan imbécil, noté que le mostraste mucho afecto cuando hablaste con él. ¡Sal de mi vista antes de que me arrepienta! ¡Largo!*
 
 Eso te pasa por demostrar alegría por alguien a quien prometiste no amar.
 
 [[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="123" name="2.1.3.5.2.2" tags="" position="2224,3819" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser muy diplomático con Guadalupe cuando se supone ya no hablas con él).**]
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *Sé que eres muy amable con la gente. Pero recuerda quién está realmente preocupado por ella ahora.* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *Sé que eres muy amable con la gente. Pero recuerda quién está realmente preocupado por ella ahora.* 
 
-[[─Discúlpame, Cris. Tienes toda la razón. Ahora, ¿sabes qué pasó anoche?|2.1.3.5.2.4]]
-[[─Lo sé bien, Cris. Perdón. No quiero quitarte mucho tiempo. ¿Sabes qué pasó anoche?|2.1.3.5.2.5]]
+[[─Discúlpame, Juli. Tienes toda la razón. Ahora, ¿sabes qué pasó anoche?|2.1.3.5.2.4]]
+[[─Lo sé bien, Juli. Perdón. No quiero quitarte mucho tiempo. ¿Sabes qué pasó anoche?|2.1.3.5.2.5]]
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="124" name="2.1.3.5.2.3" tags="" position="2440,3834" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por recordar que para ti en ese momento Cris es más importante que Guadalupe).**]
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="124" name="2.1.3.5.2.3" tags="" position="2440,3834" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por recordar que para ti en ese momento Juli es más importante que Guadalupe).**]
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *Vale. Gracias por entender. ¿En qué íbamos?... Ah, sí. Ni idea qué fue de ti anoche. Imagino que te embriagaste tanto que hasta me dejaste plantada anoche. Y que “milagrosamente” llegaste con bien a casa.
+(css: &quot;color: orange;&quot;)[**Juli:**] *Vale. Gracias por entender. ¿En qué íbamos?... Ah, sí. Ni idea qué fue de ti anoche. Imagino que te embriagaste tanto que hasta me dejaste plantada anoche. Y que “milagrosamente” llegaste con bien a casa.
 
 Más bien, ¿por qué no te vas a descansar a la casa? A lo mejor se te viene algo a la cabeza.* 
 
-[[─¿Sabes que sí? Te pido disculpas de nuevo. Adiós, querida.|2.1.5.5.6. Cris OFRECE ACOMPAÑARTE]]
-[[─Creo que puedo averiguar más en otra parte. A lo mejor encuentre respuestas.|2.1.1.5.5.6.2. Cris NO TE ACOMPAÑA]]
+[[─¿Sabes que sí? Te pido disculpas de nuevo. Adiós, querida.|2.1.5.5.6. Juli OFRECE ACOMPAÑARTE]]
+[[─Creo que puedo averiguar más en otra parte. A lo mejor encuentre respuestas.|2.1.1.5.5.6.2. Juli NO TE ACOMPAÑA]]
 
-(set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="125" name="2.1.3.5.2.4" tags="" position="2376,4107" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser demasiado directo con Cris).**] 
+(set: $puntosJuli to $puntosJuli + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="125" name="2.1.3.5.2.4" tags="" position="2376,4107" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser demasiado directo con Juli).**] 
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *¡No tengo ni la más mínima idea! Eso sí. Asegúrate que la próxima vez pienses antes de tomar. Incluso te evitas perderte. Como ahora.* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *¡No tengo ni la más mínima idea! Eso sí. Asegúrate que la próxima vez pienses antes de tomar. Incluso te evitas perderte. Como ahora.* 
 
-[[─Me da mucha pena contigo, querida. Más bien me voy a mi casa a descansar.|2.1.5.5.6. Cris OFRECE ACOMPAÑARTE]] 
-[[─Vale. Disculpa todas las molestias, Cris. Nos vemos.|2.1.1.5.5.6.2. Cris NO TE ACOMPAÑA]] 
+[[─Me da mucha pena contigo, querida. Más bien me voy a mi casa a descansar.|2.1.5.5.6. Juli OFRECE ACOMPAÑARTE]] 
+[[─Vale. Disculpa todas las molestias, Juli. Nos vemos.|2.1.1.5.5.6.2. Juli NO TE ACOMPAÑA]] 
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="126" name="2.1.3.5.2.5" tags="" position="2641,4153" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por saber preguntar adecuadamente luego de tan incómoda situación).**] 
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="126" name="2.1.3.5.2.5" tags="" position="2641,4153" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por saber preguntar adecuadamente luego de tan incómoda situación).**] 
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *No, la verdad, no. Me da curiosidad que vengas así como tan de afán a hablarme. Creo que estás desvariando. Más bien devuélvete a tu casa, y descansa. Hablamos luego.* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *No, la verdad, no. Me da curiosidad que vengas así como tan de afán a hablarme. Creo que estás desvariando. Más bien devuélvete a tu casa, y descansa. Hablamos luego.* 
 
-[[─Vale. Disculpa todas las molestias, Cris. Nos vemos.|2.1.1.5.5.6.2. Cris NO TE ACOMPAÑA]] 
+[[─Vale. Disculpa todas las molestias, Juli. Nos vemos.|2.1.1.5.5.6.2. Juli NO TE ACOMPAÑA]] 
 
-(set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="127" name="2.1.5.A" tags="" position="2788,2724" size="100,100">(css: &quot;color: orange;&quot;)[**Cris:**] *¿Y tú qué? ¡Buenas! ¿Dónde estabas anoche?* 
-
-[[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]]
-
-[[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]]
-
-[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]</tw-passagedata><tw-passagedata pid="128" name="2.1.5.B" tags="" position="2861,2850" size="100,100">(css: &quot;color: orange;&quot;)[**Cris:**] *Andas siempre por ahí. Sobre todo anoche.* 
+(set: $puntosJuli to $puntosJuli + 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="127" name="2.1.5.A" tags="" position="2788,2724" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *¿Y tú qué? ¡Buenas! ¿Dónde estabas anoche?* 
 
 [[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]]
 
 [[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]]
 
-[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]</tw-passagedata><tw-passagedata pid="129" name="2.1.5.C" tags="" position="2986,2984" size="100,100">(css: &quot;color: orange;&quot;)[**Cris:**] *¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!*
+[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]</tw-passagedata><tw-passagedata pid="128" name="2.1.5.B" tags="" position="2861,2850" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *Andas siempre por ahí. Sobre todo anoche.* 
 
-(css: &quot;color: red;&quot;)[**(-1 punto por no haber llamado a Cris).**]
+[[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]]
+
+[[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]]
+
+[[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]</tw-passagedata><tw-passagedata pid="129" name="2.1.5.C" tags="" position="2986,2984" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!*
+
+(css: &quot;color: red;&quot;)[**(-1 punto por no haber llamado a Juli).**]
 
 [[─Eso es lo que precisamente quiero saber. Porque no sé nada.|2.1.5.1.A]]
 [[─Estaba en otro evento, supongo. Y creo que me emborraché tanto que no recuerdo casi nada.|2.1.5.1.B]]
 [[─Pues, la verdad, lo más extraño es que tu hermano me llamó porque no recuerdo haber hablado con él recientemente.|2.1.5.1.C]]
 
-(set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="130" name="2.1.4. TAXI CON DINERO DE Cris" tags="" position="3137,2782" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Gracias, querida. Te debo una.*] 
+(set: $puntosJuli to $puntosJuli - 1)
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="130" name="2.1.4. TAXI CON DINERO DE Juli" tags="" position="3137,2782" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Gracias, querida. Te debo una.*] 
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *Me debes varias ya.* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *Me debes varias ya.* 
 
 (css: &quot;color: #187FF5;&quot;)[*Tienes razón. Te las pago todas pronto.*]
 (if: $itemWalletisCarried is true) [
 [[─Ven, siéntate, que te invito a tomar lo que quieras.|2.1.5.A]]
 ]
-(if: $textedCris is true) [
+(if: $textedJuli is true) [
 [[─¿Viste mi mensaje?|2.1.5.B]]
 ]
-(if: $calledCris is false) [
+(if: $calledJuli is false) [
 [[─Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.5.C]]
 ]
 (else:)[(if: $dateLocation is &quot;Sitio&quot;)[─¡Pero mira a quién tenemos aquí!
 
-[[Confronta a Cris junto a Guadalupe|2.2.2.2. ENFRENTA CON Guadalupe A Cris SIN CONFIANZA]] ](else:)[
+[[Confronta a Juli junto a Guadalupe|2.2.2.2. ENFRENTA CON Guadalupe A Juli SIN CONFIANZA]] ](else:)[
   (css: &quot;color: #187FF5;&quot;)[*Mira, vine a preguntarte algo...*]
-  [[Siéntate en el bar y habla con Cris|2.1.5.C]]
+  [[Siéntate en el bar y habla con Juli|2.1.5.C]]
 ] ]</tw-passagedata><tw-passagedata pid="131" name="2.3.4.2.A" tags="" position="3531,3556" size="100,100">(css: &quot;color: white;&quot;)[**Guadalupe:**] *¿En serio? En realidad estás mal. Bien mal. Te doy otra oportunidad.*
 (css: &quot;color: red;&quot;)[**(-1 punto por no recordar su banda favorita).**]
 
@@ -1263,7 +1263,7 @@ Bueno, la verdad iba a ver a los teloneros, la banda tributo noventera. En fin..
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *¿Estabas tan en las nubes? ¿Eso es todo lo que vas a decir? ¡Eres como todo el resto! ¡Te odio demasiado!*
 
-Guadalupe sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con él. Le contará todo a Cris con todo el odio y rencor que te tiene, y ella te matará por herir a su hermano así.
+Guadalupe sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con él. Le contará todo a Juli con todo el odio y rencor que te tiene, y ella te matará por herir a su hermano así.
 
 [[Fin del juego - Reiniciar|Parte 2]]
 
@@ -1272,8 +1272,8 @@ Guadalupe sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *No tienes nada de qué disculparte. ¿Por qué hay que parar? ¿A qué le tienes miedo?*
 
-[[─No es a qué sino a quién le tengo miedo. A Cris, tu hermana. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]]
-[[─¿No lo sabes acaso? Cris no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]]
+[[─No es a qué sino a quién le tengo miedo. A Juli, tu hermana. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]]
+[[─¿No lo sabes acaso? Juli no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]]
 
 (set: $puntosGuadalupe to $puntosGuadalupe - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe
@@ -1283,15 +1283,15 @@ Guadalupe sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] *No tienes nada de qué disculparte. ¿Por qué hay que parar? ¿A qué le tienes miedo?*
 
-[[─No es a qué sino a quién le tengo miedo. A Cris, tu hermana. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]] 
-[[─¿No lo sabes acaso? Cris no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]]
+[[─No es a qué sino a quién le tengo miedo. A Juli, tu hermana. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]] 
+[[─¿No lo sabes acaso? Juli no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]]
 
 (set: $puntosGuadalupe to $puntosGuadalupe + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe
 (if: $puntosGuadalupe + $puntosCarisma &lt;= 9)[
-(css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Guadalupe y tal vez tendrás que hacer algo para descubrir por tus propios medios qué pasó anoche.**] ]</tw-passagedata><tw-passagedata pid="137" name="2.3.5.1.A" tags="" position="4182,3663" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por decirle que temes la reacción de Cris).**]  
+(css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Guadalupe y tal vez tendrás que hacer algo para descubrir por tus propios medios qué pasó anoche.**] ]</tw-passagedata><tw-passagedata pid="137" name="2.3.5.1.A" tags="" position="4182,3663" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por decirle que temes la reacción de Juli).**]  
 
-(css: &quot;color: white;&quot;)[**Guadalupe:**] *¿Miedo de Cris? ¡Ja! Si eso es así, yo hablo con ella, y ya. ¿Cuál es el problema?*
+(css: &quot;color: white;&quot;)[**Guadalupe:**] *¿Miedo de Juli? ¡Ja! Si eso es así, yo hablo con ella, y ya. ¿Cuál es el problema?*
 
 (if: $dateLocation is &quot;Sitio&quot;)[ [[─Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] ] [[─Hicimos un pacto, Guadalupe. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]] 
 [[─Hicimos un pacto, Guadalupe. Y mi amistad con ella es más importante de lo que haya pasado entre tú y yo.|2.3.5.2.C]] 
@@ -1303,7 +1303,7 @@ Guadalupe sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con
 ]
 </tw-passagedata><tw-passagedata pid="138" name="2.3.5.1.B" tags="" position="4303,3855" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por establecer con firmeza la razón de tu visita a Guadalupe).**]
 
-(css: &quot;color: white;&quot;)[**Guadalupe:**] *¿Le tienes miedo a Cris? Tómalo con calma, que si yo hablo con ella, estoy seguro que entenderá.*
+(css: &quot;color: white;&quot;)[**Guadalupe:**] *¿Le tienes miedo a Juli? Tómalo con calma, que si yo hablo con ella, estoy seguro que entenderá.*
 
 (if: $dateLocation is &quot;Sitio&quot;)[ [[─Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] ]
 [[─Ella y yo hicimos un pacto, Guadalupe. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]]
@@ -1419,13 +1419,13 @@ Has borrado las fotos en las que apareces con Guadalupe. Esa es demasiada casual
 
 Guadalupe vuelve del baño desconcertado por ver su teléfono sobre la mesa. Sospecha que has tratado de espiarle, pero no tienes más remedio que admitirlo. 
 
-Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con la total desconfianza de Cris y Guadalupe, y tu vida se hace pedacitos. 
+Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con la total desconfianza de Juli y Guadalupe, y tu vida se hace pedacitos. 
 
 [[Fin del juego - Reiniciar|Parte 2]]]
 
 (else:) [Guadalupe vuelve del baño desconcertado por ver su teléfono sobre la mesa. Aunque tienes evidencia de la manipulación de Guadalupe contra ti, no puedes acusarle de nada ante nadie porque él sabe que has ingresado a su teléfono sin autorización, y eso también es un delito. 
 
-Eventualmente tendrás problemas con la policía, y tendrás que aclarar tu situación legal. Cris está muy desilusionada contigo, y pierdes su amistad y posiblemente hasta tu libertad.
+Eventualmente tendrás problemas con la policía, y tendrás que aclarar tu situación legal. Juli está muy desilusionada contigo, y pierdes su amistad y posiblemente hasta tu libertad.
 
 [[Fin del juego - Reiniciar|Parte 2]]]</tw-passagedata><tw-passagedata pid="148" name="2.4.2 Busca información en tu teléfono" tags="" position="4856,4287" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Por fin el wifi funciona en este teléfono de mierda!*] 
 
@@ -1632,16 +1632,16 @@ Te sientes con algo de curiosidad con este último mensaje. ¿Qué quieres hacer
 (css: &quot;color: white;&quot;)[**Guadalupe:**] No mucho. Lo que me dijiste me deja algo inquieto.  
 
 (if: ($puntosGuadalupe) &gt;= 8)[
-Pero vas a tener que decidir entre Cris o yo. Tú eliges. 
+Pero vas a tener que decidir entre Juli o yo. Tú eliges. 
 
 [[─No eres quién para darme a elegir, Guadalupe.|2.4.3.1. Convencer a Guadalupe de no mostrar las fotos]]
-[[─Cris tendrá muchos defectos, pero siempre ha sido leal conmigo. Eso es algo que tú no tienes, Guadalupe.|2.4.3.2. Guadalupe es confrontado por causa de Cris]] 
-[[─Sí que eres insistente. Eso te lo reconozco. Y Cris no me ha dado sino dolores de cabeza. ¿Cómo sé que contigo es diferente?|2.4.3.3. Tratas de querer a Guadalupe]] 
+[[─Juli tendrá muchos defectos, pero siempre ha sido leal conmigo. Eso es algo que tú no tienes, Guadalupe.|2.4.3.2. Guadalupe es confrontado por causa de Juli]] 
+[[─Sí que eres insistente. Eso te lo reconozco. Y Juli no me ha dado sino dolores de cabeza. ¿Cómo sé que contigo es diferente?|2.4.3.3. Tratas de querer a Guadalupe]] 
 ]
 (else:)[
 Pero no estoy dispuesto a rendirme tan fácilmente. Quiero luchar por nuestro amor. ¿Quieres hacerlo conmigo?
 
-[[─Bien. Creo que no tengo nada que perder, salvo a Cris, mi mejor amiga.|Final con obsesión con Guadalupe]]
+[[─Bien. Creo que no tengo nada que perder, salvo a Juli, mi mejor amiga.|Final con obsesión con Guadalupe]]
 [[─No me quieres decir qué pasó anoche, y eso me molesta demasiado.|2.4.3.1. Convencer a Guadalupe de no mostrar las fotos]]
 [[─Insisto en que no estás bien de la cabeza. Deja esa obsesión conmigo, te lo ruego.|2.3.6.3. Guadalupe puede ser consciente de lo que hará]]
 ]
@@ -1650,7 +1650,7 @@ Pero no estoy dispuesto a rendirme tan fácilmente. Quiero luchar por nuestro am
 
 (css: &quot;color: yellow;&quot;)[**Puntos con Guadalupe:**] $puntosGuadalupe</tw-passagedata><tw-passagedata pid="159" name="2.3.6. Pre-obsesión con Guadalupe" tags="" position="5934,3636" size="100,100">(css: &quot;color: white;&quot;)[**Guadalupe:**] ¿De verdad quieres estar conmigo? Dime la verdad.
 
-[[─Que si te declaré mi amor, pues sí. Y que Cris me cele todo el tiempo contigo, pues no. ¡Démonos una oportunidad, carajo!|Final con obsesión con Guadalupe]]
+[[─Que si te declaré mi amor, pues sí. Y que Juli me cele todo el tiempo contigo, pues no. ¡Démonos una oportunidad, carajo!|Final con obsesión con Guadalupe]]
 
 [[─Sí, quiero estar contigo, pero en amistad. Me disculpo por si te armé falsas expectativas. En verdad que lo siento mucho.|Final con Guadalupe destrozado]]
 
@@ -1658,11 +1658,11 @@ Pero no estoy dispuesto a rendirme tan fácilmente. Quiero luchar por nuestro am
 
 (else:)[[[─No tengo pruebas pero tampoco dudas de que me quieres. ¿Qué más da?|2.3.6.2. Guadalupe no cree en tu supuesto amor]] ]</tw-passagedata><tw-passagedata pid="160" name="2.3.6.2. Guadalupe no cree en tu supuesto amor" tags="" position="5808,4163" size="100,100">(css: &quot;color: white;&quot;)[**Guadalupe:**] Es la respuesta más mediocre que he escuchado jamás. Seguro que así serás con todo el mundo. No quiero verte nunca más, te lo digo. 
 
-Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una relación de la cual no sabes nada en absoluto. Guadalupe, en venganza, le entera a su hermana Cris de lo ocurrido. 
+Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una relación de la cual no sabes nada en absoluto. Guadalupe, en venganza, le entera a su hermana Juli de lo ocurrido. 
 
-(if: ($puntosCris) &lt;= 4)[Pierdes la confianza de la única familia que has tenido. Y eso para ti es perderlo todo.]
+(if: ($puntosJuli) &lt;= 4)[Pierdes la confianza de la única familia que has tenido. Y eso para ti es perderlo todo.]
 
-(else:)[Si bien le habías enterado a Cris sobre tu encuentro con Guadalupe, es evidente que tiene sospechas. Tendrás que esforzarte mucho para salvar una amistad que está ya casi rota.]
+(else:)[Si bien le habías enterado a Juli sobre tu encuentro con Guadalupe, es evidente que tiene sospechas. Tendrás que esforzarte mucho para salvar una amistad que está ya casi rota.]
 
 [[Fin del juego - Reiniciar|Parte 2]]]</tw-passagedata><tw-passagedata pid="161" name="2.4.3.1. Convencer a Guadalupe de no mostrar las fotos" tags="" position="5272,4279" size="100,100">(css: &quot;color: white;&quot;)[**Guadalupe:**] ¿De verdad quieres saber qué pasó anoche? 
 
@@ -1673,52 +1673,52 @@ Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una rela
 (if: $takenPhoto is false)[
 [[─Guadalupe, esto no es propio de ti. Sé que quieres estar conmigo y podríamos intentarlo. No es necesario ponernos en estas.|2.3.6. Pre-obsesión con Guadalupe]] 
 
-[[─Entiende que Cris no quiere que esté contigo. Me es imposible estar contigo aun si quisiera. Te pido por favor que borres esas fotos.|2.4.3.1.1. No convences a Guadalupe]]
+[[─Entiende que Juli no quiere que esté contigo. Me es imposible estar contigo aun si quisiera. Te pido por favor que borres esas fotos.|2.4.3.1.1. No convences a Guadalupe]]
 
-[[─No se te olvide que Cris también es tu hermana. ¿No te importa lo que ella también siente por nosotros? ¿De veras quieres echarlo todo a perder?|2.3.6.3. Guadalupe puede ser consciente de lo que hará]] ]
+[[─No se te olvide que Juli también es tu hermana. ¿No te importa lo que ella también siente por nosotros? ¿De veras quieres echarlo todo a perder?|2.3.6.3. Guadalupe puede ser consciente de lo que hará]] ]
 
 (else:) [ 
 [[─Sé que me manipulaste, Guadalupe. Y eso es gravísimo. He visto el mensaje de tu amiguito Mike. ¡Explícame ahora mismo qué pasó anoche, carajo!|2.3.6.1. Sobre el correo de Mike]] ]
 
 (set: $shownPhoto to true)</tw-passagedata><tw-passagedata pid="162" name="2.4.3.1.1. No convences a Guadalupe" tags="" position="5511,3717" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responderle a Guadalupe de una manera demasiado contundente).**]
 
-(css: &quot;color: white;&quot;)[**Guadalupe:**] No creas que me voy a rendir tan fácilmente. Después de todo lo que he sacrificado por ti. Es hora de que tú también hagas un sacrificio, y te olvides de Cris.
+(css: &quot;color: white;&quot;)[**Guadalupe:**] No creas que me voy a rendir tan fácilmente. Después de todo lo que he sacrificado por ti. Es hora de que tú también hagas un sacrificio, y te olvides de Juli.
 
-[[─No quiero que Cris me mate por esto. Debemos irnos lejos de aquí, Guadalupe.|2.3.6.2. Fuga resignada con Guadalupe]]
-[[─¡De eso nunca! Cris podrá ser como es. Pero un pacto es un pacto, y lo respetaré siempre.|Final con Cris Sospechosa]]</tw-passagedata><tw-passagedata pid="163" name="2.3.6.3. Guadalupe puede ser consciente de lo que hará" tags="" position="5954,3823" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responderle con honestidad y firmeza).**]
+[[─No quiero que Juli me mate por esto. Debemos irnos lejos de aquí, Guadalupe.|2.3.6.2. Fuga resignada con Guadalupe]]
+[[─¡De eso nunca! Juli podrá ser como es. Pero un pacto es un pacto, y lo respetaré siempre.|Final con Juli Sospechosa]]</tw-passagedata><tw-passagedata pid="163" name="2.3.6.3. Guadalupe puede ser consciente de lo que hará" tags="" position="5954,3823" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responderle con honestidad y firmeza).**]
 
 (if: ($puntosGuadalupe) &gt;= 4) [
-(css: &quot;color: white;&quot;)[**Guadalupe:**] Tal vez... tienes razón... la verdad no soy quién para obligarte a hacer algo que no quieres hacer. Ni mucho menos para perjudicar a mi hermana. Perdóname, te lo ruego. Y no le cuentes nada a Cris, por favor. 
+(css: &quot;color: white;&quot;)[**Guadalupe:**] Tal vez... tienes razón... la verdad no soy quién para obligarte a hacer algo que no quieres hacer. Ni mucho menos para perjudicar a mi hermana. Perdóname, te lo ruego. Y no le cuentes nada a Juli, por favor. 
 
-[[─Está bien, Guadalupe. Olvidemos esto y dejémoslo en el pasado. Por el bien de todos.|Final con Cris Sospechosa]] ]
+[[─Está bien, Guadalupe. Olvidemos esto y dejémoslo en el pasado. Por el bien de todos.|Final con Juli Sospechosa]] ]
 
 (else:)[
-(css: &quot;color: white;&quot;)[**Guadalupe:**] ¿Tú crees que estoy loco? ¿Loco por ti, acaso? No es justo que me digas eso después de todo lo que he sacrificado por ti. Es hora de que tú también hagas un sacrificio, y te olvides de Cris.
+(css: &quot;color: white;&quot;)[**Guadalupe:**] ¿Tú crees que estoy loco? ¿Loco por ti, acaso? No es justo que me digas eso después de todo lo que he sacrificado por ti. Es hora de que tú también hagas un sacrificio, y te olvides de Juli.
 
-[[─No quiero que Cris me mate por esto. Debemos irnos lejos de aquí, Guadalupe.|2.3.6.2. Fuga resignada con Guadalupe]]
+[[─No quiero que Juli me mate por esto. Debemos irnos lejos de aquí, Guadalupe.|2.3.6.2. Fuga resignada con Guadalupe]]
 
-[[─¡Eso nunca! Cris podrá ser como es. Pero un pacto es un pacto, y lo respetaré siempre.|Final con Cris Sospechosa]] ]</tw-passagedata><tw-passagedata pid="164" name="2.3.6.2. Fuga resignada con Guadalupe" tags="" position="6136,4143" size="100,100">Vas rápidamente a tu casa, alistas lo poco que puedes llevar antes de que Cris te llame, o incluso te visite de sorpresa este fin de semana. 
+[[─¡Eso nunca! Juli podrá ser como es. Pero un pacto es un pacto, y lo respetaré siempre.|Final con Juli Sospechosa]] ]</tw-passagedata><tw-passagedata pid="164" name="2.3.6.2. Fuga resignada con Guadalupe" tags="" position="6136,4143" size="100,100">Vas rápidamente a tu casa, alistas lo poco que puedes llevar antes de que Juli te llame, o incluso te visite de sorpresa este fin de semana. 
 
 Te fugas con Guadalupe y se van de viaje por algunos días. Esa obsesión suya no durará mucho, a menos que luches por su amor. 
 
-(if: ($puntosCris) &lt;= 4)[Tratas de que Cris no te denuncie por secuestro. O peor, que les encuentre. No hay muchas personas tan desconfiadas como ella...]
+(if: ($puntosJuli) &lt;= 4)[Tratas de que Juli no te denuncie por secuestro. O peor, que les encuentre. No hay muchas personas tan desconfiadas como ella...]
 
-(else:) [Cris está preocupada por ustedes dos. Les llama insistentemente durante dos días seguidos. Sospechará de ustedes, pero tiene la ilusión de que no estén juntos... aún.]
+(else:) [Juli está preocupada por ustedes dos. Les llama insistentemente durante dos días seguidos. Sospechará de ustedes, pero tiene la ilusión de que no estén juntos... aún.]
 
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="165" name="Final con Cris Sospechosa" tags="" position="5964,4173" size="100,100">(if: $textedCris is true or $calledCris is true or $dateLocation is &quot;Sitio&quot; or $puntosCris &gt;= 7)[
-Ya aclaradas las cosas con Guadalupe, él ha borrado cualquier evidencia de lo que pasó anoche. Y es hora de volver con Cris. Aunque la amistad se mantiene, ella no dejará de hacerle preguntas a Guadalupe o averiguar por otros medios para saber qué pasó realmente. No hay nadie tan desconfiada como ella.
+[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="165" name="Final con Juli Sospechosa" tags="" position="5964,4173" size="100,100">(if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot; or $puntosJuli &gt;= 7)[
+Ya aclaradas las cosas con Guadalupe, él ha borrado cualquier evidencia de lo que pasó anoche. Y es hora de volver con Juli. Aunque la amistad se mantiene, ella no dejará de hacerle preguntas a Guadalupe o averiguar por otros medios para saber qué pasó realmente. No hay nadie tan desconfiada como ella.
 ]
 (else:)[
-Ya que sabes qué pasó anoche y que has hecho las paces con Guadalupe, es hora de volver con tu amistad con Cris. Ella te conoce muy bien. Tu mirada no miente. Sabes que tu amistad con ella ya no podrá ser igual. 
+Ya que sabes qué pasó anoche y que has hecho las paces con Guadalupe, es hora de volver con tu amistad con Juli. Ella te conoce muy bien. Tu mirada no miente. Sabes que tu amistad con ella ya no podrá ser igual. 
 ]
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="166" name="Final con Cris Feliz" tags="" position="4162,3999" size="100,100">Has decidido respetar el pacto que tienes con Cris, tu mejor amiga que has tenido jamás. 
+[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="166" name="Final con Juli Feliz" tags="" position="4162,3999" size="100,100">Has decidido respetar el pacto que tienes con Juli, tu mejor amiga que has tenido jamás. 
 
-(if: $textedCris is true or $calledCris is true or $dateLocation is &quot;Sitio&quot; or $puntosCris &gt;= 5)[Cris y tú siguen con una gran amistad durante toda la vida.]
-(else:)[Cris y tú siguen con una buena amistad, pero no mantienen mucho contacto por las ocupaciones de la vida.]
+(if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot; or $puntosJuli &gt;= 5)[Juli y tú siguen con una gran amistad durante toda la vida.]
+(else:)[Juli y tú siguen con una buena amistad, pero no mantienen mucho contacto por las ocupaciones de la vida.]
 
 (if: $hasDeletedGuadalupePhotos is true or $hasDeletedAllPhotos is true)[A Guadalupe no le caes bien, pero sientes una satisfacción que has aventajado a Guadalupe, y no hay nada que él pueda hacer.]
 (else:)[También has razonado con Guadalupe al respecto, y él entiende las razones de tu pacto y lo respeta.]
@@ -1727,10 +1727,10 @@ Ya que sabes qué pasó anoche y que has hecho las paces con Guadalupe, es hora 
 
 [[Reiniciar juego desde el principio|Despierta]]</tw-passagedata><tw-passagedata pid="167" name="Final con Guadalupe destrozado" tags="" position="6252,3860" size="100,100">Guadalupe está profundamente desilusionado de ti. Rencoroso, publica las fotos en redes sociales.
 
-(if: ($puntosCris) &lt;= 4)
-[Por supuesto, Cris se entera, y con ello has perdido el favor de los dos. No te queda otro remedio que irte lejos, a menos que quieras que Cris te reclame por esto de maneras no muy amables...]
+(if: ($puntosJuli) &lt;= 4)
+[Por supuesto, Juli se entera, y con ello has perdido el favor de los dos. No te queda otro remedio que irte lejos, a menos que quieras que Juli te reclame por esto de maneras no muy amables...]
 
-(else:)[Cris no da crédito a lo que ve. Le habías aclarado todo, pero las pruebas son contundentes. Está dolida contigo por no respetar el pacto. Decide romper su amistad contigo de manera razonable aunque sabes que si te la encuentras en el barrio, habrá problemas. Y muy serios.] 
+(else:)[Juli no da crédito a lo que ve. Le habías aclarado todo, pero las pruebas son contundentes. Está dolida contigo por no respetar el pacto. Decide romper su amistad contigo de manera razonable aunque sabes que si te la encuentras en el barrio, habrá problemas. Y muy serios.] 
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
@@ -1738,11 +1738,11 @@ Ya que sabes qué pasó anoche y que has hecho las paces con Guadalupe, es hora 
 
 Le correspondiste a su amor sin saber exactamente por qué. Acaso también estabas en obsesión con Guadalupe desde un comienzo. Te hablará sobre anoche, pero asumirás todas las consecuencias.
 
-La más importante de todas: perder la amistad de Cris, tu mejor amiga. 
+La más importante de todas: perder la amistad de Juli, tu mejor amiga. 
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="169" name="2.4.3.2. Guadalupe es confrontado por causa de Cris" tags="" position="5457,4205" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por señalarle a Guadalupe sus defectos de manera muy directa).**]
+[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="169" name="2.4.3.2. Guadalupe es confrontado por causa de Juli" tags="" position="5457,4205" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por señalarle a Guadalupe sus defectos de manera muy directa).**]
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] Lealtad es lo que he demostrado contigo cuando me has pedido que te aclare qué pasó anoche. Y eso que no he publicado esto: 
 
@@ -1750,7 +1750,7 @@ Te muestra algunas fotos tuyas con él bastante comprometedoras.
 
 [[─Debes creerme cuando te digo que no recuerdo nada de lo que pasó anoche. Piensa en lo que vas a hacer, Guadalupe, te lo pido.|2.3.6.3. Guadalupe puede ser consciente de lo que hará]]
 
-[[─Piensa también en tu hermana, en Cris. ¿De verdad quieres arruinarlo todo para todos? Te exijo que borres esas fotos ya mismo.|2.4.3.1.1. No convences a Guadalupe]]</tw-passagedata><tw-passagedata pid="170" name="2.4.3.3. Tratas de querer a Guadalupe" tags="" position="5611,4283" size="100,100">(css: &quot;color: white;&quot;)[**Guadalupe:**] Porque sabes que nadie te ha demostrado más lealtad que yo, corazón. Esto es diferente porque soy diferente. Date cuenta que somos tal para cual, cariño. 
+[[─Piensa también en tu hermana, en Juli. ¿De verdad quieres arruinarlo todo para todos? Te exijo que borres esas fotos ya mismo.|2.4.3.1.1. No convences a Guadalupe]]</tw-passagedata><tw-passagedata pid="170" name="2.4.3.3. Tratas de querer a Guadalupe" tags="" position="5611,4283" size="100,100">(css: &quot;color: white;&quot;)[**Guadalupe:**] Porque sabes que nadie te ha demostrado más lealtad que yo, corazón. Esto es diferente porque soy diferente. Date cuenta que somos tal para cual, cariño. 
 
 ¿Reconoces el amor que te he tenido siempre?
 
@@ -1774,9 +1774,9 @@ Te muestra algunas fotos tuyas con él bastante comprometedoras.
 (set: $hasViewedGuadalupeEmail to true)
 </tw-passagedata><tw-passagedata pid="172" name="Final caótico de Guadalupe" tags="" position="5573,4580" size="100,100">Guadalupe no tiene otra opción que ir contigo a la estación de policía. Él es humillado y posiblemente irá a prisión por un tiempo. 
 
-(if: ($puntosCris) &gt;= 4) [Cris se entera, y aunque desconfía de ti porque estableciste contacto con su querido hermano, se entera de toda la verdad. Le duele mucho saber que su hermano era una persona bastante manipuladora. Te mantuviste firme en tu pacto, pero aún hay dudas. Y eso también te duele mucho.]
+(if: ($puntosJuli) &gt;= 4) [Juli se entera, y aunque desconfía de ti porque estableciste contacto con su querido hermano, se entera de toda la verdad. Le duele mucho saber que su hermano era una persona bastante manipuladora. Te mantuviste firme en tu pacto, pero aún hay dudas. Y eso también te duele mucho.]
 
-(else:) [Vuelves a tener una amistad con Cris, pero sólo por un tiempo porque desconfía mucho de ti. Y decides separarte de ella. El recuerdo de esa familia te rompe el corazón. Tal vez sea lo mejor para ti, quién sabe.]
+(else:) [Vuelves a tener una amistad con Juli, pero sólo por un tiempo porque desconfía mucho de ti. Y decides separarte de ella. El recuerdo de esa familia te rompe el corazón. Tal vez sea lo mejor para ti, quién sabe.]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
@@ -1785,13 +1785,13 @@ Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 
 [[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="173" name="Final neutro diplomático" tags="" position="5350,4579" size="100,100">Guadalupe se humilla ante ti y tiene que confesarte que te ha manipulado para ir al concierto contigo. 
 
-Pensando en el bienestar tuyo y de Cris, tu mejor amiga, le pides a Guadalupe que borre cualquier evidencia de anoche, se olviden de esta bochornosa situación, y que nunca más te pida estar con él. 
+Pensando en el bienestar tuyo y de Juli, tu mejor amiga, le pides a Guadalupe que borre cualquier evidencia de anoche, se olviden de esta bochornosa situación, y que nunca más te pida estar con él. 
 
-(if: $textedCris is true or $calledCris is true or $dateLocation is &quot;Sitio&quot;)[ 
-Mantienes tu relación con Cris, y nada ha pasado. Se aman muchísimo mientras Guadalupe ya es cosa del pasado.
+(if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot;)[ 
+Mantienes tu relación con Juli, y nada ha pasado. Se aman muchísimo mientras Guadalupe ya es cosa del pasado.
 ]
 (else:)[
-Hablas con Cris como si nada, pero ella aún sospecha de ti. Quiere preguntarle a Guadalupe qué pasa, pero él la evade todo el tiempo. La relación está enrarecida. Sabes que no va a volver a ser igual.
+Hablas con Juli como si nada, pero ella aún sospecha de ti. Quiere preguntarle a Guadalupe qué pasa, pero él la evade todo el tiempo. La relación está enrarecida. Sabes que no va a volver a ser igual.
 ]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
@@ -1824,7 +1824,7 @@ Sería un proceso de palabra de una parte contra la otra, pierdes a tu amiga y p
 
 [[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="176" name="Final amando a Guadalupe" tags="" position="5763,4372" size="100,100">Has decidido amar a Guadalupe. Le consideras como el amor de tu vida, y eso te hace muy feliz. 
 
-Ya no crees que Guadalupe sea el &quot;intocable&quot; hermano de Cris, y aunque pierdas la amistad de tu mejor amiga, harás lo posible para luchar por tu amor por él. 
+Ya no crees que Guadalupe sea el &quot;intocable&quot; hermano de Juli, y aunque pierdas la amistad de tu mejor amiga, harás lo posible para luchar por tu amor por él. 
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
@@ -1839,18 +1839,18 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] ¿Yo? Para nada. De hecho, yo no uso bufandas porque suelo perderlas. Te puedo comprobar ahora mismo que no llevaba una anoche. 
 
-[[Espera que Guadalupe saque su teléfono|2.5.1. Guadalupe descubre que no hay fotos]]</tw-passagedata><tw-passagedata pid="178" name="2.4.2.A Cris te llama" tags="" position="4925,4112" size="100,100">Cris te llama y no tienes opción sino responder.
+[[Espera que Guadalupe saque su teléfono|2.5.1. Guadalupe descubre que no hay fotos]]</tw-passagedata><tw-passagedata pid="178" name="2.4.2.A Juli te llama" tags="" position="4925,4112" size="100,100">Juli te llama y no tienes opción sino responder.
 
-(css: &quot;color: orange;&quot;)[**Cris:**] *¡Carajo! ¿Por qué no me contestas? ¿Dónde estuviste? ¿Qué pasó anoche?* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *¡Carajo! ¿Por qué no me contestas? ¿Dónde estuviste? ¿Qué pasó anoche?* 
 
-(link: &quot;&#39;Lo siento, pero estaba con mucho trabajo y no podía responder. Te llamo pronto&#39;&quot;. Corta la llamada y sigue buscando información)[(set: $calledCris to true)(set: $segundosReloj to $segundosReloj + 50)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosCris to $puntosCris - 1)
+(link: &quot;&#39;Lo siento, pero estaba con mucho trabajo y no podía responder. Te llamo pronto&#39;&quot;. Corta la llamada y sigue buscando información)[(set: $calledJuli to true)(set: $segundosReloj to $segundosReloj + 50)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosJuli to $puntosJuli - 1)
 ]
 
-(link: &quot;Corta la llamada sin decir nada y sigue buscando información&quot;)[(set: $segundosReloj to $segundosReloj + 10)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosCris to $puntosCris - 2)]
+(link: &quot;Corta la llamada sin decir nada y sigue buscando información&quot;)[(set: $segundosReloj to $segundosReloj + 10)(goto:&quot;2.4.2 Busca información en tu teléfono&quot;)(set: $puntosJuli to $puntosJuli - 2)]
 
-(css: &quot;color: red;&quot;)[**(Pierdes algunos puntos con Cris por no darle mayores explicaciones. Tal vez ella comienza a sospechar de ti).**]
+(css: &quot;color: red;&quot;)[**(Pierdes algunos puntos con Juli por no darle mayores explicaciones. Tal vez ella comienza a sospechar de ti).**]
 
-(css: &quot;color: purple;&quot;)[**Esta interacción pasó por no hablar antes con Cris.**]
+(css: &quot;color: purple;&quot;)[**Esta interacción pasó por no hablar antes con Juli.**]
 
 (set: $segundosReloj to $segundosReloj + 15)</tw-passagedata><tw-passagedata pid="179" name="2.5.1. Guadalupe descubre que no hay fotos" tags="" position="5016,5514" size="100,100">(css: &quot;color: white;&quot;)[**Guadalupe:**] Pero, ¡¿qué carajos?! ¿Dónde están mis fotos?
 
@@ -1892,7 +1892,7 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 [[─Sí, es que los hackers son tremendos pillos, ¿no? Mala suerte, querido. (Y disfruta verlo sufrir).|2.5.2.3 Ríete de Guadalupe a la cara]]</tw-passagedata><tw-passagedata pid="181" name="2.5.2.1 Huir de Guadalupe" tags="" position="4733,5825" size="100,100">Huyes rápidamente del lugar, y Guadalupe se queda sorprendido por tu reacción. Con más veras sospecha de ti, pero sabe que no tiene pruebas para acusarte de entrar a su teléfono. 
 
-Sin las cosas aclaradas con Guadalupe, es imposible volver con Cris de la misma manera. Con el tiempo pierdes también su amistad. Aprendes que no debes meterte con esta clase de personas tan manipuladoras. Huyes de todos y de todo. 
+Sin las cosas aclaradas con Guadalupe, es imposible volver con Juli de la misma manera. Con el tiempo pierdes también su amistad. Aprendes que no debes meterte con esta clase de personas tan manipuladoras. Huyes de todos y de todo. 
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.**
@@ -1902,9 +1902,9 @@ Intenta completar el juego otra vez:
 
 (css: &quot;color: #187FF5;&quot;)[*¿Terminar contigo? No recuerdo haber salido contigo nunca. Todo esto está muy raro, y la verdad me cansa estar así. No te quiero más en mi vida.*] 
 
-Sin querer aclarar nada, así se enrarece todo en tu vida. Cuando sales del lugar, Guadalupe, resentido, llama a Cris a contarle la situación. Nunca le has importado. Con ello también arruina tu amistad con Cris, y así pierdes el favor de ambos. 
+Sin querer aclarar nada, así se enrarece todo en tu vida. Cuando sales del lugar, Guadalupe, resentido, llama a Juli a contarle la situación. Nunca le has importado. Con ello también arruina tu amistad con Juli, y así pierdes el favor de ambos. 
 
-(if: ($puntosCris) &gt;= 4)[Estás triste de perder tu amistad con Cris, pero sigues con tu vida y encuentras más amigos que llenan ese vacío. A veces durante las fechas especiales todavía piensas en ella.]
+(if: ($puntosJuli) &gt;= 4)[Estás triste de perder tu amistad con Juli, pero sigues con tu vida y encuentras más amigos que llenan ese vacío. A veces durante las fechas especiales todavía piensas en ella.]
 
 (else:)[En realidad, estás más feliz sin ellos. Tu vida sigue con menos drama, estrés, y complicaciones. Tal vez es un poquito más aburrida, pero lo prefieres así.]
 
@@ -1914,7 +1914,7 @@ Gracias por jugar.**
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="183" name="2.5.2.3 Ríete de Guadalupe a la cara" tags="" position="5028,5826" size="100,100">(css: &quot;color: white;&quot;)[**Guadalupe:**] Aquí estoy viendo a una persona de lo peor de lo peor. ¡Te odio! ¡No te saldrás con la tuya!
 
-(css: &quot;color: #187FF5;&quot;)[*¿Y eso qué? ¿Qué pruebas hay? ¡Nada! No tienes nada. No eres nada, Guadalupe. Jajaja. Haz lo que quieras. A la hora de la verdad, ¿a quién le creerán? ¡A quién le creerá Cris, querido!*]
+(css: &quot;color: #187FF5;&quot;)[*¿Y eso qué? ¿Qué pruebas hay? ¡Nada! No tienes nada. No eres nada, Guadalupe. Jajaja. Haz lo que quieras. A la hora de la verdad, ¿a quién le creerán? ¡A quién le creerá Juli, querido!*]
 
 (css: &quot;color: white;&quot;)[**Guadalupe:**] Lo pagarás caro. ¡Te acordarás de mí!
 
@@ -1925,15 +1925,15 @@ Le muestras la foto del correo de Mike.
 
 (css: &quot;color: #187FF5;&quot;)[Jajajaja!! Se ve que no eres nada, Guadalupe. ¡Chaíto!*]
 
-Has logrado verle la verdadera cara a Guadalupe jugándole por donde más le duele: manipulándole como lo ha hecho contigo. Vuelves con Cris, mantienes tu pacto y relación con ella. Y disfrutas de la impunidad de tus actos. Eso no dura para siempre, ¿pero qué más da? Has ganado ahora, y eso es lo importante.]
+Has logrado verle la verdadera cara a Guadalupe jugándole por donde más le duele: manipulándole como lo ha hecho contigo. Vuelves con Juli, mantienes tu pacto y relación con ella. Y disfrutas de la impunidad de tus actos. Eso no dura para siempre, ¿pero qué más da? Has ganado ahora, y eso es lo importante.]
 
 (else:)[(css: &quot;color: #187FF5;&quot;)[*Ya te lo dije, Guadalupe. Nadie te creerá. Y es claro que quien oculta algo eres tú. Es patético ver cómo te retuerces de la rabia, suficiente prueba para pensar que sí que eres un manipulador. Jajaja!! Eres una vileza de ser humano. Esa es la verdad. Nos vemos.*]
 
 Tú también sabes que no tienes nada para protegerte de una eventual venganza de Guadalupe, salvo tus palabras y la humillación que le causa tu rechazo. Así las cosas, Guadalupe decide publicar las fotos comprometedoras en las que apareces con él.
 
-(if: ($puntosCris) &lt;= 4) [Cris te reclama, pierdes también su amistad, y no tendrás más remedio que desear que te hubiera tragado la tierra. Tu reputación está por el piso. Y terminas mal con toda persona que has conocido hasta ahora.] 
+(if: ($puntosJuli) &lt;= 4) [Juli te reclama, pierdes también su amistad, y no tendrás más remedio que desear que te hubiera tragado la tierra. Tu reputación está por el piso. Y terminas mal con toda persona que has conocido hasta ahora.] 
 
-(else:) [Cris no da crédito a sus ojos. Se enloquece. Te reclama. Se pelea contigo. No lo puede creer. Y aunque siempre ha sabido de lo que su hermano es capaz de hacer para tener lo que quiere, aún así te sigue reclamando. No aguantas más la situación y decides separarte de ella, y cambiar de casa, de ambiente. A lo mejor es lo que finalmente mereces.] ]
+(else:) [Juli no da crédito a sus ojos. Se enloquece. Te reclama. Se pelea contigo. No lo puede creer. Y aunque siempre ha sabido de lo que su hermano es capaz de hacer para tener lo que quiere, aún así te sigue reclamando. No aguantas más la situación y decides separarte de ella, y cambiar de casa, de ambiente. A lo mejor es lo que finalmente mereces.] ]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
@@ -1948,9 +1948,9 @@ A Guadalupe se le escapó la verdad en sus palabras. Está obligado a decirte so
 
 A ver si entre rejas Guadalupe aprende a no manipular a nadie nunca más. 
 
-(if: ($puntosCris) &lt;= 4)[Aunque a Cris le sorprende poco los escrúpulos de Guadalupe, te tiene en alta estima por hacer hasta lo imposible por descubrir la verdad sobre anoche. Continúas la amistad por un tiempo, pero no puedes evitar pensar que Cris puede incluso vigilarte de una manera más cruenta. Con el tiempo te alejas de ella. Sabes que es mejor para ti.]
+(if: ($puntosJuli) &lt;= 4)[Aunque a Juli le sorprende poco los escrúpulos de Guadalupe, te tiene en alta estima por hacer hasta lo imposible por descubrir la verdad sobre anoche. Continúas la amistad por un tiempo, pero no puedes evitar pensar que Juli puede incluso vigilarte de una manera más cruenta. Con el tiempo te alejas de ella. Sabes que es mejor para ti.]
 
-(else:)[A Cris le duele mucho que Guadalupe haya hecho eso. Sí, entraste a su teléfono y todo. Pero esa desconfianza que has mostrado es solamente equiparable a la que ella siente por ti. Sabes que una amistad así es insostenible, y decides irte. Por el bien común.]
+(else:)[A Juli le duele mucho que Guadalupe haya hecho eso. Sí, entraste a su teléfono y todo. Pero esa desconfianza que has mostrado es solamente equiparable a la que ella siente por ti. Sabes que una amistad así es insostenible, y decides irte. Por el bien común.]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
@@ -1966,9 +1966,9 @@ Intenta completar el juego otra vez:
 
 Como Guadalupe no tiene más pruebas sino su propia rabia, decides denunciarle ante la policía de todas maneras. Pero la denuncia es rápidamente invalidada y has terminado de muy mala manera con Guadalupe. 
 
-(if: ($puntosCris) &lt;= 4)[Cris se entera y no puede evitar hacerse preguntas sobre la relación de ustedes dos, por lo que también pierdes su confianza. Sin la una y sin el otro, te es difícil hacer alguna nueva amistad.]
+(if: ($puntosJuli) &lt;= 4)[Juli se entera y no puede evitar hacerse preguntas sobre la relación de ustedes dos, por lo que también pierdes su confianza. Sin la una y sin el otro, te es difícil hacer alguna nueva amistad.]
 
-(else:)[Le aseguraste a Cris que no había pasado nada entre ustedes. Resultaste en un juego de palabra contra palabra no una ¡sino dos veces! Para Cris eso es lo más patético que ha conocido de ti, y decide terminar su amistad contigo. Y decides irte. Por tu bien.]
+(else:)[Le aseguraste a Juli que no había pasado nada entre ustedes. Resultaste en un juego de palabra contra palabra no una ¡sino dos veces! Para Juli eso es lo más patético que ha conocido de ti, y decide terminar su amistad contigo. Y decides irte. Por tu bien.]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
@@ -1981,9 +1981,9 @@ Guadalupe no tiene más pruebas de su acusación que su propia rabia. Te denunci
 
 Por supuesto has terminado muy mal con Guadalupe. 
 
-(if: ($puntosCris) &lt;= 4)[Y Cris, al enterarse de que has intentado manipular el teléfono de Guadalupe, sabe que eres tan desconfiado como ella, y ahora te teme. Es claro que una amistad así es impensable para alguien con suficiente autoestima. Deciden separarse olvidándose que alguna vez siquiera tuvieron una amistad.]
+(if: ($puntosJuli) &lt;= 4)[Y Juli, al enterarse de que has intentado manipular el teléfono de Guadalupe, sabe que eres tan desconfiado como ella, y ahora te teme. Es claro que una amistad así es impensable para alguien con suficiente autoestima. Deciden separarse olvidándose que alguna vez siquiera tuvieron una amistad.]
 
-(else:)[Y nada más es cuestión de tiempo de que Cris se entere, haga preguntas incómodas y también pierdas su amistad. Saben que es lo mejor, así que decides cambiar de aire, olvidándote de todo lo que ha pasado.]
+(else:)[Y nada más es cuestión de tiempo de que Juli se entere, haga preguntas incómodas y también pierdas su amistad. Saben que es lo mejor, así que decides cambiar de aire, olvidándote de todo lo que ha pasado.]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.**
@@ -1992,14 +1992,14 @@ Gracias por jugar.**
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="186" name="Modo de Prueba: Start Part 2" tags="" position="2313,2153" size="100,100">(set: $puntosCarisma to 4)
 (set: $puntosGuadalupe to 5)
-(set: $puntosCris to 0)
+(set: $puntosJuli to 0)
 (set: $hasDrunkWater to true)
 (set: $hasDrunkJuice to false)
 (set: $hasEatenChicken to true)
 (set: $hasEatenSandwich to false)
-(set: $calledCris to false)
+(set: $calledJuli to false)
 (set: $calledGuadalupe to true)
-(set: $textedCris to false)
+(set: $textedJuli to false)
 (set: $textedGuadalupe to true)
 
 (set: $hasPaidTaxi to false)
@@ -2013,20 +2013,20 @@ Intenta completar el juego otra vez:
 
 
 
-(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosGuadalupe&quot;, $puntosGuadalupe, &quot;puntosCris&quot;, $puntosCris, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedCris&quot;, $textedCris, &quot;calledCris&quot;, $calledCris, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
+(set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosGuadalupe&quot;, $puntosGuadalupe, &quot;puntosJuli&quot;, $puntosJuli, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedJuli&quot;, $textedJuli, &quot;calledJuli&quot;, $calledJuli, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
 
 [[Parte 2]]</tw-passagedata><tw-passagedata pid="187" name="Créditos" tags="" position="2171,2194" size="100,100">¡Gracias por jugar! Si tienes comentarios nos envías un correo a **drawingboardgames2020@gmail.com**. También, visítanos en nuestra página web: &lt;a style=&quot;color:lightblue&quot; href=&quot;https://drawingboard.games&quot;&gt;drawingboard.games&lt;/a&gt; 
 
 Jason Denney y Félix González - 2020</tw-passagedata><tw-passagedata pid="188" name="Part 1 Final" tags="" position="2303,2020" size="100,100">(set: $puntosCarisma to 4)
 (set: $puntosGuadalupe to 5)
-(set: $puntosCris to 0)
+(set: $puntosJuli to 0)
 (set: $hasDrunkWater to true)
 (set: $hasDrunkJuice to false)
 (set: $hasEatenChicken to true)
 (set: $hasEatenSandwich to false)
-(set: $calledCris to false)
+(set: $calledJuli to false)
 (set: $calledGuadalupe to true)
-(set: $textedCris to false)
+(set: $textedJuli to false)
 (set: $textedGuadalupe to true)
 
 (set: $hasPaidTaxi to false)
@@ -2039,14 +2039,14 @@ Jason Denney y Félix González - 2020</tw-passagedata><tw-passagedata pid="188"
 (set: $previousPassage to &quot;Parte 2&quot;)
 
 [[Fin de Parte 1]]
-[[Parte 2]]</tw-passagedata><tw-passagedata pid="189" name="Confronta a Cris junto a Guadalupe|" tags="" position="3137,2932" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="190" name="Ruégale al taxista que te disculpe y te devuelva a tu casa para recoger tu billetera." tags="" position="3577,5369" size="100,100">El taxista te lleva a un lugar, pero no parece familiar.  
+[[Parte 2]]</tw-passagedata><tw-passagedata pid="189" name="Confronta a Juli junto a Guadalupe|" tags="" position="3137,2932" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="190" name="Ruégale al taxista que te disculpe y te devuelva a tu casa para recoger tu billetera." tags="" position="3577,5369" size="100,100">El taxista te lleva a un lugar, pero no parece familiar.  
 
 &quot;Ese no es mi barrio&quot; te dices.
 
 El taxista te pide salir del auto, y cuando miras arriba ves el aviso &quot;Estación de Policía&quot;. En algunos momentos estarás en la cárcel por no pagarle al taxista ni la multa de rigor. 
 
-(if: $calledCris or $textedCris)[
-Cris estaba preocupada por ti, y después de muchas horas ella paga tu fianza y salen juntos. Todo parece bien, pero todavía no sabes qué tan malo será manaña cuando Guadalupe publique todo lo de anoche y Cris se entere que rompiste la regla.
+(if: $calledJuli or $textedJuli)[
+Juli estaba preocupada por ti, y después de muchas horas ella paga tu fianza y salen juntos. Todo parece bien, pero todavía no sabes qué tan malo será manaña cuando Guadalupe publique todo lo de anoche y Juli se entere que rompiste la regla.
 ]
 (else:)[
 Esperas que tengas otra persona además de Manuel o Guadalupe para pedirle ayuda.
