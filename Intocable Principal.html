@@ -636,28 +636,28 @@ Llamas a Cris y pones el teléfono en altavoz para que Juli también escuche:
 
 (set: $visitedElSitio to true)
 
-</tw-passagedata><tw-passagedata pid="76" name="2.2.1.1. VES A Juli EN EL SITIO" tags="" position="1560,2921" size="100,100">¡Ojo! Juli está cerca, pero no te ve. Está distraída pidiendo un café al mesero. Ya sabes qué pasará si te ve con su querido hermanito. ¿Qué haces?
+</tw-passagedata><tw-passagedata pid="76" name="2.2.1.1. VES A Juli EN EL SITIO" tags="" position="1560,2921" size="100,100">¡Ojo! Juli está cerca, pero no te ve. Está pidiendo un café al mesero. Ya sabes qué pasará si te ve con Cris. ¿Qué haces?
 
 (css: &quot;color: #187FF5;&quot;)[*Carajo, Juli está aquí. Vámonos de aquí. ¡Ya!*]
 
 (if: $puntosCris + $puntosCarisma &lt;= 6)[
-(css: &quot;color: white;&quot;)[**Cris:**] *Wow, mira que sí es El Sitio favorito de ustedes dos. ¿Por qué le temes? ¿Qué ocultas? Hablemos todos.*
+(css: &quot;color: white;&quot;)[**Cris:**] *Wow, mira que sí es El Sitio favorito de ustedes dos. ¿Por qué le temes? ¿Qué ocultas? Hablemos.*
 
 [[─Prefiero evitar problemas. Te cuento luego donde tú quieras.|2.2.2. Juli TE SORPRENDE HUYENDO]]
 [[─Vale, como quieras.|2.2.2.1. ENFRENTA CON Cris A Juli CON CONFIANZA]] 
 [[─Oooook. Si tú insistes.|2.2.2.2. ENFRENTA CON Cris A Juli SIN CONFIANZA]] ]
 
 (else:) [
-(css: &quot;color: white;&quot;)[**Cris:**] *Mira quién está aquí si no es mi hermanita Juli. Vaya que este es El Sitio de ustedes dos. Sería interesante conocer cómo eres con tu gran amiga.*
+(css: &quot;color: white;&quot;)[**Cris:**] *Mira quién está aquí si no es mi Juli. Vaya que este es El Sitio de ustedes dos. Sería interesante conocer cómo eres con tu gran amiga.*
 
-[[─Sí, claro. Pero después. Te cuento luego en el lugar donde tú quieras.|2.2.2. Juli TE SORPRENDE HUYENDO]] 
+[[─Sí, claro. Pero después. Te cuento luego.|2.2.2. Juli TE SORPRENDE HUYENDO]] 
 [[─Claro, totalmente. Sigamos entonces.|2.2.2.1. ENFRENTA CON Cris A Juli CON CONFIANZA]] ]</tw-passagedata><tw-passagedata pid="77" name="2.2.2. Juli TE SORPRENDE HUYENDO" tags="" position="1531,3096" size="100,100">Juli te ve tratando de huir.
 
 (css: &quot;color: red;&quot;)[**(-1 punto Juli por intentar huirle).**] 
 
-(css: &quot;color: orange;&quot;)[**Juli:**] *¿Cris? ¡Carlitos, hermanito, qué sorpresa! Ven y siéntate. ¿Y con quién estás ahora? ¡Aaaahhh! ¿Qué es esto? ¿Qué está pasando? ¡Que alguien me explique!*
+(css: &quot;color: orange;&quot;)[**Juli:**] *¿Cris? ¡Qué sorpresa! Ven y siéntate. ¿Y con quién estás ahora? ¡Aaaahhh! ¿Qué es esto? ¿Qué está pasando? ¡Que alguien me explique!*
 
-Al ver la reacción de Juli sales a correr como la persona cobarde que eres. Cris queda desconcertado y desilusionado contigo. Mientras tanto, Juli se enloquece, te persigue, se siente muy ofendida. Pierdes la confianza de ambos, y te quedarás sin saber qué fue lo que pasó en realidad anoche. 
+Al ver la reacción de Juli sales a correr como la persona cobarde que eres. Cris se desilusiona profundamente de ti. Mientras tanto, Juli se enloquece, te persigue, se siente muy ofendida. Pierdes la confianza de tus amistades, y te quedarás sin saber qué fue lo que pasó en realidad anoche. 
 
 [[Fin del juego - Reiniciar|Parte 2]]
 
@@ -695,29 +695,29 @@ Sales rápidamente de El Sitio para tomar otro taxi.
 (if: $itemWalletisCarried is false)[ [[Ve a casa para recoger lo que te hace falta.|2.1.5.7 RECUPERAR BILLETERA]] ] 
 </tw-passagedata><tw-passagedata pid="82" name="2.2.2.1. ENFRENTA CON Cris A Juli CON CONFIANZA" tags="" position="1934,2914" size="100,100">Juli se acerca.
 
-(css: &quot;color: orange;&quot;)[**Juli:**] *¡Buenas, buenas! Uy, Carlitos, querido. ¡Qué sorpresa! No me digan que están juntos. Porque eso no puede ser.*
+(css: &quot;color: orange;&quot;)[**Juli:**] *¡Buenas, buenas! Uy, Cris. ¡Qué sorpresa! No me digan que están... porque eso no puede ser.*
 
-(css: &quot;color: white;&quot;)[**Cris:**] *Hola, hermanita querida. ¿Cómo así que no puede ser?* 
+(css: &quot;color: white;&quot;)[**Cris:**] *Hola, querida. ¿Cómo así que no puede ser?* 
 
-[[─Sí puede ser, Juli. Me enamoré de tu hermano.|2.2.2.3. Juli SABE &#39;LA VERDAD&#39; DE TI]]
-[[─Es que le hice una promesa a tu hermana de no estar contigo, Cris. Lo siento.|2.2.2.4. Cris SABE &#39;LA VERDAD&#39; DE TI]] </tw-passagedata><tw-passagedata pid="83" name="2.2.1.2. Cris SE VA DE EL SITIO" tags="" position="1154,2717" size="100,100">(css: &quot;color: red;&quot;) [**(-1 punto por tratar a Cris como si no importara nada).**]
+[[─Sí puede ser, Juli. Me enamoré.|2.2.2.3. Juli SABE &#39;LA VERDAD&#39; DE TI]]
+[[─Es que le hice una promesa a Juli de no estar contigo, Cris. Lo siento.|2.2.2.4. Cris SABE &#39;LA VERDAD&#39; DE TI]] </tw-passagedata><tw-passagedata pid="83" name="2.2.1.2. Cris SE VA DE EL SITIO" tags="" position="1154,2717" size="100,100">(css: &quot;color: red;&quot;) [**(-1 punto por tratar a Cris como si no importara nada).**]
 
-Pudiste haber tratado mejor a Cris, pero está muy furioso y se va rápidamente. Cris decide publicar sus fotos contigo en sus redes. Juli las ve y comienza a reclamarte para luego golpearte cuando te vea. Se arma un gran escándalo. Pierdes la confianza de ambos. Tu vida se vuelve horrible.
+Pudiste haber tratado mejor a Cris, pero está con mucha rabia y se va rápidamente. Cris decide publicar sus fotos contigo en sus redes. Juli las ve y comienza a reclamarte para luego golpearte cuando te vea. Se arma un gran escándalo. Pierdes la confianza de tus amistades. Tu vida se vuelve horrible.
 
 [[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="84" name="2.2.2.2. ENFRENTA CON Cris A Juli SIN CONFIANZA" tags="" position="1694,3091" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto con Cris y Juli por revelar la mucha duda que tienes).**]
 
 (if: $textedJuli is true)[Juli les ve y se acerca.]
 
-(css: &quot;color: orange;&quot;)[**Juli:**] *¡Buenas, buenas! Uy, Carlitos, querido. ¡Qué sorpresa! No me digan que están juntos. Porque eso no puede ser.*
+(css: &quot;color: orange;&quot;)[**Juli:**] *¡Buenas, buenas! Uy, Cris. ¡Qué sorpresa! No me digan... lo que veo no puede ser.*
 
-Por más que intentas reducir la importancia de estar con Cris, pierdes la confianza de ambos. Juli comienza a golpearte en el bar. Se arma un escándalo. Y el indignado Cris también te abandona. Tu vida es horrible y pagas todos los daños en el restaurante, que son muchísimos. 
+Por más que intentas reducir la importancia de estar con Cris, pierdes su confianza. Juli comienza a reclamarte en el bar. Se arma un escándalo. Y con indignación Cris también te abandona. Tu vida es horrible y pagas todos los daños en el restaurante, que son muchísimos. 
 
 [[Fin del juego - Reiniciar|Parte 2]]
 
 (set: $puntosCris to $puntosCris - 1)
 (set: $puntosJuli to $puntosJuli - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
-(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="85" name="2.2.2.3. Juli SABE &#39;LA VERDAD&#39; DE TI" tags="" position="1847,3092" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por decidirte por él).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="85" name="2.2.2.3. Juli SABE &#39;LA VERDAD&#39; DE TI" tags="" position="1847,3092" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por decidirte a estar de su lado).**]
 (css: &quot;color: red;&quot;)[**(-1 punto Juli por decidirte por Cris).**]
 
 (css: &quot;color: orange;&quot;)[**Juli:**] *Muy bien. Ya que te has decidido, entonces no cuentes más conmigo. Y tú, Cris, también me has traicionado. Por más que digan algo, no me convencerán de que esto no es un adefesio. ¡Fuera de mi vista!*
@@ -727,9 +727,9 @@ Al salir de El Sitio, Cris te dice:
 (if: $puntosCris + $puntosCarisma &gt;= 6)[
 (css: &quot;color: white;&quot;)[**Cris:**] *Has mostrado valentía, amor mío. Te admiro muchísimo. Sea lo que sea que haya pasado entre ustedes, sé que nuestro amor es más fuerte, y Juli tendrá que entrar en razón.*]
  
-(else:)[(css: &quot;color: white;&quot;)[**Cris:**] *¿Pero esto qué significa? ¿A qué viene esa actitud de mi hermana? Explícame porque no entiendo nada.*]
+(else:)[(css: &quot;color: white;&quot;)[**Cris:**] *¿Pero esto qué significa? ¿A qué viene esa actitud de Juli? Explícame porque no entiendo nada.*]
 
-Te decidiste por estar con Cris, pero aún no tienes claro por qué. Él está tan enamorado de ti que sólo quiere saber de tu promesa con ella, y nunca sabrás qué pasó realmente anoche. 
+Te decidiste por estar con Cris, pero aún no tienes claro por qué. Cris se ha enamorado tanto de ti que sólo quiere saber de tu promesa con Juli, y nunca sabrás qué pasó realmente anoche.
 
 [[Fin del juego - Reiniciar|Parte 2]]
 
@@ -741,13 +741,13 @@ Te decidiste por estar con Cris, pero aún no tienes claro por qué. Él está t
 
 (if: $puntosCris + $puntosCarisma &lt;= 6)[(css: &quot;color: white;&quot;)[**Cris:**] *¿Y aún así te metiste conmigo anoche? No sé ni qué pensar de ti. Te maldigo. Y a ti también, Juli. ¿Qué le haces prometer a quien creía que me amaba con locura? Esto es absurdo.*
 
-Al salir Cris, indignado y dolido, sube las pruebas de que lo acompañaste  a la fiesta de anoche a las redes sociales. Esto Juli no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes la confianza de ambos. Tu vida se vuelve terrible. 
+Al salir Cris, con indignación y dolor, sube las pruebas de que le acompañaste a la fiesta de anoche a sus redes sociales. Esto Juli no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes su confianza. Tu vida se vuelve terrible. 
 
 [[Fin del juego - Reiniciar|Parte 2]]]
 
-(else:)[(css: &quot;color: white;&quot;)[**Cris:**] *¡Ah, claro! Para ti es muy fácil olvidarlo todo y ya. La cobardía tuya no tiene límites. Manuelita, mírame estas fotos y dime si todo esto es mentira.* 
+(else:)[(css: &quot;color: white;&quot;)[**Cris:**] *¡Ah, claro! Para ti es muy fácil olvidarlo todo y ya. La cobardía tuya no tiene límites. Juli, mira estas fotos y dime si todo esto es mentira.* 
 
-Cris muestra algunas fotos en las que lo acompañas a la fiesta de anoche. Algunas revelan la mucha cercanía que tuvieron. Juli no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes la confianza de ambos. Tu vida se vuelve terrible. 
+Cris muestra algunas fotos en las que le acompañas a la fiesta de anoche. Algunas revelan la mucha cercanía que tuvieron. Juli no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes su confianza. Tu vida se vuelve terrible. 
 
 [[Fin del juego - Reiniciar|Parte 2]]]
 
@@ -979,7 +979,7 @@ Mike”.**
 
 
 (set: $segundosReloj to $segundosReloj + 30)
-(set: $examinedCriswallet to true)</tw-passagedata><tw-passagedata pid="104" name="2.2.1.A" tags="" position="1552,2726" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto Cris por no ser muy amable con él).**] 
+(set: $examinedCriswallet to true)</tw-passagedata><tw-passagedata pid="104" name="2.2.1.A" tags="" position="1552,2726" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto Cris por no ser muy amable).**] 
 
 (css: &quot;color: white;&quot;)[**Cris:**] *¿Estás diciendo que me vaya?*
 
@@ -988,14 +988,14 @@ Mike”.**
 [[─No, dale, entremos y hablemos.|2.2.1.1. VES A Juli EN EL SITIO]]
 
 (set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="105" name="2.2.1.B" tags="" position="1703,2709" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por ser honesto con él).**] 
+(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="105" name="2.2.1.B" tags="" position="1703,2709" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por ser honesto).**] 
 
-(css: &quot;color: white;&quot;)[**Cris:**] *Me gusta tu confianza. Me siento más seguro contigo, cariño. Sigamos.* 
+(css: &quot;color: white;&quot;)[**Cris:**] *Me gusta tu confianza. Me siento mejor contigo, cariño. Sigamos.* 
 
 [[Entra a El Sitio.|2.2.1.1. VES A Juli EN EL SITIO]] 
 
 (set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="106" name="2.2.1.C" tags="" position="1900,2718" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por bromear con él).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="106" name="2.2.1.C" tags="" position="1900,2718" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por gastarle una broma).**]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *Ja,... ja,... ja. Sí, qué gracia. Búrlate. Tu comedia es también ordinaria. Justo para El Sitio. ¿Vamos?*
 
