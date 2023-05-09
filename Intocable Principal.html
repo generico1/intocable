@@ -682,7 +682,7 @@ Vuelves a tu casa y recuperas tu billetera.
 (set: $puntosCris to $puntosCris - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
 (set: $itemWalletisCarried to true)
-(set: $segundosReloj to $segundosReloj + 100)</tw-passagedata><tw-passagedata pid="80" name="2.1.5.5.6.1. Juli TE ACOMPAÑA" tags="" position="3131,3880" size="100,100">Ahora ya no puedes inventar una excusa plausible para que ella se aparte de ti. Evitarás ir al Café Tinta, y con eso, pierdes la oportunidad de saber qué pasó entre Cris y tú.
+(set: $segundosReloj to $segundosReloj + 100)</tw-passagedata><tw-passagedata pid="80" name="2.1.5.5.6.1. Juli TE ACOMPAÑA" tags="" position="3131,3880" size="100,100">Ahora ya no puedes inventar una excusa plausible para que Juli se aparte de ti. Evitarás ir al Café Tinta, y con eso, pierdes la oportunidad de saber qué pasó entre Cris y tú.
 
 [[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="81" name="2.1.1.5.5.6.2. Juli NO TE ACOMPAÑA" tags="" position="2910,3674" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Juli por considerar que ella puede tener otros planes).**]
 
@@ -690,7 +690,7 @@ Vuelves a tu casa y recuperas tu billetera.
 
 Sales rápidamente de El Sitio para tomar otro taxi.
 
-(css: &quot;color: orange;&quot;)[**Juli:**] *Está bien. Disfruta tu día, querida.* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *Está bien. Disfruta tu día.* 
 
 [[Toma un taxi para ir a Café Tinta.|2.3. LLEGAS AL CAFÉ TINTA]] 
 
@@ -816,7 +816,7 @@ No ves a Cris ni a nadie que conozcas.
 
 (css: &quot;color: lightblue&quot;)[*Vamos a ver qué tan bueno.*] 
 ]
-(css: &quot;color: lightblue&quot;)[*Un momento. Cris no lleva chaqueta como de costumbre, pero sí esa mochila de felpa tan peculiar que tiene... Y tampoco tiene nada en los bolsillos. Si pudiera entrar a su teléfono que allí carga, podría encontrar más pistas sobre anoche sin hablarlo con él directamente.*]
+(css: &quot;color: lightblue&quot;)[*Un momento. Cris no lleva chaqueta como de costumbre, pero sí esa mochila de felpa tan peculiar que tiene... Y tampoco tiene nada en los bolsillos. Si pudiera entrar a su teléfono que allí carga, podría encontrar más pistas sobre anoche sin hablarle directamente sobre eso.*]
 
 Cris intenta besarte. Le permites hacerlo:
 
@@ -825,7 +825,7 @@ Cris intenta besarte. Le permites hacerlo:
 
 [[─Juli no puede enterarse de que tú y yo hablamos. Por eso fui, para que él no sospechara más de mí.|2.3.5.2.A]] 
 [[─¿No lo sabes acaso? Hice un pacto con Juli. Y acordamos en que tú y yo no debemos vernos. Por eso necesito hablarte.|2.3.5.2.C]] 
-[[─Porque no podemos hablar más, Cris. Si algo pasó entre tú y yo, olvídalo. No estaba en mis cabales anoche.|2.3.5.2.A]] </tw-passagedata><tw-passagedata pid="92" name="2.3.2.2. EN TU BOCA" tags="" position="3881,2876" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por hacerle pensar que lo quieres de verdad).**] (css: &quot;color: red;&quot;)[**(Eso a Juli no le gustaría. -1 punto con ella).**]
+[[─Porque no podemos hablar más, Cris. Si algo pasó entre tú y yo, olvídalo. No estaba en mis cabales anoche.|2.3.5.2.A]] </tw-passagedata><tw-passagedata pid="92" name="2.3.2.2. EN TU BOCA" tags="" position="3881,2876" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por hacerle pensar que le quieres de verdad).**] (css: &quot;color: red;&quot;)[**(Eso a Juli no le gustaría. -1 punto con ella).**]
 
 (if: $puntosCarisma &lt;= 2 )[
 (css: &quot;color: white;&quot;)[**Cris:**] *Hola.* ]
@@ -840,7 +840,7 @@ Cris intenta besarte. Le permites hacerlo:
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
 (set: $puntosJuli to $puntosJuli - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli
-</tw-passagedata><tw-passagedata pid="93" name="2.3.2.1. EN TU MEJILLA" tags="" position="3703,2876" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto Cris por ser amable con Cris aunque no muy cercano.)**] (css: &quot;color: green;&quot;)[**(A eso a Juli le gustaría. +1 punto con ella.)**] 
+</tw-passagedata><tw-passagedata pid="93" name="2.3.2.1. EN TU MEJILLA" tags="" position="3703,2876" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto Cris por ser apenas cordial con Cris.)**] (css: &quot;color: green;&quot;)[**(Eso le gustaría a Juli. +1 punto con ella.)**] 
 
 (if: $puntosCarisma &lt;= 2 )[ (css: &quot;color: white;&quot;)[**Cris:**] *Hola.* ]
 (else:)[ (css: &quot;color: white;&quot;)[**Cris:**] *Hola, cariño.* ]
@@ -932,7 +932,7 @@ Cris intenta besarte. Le permites hacerlo:
 
 (css: &quot;color: white;&quot;)[**Cris:**] *Ok, esa es la banda principal, pero a la que fui a ver fue la telonera. La de tributo noventera. En fin...
 
-No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al comienzo no lo creía. Pero luego me convenciste. Quiero asegurarme que es real lo que sientes por mí.*
+No sé si estás bromeando conmigo, pero anoche me declaraste tu amor. Yo al comienzo no lo creía. Pero luego me convenciste. Quiero asegurarme que es real lo que sientes por mí.*
 
 [[─No, no es real. Nada de esto es real. Te pido que nos olvidemos de todo. No estaba en mí. Disculpa.|2.3.5.A]]
 [[─Disculpa, pero no sé de lo que hablas. Para ya con todo esto, te lo pido.|2.3.5.B]]
@@ -1125,7 +1125,7 @@ Aunque Juli está muy disgustada contigo, agradece que no te ha querido matar. L
 [[Fin del juego - Reiniciar|Parte 2]]
 
 (set: $puntosJuli to $puntosJuli - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="120" name="2.1.5.3.2.A" tags="" position="2451,3547" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser muy directo con Cris. A Juli no le gusta eso).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="120" name="2.1.5.3.2.A" tags="" position="2451,3547" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por tener mucha franqueza con Cris. A Juli no le gusta eso).**]
 (css: &quot;color: green;&quot;)[**(+1 punto por dar una pista a Cris para construir complicidad).**]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *Hola, ¿cómo estás? Estaba en el concierto de mi banda favorita, esa de rock pesado. Y luego me fui a la after-party. Por eso no llegué a casa anoche. Perdón, Julicita.* 
@@ -1148,13 +1148,13 @@ Aunque Juli está muy disgustada contigo, agradece que no te ha querido matar. L
 (set: $puntosJuli to $puntosJuli + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="122" name="2.1.3.5.2.1" tags="" position="2221,3677" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser demasiado complaciente. Incluso Juli sabe que detestas esa música).**]
 
-(css: &quot;color: orange;&quot;)[**Juli:**] *Huh. No sabía que tenías esas confiancitas con él. No me creas tan imbécil, noté que le mostraste mucho afecto cuando hablaste con él. ¡Sal de mi vista antes de que me arrepienta! ¡Largo!*
+(css: &quot;color: orange;&quot;)[**Juli:**] *Huh. No sabía que tenías esas confiancitas con Cris. No me creas tan imbécil, noté que le mostraste mucho afecto cuando le hablaste. ¡Sal de mi vista antes de que me arrepienta! ¡Largo!*
 
 Eso te pasa por demostrar alegría por alguien a quien prometiste no amar.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="123" name="2.1.3.5.2.2" tags="" position="2224,3819" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser muy diplomático con Cris cuando se supone ya no hablas con él).**]
+[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="123" name="2.1.3.5.2.2" tags="" position="2224,3819" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser muy amable con Cris cuando se supone ya no le hablas).**]
 
-(css: &quot;color: orange;&quot;)[**Juli:**] *Sé que eres muy amable con la gente. Pero recuerda quién está realmente preocupado por ella ahora.* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *Sé que eres muy amable con la gente. Pero recuerda quién se preocupa realmente por Cris ahora.* 
 
 [[─Discúlpame, Juli. Tienes toda la razón. Ahora, ¿sabes qué pasó anoche?|2.1.3.5.2.4]]
 [[─Lo sé bien, Juli. Perdón. No quiero quitarte mucho tiempo. ¿Sabes qué pasó anoche?|2.1.3.5.2.5]]
@@ -1170,9 +1170,9 @@ Más bien, ¿por qué no te vas a descansar a la casa? A lo mejor se te viene al
 [[─Creo que puedo averiguar más en otra parte. A lo mejor encuentre respuestas.|2.1.1.5.5.6.2. Juli NO TE ACOMPAÑA]]
 
 (set: $puntosJuli to $puntosJuli + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="125" name="2.1.3.5.2.4" tags="" position="2376,4107" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por ser demasiado directo con Juli).**] 
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="125" name="2.1.3.5.2.4" tags="" position="2376,4107" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por tener demasiada franqueza con Juli).**] 
 
-(css: &quot;color: orange;&quot;)[**Juli:**] *¡No tengo ni la más mínima idea! Eso sí. Asegúrate que la próxima vez pienses antes de tomar. Incluso te evitas perderte. Como ahora.* 
+(css: &quot;color: orange;&quot;)[**Juli:**] *¡No tengo ni la más mínima idea! Eso sí, asegúrate que la próxima vez pienses antes de tomar. Incluso te evitas perderte. Como ahora.* 
 
 [[─Me da mucha pena contigo, querida. Más bien me voy a mi casa a descansar.|2.1.5.5.6. Juli OFRECE ACOMPAÑARTE]] 
 [[─Vale. Disculpa todas las molestias, Juli. Nos vemos.|2.1.1.5.5.6.2. Juli NO TE ACOMPAÑA]] 
