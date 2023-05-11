@@ -1011,13 +1011,13 @@ Mike”.**
 
 Cris toma su mochila, se va al baño y llama a Juli.
 
-(if: $dateLocation is &quot;Sitio&quot; or $puntosJuli &lt;=4)[Sabes que ahora no tienes nada que hacer. Has perdido tu amistad con él. Pero como si fuera poco, has perdido la confianza de su hermana por no haberle dicho nada sobre el asunto. Nunca sabrás qué pasó anoche. 
+(if: $dateLocation is &quot;Sitio&quot; or $puntosJuli &lt;=4)[Sabes que ahora no tienes nada que hacer. Has perdido tu amistad con Cris. Pero como si fuera poco, has perdido la confianza de Juli por no haberle dicho nada sobre el asunto. Nunca sabrás qué pasó anoche. 
 
 A menos que lo intentes de nuevo.]
 
-(else:)[Aunque Cris trata de poner a su hermana en tu contra, ella aún confía en ti porque has sido firme con el pacto que has hecho. También habías discutido antes sobre el asunto, así que se considera superado el asunto.
+(else:)[Aunque Cris trata de poner a Juli en tu contra, ella aún confía en ti porque has sido firme con el pacto que has hecho. También habías discutido antes sobre el asunto, así que se considera superado.
 
-¿Quieres saber en otra posibilidad de lo que pasó anoche?]
+¿Quieres saber otra posibilidad de lo que pasó anoche?]
 
 [[Reiniciar el juego|Parte 2]] 
 
@@ -1031,13 +1031,13 @@ A menos que lo intentes de nuevo.]
 (if: ($puntosCris + $puntosCarisma) &gt;= 8)[
 [[─Ah vale, te espero.|2.3.5.2.2. Cris DEJA SU MOCHILA EN LA MESA]] ](else:)[ [[─Ah vale, tómate tu tiempo.|2.3.5.2.1. Cris SE LLEVA LA MOCHILA AL BAÑO]] ]
 (if: ($puntosJuli + $puntosCarisma) &gt;= 6)[
-[[─Huye del restaurante y encuéntrate con Juli|Final con Juli Feliz]] ]
+[[─Huye y encuéntrate con Juli|Final con Juli Feliz]] ]
 
 (set: $puntosCris to $puntosCris - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
 </tw-passagedata><tw-passagedata pid="109" name="2.3.5.2.A" tags="" position="4156,3207" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responder por qué fuiste a El Sitio).**]
 
-(css: &quot;color: white;&quot;)[**Cris:**] *¿Qué sospecha? ¿Que estuviste conmigo anoche? Bueno, pues eso ya lo sabe. ¿Y qué con él, acaso?*
+(css: &quot;color: white;&quot;)[**Cris:**] *¿Qué sospecha? ¿Que estuviste conmigo anoche? Bueno, pues eso ya lo sabe. ¿Y qué con ella, acaso?*
 
 [[─Hicimos un pacto, Cris. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]] 
 [[─Hicimos un pacto, Cris. Y mi amistad con ella es más importante.|2.3.5.2.C]]
@@ -1230,7 +1230,7 @@ Más bien, ¿por qué no te vas a descansar a la casa? A lo mejor se te viene al
 (set: $puntosCris to $puntosCris - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
 (if: $puntosCris + $puntosCarisma &lt;= 9)[
-(css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Cris y se hace difícil descubrir que pasó anoche.**]]</tw-passagedata><tw-passagedata pid="132" name="2.3.4.2.B" tags="" position="3757,3538" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] *¿En serio? En realidad estás mal, querido. Bien mal. Te doy otra oportunidad.*
+(css: &quot;color: orange;&quot;)[**¡Ojo! Estás perdiendo la confianza de Cris y se hace difícil descubrir que pasó anoche.**]]</tw-passagedata><tw-passagedata pid="132" name="2.3.4.2.B" tags="" position="3757,3538" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] *¿En serio? En realidad estás mal, cariño. Bien mal. Te doy otra oportunidad.*
 (css: &quot;color: red;&quot;)[**(-1 punto por no recordar su banda favorita).**]
 
 [[─1349|BANDA SÚPER INCORRECTA]]
@@ -1247,7 +1247,7 @@ Bueno, la verdad iba a ver a los teloneros, la banda tributo noventera. En fin..
 
 (css: &quot;color: #187FF5;&quot;)[*Ya no se me olvida. Pero de resto, lo olvidé completamente.*]
 
-(css: &quot;color: white;&quot;)[**Cris:**] *Ok. No sé si me estás jugando una broma, pero anoche me declaraste tu amor. Yo al comienzo no lo creía. Pero luego me convenciste. Quiero asegurarme que es real lo que sientes por mí.*
+(css: &quot;color: white;&quot;)[**Cris:**] *Ok. No sé si estás jugando conmigo, pero anoche me declaraste tu amor. Yo al comienzo no lo creía. Pero luego me convenciste. Quiero asegurarme que es real lo que sientes por mí.*
 
 [[─No, no es real. Nada de esto es real. Te pido que nos olvidemos de todo. No estaba en mí. Disculpa.|2.3.5.A]]
 [[─Disculpa, pero no sé de lo que hablas. Para ya con todo esto, te lo pido.|2.3.5.B]]
@@ -1261,7 +1261,7 @@ Bueno, la verdad iba a ver a los teloneros, la banda tributo noventera. En fin..
 
 (css: &quot;color: white;&quot;)[**Cris:**] *¿Estabas tan en las nubes? ¿Eso es todo lo que vas a decir? ¡Eres como todo el resto! ¡Te odio demasiado!*
 
-Cris sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con él. Le contará todo a Juli con todo el odio y rencor que te tiene, y ella te matará por herir a su hermano así.
+Cris sale deprisa, y ya has perdido la oportunidad de aclarar las cosas. Le contará todo a Juli con todo el odio y rencor que te tiene, y ella te matará por herir a Cris así.
 
 [[Fin del juego - Reiniciar|Parte 2]]
 
@@ -1270,7 +1270,7 @@ Cris sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con él.
 
 (css: &quot;color: white;&quot;)[**Cris:**] *No tienes nada de qué disculparte. ¿Por qué hay que parar? ¿A qué le tienes miedo?*
 
-[[─No es a qué sino a quién le tengo miedo. A Juli, tu hermana. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]]
+[[─No es a qué sino a quién le tengo miedo: a Juli. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]]
 [[─¿No lo sabes acaso? Juli no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]]
 
 (set: $puntosCris to $puntosCris - 1)
@@ -1281,7 +1281,7 @@ Cris sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con él.
 
 (css: &quot;color: white;&quot;)[**Cris:**] *No tienes nada de qué disculparte. ¿Por qué hay que parar? ¿A qué le tienes miedo?*
 
-[[─No es a qué sino a quién le tengo miedo. A Juli, tu hermana. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]] 
+[[─No es a qué sino a quién le tengo miedo: a Juli. Ella no puede enterarse de que tú y yo estamos en contacto.|2.3.5.1.A]] 
 [[─¿No lo sabes acaso? Juli no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]]
 
 (set: $puntosCris to $puntosCris + 1)
@@ -1301,7 +1301,7 @@ Cris sale deprisa, y ya has perdido la oportunidad de aclarar las cosas con él.
 ]
 </tw-passagedata><tw-passagedata pid="138" name="2.3.5.1.B" tags="" position="4303,3855" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por establecer con firmeza la razón de tu visita a Cris).**]
 
-(css: &quot;color: white;&quot;)[**Cris:**] *¿Le tienes miedo a Juli? Tómalo con calma, que si yo hablo con ella, estoy seguro que entenderá.*
+(css: &quot;color: white;&quot;)[**Cris:**] *¿Le tienes miedo a Juli? Tómalo con calma, que si yo hablo con ella, seguro entenderá.*
 
 (if: $dateLocation is &quot;Sitio&quot;)[ [[─Ya viste cómo te habló. Está furiosa, y sospecha de mí. Por eso fui a El Sitio, por si las dudas.|2.3.5.2.A]] ]
 [[─Ella y yo hicimos un pacto, Cris. Sé que debí decírtelo antes. Pero así son las cosas.|2.3.5.2.B]]
@@ -1718,8 +1718,8 @@ Ya que sabes qué pasó anoche y que has hecho las paces con Cris, es hora de vo
 (if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot; or $puntosJuli &gt;= 5)[Juli y tú siguen con una gran amistad durante toda la vida.]
 (else:)[Juli y tú siguen con una buena amistad, pero no mantienen mucho contacto por las ocupaciones de la vida.]
 
-(if: $hasDeletedCrisPhotos is true or $hasDeletedAllPhotos is true)[A Cris no le caes bien, pero sientes una satisfacción que has aventajado a Cris, y no hay nada que él pueda hacer.]
-(else:)[También has razonado con Cris al respecto, y él entiende las razones de tu pacto y lo respeta.]
+(if: $hasDeletedCrisPhotos is true or $hasDeletedAllPhotos is true)[A Cris no le caes bien, pero sientes una satisfacción que has aventajado a Cris, y no hay nada que pueda hacer.]
+(else:)[También has razonado con Cris al respecto, y entiende las razones de tu pacto y lo respeta.]
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
