@@ -969,7 +969,7 @@ No sé si estás bromeando conmigo, pero anoche me declaraste tu amor. Yo al com
 (set: $previousPassage to &quot;2.4. EL TELÉFONO DE Cris&quot;)</tw-passagedata><tw-passagedata pid="103" name="2.3.5.2.2.2. LA BILLETERA DE Cris" tags="" position="4817,3907" size="100,100">Ves que tiene una boleta del concierto de rock al que fuiste anoche. Pero tiene un autógrafo que dice: 
 
 **“Para Cris: 
-un fiel fan del Mejor Rock de la mejor década.
+Fiel fan del Mejor Rock de la mejor década.
 Mike”.**
 
 (css: &quot;color: lightblue;&quot;)[*Mike es el cantante de esa porquería de banda. ¿Se sacó un autógrafo y no me di cuenta? Bueno, si fuera mi banda favorita, haría lo mismo. Son unos simples teloneros, ¿qué más se puede esperar?
@@ -1309,7 +1309,7 @@ Cris sale deprisa, y ya has perdido la oportunidad de aclarar las cosas. Le cont
 
 (set: $puntosCris to $puntosCris + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
-</tw-passagedata><tw-passagedata pid="139" name="2.3.5.2.2. Cris DEJA SU MOCHILA EN LA MESA" tags="" position="4553,3703" size="100,100">Cris está muy confundido, y de la prisa que tenía para aclarar su mente en el baño, dejó su mochila en la mesa.
+</tw-passagedata><tw-passagedata pid="139" name="2.3.5.2.2. Cris DEJA SU MOCHILA EN LA MESA" tags="" position="4553,3703" size="100,100">Cris quiere aclarar su mente y va al baño. Por la prisa que tenía, dejó su mochila en la mesa.
 
 (if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
 [[Toma la mochila|2.3.5.2.2.1. TOMA LA MOCHILA]] ]
@@ -1321,7 +1321,7 @@ Cris sale deprisa, y ya has perdido la oportunidad de aclarar las cosas. Le cont
 [[Espera hasta que regrese|2.4.3 Ríndete]]
 
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que (no) comiste o bebiste...**]
-</tw-passagedata><tw-passagedata pid="140" name="2.3.5.2.1. Cris SE LLEVA LA MOCHILA AL BAÑO" tags="" position="4719,3660" size="100,100">Cris está muy confundido, y se lleva su mochila al baño. Ahí estaba su teléfono móvil, lo único que te podía decir qué pasó anoche. 
+</tw-passagedata><tw-passagedata pid="140" name="2.3.5.2.1. Cris SE LLEVA LA MOCHILA AL BAÑO" tags="" position="4719,3660" size="100,100">Cris quiere aclarar su mente y se lleva su mochila al baño. Ahí estaba su teléfono móvil, lo único que te podía decir qué pasó anoche. 
 
 Has perdido la oportunidad de hacerlo porque no tienes suficiente confianza con Cris.
 
@@ -1368,7 +1368,7 @@ $phoneCodeGuess
 ]
 (set: $phoneCodeGuess to &quot;&quot;)
 (set: $segundosReloj to $segundosReloj + 5)
-]</tw-passagedata><tw-passagedata pid="143" name="2.4.1.2. Entrar a la aplicación de fotos" tags="" position="4555,5065" size="100,100">Ves algunas fotos besándote con Cris, y otras bailando muy sugestivamente con él. Y hay muchas otras de Cris con otras personas que no te interesa ver.
+]</tw-passagedata><tw-passagedata pid="143" name="2.4.1.2. Entrar a la aplicación de fotos" tags="" position="4555,5065" size="100,100">Ves algunas fotos besándote con Cris, y otras bailando muy sugestivamente. Y hay muchas otras de Cris con otras personas que no te interesa ver.
 
 (css: &quot;color: lightblue&quot;)[*¡Ajá! Aquí está la prueba reina. Wow! Sí que no estaba en mí anoche. La verdad no recuerdo eso. Tengo que hacer algo con esto.*
 ]
@@ -1406,22 +1406,22 @@ Has borrado las fotos en las que apareces con Cris. Esa es demasiada casualidad,
 [[Apaga la pantalla del teléfono y mételo en la mochila.|2.4.1.5. metes el teléfono en la mochila]]
 (set: $hasDeletedCrisPhotos to true)
 ]
-</tw-passagedata><tw-passagedata pid="146" name="2.4.1.5. metes el teléfono en la mochila" tags="" position="4831,5365" size="100,100">(if: $hasDeletedCrisPhotos is true or $hasDeletedAllPhotos is true)[Cris vuelve resuelto a hablar contigo pero le interrumpes diciéndole con confianza: 
+</tw-passagedata><tw-passagedata pid="146" name="2.4.1.5. metes el teléfono en la mochila" tags="" position="4831,5365" size="100,100">(if: $hasDeletedCrisPhotos is true or $hasDeletedAllPhotos is true)[Cris vuelve a hablar contigo pero le interrumpes diciéndole con confianza: 
 
 (css: &quot;color: lightblue;&quot;)[*¿Cómo estás, Cris?*]
 
-(css: &quot;color: white;&quot;)[**Cris:**] Pues un poco inquieto por lo que me dijiste, la verdad. 
+(css: &quot;color: white;&quot;)[**Cris:**] Pues con un poco de inquietud por lo que me dijiste, la verdad. 
 
-[[─¿Cómo inquieto?|2.5. El comienzo del fin]] ]
+[[─¿Cómo con inquietud?|2.5. El comienzo del fin]] ]
 (else:)[ [[Habla con Cris para aclarar lo de anoche.|2.4.3 Ríndete]] ]</tw-passagedata><tw-passagedata pid="147" name="2.4.1.6. dejas el teléfono en la mesa" tags="" position="4204,5364" size="100,100">(if: $takenPhoto is false or $hasDeletedAllPhotos is false)[
 
-Cris vuelve del baño desconcertado por ver su teléfono sobre la mesa. Sospecha que has tratado de espiarle, pero no tienes más remedio que admitirlo. 
+Cris vuelve del baño con desconcierto por ver su teléfono sobre la mesa. Sospecha que has tratado de espiarle, pero no tienes más remedio que admitirlo. 
 
 Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con la total desconfianza de Juli y Cris, y tu vida se hace pedacitos. 
 
 [[Fin del juego - Reiniciar|Parte 2]]]
 
-(else:) [Cris vuelve del baño desconcertado por ver su teléfono sobre la mesa. Aunque tienes evidencia de la manipulación de Cris contra ti, no puedes acusarle de nada ante nadie porque él sabe que has ingresado a su teléfono sin autorización, y eso también es un delito. 
+(else:) [Cris vuelve del baño con extrañeza por ver su teléfono sobre la mesa. Aunque tienes evidencia de la manipulación de Cris contra ti, no puedes acusarle de nada ante nadie porque sabe que has ingresado a su teléfono sin autorización, y eso también es un delito. 
 
 Eventualmente tendrás problemas con la policía, y tendrás que aclarar tu situación legal. Juli está muy desilusionada contigo, y pierdes su amistad y posiblemente hasta tu libertad.
 
@@ -1545,7 +1545,7 @@ Todas estas canciones son de distintas décadas. Puede ser que sea:
 (set: $segundosReloj to $segundosReloj + 5)
 ]
 
-Bueno, una de estas puede ser la clave. Espero que funcione: 
+(css: &quot;color: lightblue&quot;)[*Bueno, una de estas puede ser la clave. Espero que funcione.*]
 
 [[Ingresa la clave|2.4.1 Ingresa la clave del teléfono de Cris]]
 [[Ver más bien las canciones de rock ligero |2.4.2.2.2.2 Rock ligero]]
@@ -1588,7 +1588,7 @@ Todas estas canciones son de distintas décadas. Puede ser que sea:
 (set: $segundosReloj to $segundosReloj + 5)
 ]
 
-Bueno, aquí puede estar la clave. Espero que funcione: 
+(css: &quot;color: lightblue&quot;)[*Bueno, aquí puede estar la clave. Espero que funcione.*]
 
 [[Ingresa la clave|2.4.1 Ingresa la clave del teléfono de Cris]]
 [[Ver más bien las canciones de rock pesado |2.4.2.2.2.1 Rock pesado]]
@@ -1598,13 +1598,13 @@ Bueno, aquí puede estar la clave. Espero que funcione:
 
 El que ha visto es de &#39;Mike&#39; y dice: 
 
-(css: &quot;color: yellow&quot;)[**Me alegra que ya tienes una nueva pareja, amigo. Y cómo le notas? Feliz?**]
+(css: &quot;color: yellow&quot;)[**Me alegra que ya tienes una nueva pareja. Y cómo le notas? Feliz?**]
 
 El que Cris ha enviado dice: 
 
-(css: &quot;color: blue&quot;)[**Nos encontraremos hoy como nueva pareja. Qué emoción!! :)) Pero a veces me desconcierta. No sé si de verdad quiere estar conmigo. Estoy seguro que le seduciré. Seguro. ;)**]
+(css: &quot;color: blue&quot;)[**Nos encontraremos hoy como nueva pareja. Qué emoción!! :)) Pero a veces me desconcierta. No sé si de verdad quiere estar conmigo. Le seduciré. Seguro. ;)**]
 
-(css: &quot;color: lightblue&quot;)[¿Por qué él está tan seguro? Todo esto me parece muy raro...]
+(css: &quot;color: lightblue&quot;)[¿Por qué dice eso Cris? Todo esto me parece muy raro...]
 
 [[Vuelve al menú anterior|2.4.1.1 Entra al teléfono de Cris]]
 
@@ -1756,9 +1756,9 @@ Te muestra algunas fotos tuyas con él bastante comprometedoras.
 [[─No tengo pruebas pero tampoco dudas de que me quieres. ¿Qué más da?|2.3.6.2. Cris no cree en tu supuesto amor]]
 [[─Sí, quiero estar contigo, pero como amigo. Me disculpo por si te armé falsas expectativas. En verdad que lo siento mucho.|Final con Cris destrozado]]</tw-passagedata><tw-passagedata pid="171" name="2.4.1.4.1. Ver el mensaje completo" tags="" position="4918,5029" size="100,100">&#39;Mike Polainas&#39; le escribió a Cris lo siguiente: 
 
-(css: &quot;color: yellow&quot;)[**&quot;Llevarás a tu nueva pareja al concierto. ¿Estás seguro que le agradará venir a vernos? Ni que le obligues va a venir. A menos que de verdad hagas lo que me dijiste el otro día... Ojo con eso, querido.&quot;**]
+(css: &quot;color: yellow&quot;)[**&quot;Llevarás a tu nueva pareja al concierto. ¿Es verdad que le agradará venir a vernos? Ni que le obligues va a venir. A menos que de verdad hagas lo que me dijiste el otro día... Cuidado con eso.&quot;**]
 
-(css: &quot;color: lightblue&quot;)[*¡¿Qué es esto?! De veras aquí hay algo muy oscuro. Pero si le pregunto a Cris directamente, él sospechará de mí. ¿Qué hago?*]
+(css: &quot;color: lightblue&quot;)[*¡¿Qué es esto?! De veras aquí hay algo muy oscuro. Pero si le pregunto a Cris directamente, sospechará de mí. ¿Qué hago?*]
 
 [[Síguele el juego a Cris para preguntarle luego|2.4.3 Ríndete]] 
 (if: $takenPhoto is false)[
@@ -1816,9 +1816,9 @@ Cris manipula su teléfono enfrente tuyo.
 
 (css: &quot;color: white;&quot;)[**Cris:**] Ya está. No hay pruebas de lo que me dices. Pero ya te he dicho que te voy a hundir. 
 
-[[─¿Ah, sí? ¿Cómo más entonces? Cobarde que eres.|Final con Cris destrozado]] ]</tw-passagedata><tw-passagedata pid="175" name="2.6. Confronta a Cris sobre las fotos" tags="" position="4503,5378" size="100,100">Cuando Cris vuelve, tú no te aguantas las ganas de reclamarle por esas fotos tan sugestivas que tiene contigo en su teléfono. Aún si hubieras conservado una copia de ellas para denunciarle ante la policía por una supuesta manipulación, él te contrademandaría por invasión de la privacidad de su teléfono. 
+[[─¿Ah, sí? ¿Cómo más entonces? Cobarde que eres.|Final con Cris destrozado]] ]</tw-passagedata><tw-passagedata pid="175" name="2.6. Confronta a Cris sobre las fotos" tags="" position="4503,5378" size="100,100">Cuando Cris vuelve, tú no te aguantas las ganas de reclamarle por esas fotos tan sugestivas que tiene contigo en su teléfono. Aún si hubieras conservado una copia de ellas para denunciarle ante la policía por una supuesta manipulación, Cris te contrademandaría por invasión de la privacidad de su teléfono. 
 
-Sería un proceso de palabra de una parte contra la otra, pierdes a tu amiga y posiblemente pierdes la libertad. ¡El desastre de tu vida!
+Sería un proceso de palabra de una parte contra la otra, pierdes a Juli y posiblemente pierdes la libertad. ¡El desastre de tu vida!
 
 [[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="176" name="Final amando a Cris" tags="" position="5763,4372" size="100,100">Has decidido amar a Cris. Le consideras como el amor de tu vida, y eso te hace muy feliz. 
 
@@ -1826,14 +1826,17 @@ Ya no crees que Cris sea el &quot;intocable&quot; hermano de Juli, y aunque pier
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="177" name="2.5. El comienzo del fin" tags="" position="4831,5514" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Inquieto porque no te has definido si me quieres o no. Y eso créeme que no me gusta nada. 
+[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="177" name="2.5. El comienzo del fin" tags="" position="4832.666666666667,5510.666666666667" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Con inquietud porque no te has definido si me quieres o no. Y eso créeme que no me gusta nada. 
 
-(css: &quot;color: #187FF5;&quot;)[*Claro que te quiero. Sólo que me confundo un poco porque es algo que nunca antes había sentido. Fue divertido anoche.
-Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*] 
+(css: &quot;color: #187FF5;&quot;)[*Claro que te quiero. Sólo que me confundo un poco porque es algo que nunca antes había sentido. Fue divertido anoche.*]
+
+(css: &quot;color: lightblue&quot;)[*Quiero que Cris vea su teléfono ahora mismo para que vea cómo va a sufrir. Que tenga que sacarlo de la mochila.*]
+
+(css: &quot;color: #187FF5;&quot;)[*Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*] 
 
 (css: &quot;color: white;&quot;)[**Cris:**] No, yo no perdí ninguna bufanda anoche. 
 
-(css: &quot;color: #187FF5;&quot;)[*Sí, yo te la vi puesta. La tuviste casi toda la noche. ¿Estabas borracho?*]
+(css: &quot;color: #187FF5;&quot;)[*Sí, yo te la vi puesta. La tuviste casi toda la noche. ¿Estabas con tragos?*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] ¿Yo? Para nada. De hecho, yo no uso bufandas porque suelo perderlas. Te puedo comprobar ahora mismo que no llevaba una anoche. 
 
@@ -1864,9 +1867,9 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 [[─¿Por qué lo piensas, Cris? ¿Qué pruebas tienes?|2.5.1.1 Acusa a Cris de calumnioso]]
 
-[[─Estás loco, Cris. A mí no me interesa hacerte daño.|2.5.1.2 Cris te acusa de ladrón]] ]
+[[─Estás demente, Cris. A mí no me interesa hacerte daño.|2.5.1.2 Cris te acusa de ladrón]] ]
 
-(else:)[ (css: &quot;color: #187FF5;&quot;)[*¿Cómo asi? ¿Qué pasó?*]
+(else:)[ (css: &quot;color: #187FF5;&quot;)[*¿Cómo así? ¿Qué pasó?*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] La verdad es que no lo entiendo. Todas mis fotos del teléfono... se perdieron. ¡Esto no puede ser!
 
@@ -1878,7 +1881,7 @@ Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*]
 
 [[─Jajaja... la cara de hacker que tengo yo ahora. ¡Lo que me faltaba!|2.5.2.3 Ríete de Cris a la cara]] 
 
-[[─Estás loco, Cris. A mí no me interesa hacerte daño.|2.5.1.2 Cris te acusa de ladrón]] ]</tw-passagedata><tw-passagedata pid="180" name="2.5.2 Respuesta sobre la nube" tags="" position="4882,5658" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¡Carajo! Yo pensé que las fotos ya estaban vinculadas a la nube. 
+[[─¿Y qué ganaría con eso?|2.5.1.2 Cris te acusa de ladrón]] ]</tw-passagedata><tw-passagedata pid="180" name="2.5.2 Respuesta sobre la nube" tags="" position="4882,5658" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¡Carajo! Yo pensé que las fotos ya estaban vinculadas a la nube. 
 
 (css: &quot;color: #187FF5;&quot;)[*Tú sabes que a veces la tecnología es caprichosa. Lo lamento mucho.*] 
 
