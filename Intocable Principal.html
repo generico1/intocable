@@ -1623,11 +1623,11 @@ Te sientes con algo de curiosidad con este último mensaje. ¿Qué quieres hacer
 [[Lee el correo completo|2.4.1.4.1. Ver el mensaje completo]]
 [[Vuelve al menú principal del teléfono|2.4.1.1 Entra al teléfono de Cris]]
 
-(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="158" name="2.4.3 Ríndete" tags="" position="5269,3978" size="100,100">Cris llega del baño, ahora muy pensativo. 
+(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="158" name="2.4.3 Ríndete" tags="" position="5269,3978" size="100,100">Cris llega del baño con una cara seria. 
 
 (css: &quot;color: #187FF5;&quot;)[*¿Estás bien?*]
 
-(css: &quot;color: white;&quot;)[**Cris:**] No mucho. Lo que me dijiste me deja algo inquieto.  
+(css: &quot;color: white;&quot;)[**Cris:**] No mucho. Lo que me dijiste me deja con mucha inquietud.  
 
 (if: ($puntosCris) &gt;= 8)[
 Pero vas a tener que decidir entre Juli o yo. Tú eliges. 
@@ -1637,7 +1637,7 @@ Pero vas a tener que decidir entre Juli o yo. Tú eliges.
 [[─Sí que eres insistente. Eso te lo reconozco. Y Juli no me ha dado sino dolores de cabeza. ¿Cómo sé que contigo es diferente?|2.4.3.3. Tratas de querer a Cris]] 
 ]
 (else:)[
-Pero no estoy dispuesto a rendirme tan fácilmente. Quiero luchar por nuestro amor. ¿Quieres hacerlo conmigo?
+Pero no quiero rendirme tan fácilmente. Voy a luchar por nuestro amor. ¿Lo harás conmigo?
 
 [[─Bien. Creo que no tengo nada que perder, salvo a Juli, mi mejor amiga.|Final con obsesión con Cris]]
 [[─No me quieres decir qué pasó anoche, y eso me molesta demasiado.|2.4.3.1. Convencer a Cris de no mostrar las fotos]]
@@ -1652,11 +1652,11 @@ Pero no estoy dispuesto a rendirme tan fácilmente. Quiero luchar por nuestro am
 
 [[─Sí, quiero estar contigo, pero en amistad. Me disculpo por si te armé falsas expectativas. En verdad que lo siento mucho.|Final con Cris destrozado]]
 
-(if: $shownPhoto is true)[ [[─Estás loco, Cris. No sé qué podrías hacer si no me junto contigo. La verdad es que no recuerdo nada de eso que me muestras. Date cuenta de lo que estás haciendo conmigo.|2.3.6.3. Cris puede ser consciente de lo que hará]] ]
+(if: $shownPhoto is true)[ [[─Estás demente, Cris. No sé qué podrías hacer si no me junto contigo. La verdad es que no recuerdo nada de eso que me muestras. Date cuenta de lo que estás haciendo conmigo.|2.3.6.3. Cris puede ser consciente de lo que hará]] ]
 
 (else:)[[[─No tengo pruebas pero tampoco dudas de que me quieres. ¿Qué más da?|2.3.6.2. Cris no cree en tu supuesto amor]] ]</tw-passagedata><tw-passagedata pid="160" name="2.3.6.2. Cris no cree en tu supuesto amor" tags="" position="5808,4163" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Es la respuesta más mediocre que he escuchado jamás. Seguro que así serás con todo el mundo. No quiero verte nunca más, te lo digo. 
 
-Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una relación de la cual no sabes nada en absoluto. Cris, en venganza, le entera a su hermana Juli de lo ocurrido. 
+Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una relación de la cual no sabes nada en absoluto. Cris, en venganza, le entera a Juli de lo ocurrido. 
 
 (if: ($puntosJuli) &lt;= 4)[Pierdes la confianza de la única familia que has tenido. Y eso para ti es perderlo todo.]
 
@@ -1664,16 +1664,16 @@ Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una rela
 
 [[Fin del juego - Reiniciar|Parte 2]]]</tw-passagedata><tw-passagedata pid="161" name="2.4.3.1. Convencer a Cris de no mostrar las fotos" tags="" position="5272,4279" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¿De verdad quieres saber qué pasó anoche? 
 
-¡Esto pasó anoche! Estoy seguro que a tu amiguita Manuelita no le van a gustar estas fotos tan... nuestras. 
+¡Esto pasó anoche! Estoy seguro que a tu amiguita Julicita no le van a gustar estas fotos tan... nuestras. 
 
-(css: &quot;color: yellow;&quot;)[*Cris muestra su teléfono con una foto que muestra mucha cercanía entre ustedes. Si alguien la viera, pensaría que son pareja.*]   
+(css: &quot;color: yellow;&quot;)[*Cris muestra su teléfono con una foto que muestra mucha cercanía entre ustedes. Si alguien la viera, pensaría que ustedes son pareja.*]   
  
 (if: $takenPhoto is false)[
 [[─Cris, esto no es propio de ti. Sé que quieres estar conmigo y podríamos intentarlo. No es necesario ponernos en estas.|2.3.6. Pre-obsesión con Cris]] 
 
 [[─Entiende que Juli no quiere que esté contigo. Me es imposible estar contigo aun si quisiera. Te pido por favor que borres esas fotos.|2.4.3.1.1. No convences a Cris]]
 
-[[─No se te olvide que Juli también es tu hermana. ¿No te importa lo que ella también siente por nosotros? ¿De veras quieres echarlo todo a perder?|2.3.6.3. Cris puede ser consciente de lo que hará]] ]
+[[─No se te olvide que Juli también es muy especial para ti. ¿No te importa lo que ella también siente lo mismo? ¿De veras quieres echarlo todo a perder?|2.3.6.3. Cris puede ser consciente de lo que hará]] ]
 
 (else:) [ 
 [[─Sé que me manipulaste, Cris. Y eso es gravísimo. He visto el mensaje de tu amiguito Mike. ¡Explícame ahora mismo qué pasó anoche, carajo!|2.3.6.1. Sobre el correo de Mike]] ]
@@ -1688,10 +1688,10 @@ Y así no te queda más remedio que irte de ese lugar. Fingiste amor en una rela
 (if: ($puntosCris) &gt;= 4) [
 (css: &quot;color: white;&quot;)[**Cris:**] Tal vez... tienes razón... la verdad no soy quién para obligarte a hacer algo que no quieres hacer. Ni mucho menos para perjudicar a mi hermana. Perdóname, te lo ruego. Y no le cuentes nada a Juli, por favor. 
 
-[[─Está bien, Cris. Olvidemos esto y dejémoslo en el pasado. Por el bien de todos.|Final con Juli Sospechosa]] ]
+[[─Está bien, Cris. Olvidemos esto y dejémoslo en el pasado. Por nuestro bien.|Final con Juli Sospechosa]] ]
 
 (else:)[
-(css: &quot;color: white;&quot;)[**Cris:**] ¿Tú crees que estoy loco? ¿Loco por ti, acaso? No es justo que me digas eso después de todo lo que he sacrificado por ti. Es hora de que tú también hagas un sacrificio, y te olvides de Juli.
+(css: &quot;color: white;&quot;)[**Cris:**] ¿Tú crees que estoy demente? ¿Demente por ti, acaso? No es justo que me digas eso después de todo lo que he sacrificado por ti. Es hora de que tú también hagas un sacrificio, y te olvides de Juli.
 
 [[─No quiero que Juli me mate por esto. Debemos irnos lejos de aquí, Cris.|2.3.6.2. Fuga resignada con Cris]]
 
@@ -1701,15 +1701,15 @@ Te fugas con Cris y se van de viaje por algunos días. Esa obsesión suya no dur
 
 (if: ($puntosJuli) &lt;= 4)[Tratas de que Juli no te denuncie por secuestro. O peor, que les encuentre. No hay muchas personas tan desconfiadas como ella...]
 
-(else:) [Juli está preocupada por ustedes dos. Les llama insistentemente durante dos días seguidos. Sospechará de ustedes, pero tiene la ilusión de que no estén juntos... aún.]
+(else:) [Juli está preocupada por ustedes dos. Les llama insistentemente durante dos días seguidos. Sospechará de ustedes, pero tiene la ilusión de que no sean pareja... aún.]
 
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
 [[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="165" name="Final con Juli Sospechosa" tags="" position="5964,4173" size="100,100">(if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot; or $puntosJuli &gt;= 7)[
-Ya aclaradas las cosas con Cris, él ha borrado cualquier evidencia de lo que pasó anoche. Y es hora de volver con Juli. Aunque la amistad se mantiene, ella no dejará de hacerle preguntas a Cris o averiguar por otros medios para saber qué pasó realmente. No hay nadie tan desconfiada como ella.
+Ya aclaradas las cosas con Cris, ha borrado cualquier evidencia de lo que pasó anoche. Y es hora de volver con Juli. Aunque la amistad se mantiene, ella no dejará de hacerle preguntas a Cris o averiguar por otros medios para saber qué pasó realmente. No hay nadie tan desconfiada como ella.
 ]
 (else:)[
-Ya que sabes qué pasó anoche y que has hecho las paces con Cris, es hora de volver con tu amistad con Juli. Ella te conoce muy bien. Tu mirada no miente. Sabes que tu amistad con ella ya no podrá ser igual. 
+Ya que sabes qué pasó anoche y ahora que has hecho las paces con Cris, es hora de volver a tu amistad con Juli. Ella te conoce muy bien. Tu mirada no miente. Sabes que tu amistad con ella ya no podrá ser igual. 
 ]
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
@@ -1723,10 +1723,10 @@ Ya que sabes qué pasó anoche y que has hecho las paces con Cris, es hora de vo
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[Reiniciar juego desde el principio|Despierta]]</tw-passagedata><tw-passagedata pid="167" name="Final con Cris destrozado" tags="" position="6252,3860" size="100,100">Cris está profundamente desilusionado de ti. Rencoroso, publica las fotos en redes sociales.
+[[Reiniciar juego desde el principio|Despierta]]</tw-passagedata><tw-passagedata pid="167" name="Final con Cris destrozado" tags="" position="6252,3860" size="100,100">Cris siente mucha decepción por ti. Por rencor también publica las fotos en redes sociales.
 
 (if: ($puntosJuli) &lt;= 4)
-[Por supuesto, Juli se entera, y con ello has perdido el favor de los dos. No te queda otro remedio que irte lejos, a menos que quieras que Juli te reclame por esto de maneras no muy amables...]
+[Por supuesto, Juli se entera, y por eso has perdido el favor de Juli y de Cris. No te queda otro remedio que irte lejos, a menos que quieras que Juli te reclame por esto de maneras no muy amables...]
 
 (else:)[Juli no da crédito a lo que ve. Le habías aclarado todo, pero las pruebas son contundentes. Está dolida contigo por no respetar el pacto. Decide romper su amistad contigo de manera razonable aunque sabes que si te la encuentras en el barrio, habrá problemas. Y muy serios.] 
 
@@ -1744,17 +1744,17 @@ La más importante de todas: perder la amistad de Juli, tu mejor amiga.
 
 (css: &quot;color: white;&quot;)[**Cris:**] Lealtad es lo que he demostrado contigo cuando me has pedido que te aclare qué pasó anoche. Y eso que no he publicado esto: 
 
-Te muestra algunas fotos tuyas con él bastante comprometedoras. 
+Te muestra algunas fotos tuyas con Cris bastante comprometedoras. 
 
 [[─Debes creerme cuando te digo que no recuerdo nada de lo que pasó anoche. Piensa en lo que vas a hacer, Cris, te lo pido.|2.3.6.3. Cris puede ser consciente de lo que hará]]
 
-[[─Piensa también en tu hermana, en Juli. ¿De verdad quieres arruinarlo todo para todos? Te exijo que borres esas fotos ya mismo.|2.4.3.1.1. No convences a Cris]]</tw-passagedata><tw-passagedata pid="170" name="2.4.3.3. Tratas de querer a Cris" tags="" position="5611,4283" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Porque sabes que nadie te ha demostrado más lealtad que yo, corazón. Esto es diferente porque soy diferente. Date cuenta que somos tal para cual, cariño. 
+[[─Piensa también en Juli. ¿De verdad quieres arruinarlo todo? Te exijo que borres esas fotos ya mismo.|2.4.3.1.1. No convences a Cris]]</tw-passagedata><tw-passagedata pid="170" name="2.4.3.3. Tratas de querer a Cris" tags="" position="5611,4283" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Porque sabes que nadie te ha demostrado más lealtad que yo, corazón. Esto es diferente porque soy diferente. Date cuenta que somos tal para cual, cariño. 
 
 ¿Reconoces el amor que te he tenido siempre?
 
 [[─Totalmente, Cris. Sé que tu amor ha sido verdadero desde siempre. Y quiero amarte en todo momento.|Final amando a Cris]]
 [[─No tengo pruebas pero tampoco dudas de que me quieres. ¿Qué más da?|2.3.6.2. Cris no cree en tu supuesto amor]]
-[[─Sí, quiero estar contigo, pero como amigo. Me disculpo por si te armé falsas expectativas. En verdad que lo siento mucho.|Final con Cris destrozado]]</tw-passagedata><tw-passagedata pid="171" name="2.4.1.4.1. Ver el mensaje completo" tags="" position="4918,5029" size="100,100">&#39;Mike Polainas&#39; le escribió a Cris lo siguiente: 
+[[─Sí, quiero estar contigo, pero en amistad. Me disculpo por si te armé falsas expectativas. En verdad que lo siento mucho.|Final con Cris destrozado]]</tw-passagedata><tw-passagedata pid="171" name="2.4.1.4.1. Ver el mensaje completo" tags="" position="4918,5029" size="100,100">&#39;Mike Polainas&#39; le escribió a Cris lo siguiente: 
 
 (css: &quot;color: yellow&quot;)[**&quot;Llevarás a tu nueva pareja al concierto. ¿Es verdad que le agradará venir a vernos? Ni que le obligues va a venir. A menos que de verdad hagas lo que me dijiste el otro día... Cuidado con eso.&quot;**]
 
@@ -1770,11 +1770,11 @@ Te muestra algunas fotos tuyas con él bastante comprometedoras.
 
 (set: $segundosReloj to $segundosReloj + 60)
 (set: $hasViewedCrisEmail to true)
-</tw-passagedata><tw-passagedata pid="172" name="Final caótico de Cris" tags="" position="5573,4580" size="100,100">Cris no tiene otra opción que ir contigo a la estación de policía. Él es humillado y posiblemente irá a prisión por un tiempo. 
+</tw-passagedata><tw-passagedata pid="172" name="Final caótico de Cris" tags="" position="5573,4580" size="100,100">Cris no tiene otra opción que ir contigo a la estación de policía, y posiblemente irá a prisión por un tiempo. 
 
-(if: ($puntosJuli) &gt;= 4) [Juli se entera, y aunque desconfía de ti porque estableciste contacto con su querido hermano, se entera de toda la verdad. Le duele mucho saber que su hermano era una persona bastante manipuladora. Te mantuviste firme en tu pacto, pero aún hay dudas. Y eso también te duele mucho.]
+(if: ($puntosJuli) &gt;= 4) [Juli se entera, y aunque desconfía de ti porque estableciste contacto con Cris, se entera de toda la verdad. Le duele mucho saber que Cris era una persona así de manipuladora. Te mantuviste firme en tu pacto, pero aún hay dudas. Y eso también te duele mucho.]
 
-(else:) [Vuelves a tener una amistad con Juli, pero sólo por un tiempo porque desconfía mucho de ti. Y decides separarte de ella. El recuerdo de esa familia te rompe el corazón. Tal vez sea lo mejor para ti, quién sabe.]
+(else:) [Vuelves a tener una amistad con Juli, pero sólo por un tiempo porque desconfía mucho de ti. Y decides separarte de ella. El recuerdo de esa amistad te rompe el corazón. Tal vez sea lo mejor para ti, quién sabe.]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
 Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
@@ -1783,13 +1783,13 @@ Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 
 [[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="173" name="Final neutro diplomático" tags="" position="5350,4579" size="100,100">Cris se humilla ante ti y tiene que confesarte que te ha manipulado para ir al concierto contigo. 
 
-Pensando en el bienestar tuyo y de Juli, tu mejor amiga, le pides a Cris que borre cualquier evidencia de anoche, se olviden de esta bochornosa situación, y que nunca más te pida estar con él. 
+Pensando en el bienestar tuyo y de Juli, tu mejor amiga, le pides a Cris que borre cualquier evidencia de anoche, se olviden de esta bochornosa situación, y que nunca más te pida nada más. 
 
 (if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot;)[ 
 Mantienes tu relación con Juli, y nada ha pasado. Se aman muchísimo mientras Cris ya es cosa del pasado.
 ]
 (else:)[
-Hablas con Juli como si nada, pero ella aún sospecha de ti. Quiere preguntarle a Cris qué pasa, pero él la evade todo el tiempo. La relación está enrarecida. Sabes que no va a volver a ser igual.
+Hablas con Juli como si nada, pero ella aún sospecha de ti. Quiere preguntarle a Cris qué pasa, pero Cris la evade todo el tiempo. La relación está enrarecida. Sabes que no va a volver a ser igual.
 ]
 
 **¡HAS LLEGADO AL FINAL DE &#39;INTOCABLE&#39;!
@@ -1806,9 +1806,11 @@ Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 
 (if: $takenPhoto is true)[ 
 
+Le muestras a Cris la foto que has tomado del mensaje de Mike:
+
 [[─Dime la verdad y haremos de cuenta que aquí no ha pasado nada.|Final neutro diplomático]]
 
-[[─Ven conmigo a la estación de policía, y ahí les explicarás todo. ¡Quien te va a hundir soy yo, desgraciado!|Final caótico de Cris]] ]
+[[─Ven conmigo a la estación de policía, y ahí les explicarás todo. ¡Quien te va a hundir soy yo!|Final caótico de Cris]] ]
 
 (else:)[(css: &quot;color: #187FF5;&quot;)[*Mike te decía que tenías una nueva pareja, que supongo soy yo, y que ibas a hacer algo que le dijiste el otro día que harías. Explícate, Cris.*] 
 
@@ -1822,7 +1824,7 @@ Sería un proceso de palabra de una parte contra la otra, pierdes a Juli y posib
 
 [[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="176" name="Final amando a Cris" tags="" position="5763,4372" size="100,100">Has decidido amar a Cris. Le consideras como el amor de tu vida, y eso te hace muy feliz. 
 
-Ya no crees que Cris sea el &quot;intocable&quot; hermano de Juli, y aunque pierdas la amistad de tu mejor amiga, harás lo posible para luchar por tu amor por él. 
+Ya no crees que Cris sea la persona &quot;intocable&quot; de Juli, y aunque pierdas la amistad de tu mejor amiga, harás lo posible para luchar por tu amor a Cris. 
 
 ¿Quieres saber otra versión de lo que pasó anoche? Intenta completar el juego otra vez:
 
