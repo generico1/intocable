@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -66,7 +66,7 @@ Te despiertas. Tienes dolor de cabeza y de estómago. ¿Qué haces?
 
 (css: &quot;color: #187FF5;&quot;)[¡Uy, qué resaca! ¿qué pasó anoche, dónde estaba?]
 
-(link-goto: &quot;Averigua qué pasó&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="8" name="Sal de la cama" tags="" position="810.6666666666666,347.3333333333333" size="100,100">Estás en tu habitación. (if: $itemClothes&#39;s isCarried is false and $hasBathed is false) [No te diste cuenta que te dormiste con ropa.] 
+(link-goto: &quot;Averigua qué pasó&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="8" name="Sal de la cama" tags="" position="810,347" size="100,100">Estás en tu habitación. (if: $itemClothes&#39;s isCarried is false and $hasBathed is false) [No te diste cuenta que te dormiste con ropa.] 
 (if: $itemClothes&#39;s isCarried is false)[
 Hay ropa limpia en el armario. [[Ve al armario.]] 
 ]
@@ -88,13 +88,13 @@ Hay dos puertas, una al baño y la otra a la sala. [[Ve al baño.|Ve al baño]] 
 ] (set: $puntosCarisma to $puntosCarisma + 1)]
 (link-goto: &quot;Ve a ponerte aún mejor&quot;, $previousPassage)
 
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="10" name="cámbiate de ropa sucio" tags="" position="167,851.3333333333334" size="100,100">(set:$itemClothes&#39;s isCarried to true) (css: &quot;color: red;&quot;)[**(-1 punto por ponerte ropa sin bañarte).**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="10" name="cámbiate de ropa sucio" tags="" position="167,851" size="100,100">(set:$itemClothes&#39;s isCarried to true) (css: &quot;color: red;&quot;)[**(-1 punto por ponerte ropa sin bañarte).**]
 
 Bueno, no hueles tan mal. Pero no es lo ideal estar así.
 
 (link-goto: &quot;Sigue como anoche&quot;, $previousPassage)
 (set: $puntosCarisma to $puntosCarisma - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="11" name="Ve a ducharte" tags="" position="842.6666666666666,689.3333333333334" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por tomar un baño).**]
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="11" name="Ve a ducharte" tags="" position="842,689" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por tomar un baño).**]
 
 Con el baño pareces una persona nueva. Ahora ve por ropa limpia.
 
@@ -107,13 +107,13 @@ Pero por alguna razón todavía te sientes un poquito...
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma
 (set: $hasBathed to true)</tw-passagedata><tw-passagedata pid="12" name="Mira el mensaje" tags="" position="1867,449" size="100,100">(if: $calledCris is true) [ (goto: &quot;Mensaje Cris amable&quot;) [[Mensaje Cris amable]] ]
 
-(else:) [ (goto: &quot;Mensaje Cris indiferente&quot;) [[Mensaje Cris indiferente]] ]</tw-passagedata><tw-passagedata pid="13" name="Responder mensaje" tags="" position="1614.3333333333333,770.3333333333334" size="100,100">(set: $textedCris to true)
+(else:) [ (goto: &quot;Mensaje Cris indiferente&quot;) [[Mensaje Cris indiferente]] ]</tw-passagedata><tw-passagedata pid="13" name="Responder mensaje" tags="" position="1614,770" size="100,100">(set: $textedCris to true)
 (css: &quot;color: lightblue;&quot;)[*¿“Mi amor”? ¿“Anoche fue increíble”? Ni Juli ni nadie se puede enterar de esto. ¡¿Le dediqué una canción?! ¡Qué vergüenza!*]
 
 No recuerdas con claridad lo que pasó anoche. ¿Qué haces? 
 
 [[Responde amable|Respondes amigablemente]]
-[[Responde distante|Respondes con un insulto]]</tw-passagedata><tw-passagedata pid="14" name="No responder mensaje" tags="" position="1887.6666666666667,774" size="100,100">(css: &quot;color: lightblue;&quot;)[*¿En serio, Cris?*] La verdad no te acuerdas de nada de lo que pasó anoche. 
+[[Responde distante|Respondes con un insulto]]</tw-passagedata><tw-passagedata pid="14" name="No responder mensaje" tags="" position="1887,774" size="100,100">(css: &quot;color: lightblue;&quot;)[*¿En serio, Cris?*] La verdad no te acuerdas de nada de lo que pasó anoche. 
 
 Tienes ganas de responderle, pero es muy extraño que Cris tenga tanta confianza contigo. ¿Será que sí pasó algo entre ustedes?
 
@@ -126,7 +126,7 @@ Cris comienza a llamar con insistencia, pero ahora no tienes cabeza para respond
 
 [[Deja el teléfono|Deja el teléfono]]
 (set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="16" name="Respondes con un insulto" tags="" position="1700,923.6666666666667" size="100,100">Tú escribes: (css: &quot;color: white;&quot;)[**“Hola, Cris. En serio que estoy con mucho cansancio ahora. Te llamo después”.**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="16" name="Respondes con un insulto" tags="" position="1700,923" size="100,100">Tú escribes: (css: &quot;color: white;&quot;)[**“Hola, Cris. En serio que estoy con mucho cansancio ahora. Te llamo después”.**]
 
 (css: &quot;color: red;&quot;)[**(-1 punto por responder de manera poco diplomática).**]
 
@@ -141,7 +141,7 @@ Ahora, a aliviar esa resaca. ]
 (else:)[Sigue averiguando más sobre anoche.]
 
 (if: $inBed is true)[ [[Levántate|Sal de la cama]] ]
-(else:)[ [[Da una vuelta por la habitación|Sal de la cama]] ]</tw-passagedata><tw-passagedata pid="19" name="Mira las llamadas" tags="" position="1411.6666666666667,1233.3333333333333" size="100,100">**Tienes 13 llamadas perdidas de Cris.**
+(else:)[ [[Da una vuelta por la habitación|Sal de la cama]] ]</tw-passagedata><tw-passagedata pid="19" name="Mira las llamadas" tags="" position="1411,1233" size="100,100">**Tienes 13 llamadas perdidas de Cris.**
 **Tienes 2 llamadas perdidas de Juli.**
 
 (css: &quot;color: lightblue;&quot;)[*Juli es mi mejor amiga, y con Cris tiene una relación muy cercana, de hermandad y de complicidad. Juli me ha ayudado mucho en mis momentos más difíciles y hasta ahora había establecido un contacto así de estrecho con Cris. Cris también me quiere (?). Tengo que averiguarlo.*]
@@ -151,7 +151,7 @@ Uh oh. A tu mejor amiga no le va a gustar que Cris te llamara. Ella específicam
 (if: $calledJuli is false)[ [[Llama a Juli]] ]
 (if: $calledCris is false)[ [[Llama a Cris]] ]
 
-[[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="20" name="Llama a Juli" tags="" position="1517,1379.3333333333333" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con tu amiga por llamarla).**]
+[[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="20" name="Llama a Juli" tags="" position="1517,1379" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto con tu amiga por llamarla).**]
 
 No contesta. ¿Qué haces?
 
@@ -244,7 +244,7 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 [[─Ya. Comprendo.|&quot;Sí, sí. Entiendo.&quot;]]
 [[─Supongo que está bien.|&quot;Sí, me parece bien. No hay problema.&quot;]]
 (set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="31" name="Tienes razón. ¿Entonces qué propones?" tags="" position="2979.3333333333335,1443.6666666666667" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no tomar la iniciativa).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="31" name="Tienes razón. ¿Entonces qué propones?" tags="" position="2979,1443" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no tomar la iniciativa).**]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *Claro, vamos a El Sitio. Es el lugar favorito de las parejas.* 
 
@@ -292,7 +292,7 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 [[─Ya, ¿pero planes de qué o qué?|&quot;Ya, ¿pero planes de qué o qué?&quot;]] 
 
 (set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="36" name="&quot;Nada, me estaba alistando.&quot;" tags="" position="2236.6666666666665,1092.3333333333333" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder algo que Cris cree muy improbable).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="36" name="&quot;Nada, me estaba alistando.&quot;" tags="" position="2236,1092" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responder algo que Cris cree muy improbable).**]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *Ya, claro. Espero que te hayas arreglado para encontrarnos ahora, ¿verdad?*
 
@@ -396,11 +396,11 @@ Hay algo debajo de las sábanas... ¡Tu billetera!
 (set:$itemWallet&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)] 
 	  (link-goto: &quot;Busca más cosas en la habitación&quot;, $previousPassage)
   ]
-]</tw-passagedata><tw-passagedata pid="48" name="Agáchate y mira." tags="" position="1104.6666666666667,530.3333333333334" size="100,100">Hay polvo y memorias debajo de la cama y... zapatos limpios, por suerte.
+]</tw-passagedata><tw-passagedata pid="48" name="Agáchate y mira." tags="" position="1104,530" size="100,100">Hay polvo y memorias debajo de la cama y... zapatos limpios, por suerte.
 
 (if: (($hasBathed is true) or ($itemClothes&#39;s isCarried is true)) and ($itemShoes&#39;s isCarried is false))[ [[Ponte los zapatos|Ponte los zapatos]] ]
 (else:)[ [[Mira los zapatos|Mirar los zapatos]] ]
-(link-goto: &quot;Levántate&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Cris indiferente" tags="" position="1774.6666666666667,617" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no llamar antes a Cris).**]
+(link-goto: &quot;Levántate&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Cris indiferente" tags="" position="1774,617" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no llamar antes a Cris).**]
 
 (css: &quot;color: white;&quot;)[**Cris:** *“Hola. Espero hayas amanecido muy bien. Anoche fue muy especial. Quiero asegurarme de que sí sientes algo por mí, a ver si tenemos algo de verdad. Llámame pronto”.*] 
 
@@ -458,7 +458,7 @@ Este es tu punto de control, y si tienes que reiniciar, vas a empezar desde aqu�
 [[Deja el teléfono|Deja el teléfono]]
 (set: $puntosCris to $puntosCris + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
-(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="54" name="Toma agua" tags="" position="693.6666666666666,686.3333333333334" size="100,100">Llenas el vaso con agua del lavamanos y bebes como si no hubiera mañana. Ya te sientes un poco mejor. (set:$hasDrunkWater to true)
+(set: $dateLocation to &quot;Tinta&quot;)</tw-passagedata><tw-passagedata pid="54" name="Toma agua" tags="" position="693,686" size="100,100">Llenas el vaso con agua del lavamanos y bebes como si no hubiera mañana. Ya te sientes un poco mejor. (set:$hasDrunkWater to true)
 
 (css: &quot;color: green;&quot;)[**(+1 punto por beber agua para el dolor de cabeza).**]
 (set: $puntosCarisma to $puntosCarisma + 1)
@@ -471,7 +471,7 @@ Has saciado tu sed, pero por hacerlo con mucha prisa se ha regado parte del jugo
 
 [[Ve a la cocina|Ve a la cocina]]
 (set: $hasDrunkJuice to true)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="56" name="Ve al baño" tags="" position="747.6666666666667,516" size="100,100">Estás en el baño.
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="56" name="Ve al baño" tags="" position="747,516" size="100,100">Estás en el baño.
 
 (if: $itemGlass&#39;s isCarried is false) [Hay un vaso en la gaveta.] (if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo.&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)] ]
 (if: (($itemGlass&#39;s isCarried is true) and ($hasDrunkWater is false)))[
@@ -479,7 +479,7 @@ Has saciado tu sed, pero por hacerlo con mucha prisa se ha regado parte del jugo
 (if: ($hasBathed is false) and ($itemClothes&#39;s isCarried is false))[ Necesitas bañarte y cambiarte de ropa.
 
 [[Ve a ducharte|Ve a ducharte]] ]
-(link-goto: &quot;Regresar a la habitación para ponerte mejor&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="57" name="Ve a la sala" tags="" position="3476,574.3333333333334" size="100,100">Estás en la sala.
+(link-goto: &quot;Regresar a la habitación para ponerte mejor&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="57" name="Ve a la sala" tags="" position="3476,574" size="100,100">Estás en la sala.
 
 (if: $calledCris is false) [¿Qué haces? ¿A dónde vas?  Tal vez debes hablar con alguien...]
 (else:)[Tienes un poco de hambre, pero no quieres estar mucho tiempo en casa.]
@@ -497,7 +497,7 @@ Ah, zapatos decentes. Te quedan muy bien, tal como lo pensaste.[(set: $selectedI
 
 (link-goto: &quot;Levántate ahora con confianza&quot;, $previousPassage)
 (set: $puntosCarisma to $puntosCarisma + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="60" name="Mirar los zapatos" tags="" position="1186.6666666666667,687" size="100,100">Son zapatos más casuales, pero más apropiados. Debes vestirte bien para lucirlos.
+(css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="60" name="Mirar los zapatos" tags="" position="1186,687" size="100,100">Son zapatos más casuales, pero más apropiados. Debes vestirte bien para lucirlos.
 
 (link-goto: &quot;Ve y alístate bien&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="61" name="Ve al armario." tags="" position="169,544" size="100,100">Ves una camisa a medio planchar, un pantalón y unos tenis más bien sucios. 
 
@@ -546,7 +546,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 (set: $hasDrunkWater to $part2SavedState&#39;s hasDrunkWater)
 (set: $hasDrunkJuice to $part2SavedState&#39;s hasDrunkJuice)
 (set: $hasEatenChicken to $part2SavedState&#39;s hasEatenChicken)
-(set: $hasEatenSandwich to $part2SavedState&#39;s hasEatenSandwich)</tw-passagedata><tw-passagedata pid="67" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2088.6666666666665,2370.3333333333335" size="100,100">¡Bien! Pagaste el recorrido completo. (if: $dateLocation is &quot;Tinta&quot;)[Pero apenas te queda dinero para ir a otro lugar, en caso de que sea necesario.]
+(set: $hasEatenSandwich to $part2SavedState&#39;s hasEatenSandwich)</tw-passagedata><tw-passagedata pid="67" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2088,2370" size="100,100">¡Bien! Pagaste el recorrido completo. (if: $dateLocation is &quot;Tinta&quot;)[Pero apenas te queda dinero para ir a otro lugar, en caso de que sea necesario.]
 
 (if: $dateLocation is &quot;Sitio&quot;) [ 
  [[Entra a El Sitio|2.2. Cris EN EL SITIO]]
@@ -560,7 +560,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 
 (if: $hasPaidTaxi is true) [ [[─Ven, que te invito a tomar lo que quieras.|2.1.1.1.A]] ]
 (elseif: $textedJuli is true) [ [[─¿Viste mi mensaje?|2.1.1.1.B]] ]
-(else:)[ [[─Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.1.1.C]] ]</tw-passagedata><tw-passagedata pid="69" name="2.1.2. Juli CAMINA" tags="" position="2786.3333333333335,2569" size="100,100">Mira quién viene caminando casualmente… ¡Es Juli!
+(else:)[ [[─Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.1.1.C]] ]</tw-passagedata><tw-passagedata pid="69" name="2.1.2. Juli CAMINA" tags="" position="2786,2569" size="100,100">Mira quién viene caminando casualmente… ¡Es Juli!
 
 ¿Qué haces?
 
@@ -625,7 +625,7 @@ Dices: (css: &quot;color: #187FF5;&quot;)[Hola, Cris. Estoy aqui con Juli.]
 [[─De hecho lo es. Si me quieres conocer, conóceme en cualquier lugar.|2.2.1.B]] 
 [[─¿Acaso me estás diciendo que soy una persona ordinaria? Muestra respeto a tus mayores, jajaja.|2.2.1.C]]
 
-(set: $visitedElSitio to true)</tw-passagedata><tw-passagedata pid="76" name="2.2.1.1. VES A Juli EN EL SITIO" tags="" position="1561.6666666666667,2919.3333333333335" size="100,100">¡Atención! Juli está cerca, pero no te ve. Está pidiendo un café. Ya sabes qué pasará si te ve con Cris. ¿Qué haces?
+(set: $visitedElSitio to true)</tw-passagedata><tw-passagedata pid="76" name="2.2.1.1. VES A Juli EN EL SITIO" tags="" position="1561,2919" size="100,100">¡Atención! Juli está cerca, pero no te ve. Está pidiendo un café. Ya sabes qué pasará si te ve con Cris. ¿Qué haces?
 
 (css: &quot;color: #187FF5;&quot;)[*Carajo, Juli está aquí. Vámonos de aquí. ¡Ya!*]
 
@@ -640,7 +640,7 @@ Dices: (css: &quot;color: #187FF5;&quot;)[Hola, Cris. Estoy aqui con Juli.]
 (css: &quot;color: white;&quot;)[**Cris:**] *Mira quién está aquí si no es mi Juli. Vaya que este es El Sitio de ustedes dos. Sería interesante conocer cómo eres con tu gran amiga.*
 
 [[─Sí, claro. Pero después. Te cuento luego.|2.2.2. Juli TE SORPRENDE HUYENDO]] 
-[[─Claro, totalmente. Sigamos entonces.|2.2.2.1. ENFRENTA CON Cris A Juli CON CONFIANZA]] ]</tw-passagedata><tw-passagedata pid="77" name="2.2.2. Juli TE SORPRENDE HUYENDO" tags="" position="1527.6666666666665,3092.6666666666665" size="100,100">Juli te ve tratando de huir.
+[[─Claro, totalmente. Sigamos entonces.|2.2.2.1. ENFRENTA CON Cris A Juli CON CONFIANZA]] ]</tw-passagedata><tw-passagedata pid="77" name="2.2.2. Juli TE SORPRENDE HUYENDO" tags="" position="1527,3092" size="100,100">Juli te ve tratando de huir.
 
 (css: &quot;color: red;&quot;)[**(-1 punto Juli por intentar huirle).**] 
 
@@ -651,7 +651,7 @@ Al ver la reacción de Juli, sales a correr como la persona cobarde que eres. Cr
 [[Fin del juego - Reiniciar|Parte 2]]
 
 (set: $puntosJuli to $puntosJuli - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="2372.333333333333,2274.3333333333335" size="100,100">El taxista te pide el dinero de tu recorrido. 
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="2372,2274" size="100,100">El taxista te pide el dinero de tu recorrido. 
 (if: $itemWalletisCarried is true) [ [[Paga la carrera |2.1.1. TAXI CON MI DINERO EN EL SITIO]] ] 
 (else:) [Olvidaste tu billetera. ¡Qué mal!
 
@@ -744,7 +744,7 @@ Cris muestra algunas fotos en las que le acompañas a la fiesta de anoche. Algun
 (set: $puntosCris to $puntosCris - 1)
 (set: $puntosJuli to $puntosJuli + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
-(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="87" name="2.3. LLEGAS AL CAFÉ TINTA" tags="" position="3508.6666666666665,2278.3333333333335" size="100,100">El taxista te pide el dinero de tu recorrido. 
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="87" name="2.3. LLEGAS AL CAFÉ TINTA" tags="" position="3508,2278" size="100,100">El taxista te pide el dinero de tu recorrido. 
 (if: $itemWalletisCarried)[
 (if: $examinedWallet is false)[(link-goto: &quot;Examinar Billetera&quot;, &quot;Mira la billetera&quot;) (set: $previousPassage to &quot;2.3. LLEGAS AL CAFÉ TINTA&quot;)
 ] [[Paga el recorrido|2.3.1. PAGAR TAXI AL CAFÉ TINTA]] ]
@@ -914,7 +914,7 @@ No sé si estás bromeando conmigo, pero anoche me declaraste tu amor. Yo al com
 [[─Aún no creo que hice todo eso. Creo que todo esto es un malentendido. Te pido por favor que me disculpes.|2.3.5.C]] 
 
 (set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="100" name="2.3.5.2.3. COME EN CAFÉ TINTA" tags="" position="4709.666666666667,3795.6666666666665" size="100,100">Has comido algo, pero pierdes minutos valiosos. 
+(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="100" name="2.3.5.2.3. COME EN CAFÉ TINTA" tags="" position="4709,3795" size="100,100">Has comido algo, pero pierdes minutos valiosos. 
 
 (set: $segundosReloj to $segundosReloj + 150)
 
@@ -962,7 +962,7 @@ Mike”.**
 [[─Para nada. Entremos y hablemos.|2.2.1.1. VES A Juli EN EL SITIO]]
 
 (set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="105" name="2.2.1.B" tags="" position="1734.6666666666667,2709" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por hablar con honestidad).**] 
+(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="105" name="2.2.1.B" tags="" position="1734,2709" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por hablar con honestidad).**] 
 
 (css: &quot;color: white;&quot;)[**Cris:**] *Me gusta tu confianza. Me siento mejor contigo, cariño. Sigamos.* 
 
@@ -976,7 +976,7 @@ Mike”.**
 [[Entra a El Sitio|2.2.1.1. VES A Juli EN EL SITIO]]
 
 (set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="107" name="2.3.5.2.C" tags="" position="4748,3493.3333333333335" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por mostrar más lealtad a Juli).**]
+(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="107" name="2.3.5.2.C" tags="" position="4748,3493" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por mostrar más lealtad a Juli).**]
 (css: &quot;color: red;&quot;)[**(-1 punto por mostrar menos lealtad a Cris).**]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *¿Un pacto? Bien, pues tengo que aclarar eso con ella ahora mismo. Debiste decírmelo antes de que me ilusionaras anoche.*
@@ -1053,7 +1053,7 @@ A menos que lo intentes de nuevo.]
 
 [[─Estaba tan en las nubes por los tragos, que tengo algunos recuerdos nublados sobre anoche.|2.1.5.1.B]]
 [[─La verdad no sé dónde me metí anoche.|2.1.5.1.A]] 
-[[─Cris me llamó, y eso es bastante extraño. Te juro que no hemos tenido contacto alguno.|2.1.5.1.C]] </tw-passagedata><tw-passagedata pid="115" name="2.1.1.1.C" tags="" position="2582.3333333333335,2677.3333333333335" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!* (css: &quot;color: red;&quot;)[**(-1 punto por no llamar a Juli).**]
+[[─Cris me llamó, y eso es bastante extraño. Te juro que no hemos tenido contacto alguno.|2.1.5.1.C]] </tw-passagedata><tw-passagedata pid="115" name="2.1.1.1.C" tags="" position="2582,2677" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!* (css: &quot;color: red;&quot;)[**(-1 punto por no llamar a Juli).**]
 
 [[─Cris me llamó no sé cómo porque jamás hemos tenido contacto alguno.|2.1.5.1.C]]
 [[─Creo que me excedí tanto en trago, que no sé mayor cosa sobre anoche.|2.1.5.1.B]]
@@ -1167,7 +1167,7 @@ Más bien, ¿por qué no te vas a descansar a casa? A lo mejor se te viene algo 
 [[─No sé nada, para hablarte con sinceridad.|2.1.5.1.A]]</tw-passagedata><tw-passagedata pid="128" name="2.1.5.B" tags="" position="2861,2850" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *Andas siempre por ahí. Sobre todo anoche.* 
 
 [[─¿Anoche? Qué pasó anoche, que no sé nada.|2.1.5.1.A]]
-[[─Cris y me llamó. Y eso no me gusta nada.|2.1.5.1.C]]
+[[─Cris me llamó. Y eso no me gusta nada.|2.1.5.1.C]]
 [[─Supongo que bebí algo que me he perdido por completo.|2.1.5.1.B]]</tw-passagedata><tw-passagedata pid="129" name="2.1.5.C" tags="" position="2986,2984" size="100,100">(css: &quot;color: orange;&quot;)[**Juli:**] *¿Y eso qué quieres saber? ¿Cómo me dejaste esperando como una idiota anoche? ¡¿Dónde carajos estabas?!*
 
 (css: &quot;color: red;&quot;)[**(-1 punto por no haber llamado a Juli).**]
@@ -1254,7 +1254,7 @@ Cris sale deprisa, y ya has perdido la oportunidad de aclarar las cosas. Le cont
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
 (if: $puntosCris + $puntosCarisma &lt;= 9)[
 (css: &quot;color: orange;&quot;)[**¡Cuidado! Estás perdiendo la confianza de Cris y tal vez tendrás que hacer algo para descubrir por tus propios medios qué pasó anoche.**]
-]</tw-passagedata><tw-passagedata pid="136" name="2.3.5.C" tags="" position="4359.333333333334,3371.6666666666665" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por ser vulnerable disculpándote).**]
+]</tw-passagedata><tw-passagedata pid="136" name="2.3.5.C" tags="" position="4359,3371" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por ser vulnerable disculpándote).**]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *No tienes nada de qué disculparte. ¿Por qué hay que parar? ¿A qué le tienes miedo?*
 
@@ -1308,7 +1308,7 @@ Has perdido la oportunidad de hacerlo porque no tienes suficiente confianza con 
 [[Mira sus mensajes de correo electrónico|2.4.1.4. Ver correo electrónico]]
 [[Entra a la aplicación de fotos|2.4.1.2. Entrar a la aplicación de fotos]]
 
-(set: $segundosReloj to $segundosReloj + 5)</tw-passagedata><tw-passagedata pid="142" name="2.4.1 Ingresa la clave del teléfono de Cris" tags="" position="4600.333333333333,4289" size="100,100">Es una clave numérica de cuatro dígitos. 
+(set: $segundosReloj to $segundosReloj + 5)</tw-passagedata><tw-passagedata pid="142" name="2.4.1 Ingresa la clave del teléfono de Cris" tags="" position="4600,4289" size="100,100">Es una clave numérica de cuatro dígitos. 
 
 $phoneCodeGuess
 
@@ -1431,7 +1431,7 @@ Eventualmente tendrás problemas con la policía, y tendrás que aclarar tu situ
 [[mételo en su mochila.|2.4.1.5. metes el teléfono en la mochila]]
 [[déjalo sobre la mesa.|2.4.1.6. dejas el teléfono en la mesa]]
 
-(set: $segundosReloj to $segundosReloj + 5)</tw-passagedata><tw-passagedata pid="152" name="2.4.2.2.1 “Bandas con números en su nombre”" tags="" position="4721.333333333333,4650" size="100,100">Encuentras la siguiente lista: 
+(set: $segundosReloj to $segundosReloj + 5)</tw-passagedata><tw-passagedata pid="152" name="2.4.2.2.1 “Bandas con números en su nombre”" tags="" position="4721,4650" size="100,100">Encuentras la siguiente lista: 
 
 **1) Doble U dos
 2) Cero noventa y uno
@@ -1476,7 +1476,7 @@ Bueno, hay algo más de información. Pero debo saber cuáles de estas canciones
 
 (set: $segundosReloj to $segundosReloj + 120)
 (set: $historialNavegadorPesado to (datamap:&quot;masViejo&quot;, false, &quot;masReciente&quot;, false, &quot;decada&quot;, false, &quot;repetida&quot;, false))
-(set: $historialNavegadorLigero to (datamap:&quot;masViejo&quot;, false, &quot;masReciente&quot;, false, &quot;decada&quot;, false, &quot;repetida&quot;, false))</tw-passagedata><tw-passagedata pid="154" name="2.4.2.2.2.1 Rock pesado" tags="" position="4827.333333333333,4793.666666666667" size="100,100">**2) “Dos mil trescientos cuarenta y ocho”, Prisa (1976)
+(set: $historialNavegadorLigero to (datamap:&quot;masViejo&quot;, false, &quot;masReciente&quot;, false, &quot;decada&quot;, false, &quot;repetida&quot;, false))</tw-passagedata><tw-passagedata pid="154" name="2.4.2.2.2.1 Rock pesado" tags="" position="4827,4793" size="100,100">**2) “Dos mil trescientos cuarenta y ocho”, Prisa (1976)
 4) “Doce menos un minuto”, Rubiecita (1978)
 5) “1984”, Principito (1982)
 7) “1979”, Destrozando Tomates (1996)
@@ -1561,7 +1561,7 @@ Todas estas canciones son de distintas décadas. Puede ser que sea:
 [[Ingresa la clave|2.4.1 Ingresa la clave del teléfono de Cris]]
 [[Ver más bien las canciones de rock pesado |2.4.2.2.2.1 Rock pesado]]
 
-(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="156" name="2.4.1.3. Ver mensajes" tags="" position="4244,4935.666666666667" size="100,100">En su historial más reciente de mensajes de texto te das cuenta que hay un mensaje que Cris ha visto y otro que ha enviado esta mañana. 
+(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="156" name="2.4.1.3. Ver mensajes" tags="" position="4244,4935" size="100,100">En su historial más reciente de mensajes de texto te das cuenta que hay un mensaje que Cris ha visto y otro que ha enviado esta mañana. 
 
 El que ha visto es de &#39;Mike&#39; y dice: 
 
@@ -1629,7 +1629,7 @@ Por dignidad debes irte de ese lugar. Fingiste amor en una relación de la cual 
 
 (else:)[Si bien le habías enterado a Juli sobre tu encuentro con Cris, es evidente que tiene sospechas. Tendrás que esforzarte mucho para salvar una amistad que está ya casi rota.]
 
-[[Fin del juego - Reiniciar|Parte 2]]]</tw-passagedata><tw-passagedata pid="161" name="2.4.3.1. Convencer a Cris de no mostrar las fotos" tags="" position="5268.666666666667,4247.333333333333" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¿De verdad quieres saber qué pasó anoche? 
+[[Fin del juego - Reiniciar|Parte 2]]]</tw-passagedata><tw-passagedata pid="161" name="2.4.3.1. Convencer a Cris de no mostrar las fotos" tags="" position="5268,4247" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¿De verdad quieres saber qué pasó anoche? 
 
 ¡Esto pasó anoche! Estoy seguro que a tu amiguita Julicita no le van a gustar estas fotos tan... nuestras. 
 
@@ -1746,7 +1746,7 @@ Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
 [[Reiniciar juego|Despierta]]
-[[Coméntanos cómo te ha parecido el juego|Créditos]]</tw-passagedata><tw-passagedata pid="173" name="Final neutro diplomático" tags="" position="5338.333333333333,4579" size="100,100">Cris se humilla ante ti y tiene que confesarte que te ha manipulado para ir al concierto contigo. 
+[[Coméntanos cómo te ha parecido el juego|Créditos]]</tw-passagedata><tw-passagedata pid="173" name="Final neutro diplomático" tags="" position="5338,4579" size="100,100">Cris se humilla ante ti y tiene que confesarte que te ha manipulado para ir al concierto contigo. 
 
 Pensando en el bienestar tuyo y de Juli, tu mejor amiga, le pides a Cris que borre cualquier evidencia de anoche, se olviden de esta bochornosa situación, y que nunca más te pida nada más. 
 
@@ -1781,7 +1781,7 @@ Cris manipula su teléfono enfrente tuyo.
 
 (css: &quot;color: white;&quot;)[**Cris:**] Ya está. No hay pruebas de lo que me dices. Pero ya te he dicho que te voy a hundir. 
 
-[[─¿Ah, sí? ¿Cómo más entonces? Cobarde que eres.|Final con Cris destrozado]] ]</tw-passagedata><tw-passagedata pid="175" name="2.6. Confronta a Cris sobre las fotos" tags="" position="4504.666666666667,5363" size="100,100">Cuando Cris vuelve, tú no te aguantas las ganas de reclamarle por esas fotos tan sugestivas que tiene contigo en su teléfono. Aún si hubieras conservado una copia de ellas para denunciarle ante la policía por una supuesta manipulación, Cris te contrademandaría por invasión de la privacidad de su teléfono. 
+[[─¿Ah, sí? ¿Cómo más entonces? Cobarde que eres.|Final con Cris destrozado]] ]</tw-passagedata><tw-passagedata pid="175" name="2.6. Confronta a Cris sobre las fotos" tags="" position="4504,5363" size="100,100">Cuando Cris vuelve, tú no te aguantas las ganas de reclamarle por esas fotos tan sugestivas que tiene contigo en su teléfono. Aún si hubieras conservado una copia de ellas para denunciarle ante la policía por una supuesta manipulación, Cris te contrademandaría por invasión de la privacidad de su teléfono. 
 
 Sería un proceso de palabra de una parte contra la otra, pierdes a Juli y posiblemente pierdes la libertad. ¡El desastre de tu vida!
 
@@ -1859,7 +1859,7 @@ Sin las cosas aclaradas con Cris, es imposible volver con Juli de la misma maner
 Gracias por jugar.**
 
 Intenta completar el juego otra vez:
-[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="182" name="2.5.2.2 Termina con Cris sin explicaciones" tags="" position="4883,5826.666666666667" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¿Cómo que quieres terminar conmigo? Y claro, luego de que tú borraras las fotos, ¿cierto?
+[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="182" name="2.5.2.2 Termina con Cris sin explicaciones" tags="" position="4883,5826" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¿Cómo que quieres terminar conmigo? Y claro, luego de que tú borraras las fotos, ¿cierto?
 
 (css: &quot;color: #187FF5;&quot;)[*¿Terminar contigo? No recuerdo haber salido contigo nunca. Todo esto está muy raro, y la verdad me cansa estar así. No te quiero más en mi vida.*] 
 
@@ -1901,7 +1901,7 @@ Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 Intenta completar el juego otra vez:
 
 [[REINICIAR JUEGO|Despierta]]
-[[Coméntanos cómo te ha parecido el juego|Créditos]]</tw-passagedata><tw-passagedata pid="184" name="2.5.1.1 Acusa a Cris de calumnioso" tags="" position="5335.666666666667,5661.666666666667" size="100,100">(if: ($puntosCris) &gt;= 6)[
+[[Coméntanos cómo te ha parecido el juego|Créditos]]</tw-passagedata><tw-passagedata pid="184" name="2.5.1.1 Acusa a Cris de calumnioso" tags="" position="5335,5661" size="100,100">(if: ($puntosCris) &gt;= 6)[
 (css: &quot;color: white;&quot;)[**Cris:**] Te hice ir a ese concierto, ¿y así es como me pagas?
 
 (css: &quot;color: #187FF5;&quot;)[*¿Cómo es eso? ¿Fui contra mi propia voluntad? ¡Explícame eso ya mismo!*]
@@ -1955,7 +1955,7 @@ Por supuesto has terminado muy mal con Cris.
 Gracias por jugar.**
 
 Intenta completar el juego otra vez:
-[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="186" name="Modo de Prueba: Start Part 2" tags="" position="2343,2144.6666666666665" size="100,100">(set: $puntosCarisma to 4)
+[[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="186" name="Modo de Prueba: Start Part 2" tags="" position="2343,2144" size="100,100">(set: $puntosCarisma to 4)
 (set: $puntosCris to 5)
 (set: $puntosJuli to 0)
 (set: $hasDrunkWater to true)
@@ -1980,11 +1980,11 @@ Intenta completar el juego otra vez:
 
 (set: $part2SavedState to (datamap:&quot;puntosCarisma&quot;, $puntosCarisma, &quot;puntosCris&quot;, $puntosCris, &quot;puntosJuli&quot;, $puntosJuli, &quot;dateLocation&quot;, $dateLocation, &quot;itemWalletisCarried&quot;, $itemWallet&#39;s isCarried, &quot;examinedWallet&quot;, $examinedWallet, &quot;textedJuli&quot;, $textedJuli, &quot;calledJuli&quot;, $calledJuli, &quot;hasDrunkWater&quot;, $hasDrunkWater, &quot;hasDrunkJuice&quot;, $hasDrunkJuice, &quot;hasEatenChicken&quot;, $hasEatenChicken, &quot;hasEatenSandwich&quot;, $hasEatenSandwich))
 
-[[Parte 2]]</tw-passagedata><tw-passagedata pid="187" name="Créditos" tags="" position="5111,6012.333333333333" size="100,100">¡Gracias por jugar! Si tienes comentarios envíanos un correo a **drawingboardgames2020@gmail.com**. 
+[[Parte 2]]</tw-passagedata><tw-passagedata pid="187" name="Créditos" tags="" position="5111,6012" size="100,100">¡Gracias por jugar! Si tienes comentarios envíanos un correo a **drawingboardgames2020@gmail.com**. 
 
 También, visítanos en nuestra página web: &lt;a style=&quot;color:lightblue&quot; href=&quot;https://drawingboard.games&quot;&gt;drawingboard.games&lt;/a&gt; 
 
-**Intocable es creado por Jason Denney y Félix González - 2023**</tw-passagedata><tw-passagedata pid="188" name="Part 1 Final" tags="" position="2376.3333333333335,2001.6666666666667" size="100,100">(set: $puntosCarisma to 4)
+**Intocable es creado por Jason Denney y Félix González - 2023**</tw-passagedata><tw-passagedata pid="188" name="Part 1 Final" tags="" position="2376,2001" size="100,100">(set: $puntosCarisma to 4)
 (set: $puntosCris to 5)
 (set: $puntosJuli to 0)
 (set: $hasDrunkWater to true)
