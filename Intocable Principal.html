@@ -122,7 +122,7 @@ Tienes ganas de responderle, pero es muy extraño que Cris tenga tanta confianza
 
 Tú escribes: (css: &quot;color: white;&quot;)[**“Hola, Cris. Tengo mucho dolor de cabeza, y no recuerdo bien qué pasó anoche. ¿Me llamas más tarde y hablamos?”.**]
 
-Cris comienza a llamar con insistencia, pero ahora no tienes cabeza para responderle. 
+Cris comienza a llamar con insistencia.
 
 [[Deja el teléfono|Deja el teléfono]]
 (set: $puntosCris to $puntosCris + 1)
@@ -146,7 +146,7 @@ Ahora, a aliviar esa resaca. ]
 
 (css: &quot;color: lightblue;&quot;)[*Juli es mi mejor amiga, y con Cris tiene una relación muy cercana, de hermandad y de complicidad. Juli me ha ayudado mucho en mis momentos más difíciles y hasta ahora había establecido un contacto así de estrecho con Cris. Cris también me quiere (?). Tengo que averiguarlo.*]
 
-Uh oh. A tu mejor amiga no le va a gustar que Cris te llamara. Ella específicamente te dijo que nunca le tocaras. Nunca. Carajo, ¡¿qué hiciste?!
+Uh oh. A tu mejor amiga no le va a gustar que Cris te llamara. Ella específicamente te dijo que nunca le contactaras. Nunca. Carajo, ¡¿qué hiciste?!
 
 (if: $calledJuli is false)[ [[Llama a Juli]] ]
 (if: $calledCris is false)[ [[Llama a Cris]] ]
@@ -193,7 +193,7 @@ No contesta. ¿Qué haces?
     [[Busca en la habitación|Sal de la cama]]
       ]
 	(if: $itemPhone&#39;s isCarried is true)[   
-	[[Sal de la casa|Fin de Parte 1]] ]
+	[[Averigua qué pasó anoche|Fin de Parte 1]] ]
 	(else:)[
 	  Sin teléfono, ¿cómo vas a estar en contacto con tus amistades?
 	  [[Ve a la habitación|Sal de la cama]]
@@ -530,8 +530,8 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 
 (link-goto: &quot;Juega otra vez&quot;, &quot;Despierta&quot;)</tw-passagedata><tw-passagedata pid="66" name="Parte 2" tags="" position="2622,2361" size="100,100">**Intocable - Parte 2**
 
-[[Vas a El Sitio|2.1. Llegas a El Sitio]]
-[[Vas al Café Tinta|2.3. LLEGAS AL CAFÉ TINTA]]
+[[Ve a El Sitio|2.1. Llegas a El Sitio]]
+[[Ve al Café Tinta|2.3. LLEGAS AL CAFÉ TINTA]]
 
 (set: $visitedElSitio to false)
 (set: $segundosReloj to 0)
