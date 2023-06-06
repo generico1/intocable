@@ -209,7 +209,7 @@ No hablaste con nadie, así que es imposible saber qué pasó anoche.
 
 (css: &quot;color: white;&quot;)[**Cris:**] *Me alegra. Espero hayas llegado bien.*
 
-(css: &quot;color: lightblue;&quot;)[* Pero, ¿desde cuándo le importo tanto?*]
+(css: &quot;color: lightblue;&quot;)[*Pero, ¿desde cuándo le importo tanto?*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *Quiero verte.*
 
@@ -533,6 +533,9 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 [[Ve a El Sitio|2.1. Llegas a El Sitio]]
 [[Ve al Café Tinta|2.3. LLEGAS AL CAFÉ TINTA]]
 
+
+
+[[VUELVE A JUGAR DESDE EL INICIO|Despierta]]
 (set: $visitedElSitio to false)
 (set: $segundosReloj to 0)
 (set: $puntosCarisma to $part2SavedState&#39;s puntosCarisma)
@@ -795,7 +798,7 @@ No ves a Cris ni a nadie que conozcas.
 ]</tw-passagedata><tw-passagedata pid="90" name="2.3.2. SALUDO A Cris" tags="" position="3813,2695" size="100,100">(if: $puntosCris &lt;= 3 or $dateLocation is &quot;Sitio&quot;)[
 (css: &quot;color: #187FF5;&quot;)[*Disculpa el retraso. Ya sabes...*] (css: &quot;color: lightblue;&quot;)[*¿Qué digo aquí? ¿Qué digo? ¡Ya sé!*] (css: &quot;color: #187FF5;&quot;)[*la resaca.*] ]
 (else:)[
-(css: &quot;color: #187FF5;&quot;)[*Qué bueno verte.*] 
+(css: &quot;color: white;&quot;)[**Cris:**]*Qué bueno verte.* 
 
 (css: &quot;color: lightblue&quot;)[*Vamos a ver qué tanto.*] 
 ]
@@ -849,7 +852,7 @@ Cris intenta besarte. Le permites hacerlo:
 
 (css: &quot;color: white;&quot;)[**Cris:**] *¿Estás bien?* 
 
-[[─Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] : ir a 2.3.4.1.
+[[─Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]]
 ]
 (css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que comiste o bebiste...**]</tw-passagedata><tw-passagedata pid="95" name="2.3.2.4. TOMAR AGUA" tags="" position="3877,3028" size="100,100">(if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
 (css: &quot;color: lightblue;&quot;)[*Bueno, creo que ya se me está pasando el dolor de cabeza.*]
@@ -1300,7 +1303,11 @@ Cris sale deprisa, y ya has perdido la oportunidad de aclarar las cosas. Le cont
 
 Has perdido la oportunidad de hacerlo porque no tienes suficiente confianza con Cris.
 
-[[Fin del juego - Reiniciar|Parte 2]]</tw-passagedata><tw-passagedata pid="141" name="2.4.1.1 Entra al teléfono de Cris" tags="" position="4593,4839" size="100,100">Has accedido al teléfono de Cris. ¿Qué quieres hacer?
+(if: $puntosCarisma &lt;= 2)[Parece que no te preparaste bien para la cita. A veces te sirve tomar tu tiempo para ponerte mejor.]
+
+[[Fin del juego - Reiniciar|Parte 2]]
+
+</tw-passagedata><tw-passagedata pid="141" name="2.4.1.1 Entra al teléfono de Cris" tags="" position="4593,4839" size="100,100">Has accedido al teléfono de Cris. ¿Qué quieres hacer?
 
 (if: $segundosReloj &gt; 500)[¡Cris debe estar por llegar! Apresúrate.]
 
