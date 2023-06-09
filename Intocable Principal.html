@@ -798,7 +798,7 @@ No ves a Cris ni a nadie que conozcas.
 ]</tw-passagedata><tw-passagedata pid="90" name="2.3.2. SALUDO A Cris" tags="" position="3813,2695" size="100,100">(if: $puntosCris &lt;= 3 or $dateLocation is &quot;Sitio&quot;)[
 (css: &quot;color: #187FF5;&quot;)[*Disculpa el retraso. Ya sabes...*] (css: &quot;color: lightblue;&quot;)[*¿Qué digo aquí? ¿Qué digo? ¡Ya sé!*] (css: &quot;color: #187FF5;&quot;)[*la resaca.*] ]
 (else:)[
-(css: &quot;color: white;&quot;)[**Cris:**]*Qué bueno verte.* 
+(css: &quot;color: white;&quot;)[**Cris:**] *Qué bueno verte.* 
 
 (css: &quot;color: lightblue&quot;)[*Vamos a ver qué tanto.*] 
 ]
@@ -902,9 +902,9 @@ Cris intenta besarte. Le permites hacerlo:
 [[─1919|2.3.4.2.1. LA BANDA “1919”]]
 
 (if: $examinedWallet is true and $itemWalletisCarried is true)
-[[[Claro. Dame un momento para recordar.|Mira la billetera]]]
+[[[─Claro. Dame un momento para recordar.|Mira la billetera]]]
 (elseif: $itemWalletisCarried is true)
-[[[Ah, sí. Voy a mirar en mi billetera.|Mira la billetera]]]
+[[[─Ah, sí. Voy a mirar en mi billetera.|Mira la billetera]]]
 (set: $previousPassage to &quot;2.3.4.2. TU BANDA FAVORITA&quot;)</tw-passagedata><tw-passagedata pid="99" name="2.3.4.2.1. LA BANDA “1919”" tags="" position="3874,3335" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡1919! Bueno, no me gusta esa música tan pesada. Pero hice el esfuerzo por acompañarte. De resto, lo olvidé completamente.*]
 (css: &quot;color: green;&quot;)[**(+1 punto con Cris por recordar rápidamente el nombre de la banda).**]
 
@@ -933,8 +933,9 @@ No sé si estás bromeando conmigo, pero anoche me declaraste tu amor. Yo al com
 
 (if: $segundosReloj &gt; 500)[¡Atención! ¡Cris debe estar por llegar! Date prisa.]
 
-(if: $itemWalletisCarried is true)[ [[Mira la billetera|Mira la billetera]] ]
 [[Ingresa la clave del teléfono de Cris|2.4.1 Ingresa la clave del teléfono de Cris]]
+
+(if: $itemWalletisCarried is true)[ [[Mira tu billetera|Mira la billetera]] ]
 (if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot;)[ [[Busca información en tu teléfono|2.4.2 Busca información en tu teléfono]] ]
 (else:)[[[Busca información en tu teléfono|2.4.2.A Juli te llama]] ]
 ]
@@ -949,7 +950,7 @@ No sé si estás bromeando conmigo, pero anoche me declaraste tu amor. Yo al com
 Fiel fan del Mejor Rock de la mejor década.
 Mike”.**
 
-(css: &quot;color: lightblue;&quot;)[*Creo que Mike es el cantante de esa porquería de banda. ¿Se sacó un autógrafo y no me di cuenta? Bueno, si fuera mi banda favorita, haría lo mismo. Son unos simples teloneros, ¿qué más se puede esperar?
+(css: &quot;color: lightblue;&quot;)[*Creo que Mike es el cantante de esa porquería de banda. ¿Obtuvo un autógrafo y no me di cuenta? Bueno, si fuera mi banda favorita, haría lo mismo. Son unos simples teloneros, ¿qué más se puede esperar?
 
 ¿La mejor década? Hmm… yo lo dudo mucho, pero bueno. En fin...*].
 
@@ -1330,6 +1331,8 @@ $phoneCodeGuess
 (link: &quot;8&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;8&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Cris&quot;)]
 (link: &quot;9&quot;)[(set: $phoneCodeGuess to $phoneCodeGuess + &quot;9&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Cris&quot;)]
 
+(link: &quot;Borra la clave&quot;)[(set: $phoneCodeGuess to &quot;&quot;)(goto:&quot;2.4.1 Ingresa la clave del teléfono de Cris&quot;)]
+
 (link: &quot;Ingresa&quot;)[
 
 (if: $phoneCodeGuess is &quot;1979&quot;)[
@@ -1403,7 +1406,11 @@ Ahora con más veras no descubrirás nada de lo que pasó anoche. Terminas con l
 
 Eventualmente tendrás problemas con la policía, y tendrás que aclarar tu situación legal. Juli está muy desilusionada contigo, y pierdes su amistad y posiblemente hasta tu libertad.
 
-[[Fin del juego - Reiniciar|Parte 2]]]</tw-passagedata><tw-passagedata pid="148" name="2.4.2 Busca información en tu teléfono" tags="" position="4856,4287" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Por fin el wifi funciona en este teléfono de mierda!*] 
+[[Fin del juego - Reiniciar|Parte 2]]]
+
+(if: $segundosReloj &gt; 600)[
+Si hubieras tenido más tiempo, tal vez habrías puesto el teléfono en una posición menos sospechosa.
+]</tw-passagedata><tw-passagedata pid="148" name="2.4.2 Busca información en tu teléfono" tags="" position="4856,4287" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Por fin el wifi funciona en este teléfono de mierda!*] 
 
 ¿Qué quieres hacer en tu teléfono?
 
