@@ -407,15 +407,11 @@ Hay algo debajo de las sábanas... ¡Tu billetera!
 [[Responde el mensaje|Responder mensaje]]
 [[Deja el mensaje en visto|No responder mensaje]]
 (set: $puntosCris to $puntosCris - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="50" name="Mensaje Cris amable" tags="" position="1960,620" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por llamar a Cris primero).**]
-
-(css: &quot;color: white;&quot;)[**Cris:**]*“¡Hola! Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Incluso me dedicaste mi canción favorita. Eso fue muy especial. ¡Quiero contarles a todas mis amistades de lo nuestro!”.* 
+(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="50" name="Mensaje Cris amable" tags="" position="1960,620" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**]*“¡Hola! Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Incluso me dedicaste mi canción favorita. Eso fue muy especial. ¡Quiero contarles a todas mis amistades de lo nuestro!”.* 
 
 (css: &quot;color: lightblue;&quot;)[*Claro. Esta es la confirmación de su capricho por mí. Ni Juli ni nadie se puede enterar de esto. Incluso le dediqué una canción. ¡Debo parar esto ahora mismo!*]
 
-[[Deja el teléfono|Deja el teléfono]]
-(set: $puntosCris to $puntosCris + 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="51" name="Fin de Parte 1" tags="" position="2621,2191" size="100,100">(css: &quot;color: green;&quot;) [**¡Te has alistado para salir de la casa!**]
+[[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="51" name="Fin de Parte 1" tags="" position="2621,2191" size="100,100">(css: &quot;color: green;&quot;) [**¡Te has alistado para salir de la casa!**]
 
 Este es tu punto de control, y si tienes que reiniciar, vas a empezar desde aquí.
 
@@ -481,8 +477,8 @@ Has saciado tu sed, pero por hacerlo con mucha prisa se ha regado parte del jugo
 [[Ve a ducharte|Ve a ducharte]] ]
 (link-goto: &quot;Regresar a la habitación para ponerte mejor&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="57" name="Ve a la sala" tags="" position="3476,574" size="100,100">Estás en la sala.
 
-(if: $calledCris is false) [¿Qué haces? ¿A dónde vas?  Tal vez debes hablar con alguien...]
-(else:)[Tienes un poco de hambre, pero no quieres estar mucho tiempo en casa.]
+(if: $calledCris is false) [¿Qué haces? ¿A dónde vas? Tal vez debes hablar con alguien...]
+(else:)[ (if: $hasEatenSandwich is false and $hasDrunkWater is false and $hasDrunkJuice is false and $hasEatenChicken is false)[Tienes un poco de hambre y sed, pero no quieres estar mucho tiempo en casa.]]
 
 [[Vuelve a la habitación |Sal de la cama]]
 [[Ve a la cocina]]
@@ -871,7 +867,7 @@ Cris intenta besarte. Le permites hacerlo:
 
 (css: &quot;color: white;&quot;)[**Cris:**] *¿Qué no recuerdas exactamente? Es decir, ¿ni siquiera del concierto? ¿Nada? ¿Ni la banda que vimos?*
 
-(if: $itemWalletisCarried is true and $examinedWallet is false)[(link-goto: &quot;Examinar Billetera&quot;, &quot;Mirar billetera&quot;)
+(if: $itemWalletisCarried is true and $examinedWallet is false)[(link-goto: &quot;Examina Billetera&quot;, &quot;Mira la billetera&quot;)
 (set: $previousPassage to &quot;2.3.4. NO RECUERDO TODO&quot;)]
 (if: $examinedWallet is true)[ [[─El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]] ]
 
@@ -1389,7 +1385,7 @@ Has borrado las fotos en las que apareces con Cris. Esa es demasiada casualidad,
 (set: $hasDeletedCrisPhotos to true)
 ]</tw-passagedata><tw-passagedata pid="146" name="2.4.1.5. metes el teléfono en la mochila" tags="" position="4831,5365" size="100,100">(if: $hasDeletedCrisPhotos is true or $hasDeletedAllPhotos is true)[Cris vuelve a hablar contigo, pero le interrumpes diciéndole con confianza: 
 
-(css: &quot;color: lightblue;&quot;)[*¿Cómo estás, Cris?*]
+(css: &quot;color: #187FF5;&quot;)[*¿Cómo estás, Cris?*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] Pues con un poco de inquietud por lo que me dijiste, la verdad. 
 
