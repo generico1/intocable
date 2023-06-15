@@ -469,7 +469,7 @@ Has saciado tu sed, pero por hacerlo con mucha prisa se ha regado parte del jugo
 (set: $hasDrunkJuice to true)
 (css: &quot;color: yellow;&quot;)[**Puntos sociales:**] $puntosCarisma</tw-passagedata><tw-passagedata pid="56" name="Ve al baño" tags="" position="747,516" size="100,100">Estás en el baño.
 
-(if: $itemGlass&#39;s isCarried is false) [Hay un vaso en la gaveta.] (if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo.&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)] ]
+(if: $itemGlass&#39;s isCarried is false) [Hay un vaso en la gaveta.] (if: $itemGlass&#39;s isCarried is false)[ (link: &quot;Recógelo.&quot;)[ (set: $selectedItem to $itemGlass)(set:$itemGlass&#39;s isCarried to true)(goto:&quot;Ve al baño&quot;)] ]
 (if: (($itemGlass&#39;s isCarried is true) and ($hasDrunkWater is false)))[
 [[Toma un poco de agua|Toma agua]]]
 (if: ($hasBathed is false) and ($itemClothes&#39;s isCarried is false))[ Necesitas bañarte y cambiarte de ropa.
@@ -545,7 +545,14 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 (set: $hasDrunkWater to $part2SavedState&#39;s hasDrunkWater)
 (set: $hasDrunkJuice to $part2SavedState&#39;s hasDrunkJuice)
 (set: $hasEatenChicken to $part2SavedState&#39;s hasEatenChicken)
-(set: $hasEatenSandwich to $part2SavedState&#39;s hasEatenSandwich)</tw-passagedata><tw-passagedata pid="67" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2088,2370" size="100,100">¡Bien! Pagaste el recorrido completo. (if: $dateLocation is &quot;Tinta&quot;)[Pero apenas te queda dinero para ir a otro lugar, en caso de que sea necesario.]
+(set: $hasEatenSandwich to $part2SavedState&#39;s hasEatenSandwich)
+
+(set: $hasPaidTaxi to false)
+(set: $examinedCriswallet to false)
+(set: $takenPhoto to false)
+(set: $shownPhoto to false)
+(set: $hasViewedCrisEmail to false)
+(set: $phoneCodeGuess to &quot;&quot;)</tw-passagedata><tw-passagedata pid="67" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2088,2370" size="100,100">¡Bien! Pagaste el recorrido completo. (if: $dateLocation is &quot;Tinta&quot;)[Pero apenas te queda dinero para ir a otro lugar, en caso de que sea necesario.]
 
 (if: $dateLocation is &quot;Sitio&quot;) [ 
  [[Entra a El Sitio|2.2. Cris EN EL SITIO]]
@@ -917,7 +924,10 @@ No sé si estás bromeando conmigo, pero anoche me declaraste tu amor. Yo al com
 
 (set: $segundosReloj to $segundosReloj + 150)
 
-[[Toma la mochila|2.3.5.2.2.1. TOMA LA MOCHILA]]</tw-passagedata><tw-passagedata pid="101" name="2.3.5.2.2.1. TOMA LA MOCHILA" tags="" position="4604,3907" size="100,100">Ves el interior de la mochila de Cris.
+[[Toma la mochila de Cris|2.3.5.2.2.1. TOMA LA MOCHILA]]
+
+[[Espera hasta que regrese|2.4.3 Ríndete]]
+</tw-passagedata><tw-passagedata pid="101" name="2.3.5.2.2.1. TOMA LA MOCHILA" tags="" position="4604,3907" size="100,100">Ves el interior de la mochila de Cris.
 
 [[Toma su teléfono|2.4. EL TELÉFONO DE Cris]]
 [[Toma su billetera|2.3.5.2.2.2. LA BILLETERA DE Cris]]
@@ -1600,7 +1610,7 @@ Te sientes con algo de curiosidad con este último mensaje. ¿Qué quieres hacer
 [[Lee el correo completo|2.4.1.4.1. Ver el mensaje completo]]
 [[Vuelve al menú principal del teléfono|2.4.1.1 Entra al teléfono de Cris]]
 
-(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="158" name="2.4.3 Ríndete" tags="" position="5269,3978" size="100,100">Cris llega del baño con una cara seria. 
+(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="158" name="2.4.3 Ríndete" tags="" position="5219,3969.6666666666665" size="100,100">Cris llega del baño con una cara seria. 
 
 (css: &quot;color: #187FF5;&quot;)[*¿Estás bien?*]
 
@@ -1639,7 +1649,7 @@ Por dignidad debes irte de ese lugar. Fingiste amor en una relación de la cual 
 
 (else:)[Si bien le habías enterado a Juli sobre tu encuentro con Cris, es evidente que tiene sospechas. Tendrás que esforzarte mucho para salvar una amistad que está ya casi rota.]
 
-[[Fin del juego - Reiniciar|Parte 2]]]</tw-passagedata><tw-passagedata pid="161" name="2.4.3.1. Convencer a Cris de no mostrar las fotos" tags="" position="5268,4247" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¿De verdad quieres saber qué pasó anoche? 
+[[Fin del juego - Reiniciar|Parte 2]]]</tw-passagedata><tw-passagedata pid="161" name="2.4.3.1. Convencer a Cris de no mostrar las fotos" tags="" position="5278,4207" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¿De verdad quieres saber qué pasó anoche? 
 
 ¡Esto pasó anoche! Estoy seguro que a tu amiguita Julicita no le van a gustar estas fotos tan... nuestras. 
 
@@ -1655,12 +1665,12 @@ Por dignidad debes irte de ese lugar. Fingiste amor en una relación de la cual 
 (else:) [ 
 [[─Sé que me manipulaste, Cris. Y eso es gravísimo. He visto el mensaje de tu amiguito Mike. ¡Explícame ahora mismo qué pasó anoche, carajo!|2.3.6.1. Sobre el correo de Mike]] ]
 
-(set: $shownPhoto to true)</tw-passagedata><tw-passagedata pid="162" name="2.4.3.1.1. No convences a Cris" tags="" position="5511,3717" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responderle a Cris de una manera demasiado contundente).**]
+(set: $shownPhoto to true)</tw-passagedata><tw-passagedata pid="162" name="2.4.3.1.1. No convences a Cris" tags="" position="5506,3697" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por responderle a Cris de una manera demasiado contundente).**]
 
 (css: &quot;color: white;&quot;)[**Cris:**] No creas que me voy a rendir tan fácilmente. Después de todo lo que he sacrificado por ti. Es hora de que tú también hagas un sacrificio, y te olvides de Juli.
 
 [[─No quiero que Juli me mate por esto. Debemos irnos lejos de aquí, Cris.|2.3.6.2. Fuga resignada con Cris]]
-[[─¡De eso nunca! Juli podrá ser como es. Pero un pacto es un pacto, y lo respetaré siempre.|Final con Juli Sospechosa]]</tw-passagedata><tw-passagedata pid="163" name="2.3.6.3. Cris puede ser consciente de lo que hará" tags="" position="5954,3823" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responderle con honestidad y firmeza).**]
+[[─¡De eso nunca! Juli podrá ser como es. Pero un pacto es un pacto, y lo respetaré siempre.|Final con Cris destrozado]]</tw-passagedata><tw-passagedata pid="163" name="2.3.6.3. Cris puede ser consciente de lo que hará" tags="" position="5954,3823" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por responderle con honestidad y firmeza).**]
 (if: ($puntosCris) &gt;= 4) [
 (css: &quot;color: white;&quot;)[**Cris:**] Tal vez... tienes razón... la verdad no soy quién para obligarte a hacer algo que no quieres hacer. Ni mucho menos para perjudicar a Juli. Perdóname, te lo ruego. Y no le cuentes nada a Juli, por favor. 
 
@@ -1681,11 +1691,11 @@ Te fugas con Cris y se van de viaje por algunos días. Esa obsesión suya no dur
 
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="165" name="Final con Juli Sospechosa" tags="" position="5964,4173" size="100,100">(if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot; or $puntosJuli &gt;= 7)[
+[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="165" name="Final con Juli Sospechosa" tags="" position="5972.333333333333,4259.666666666667" size="100,100">(if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot; or $puntosJuli &gt;= 7)[
 Ya aclaradas las cosas con Cris, ha borrado cualquier evidencia de lo que pasó anoche. Y es hora de volver con Juli. Aunque la amistad se mantiene, ella no dejará de hacerle preguntas a Cris o averiguar por otros medios para saber qué pasó realmente. No hay nadie tan desconfiada como ella.
 ]
 (else:)[
-Ya que sabes qué pasó anoche y ahora que has hecho las paces con Cris, es hora de volver a tu amistad con Juli. Ella te conoce muy bien. Tu mirada no miente. Sabes que tu amistad con ella ya no podrá ser igual. 
+Has hecho las paces con Cris y es hora de volver a tu amistad con Juli. Ella te conoce muy bien. Tu mirada no miente. Sabes que tu amistad con ella ya no podrá ser igual.
 ]
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
@@ -1723,7 +1733,7 @@ Te muestra algunas fotos tuyas con Cris bastante comprometedoras.
 
 [[─Debes creerme cuando te digo que no recuerdo nada de lo que pasó anoche. Piensa en lo que vas a hacer, Cris, te lo pido.|2.3.6.3. Cris puede ser consciente de lo que hará]]
 
-[[─Piensa también en Juli. ¿De verdad quieres arruinarlo todo? Te exijo que borres esas fotos ya mismo.|2.4.3.1.1. No convences a Cris]]</tw-passagedata><tw-passagedata pid="170" name="2.4.3.3. Tratas de querer a Cris" tags="" position="5611,4283" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Porque sabes que nadie te ha demostrado más lealtad que yo, corazón. Esto es diferente porque soy diferente. Date cuenta que somos tal para cual, cariño. 
+[[─Piensa también en Juli. ¿De verdad quieres arruinarlo todo? Te exijo que borres esas fotos ya mismo.|2.4.3.1.1. No convences a Cris]]</tw-passagedata><tw-passagedata pid="170" name="2.4.3.3. Tratas de querer a Cris" tags="" position="5611,4264.666666666667" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Porque sabes que nadie te ha demostrado más lealtad que yo, corazón. Esto es diferente porque soy diferente. Date cuenta que somos tal para cual, cariño. 
 
 ¿Reconoces el amor que te he tenido siempre?
 
@@ -1976,6 +1986,8 @@ Intenta completar el juego otra vez:
 (set: $calledCris to true)
 (set: $textedJuli to false)
 (set: $textedCris to true)
+(set: $itemWallet to (datamap:&quot;name&quot;, &quot;wallet&quot;, &quot;description&quot;, &quot;Es una billetera&quot;, &quot;pickupText&quot;, &quot;Tienes la billetera en tu bolsillo.&quot;, &quot;isCarried&quot;, true))
+(set: $previousPassage to &quot;Parte 2&quot;)
 
 (set: $hasPaidTaxi to false)
 (set: $examinedCriswallet to false)
@@ -1983,8 +1995,8 @@ Intenta completar el juego otra vez:
 (set: $shownPhoto to false)
 (set: $hasViewedCrisEmail to false)
 (set: $phoneCodeGuess to &quot;&quot;)
-(set: $itemWallet to (datamap:&quot;name&quot;, &quot;wallet&quot;, &quot;description&quot;, &quot;Es una billetera&quot;, &quot;pickupText&quot;, &quot;Tienes la billetera en tu bolsillo.&quot;, &quot;isCarried&quot;, true))
-(set: $previousPassage to &quot;Parte 2&quot;)
+
+
 
 
 
