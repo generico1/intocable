@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -857,7 +857,7 @@ Cris intenta besarte. Le permites hacerlo:
 
 [[─Sí, sí. Bien. No sé qué pasó anoche, y quisiera que me lo aclararas.|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]]
 ]
-(css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que comiste o bebiste...**]</tw-passagedata><tw-passagedata pid="95" name="2.3.2.4. TOMAR AGUA" tags="" position="3877,3028" size="100,100">(if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
+(css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que (no) comiste o bebiste...**]</tw-passagedata><tw-passagedata pid="95" name="2.3.2.4. TOMAR AGUA" tags="" position="3877,3028" size="100,100">(if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
 (css: &quot;color: lightblue;&quot;)[*Bueno, creo que ya se me está pasando el dolor de cabeza.*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *¿Cómo estás?*
@@ -870,11 +870,11 @@ Cris intenta besarte. Le permites hacerlo:
 
 [[─Bien, sí. ¿Sabes qué pasó anoche exactamente?|2.3.4.1. QUISIERA QUE ME LO ACLARARAS]] ]
 
-(css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que comiste o bebiste...**]</tw-passagedata><tw-passagedata pid="96" name="2.3.4. NO RECUERDO TODO" tags="" position="3700,3177" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por pedir respuestas con amabilidad).**]
+(css: &quot;color: purple;&quot;)[**Esta interacción cambió por algo que (no) comiste o bebiste...**]</tw-passagedata><tw-passagedata pid="96" name="2.3.4. NO RECUERDO TODO" tags="" position="3700,3177" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto por pedir respuestas con amabilidad).**]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *¿Qué no recuerdas exactamente? Es decir, ¿ni siquiera del concierto? ¿Nada? ¿Ni la banda que vimos?*
 
-(if: $itemWalletisCarried is true and $examinedWallet is false)[(link-goto: &quot;Examina Billetera&quot;, &quot;Mira la billetera&quot;)
+(if: $itemWalletisCarried is true and $examinedWallet is false)[(link-goto: &quot;Mira la billetera&quot;, &quot;Mira la billetera&quot;)
 (set: $previousPassage to &quot;2.3.4. NO RECUERDO TODO&quot;)]
 (if: $examinedWallet is true)[ [[─El concierto, claro. Fue un concierto de rock. Tu banda favorita, ¿no?|2.3.4.2. TU BANDA FAVORITA]] ]
 
@@ -1610,7 +1610,7 @@ Te sientes con algo de curiosidad con este último mensaje. ¿Qué quieres hacer
 [[Lee el correo completo|2.4.1.4.1. Ver el mensaje completo]]
 [[Vuelve al menú principal del teléfono|2.4.1.1 Entra al teléfono de Cris]]
 
-(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="158" name="2.4.3 Ríndete" tags="" position="5219,3969.6666666666665" size="100,100">Cris llega del baño con una cara seria. 
+(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="158" name="2.4.3 Ríndete" tags="" position="5219,3969" size="100,100">Cris llega del baño con una cara seria. 
 
 (css: &quot;color: #187FF5;&quot;)[*¿Estás bien?*]
 
@@ -1691,7 +1691,7 @@ Te fugas con Cris y se van de viaje por algunos días. Esa obsesión suya no dur
 
 ¿Quieres saber otra posibilidad de lo que pasó anoche? Intenta completar el juego otra vez:
 
-[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="165" name="Final con Juli Sospechosa" tags="" position="5972.333333333333,4259.666666666667" size="100,100">(if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot; or $puntosJuli &gt;= 7)[
+[[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="165" name="Final con Juli Sospechosa" tags="" position="5972,4259" size="100,100">(if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot; or $puntosJuli &gt;= 7)[
 Ya aclaradas las cosas con Cris, ha borrado cualquier evidencia de lo que pasó anoche. Y es hora de volver con Juli. Aunque la amistad se mantiene, ella no dejará de hacerle preguntas a Cris o averiguar por otros medios para saber qué pasó realmente. No hay nadie tan desconfiada como ella.
 ]
 (else:)[
@@ -1733,7 +1733,7 @@ Te muestra algunas fotos tuyas con Cris bastante comprometedoras.
 
 [[─Debes creerme cuando te digo que no recuerdo nada de lo que pasó anoche. Piensa en lo que vas a hacer, Cris, te lo pido.|2.3.6.3. Cris puede ser consciente de lo que hará]]
 
-[[─Piensa también en Juli. ¿De verdad quieres arruinarlo todo? Te exijo que borres esas fotos ya mismo.|2.4.3.1.1. No convences a Cris]]</tw-passagedata><tw-passagedata pid="170" name="2.4.3.3. Tratas de querer a Cris" tags="" position="5611,4264.666666666667" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Porque sabes que nadie te ha demostrado más lealtad que yo, corazón. Esto es diferente porque soy diferente. Date cuenta que somos tal para cual, cariño. 
+[[─Piensa también en Juli. ¿De verdad quieres arruinarlo todo? Te exijo que borres esas fotos ya mismo.|2.4.3.1.1. No convences a Cris]]</tw-passagedata><tw-passagedata pid="170" name="2.4.3.3. Tratas de querer a Cris" tags="" position="5611,4264" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Porque sabes que nadie te ha demostrado más lealtad que yo, corazón. Esto es diferente porque soy diferente. Date cuenta que somos tal para cual, cariño. 
 
 ¿Reconoces el amor que te he tenido siempre?
 
