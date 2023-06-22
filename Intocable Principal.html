@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -752,7 +752,7 @@ Cris muestra algunas fotos en las que le acompañas a la fiesta de anoche. Algun
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
 (css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="87" name="2.3. LLEGAS AL CAFÉ TINTA" tags="" position="3508,2278" size="100,100">El taxista te pide el dinero de tu recorrido. 
 (if: $itemWalletisCarried)[
-(if: $examinedWallet is false)[(link-goto: &quot;Examinar Billetera&quot;, &quot;Mira la billetera&quot;) (set: $previousPassage to &quot;2.3. LLEGAS AL CAFÉ TINTA&quot;)
+(if: $examinedWallet is false)[(link-goto: &quot;Examina la billetera&quot;, &quot;Mira la billetera&quot;) (set: $previousPassage to &quot;2.3. LLEGAS AL CAFÉ TINTA&quot;)
 ] [[Paga el recorrido|2.3.1. PAGAR TAXI AL CAFÉ TINTA]] ]
 (else:)[
 Olvidaste tu billetera y no tienes dinero para pagar. ¿Qué haces?  
@@ -805,7 +805,7 @@ No ves a Cris ni a nadie que conozcas.
 
 (css: &quot;color: lightblue&quot;)[*Vamos a ver qué tanto.*] 
 ]
-(css: &quot;color: lightblue&quot;)[*Un momento. Cris no lleva chaqueta como de costumbre, pero sí esa mochila de felpa tan peculiar... Y tampoco parece tener nada en los bolsillos. Si pudiera entrar a su teléfono que allí carga, podría encontrar más pistas sobre anoche sin hablarle directamente sobre eso.*]
+(css: &quot;color: lightblue&quot;)[*Un momento. Cris no lleva chaqueta como de costumbre, pero sí esa mochila de felpa tan peculiar... Y tampoco parece tener nada en los bolsillos de su pantalón. Si pudiera entrar a su teléfono que allí carga, podría encontrar más pistas sobre anoche sin hablarle directamente sobre eso.*]
 
 Cris intenta besarte. Le permites hacerlo:
 
@@ -927,15 +927,15 @@ No sé si estás bromeando conmigo, pero anoche me declaraste tu amor. Yo al com
 [[Toma la mochila de Cris|2.3.5.2.2.1. TOMA LA MOCHILA]]
 
 [[Espera hasta que regrese|2.4.3 Ríndete]]
-</tw-passagedata><tw-passagedata pid="101" name="2.3.5.2.2.1. TOMA LA MOCHILA" tags="" position="4604,3907" size="100,100">Ves el interior de la mochila de Cris.
+</tw-passagedata><tw-passagedata pid="101" name="2.3.5.2.2.1. TOMA LA MOCHILA" tags="" position="4647.333333333333,3927" size="100,100">Ves el interior de la mochila de Cris.
 
 [[Toma su teléfono|2.4. EL TELÉFONO DE Cris]]
 [[Toma su billetera|2.3.5.2.2.2. LA BILLETERA DE Cris]]
 [[Déjala y espera hasta que regrese|2.4.3 Ríndete]]
 
-(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="102" name="2.4. EL TELÉFONO DE Cris" tags="" position="4660,4112" size="100,100">(set: $phoneCodeGuess to &quot;&quot;)
+(set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="102" name="2.4. EL TELÉFONO DE Cris" tags="" position="4685,4077" size="100,100">(set: $phoneCodeGuess to &quot;&quot;)
 
-(if: $segundosReloj &lt; 700)[Tienes a la mano su billetera y teléfono, y también tu teléfono(if:$itemWalletisCarried is true)[ y tu billetera]. ¿Qué quieres hacer?
+(if: $segundosReloj &lt; 700)[Tienes a la mano su teléfono, y también tu teléfono(if:$itemWalletisCarried is true)[ y tu billetera]. ¿Qué quieres hacer?
 
 (if: $segundosReloj &gt; 500)[¡Atención! ¡Cris debe estar por llegar! Date prisa.]
 
@@ -950,7 +950,7 @@ No sé si estás bromeando conmigo, pero anoche me declaraste tu amor. Yo al com
 [[Habla con Cris|2.4.3 Ríndete]]
 ]
 (set: $segundosReloj to $segundosReloj + 5)
-(set: $previousPassage to &quot;2.4. EL TELÉFONO DE Cris&quot;)</tw-passagedata><tw-passagedata pid="103" name="2.3.5.2.2.2. LA BILLETERA DE Cris" tags="" position="4817,3907" size="100,100">Ves que en su billetera Cris tiene un boleto del concierto de rock al que fuiste anoche. Allí aparece un autógrafo que dice: 
+(set: $previousPassage to &quot;2.4. EL TELÉFONO DE Cris&quot;)</tw-passagedata><tw-passagedata pid="103" name="2.3.5.2.2.2. LA BILLETERA DE Cris" tags="" position="4928.666666666666,3905.333333333333" size="100,100">Ves que en su billetera Cris tiene un boleto del concierto de rock al que fuiste anoche. Allí aparece un autógrafo que dice: 
 
 **“Para Cris: 
 Fiel fan del Mejor Rock de la mejor década.
@@ -1591,7 +1591,7 @@ El que Cris ha enviado dice:
 
 (css: &quot;color: blue&quot;)[**Nos encontraremos hoy como nueva pareja. Qué emoción!! :)) Pero a veces me desconcierta. No sé si de verdad quiere estar conmigo. Le seduciré. Seguro. ;)**]
 
-(css: &quot;color: lightblue&quot;)[¿Por qué dice eso Cris? Todo esto me parece muy raro...]
+(css: &quot;color: lightblue&quot;)[*¿Por qué dice eso Cris? Todo esto me parece muy raro...*]
 
 [[Vuelve al menú anterior|2.4.1.1 Entra al teléfono de Cris]]
 
@@ -1926,7 +1926,7 @@ Intenta completar el juego otra vez:
 
 (css: &quot;color: #187FF5;&quot;)[*¿Cómo es eso? ¿Fui contra mi propia voluntad? ¡Explícame eso ya mismo!*]
 
-A Cris se le escapó la verdad en sus palabras. Tiene que decirte sobre su manipulación para que fueras a la fiesta. Como te acusó de hackear su teléfono, no le tienes piedad y le denuncias ante la policía por su confesión. 
+A Cris se le escapó la verdad en sus palabras. Tiene que decirte sobre su manipulación para que fueras a la fiesta. Como te acusó de hackear su teléfono, no le tienes piedad y le denuncias ante la policía por su confesión.(if: $takenPhoto is true)[ También muestras la foto del correo sospechoso de Mike. ]
 
 A ver si entre rejas Cris aprende a no manipular a nadie nunca más. 
 
