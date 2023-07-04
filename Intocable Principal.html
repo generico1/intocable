@@ -49,9 +49,9 @@ Te despiertas. Tienes dolor de cabeza y de estómago. ¿Qué haces?
 (set: $itemShoes to (datamap:&quot;name&quot;, &quot;shoes&quot;, &quot;description&quot;, &quot;Son unos zapatos más casuales, pero más apropiados.&quot;, &quot;pickupText&quot;, &quot;Ahora tienes puestos los zapatos.&quot;, &quot;isCarried&quot;, false))
 (set: $dateLocation to &quot;None&quot;)</tw-passagedata><tw-passagedata pid="2" name="Item Acquired" tags="" position="724,4" size="100,100">(print: $selectedItem&#39;s pickupText)
 
-(link-goto: &quot;Listo&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="3" name="Item&#39;s Description" tags="" position="854,6" size="100,100">(print: $selectedItem&#39;s description)
+(link-goto: &quot;Vale&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="3" name="Item&#39;s Description" tags="" position="854,6" size="100,100">(print: $selectedItem&#39;s description)
 
-(link-goto: &quot;Listo&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="4" name="Mira alrededor" tags="" position="358,356" size="100,100">Estás en la cama de tu habitación. Ves tu teléfono en la mesita de noche. 
+(link-goto: &quot;Vale&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="4" name="Mira alrededor" tags="" position="358,356" size="100,100">Estás en la cama de tu habitación. Ves tu teléfono en la mesita de noche. 
 
 [[Mira tu teléfono|un teléfono]]
 [[Revisa el teléfono|Revisa el teléfono.]]
@@ -166,13 +166,13 @@ No contesta. ¿Qué haces?
 [[Deja el teléfono|Deja el teléfono]]
 (set: $textedJuli to true)</tw-passagedata><tw-passagedata pid="22" name="No dejarle ningún mensaje" tags="" position="1239,1378" size="100,100">Probablemente Juli vuelve a llamar más tarde. (if: $hasDrunkWater is false)[Tu cabeza está que estalla.] (else:)[Aún no tienes cabeza para hablar con nadie.] 
 
-[[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="23" name="Ve a la cocina" tags="" position="3680,1006" size="100,100">Estás en la cocina.
+[[Deja el teléfono|Deja el teléfono]]</tw-passagedata><tw-passagedata pid="23" name="Ve a la cocina" tags="" position="3665,1016" size="100,100">Estás en la cocina.
 (if: ($hasDrunkJuice is false and $hasDrunkWater is false) or ($hasEatenSandwich is false and $hasEatenChicken is false))[Necesitas comer o beber algo.]
 (if: $hasDrunkJuice is false or $hasEatenSandwich is false )[Ves el refrigerador entreabierto. [[Abre el refrigerador]]]
 (if: $hasEatenChicken is false)[Ves el comedor con alguna comida cubierta con una servilleta. [[Ve al comedor]]]
 
 [[Ve a la habitación|Sal de la cama]]
-[[Sal de la casa]]
+[[Ve a la sala|Ve a la sala]]
 
 (set: $previousPassage to &quot;Ve a la cocina&quot;)</tw-passagedata><tw-passagedata pid="24" name="Abre el refrigerador" tags="" position="3949,1097" size="100,100">Abres el refrigerador y ves que hay...
 
@@ -427,7 +427,7 @@ Este es tu punto de control, y si tienes que reiniciar, vas a empezar desde aqu�
 	Bueno, lo que tengo que hacer es hablar con sinceridad con Cris, a ver qué pasa. Pero debo tener claro también si quiero tener la confianza de Juli. ¿Qué puedo hacer ahora?](elseif: $puntosCris + $puntosCarisma &gt;= 9)[
 	Vale. Una de dos: o termino con Cris y sigo firme con Juli, o todo se puede ir al traste. Igual tengo que hablar con Cris con firmeza y sinceridad. Seguro que podemos arreglar algo.](elseif: $puntosCris + $puntosCarisma &gt;= 5)[
     Bien. Sé que esto no puede ser con Cris para mantener mi amistad con Juli. Tiene que haber algo para estar como antes. Si juego bien mis cartas, seguro habrá una solución justa. Veremos…](elseif: $puntosCris + $puntosCarisma &gt;= 2)[
-	¡Aaaaah! Me molesta muchísimo todo esto. Que Cris, que Juli, que esto, que lo otro. ¡Qué fastidio! Si no hagho bien las cosas, todo esto se va a la mismísima mierda.](elseif: $puntosCris + $puntosCarisma &gt;= 0)[
+	¡Aaaaah! Me molesta muchísimo todo esto. Que Cris, que Juli, que esto, que lo otro. ¡Qué fastidio! Si no hago bien las cosas, todo esto se va a la mismísima mierda.](elseif: $puntosCris + $puntosCarisma &gt;= 0)[
 	Bueno. Puedo llegar, hablarle a Cris con firmeza, y aquí nada ha pasado. Claro, y borrar la evidencia si hay alguna. Simple.](else:)[
   ¡Cris está demente! ¡Si hay evidencia de algo raro, hay que borrarla! Y ya.]
 
