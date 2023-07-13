@@ -502,7 +502,7 @@ Ah, zapatos decentes. Te quedan muy bien, tal como lo pensaste.[(set: $selectedI
 (link-goto: &quot;Ve y alístate bien&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="61" name="Ve al armario." tags="" position="169,544" size="100,100">Ves una camisa a medio planchar, un pantalón y unos tenis más bien sucios. 
 
 [[Cámbiate de ropa|Cámbiate de ropa]]
-(link-goto: &quot;Explora más la habitación&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="62" name="Revisa el teléfono." tags="" position="1596,103" size="100,100">(css: &quot;color: #187FF5;&quot;)[¡Carajo! Otra vez este internet de mierda... ]
+(link-goto: &quot;Explora más la habitación&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="62" name="Revisa el teléfono." tags="" position="1596,103" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─¡Carajo! Otra vez este internet de mierda...* ]
 (css: &quot;color: lightblue;&quot;)[*Debo hacer algo con eso. Sólo puedo mirar lo básico.*]
 
 Tienes 1 mensaje no leído y 15 llamadas perdidas.
@@ -571,7 +571,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 ]
 
 (set: $hasPaidSitioTaxi to true)
-(set: $visitedElSitio to true)</tw-passagedata><tw-passagedata pid="68" name="2.1.1.1. EL SITIO CON Juli DIRECTAMENTE" tags="" position="2287,2575" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Hola, Juli querida. ¿Todo bien?*]
+(set: $visitedElSitio to true)</tw-passagedata><tw-passagedata pid="68" name="2.1.1.1. EL SITIO CON Juli DIRECTAMENTE" tags="" position="2287,2575" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─Hola, Juli querida. ¿Todo bien?*]
 
 (if: $hasPaidSitioTaxi is true) [ [[─Ven, que te invito a tomar lo que quieras.|2.1.1.1.A]] ]
 (elseif: $textedJuli is true) [ [[─¿Viste mi mensaje?|2.1.1.1.B]] ]
@@ -582,7 +582,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 (if: $hasPaidSitioTaxi is false) [ [[Pídele prestado para el taxi|2.1.3. PEDIR PRESTADO A Juli]] ]
 (else:)[
 [[Habla con Juli|2.1.5.A]] ]
-[[Trata de ignorarla|2.1.7. TRATAS DE IGNORARLA]]</tw-passagedata><tw-passagedata pid="70" name="2.1.3. PEDIR PRESTADO A Juli" tags="" position="2947,2326" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Juli! ¡Qué bueno verte! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota.*] 
+[[Trata de ignorarla|2.1.7. TRATAS DE IGNORARLA]]</tw-passagedata><tw-passagedata pid="70" name="2.1.3. PEDIR PRESTADO A Juli" tags="" position="2947,2326" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─¡Juli! ¡Qué bueno verte! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota.*] 
 (css: &quot;color: red;&quot;) [**(-1 punto por pedirle prestado a Juli).**]
 
 (if: $calledJuli is false) [
@@ -608,7 +608,7 @@ Tienes 1 mensaje no leído y 15 llamadas perdidas.
 
 Llamas a Cris y pones el teléfono en altavoz para que Juli también escuche:
 
-Dices: (css: &quot;color: #187FF5;&quot;)[Hola, Cris. Estoy aqui con Juli.]
+Dices: (css: &quot;color: #187FF5;&quot;)[*─Hola, Cris. Estoy aqui con Juli.*]
 
 [[─Dile a tu comadre, por favor, que no estuviste conmigo anoche.|2.1.5.3.2.A]]
 [[─Cuéntame qué hiciste anoche para aquí la tranquilidad de tu comadre.|2.1.5.3.2.B]]
@@ -633,16 +633,16 @@ Dices: (css: &quot;color: #187FF5;&quot;)[Hola, Cris. Estoy aqui con Juli.]
 (css: &quot;color: purple;&quot;)[**(Algo que hiciste en el pasado determinó esta interacción.)** ]</tw-passagedata><tw-passagedata pid="75" name="2.2. Cris EN EL SITIO" tags="" position="1887,2478" size="100,100">Cris te invita a entrar a El Sitio.
 
 (if: $visitedTinta is true)[
-(css: &quot;color: white;&quot;)[**Cris:**] *¡Oye, hasta que por fin llegaste! Eres de una ordinariez tremenda, al igual que este ordinario Sitio...*](else:)[
-(css: &quot;color: white;&quot;)[**Cris:**] *Hola. Ahora veo por qué es tan popular El Sitio. Pensé que era más ordinario.*]
+(css: &quot;color: white;&quot;)[**Cris:**] *¡Oye, hasta que por fin estás aquí! Llegas tarde como todo el mundo.*](else:)[
+(css: &quot;color: white;&quot;)[**Cris:**] *Hola. Como siempre es tan popular El Sitio, supongo que somos como todo el mundo.*]
 
-[[─¿Ordinario? Creo que todo el mundo está en desacuerdo contigo. Si no te gusta, pues allá tú.|2.2.1.A]]
-[[─De hecho lo es. Si me quieres conocer, conóceme en cualquier lugar.|2.2.1.B]] 
-[[─¿Acaso me estás diciendo que soy una persona ordinaria? Muestra respeto a tus mayores, jajaja.|2.2.1.C]]
+[[─¿Como todo el mundo? Yo no soy así. Vete con esa actitud a otra parte. |2.2.1.A]]
+[[─De hecho sí. Soy una persona ordinaria.|2.2.1.B]] 
+[[─¿Acaso me estás diciendo que soy como todo el mundo? Muestra respeto a tus mayores, jajaja.|2.2.1.C]]
 
 (set: $visitedElSitio to true)</tw-passagedata><tw-passagedata pid="76" name="2.2.1.1. VES A Juli EN EL SITIO" tags="" position="1561,2919" size="100,100">¡Atención! Juli está cerca, pero no te ve. Está pidiendo un café. Ya sabes qué pasará si te ve con Cris. ¿Qué haces?
 
-(css: &quot;color: #187FF5;&quot;)[*Carajo, Juli está aquí. Vámonos de aquí. ¡Ya!*]
+(css: &quot;color: #187FF5;&quot;)[*─Carajo, Juli está aquí. Vámonos de aquí. ¡Ya!*]
 
 (if: $puntosCris + $puntosCarisma &lt;= 6)[
 (css: &quot;color: white;&quot;)[**Cris:**] *Wow, mira que sí es El Sitio favorito de ustedes dos. ¿Por qué le temes? ¿Qué ocultas? Hablemos.*
@@ -790,7 +790,7 @@ No ves a Cris ni a nadie que conozcas.
   ]
 ]
 (set: $hasPaidTintaTaxi to true)
-(set: $visitedTinta to true)</tw-passagedata><tw-passagedata pid="89" name="2.3.1.1. PEDIRLE PRESTADO A Cris" tags="" position="3680,2587" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Hola, Cris! Disculpa, olvidé mi billetera y no tengo para pagar el taxi. ¿Me puedes prestar algo?*]
+(set: $visitedTinta to true)</tw-passagedata><tw-passagedata pid="89" name="2.3.1.1. PEDIRLE PRESTADO A Cris" tags="" position="3680,2587" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─¡Hola, Cris! Disculpa, olvidé mi billetera y no tengo para pagar el taxi. ¿Me puedes prestar algo?*]
 
 (if: ($puntosCris &lt;= 3) or ($dateLocation is &quot;Sitio&quot;))[
 (css: &quot;color: white;&quot;)[**Cris:**] *Ya. Toma. Y ven rápido.* 
@@ -809,7 +809,7 @@ No ves a Cris ni a nadie que conozcas.
 (if: $puntosCris + $puntosCarisma &lt;= 9)[
   (css: &quot;color: orange;&quot;)[**¡Atención! Estás perdiendo la confianza de Cris y se hace más difícil descubrir que pasó anoche.**]
 ]</tw-passagedata><tw-passagedata pid="90" name="2.3.2. SALUDO A Cris" tags="" position="3813,2695" size="100,100">(if: $puntosCris &lt;= 3 or $dateLocation is &quot;Sitio&quot;)[
-(css: &quot;color: #187FF5;&quot;)[*Disculpa el retraso. Ya sabes...*] (css: &quot;color: lightblue;&quot;)[*¿Qué digo aquí? ¿Qué digo? ¡Ya sé!*] (css: &quot;color: #187FF5;&quot;)[*la resaca.*] ]
+(css: &quot;color: #187FF5;&quot;)[*─Disculpa el retraso. Ya sabes...*] (css: &quot;color: lightblue;&quot;)[*¿Qué digo aquí? ¿Qué digo? ¡Ya sé!*] (css: &quot;color: #187FF5;&quot;)[*─la resaca.*] ]
 (else:)[
 (css: &quot;color: white;&quot;)[**Cris:**] *Qué bueno verte.* 
 
@@ -855,7 +855,7 @@ Cris intenta besarte. Le permites hacerlo:
 (if: $puntosCris + $puntosCarisma &lt;= 9)[
   (css: &quot;color: orange;&quot;)[**¡Cuidado! Estás perdiendo la confianza de Cris y se hace más difícil descubrir que pasó anoche.**]
 ]</tw-passagedata><tw-passagedata pid="94" name="2.3.2.3. TOMAR CAFÉ" tags="" position="3698,3030" size="100,100">(if: $hasEatenChicken and ($hasDrunkWater or $hasDrunkJuice))[
-(css: &quot;color: #187FF5;&quot;)[*¡Qué buen café! Apenas para el frío de la mañana.*]
+(css: &quot;color: #187FF5;&quot;)[*─¡Qué buen café! Apenas para el frío de la mañana.*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *Sí, es verdad. ¿Cómo estás?*
 
@@ -918,7 +918,7 @@ Cris intenta besarte. Le permites hacerlo:
 [[[─Claro. Dame un momento para recordar.|Mira la billetera]]]
 (elseif: $itemWalletisCarried is true)
 [[[─Ah, sí. Voy a mirar en mi billetera.|Mira la billetera]]]
-(set: $previousPassage to &quot;2.3.4.2. TU BANDA FAVORITA&quot;)</tw-passagedata><tw-passagedata pid="99" name="2.3.4.2.1. LA BANDA “1919”" tags="" position="3874,3335" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡1919! Bueno, no me gusta esa música tan pesada. Pero hice el esfuerzo por acompañarte. De resto, lo olvidé completamente.*]
+(set: $previousPassage to &quot;2.3.4.2. TU BANDA FAVORITA&quot;)</tw-passagedata><tw-passagedata pid="99" name="2.3.4.2.1. LA BANDA “1919”" tags="" position="3874,3335" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─¡1919! Bueno, no me gusta esa música tan pesada. Pero hice el esfuerzo por acompañarte. De resto, lo olvidé completamente.*]
 (css: &quot;color: green;&quot;)[**(+1 punto con Cris por recordar rápidamente el nombre de la banda).**]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *Ok, esa es la banda principal, pero a la que fui a ver fue la telonera. La de tributo noventera. En fin...
@@ -984,14 +984,14 @@ Mike”.**
 (set: $puntosCris to $puntosCris - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="105" name="2.2.1.B" tags="" position="1734,2709" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por hablar con honestidad).**] 
 
-(css: &quot;color: white;&quot;)[**Cris:**] *Me gusta tu confianza. Me siento mejor contigo, cariño. Sigamos.* 
+(css: &quot;color: white;&quot;)[**Cris:**] *Me gusta tu honestidad. Me siento mejor contigo, cariño. Sigamos.* 
 
 [[Entra a El Sitio.|2.2.1.1. VES A Juli EN EL SITIO]] 
 
 (set: $puntosCris to $puntosCris + 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris</tw-passagedata><tw-passagedata pid="106" name="2.2.1.C" tags="" position="1900,2718" size="100,100">(css: &quot;color: green;&quot;)[**(+1 punto Cris por gastarle una broma).**]
 
-(css: &quot;color: white;&quot;)[**Cris:**] *Ja,... ja,... ja. Sí, qué gracia. Búrlate. Tu comedia es también ordinaria. Justo para El Sitio. ¿Vamos?*
+(css: &quot;color: white;&quot;)[**Cris:**] *Ja,... ja,... ja. Sí, qué gracia. Búrlate. Tu comedia es agradable. Justo como El Sitio. ¿Vamos?*
 
 [[Entra a El Sitio|2.2.1.1. VES A Juli EN EL SITIO]]
 
@@ -1197,11 +1197,11 @@ Más bien, ¿por qué no te vas a descansar? A lo mejor se te viene algo a la ca
 [[─Me ha extrañado mucho recibir una llamada de Cris porque jamás le he dado mi número.|2.1.5.1.C]]
 
 (set: $puntosJuli to $puntosJuli - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="130" name="2.1.4. TAXI CON DINERO DE Juli" tags="" position="3070,2777" size="100,100">(css: &quot;color: #187FF5;&quot;)[*Gracias, querida. Te debo una.*] 
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="130" name="2.1.4. TAXI CON DINERO DE Juli" tags="" position="3070,2777" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─Gracias, querida. Te debo una.*] 
 
 (css: &quot;color: orange;&quot;)[**Juli:**] *Me debes varias ya.* 
 
-(css: &quot;color: #187FF5;&quot;)[*Tienes razón. Te las pago todas pronto.*]
+(css: &quot;color: #187FF5;&quot;)[*─Tienes razón. Te las pago todas pronto.*]
 (if: $itemWalletisCarried is true) [
 [[─Ven, siéntate, que te invito a tomar lo que quieras.|2.1.5.A]]
 ]
@@ -1214,7 +1214,7 @@ Más bien, ¿por qué no te vas a descansar? A lo mejor se te viene algo a la ca
 (else:)[(if: $dateLocation is &quot;Sitio&quot;)[─¡Pero mira a quién tenemos aquí!
 
 [[Confronta a Juli junto a Cris|2.2.2.2. ENFRENTA CON Cris A Juli SIN CONFIANZA]] ](else:)[
-  (css: &quot;color: #187FF5;&quot;)[*Mira, vine a preguntarte algo...*]
+  (css: &quot;color: #187FF5;&quot;)[*─Mira, vine a preguntarte algo...*]
   [[Siéntate en el bar y habla con Juli|2.1.5.C]]
 ] ]</tw-passagedata><tw-passagedata pid="131" name="2.3.4.2.A" tags="" position="3531,3556" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no recordar su banda favorita).**]
 
@@ -1242,7 +1242,7 @@ Más bien, ¿por qué no te vas a descansar? A lo mejor se te viene algo a la ca
 (css: &quot;color: white;&quot;)[**Cris:**] *Estoy comenzando a pensar que de verdad te caigo mal. ¡1919! Un poco pesada para ti, lo sé.
 Bueno, la verdad iba a ver a los teloneros, la banda tributo noventera. En fin...* 
 
-(css: &quot;color: #187FF5;&quot;)[*Ya no se me olvida. Pero de resto, lo olvidé completamente.*]
+(css: &quot;color: #187FF5;&quot;)[*─Ya no se me olvida. Pero de resto, lo olvidé completamente.*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] *Ok. No sé si estás jugando conmigo, pero anoche me declaraste tu amor. Yo al comienzo no lo creía. Pero luego me convenciste. Quiero asegurarme que es real lo que sientes por mí.*
 
@@ -1405,7 +1405,7 @@ Has borrado las fotos en las que apareces con Cris. Esa es demasiada casualidad,
 (set: $hasDeletedCrisPhotos to true)
 ]</tw-passagedata><tw-passagedata pid="146" name="2.4.1.5. metes el teléfono en la mochila" tags="" position="4831,5365" size="100,100">(if: $hasDeletedCrisPhotos is true or $hasDeletedAllPhotos is true)[Cris vuelve a hablar contigo, pero le interrumpes diciéndole con confianza: 
 
-(css: &quot;color: #187FF5;&quot;)[*¿Cómo estás, Cris?*]
+(css: &quot;color: #187FF5;&quot;)[*─¿Cómo estás, Cris?*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] Pues con un poco de inquietud por lo que me dijiste, la verdad. 
 
@@ -1426,7 +1426,7 @@ Eventualmente tendrás problemas con la policía, y tendrás que aclarar tu situ
 
 (if: $segundosReloj &gt; 600)[
 Si hubieras tenido más tiempo, tal vez habrías puesto el teléfono en una posición menos sospechosa.
-]</tw-passagedata><tw-passagedata pid="148" name="2.4.2 Busca información en tu teléfono" tags="" position="4856,4287" size="100,100">(css: &quot;color: #187FF5;&quot;)[*¡Por fin el wifi funciona en este teléfono de mierda!*] 
+]</tw-passagedata><tw-passagedata pid="148" name="2.4.2 Busca información en tu teléfono" tags="" position="4856,4287" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─¡Por fin el wifi funciona en este teléfono de mierda!*] 
 
 ¿Qué quieres hacer en tu teléfono?
 
@@ -1477,12 +1477,12 @@ Si hubieras tenido más tiempo, tal vez habrías puesto el teléfono en una posi
 10) Cincuenta y dos abejas** 
 
 (if: $examinedCriswallet is true)[
-(css: &quot;color: lightblue&quot;)[*Algunas de estas bandas son de época, pero no me dice mucho. Voy a buscar ahora:*] 
+(css: &quot;color: lightblue;&quot;)[*Algunas de estas bandas son de época, pero no me dice mucho. Voy a buscar ahora:*] 
 
 [[Busca “Canciones con números en su nombre”|2.4.2.2.2 “Canciones con números en su nombre&quot;]]
 ]
 (else:)[
-(css: &quot;color: #187FF5;&quot;)[*Esto es demasiado confuso. Debería buscar más pistas en otra parte.*] 
+(css: &quot;color: lightblue;&quot;)[*Esto es demasiado confuso. Debería buscar más pistas en otra parte.*] 
 
 [[Mira la mochila de Cris|2.3.5.2.2.1. TOMA LA MOCHILA]]
 ]
@@ -1624,7 +1624,7 @@ Te sientes con algo de curiosidad con este último mensaje. ¿Qué quieres hacer
 
 (set: $segundosReloj to $segundosReloj + 10)</tw-passagedata><tw-passagedata pid="158" name="2.4.3 Ríndete" tags="" position="5219,3969" size="100,100">Cris llega del baño con una cara seria. 
 
-(css: &quot;color: #187FF5;&quot;)[*¿Estás bien?*]
+(css: &quot;color: #187FF5;&quot;)[*─¿Estás bien?*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] No mucho. Lo que me dijiste me deja con mucha inquietud.  
 
@@ -1797,7 +1797,7 @@ Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 [[REINICIAR JUEGO|Despierta]]
 [[Coméntanos cómo te ha parecido el juego|Créditos]]</tw-passagedata><tw-passagedata pid="174" name="2.3.6.1. Sobre el correo de Mike" tags="" position="5369,4418" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¿Manipulación? Estás fuera de ti, en serio. Lo que me faltaba. Que me acuses de algo que sería yo incapaz de hacerle a nadie.
 
-(css: &quot;color: #187FF5;&quot;)[*Mira el correo de Mike. El que &quot;no has visto&quot;.*]
+(css: &quot;color: #187FF5;&quot;)[*─Mira el correo de Mike. El que &quot;no has visto&quot;.*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] ¡¿Entraste a mi teléfono, acaso?! Eso sí que es absurdo!! Te voy a denunciar por acoso. ¡Te voy a hundir, ¿me oíste?!
 
@@ -1807,7 +1807,7 @@ Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 
 [[─Ven conmigo a la estación de policía, y ahí les explicarás todo. ¡Quien te va a hundir soy yo!|Final caótico de Cris]] ]
 
-(else:)[(css: &quot;color: #187FF5;&quot;)[*Mike te decía que tenías una nueva pareja, que supongo soy yo, y que ibas a hacer algo que le dijiste el otro día que harías. Explícate, Cris.*] 
+(else:)[(css: &quot;color: #187FF5;&quot;)[*─Mike te decía que tenías una nueva pareja, que supongo soy yo, y que ibas a hacer algo que le dijiste el otro día que harías. Explícate, Cris.*] 
 
 Cris manipula su teléfono enfrente tuyo. 
 
@@ -1825,15 +1825,15 @@ Ya no crees que Cris sea la persona &quot;intocable&quot; de Juli, y aunque pier
 
 [[Reiniciar juego|Despierta]]</tw-passagedata><tw-passagedata pid="177" name="2.5. El comienzo del fin" tags="" position="4832,5510" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Con inquietud porque no te has definido si me quieres o no. Y eso créeme que no me gusta nada. 
 
-(css: &quot;color: #187FF5;&quot;)[*Claro que te quiero. Sólo que me confundo un poco porque es algo que nunca antes había sentido. Fue divertido anoche.*]
+(css: &quot;color: #187FF5;&quot;)[*─Claro que te quiero. Sólo que me confundo un poco porque es algo que nunca antes había sentido. Fue divertido anoche.*]
 
 (css: &quot;color: lightblue&quot;)[*Quiero que Cris vea su teléfono ahora mismo para que vea cómo va a sufrir. Que tenga que sacarlo de la mochila.*]
 
-(css: &quot;color: #187FF5;&quot;)[*Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*] 
+(css: &quot;color: #187FF5;&quot;)[*─Por cierto, ¿encontraste la bufanda que se te extravió en medio del pogo?*] 
 
 (css: &quot;color: white;&quot;)[**Cris:**] No, yo no perdí ninguna bufanda anoche. 
 
-(css: &quot;color: #187FF5;&quot;)[*Sí, yo te la vi puesta. La tuviste casi toda la noche. ¿Estabas con tragos?*]
+(css: &quot;color: #187FF5;&quot;)[*─Sí, yo te la vi puesta. La tuviste casi toda la noche. ¿Estabas con tragos?*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] ¿Yo? Para nada. De hecho, yo no uso bufandas porque suelo perderlas. Te puedo comprobar ahora mismo que no llevaba una anoche. 
 
@@ -1851,11 +1851,11 @@ Ya no crees que Cris sea la persona &quot;intocable&quot; de Juli, y aunque pier
 
 (set: $segundosReloj to $segundosReloj + 15)</tw-passagedata><tw-passagedata pid="179" name="2.5.1. Cris descubre que no hay fotos" tags="" position="5016,5514" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Pero, ¡¿qué carajos?! ¿Dónde están mis fotos?
 
-(if: $hasDeletedCrisPhotos is true)[ (css: &quot;color: #187FF5;&quot;)[*¿Cómo? ¿No están?*]
+(if: $hasDeletedCrisPhotos is true)[ (css: &quot;color: #187FF5;&quot;)[*─¿Cómo? ¿No están?*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] Todas las fotos de anoche... borradas. ¿Cómo es posible? 
 
-(css: &quot;color: #187FF5;&quot;)[*Pues, cosas que pasan. ¿No?*]
+(css: &quot;color: #187FF5;&quot;)[*─Pues, cosas que pasan. ¿No?*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] A ver, un momento... Hiciste algo, ¿verdad? ¡Debiste ser tú!
 
@@ -1863,11 +1863,11 @@ Ya no crees que Cris sea la persona &quot;intocable&quot; de Juli, y aunque pier
 [[─¿Por qué lo piensas, Cris? ¿Qué pruebas tienes?|2.5.1.1 Acusa a Cris de calumnioso]]
 [[─Estás demente, Cris. A mí no me interesa hacerte daño.|2.5.1.2 Cris te acusa de ladrón]] ]
 
-(else:)[ (css: &quot;color: #187FF5;&quot;)[*¿Cómo así? ¿Qué pasó?*]
+(else:)[ (css: &quot;color: #187FF5;&quot;)[*─¿Cómo así? ¿Qué pasó?*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] La verdad es que no lo entiendo. Todas mis fotos del teléfono... se perdieron. ¡Esto no puede ser!
 
-(css: &quot;color: #187FF5;&quot;)[*Uy, tal vez tienes un virus informático. Lo escuché en las noticias la semana pasada que puede borrar tus archivos. Puede ser esto, ¿no?*]
+(css: &quot;color: #187FF5;&quot;)[*─Uy, tal vez tienes un virus informático. Lo escuché en las noticias la semana pasada que puede borrar tus archivos. Puede ser esto, ¿no?*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] ¡No me digas! Me están hackeando. No habrás sido tú, ¿verdad?
 
@@ -1875,7 +1875,7 @@ Ya no crees que Cris sea la persona &quot;intocable&quot; de Juli, y aunque pier
 [[─¿Ya has mirado en la nube?|2.5.2 Respuesta sobre la nube]]
 [[─¿Y qué ganaría con eso?|2.5.1.2 Cris te acusa de ladrón]] ]</tw-passagedata><tw-passagedata pid="180" name="2.5.2 Respuesta sobre la nube" tags="" position="4882,5658" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¡Carajo! Yo pensé que las fotos ya estaban vinculadas a la nube. 
 
-(css: &quot;color: #187FF5;&quot;)[*Tú sabes que a veces la tecnología es caprichosa. Lo lamento mucho.*] 
+(css: &quot;color: #187FF5;&quot;)[*─Tú sabes que a veces la tecnología es caprichosa. Lo lamento mucho.*] 
 
 (css: &quot;color: white;&quot;)[**Cris:**] Sí, pero no paro de pensar que es tremenda casualidad.
 
@@ -1893,7 +1893,7 @@ Gracias por jugar.**
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="182" name="2.5.2.2 Termina con Cris sin explicaciones" tags="" position="4883,5826" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] ¿Cómo que quieres terminar conmigo? Y claro, luego de que tú borraras las fotos, ¿cierto?
 
-(css: &quot;color: #187FF5;&quot;)[*¿Terminar contigo? No recuerdo haber salido contigo nunca. Todo esto está muy raro, y la verdad me cansa estar así. No te quiero más en mi vida.*] 
+(css: &quot;color: #187FF5;&quot;)[*─¿Terminar contigo? No recuerdo haber salido contigo nunca. Todo esto está muy raro, y la verdad me cansa estar así. No te quiero más en mi vida.*] 
 
 Sin querer aclarar nada, así se enrarece todo en tu vida. Cuando sales del lugar, Cris, con resentimiento, llama a Juli a contarle la situación. Nunca le has importado. Con eso también arruina tu amistad con Juli, y así pierdes su favor. 
 
@@ -1907,19 +1907,19 @@ Gracias por jugar.**
 Intenta completar el juego otra vez:
 [[REINICIAR JUEGO|Despierta]]</tw-passagedata><tw-passagedata pid="183" name="2.5.2.3 Ríete de Cris a la cara" tags="" position="5028,5826" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] Aquí estoy viendo a una persona de lo peor de lo peor. ¡Te odio! ¡No te saldrás con la tuya!
 
-(css: &quot;color: #187FF5;&quot;)[*¿Y eso qué? ¿Qué pruebas hay? ¡Nada! No tienes nada. No eres nada, Cris. Jajaja. Haz lo que quieras. A la hora de la verdad, ¿a quién le creerán? ¡A quién le creerá Juli, cariño!*]
+(css: &quot;color: #187FF5;&quot;)[*─¿Y eso qué? ¿Qué pruebas hay? ¡Nada! No tienes nada. No eres nada, Cris. Jajaja. Haz lo que quieras. A la hora de la verdad, ¿a quién le creerán? ¡A quién le creerá Juli, cariño!*]
 
 (css: &quot;color: white;&quot;)[**Cris:**] Lo pagarás caro. ¡Te acordarás de mí!
 
-(if: $takenPhoto is true)[(css: &quot;color: #187FF5;&quot;)[*¿Y qué? Yo sí soy quien tiene pruebas para hundirte, a-mor-ci-to. Más te vale tener cuidado.*]
+(if: $takenPhoto is true)[(css: &quot;color: #187FF5;&quot;)[*─¿Y qué? Yo sí soy quien tiene pruebas para hundirte, a-mor-ci-to. Más te vale tener cuidado.*]
 
 Le muestras la foto del correo de Mike.
 
-(css: &quot;color: #187FF5;&quot;)[*Jajajaja!! Se ve que no eres nada, Cris. ¡Chaíto!*]
+(css: &quot;color: #187FF5;&quot;)[*─Jajajaja!! Se ve que no eres nada, Cris. ¡Chaíto!*]
 
 Has logrado verle la verdadera cara a Cris jugándole por donde más le duele: manipulándole como lo ha hecho contigo. Vuelves con Juli, mantienes tu pacto y relación con ella. Y disfrutas de la impunidad de tus actos. Eso no dura para siempre, ¿pero qué más da? Has ganado ahora, y eso es lo importante.]
 
-(else:)[(css: &quot;color: #187FF5;&quot;)[*Ya te lo dije, Cris. Nadie te creerá. Y es claro que quien oculta algo eres tú. Es patético ver cómo te retuerces de la rabia, suficiente prueba para pensar que sí quieres manipularlo todo. Jajaja!! Eres una vileza de ser humano. Esa es la verdad. Hasta nunca.*]
+(else:)[(css: &quot;color: #187FF5;&quot;)[*─Ya te lo dije, Cris. Nadie te creerá. Y es claro que quien oculta algo eres tú. Es patético ver cómo te retuerces de la rabia, suficiente prueba para pensar que sí quieres manipularlo todo. Jajaja!! Eres una vileza de ser humano. Esa es la verdad. Hasta nunca.*]
 
 Tú también sabes que no tienes nada para protegerte de una eventual venganza de Cris, salvo tus palabras y la humillación que le causa tu rechazo. Así las cosas, Cris decide publicar las fotos comprometedoras en las que apareces con Cris.
 
@@ -1936,7 +1936,7 @@ Intenta completar el juego otra vez:
 [[Coméntanos cómo te ha parecido el juego|Créditos]]</tw-passagedata><tw-passagedata pid="184" name="2.5.1.1 Acusa a Cris de calumnioso" tags="" position="5335,5661" size="100,100">(if: ($puntosCris) &gt;= 6)[
 (css: &quot;color: white;&quot;)[**Cris:**] Te hice ir a ese concierto, ¿y así es como me pagas?
 
-(css: &quot;color: #187FF5;&quot;)[*¿Cómo es eso? ¿Fui contra mi propia voluntad? ¡Explícame eso ya mismo!*]
+(css: &quot;color: #187FF5;&quot;)[*─¿Cómo es eso? ¿Fui contra mi propia voluntad? ¡Explícame eso ya mismo!*]
 
 A Cris se le escapó la verdad en sus palabras. Tiene que decirte sobre su manipulación para que fueras a la fiesta. Como te acusó de hackear su teléfono, no le tienes piedad y le denuncias ante la policía por su confesión.(if: $takenPhoto is true)[ También muestras la foto del correo sospechoso de Mike. ]
 
@@ -1958,7 +1958,7 @@ Intenta completar el juego otra vez:
 
 (css: &quot;color: white;&quot;)[**Cris:**] Pruebas no son necesarias cuando yo, una persona noble que te ama, te rehúsas a amarme a mí.
 
-(css: &quot;color: #187FF5;&quot;)[*Es claro que no estás en ti, Cris. Sabes que te puedo denunciar por calumnia, ¿verdad? No he hecho nada, y tú lo sabes.*] 
+(css: &quot;color: #187FF5;&quot;)[*─Es claro que no estás en ti, Cris. Sabes que te puedo denunciar por calumnia, ¿verdad? No he hecho nada, y tú lo sabes.*] 
 
 Como Cris no tiene más pruebas sino su propia rabia, decides denunciarle ante la policía de todas maneras. Pero la denuncia es rápidamente invalidada, y has terminado de muy mala manera con Cris. 
 
