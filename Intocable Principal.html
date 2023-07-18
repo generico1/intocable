@@ -16,13 +16,13 @@
 }
 tw-sidebar tw-icon.undo {
  display: none;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Inicio" color="green"></tw-tag><tw-passagedata pid="1" name="Despierta" tags="Inicio" position="392,56" size="100,100">(css: &quot;color: gray;&quot;)[**Intocable - Versión: 1.2**]
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Inicio" color="green"></tw-tag><tw-passagedata pid="1" name="Despierta" tags="Inicio" position="392,56" size="100,100">(css: &quot;color: gray;&quot;)[**Intocable - Versión: 1.3**]
 
 Te despiertas. Tienes dolor de cabeza y de estómago. ¿Qué haces?
 
 [[Miras alrededor]]
-[[Meditas]]
 [[Piensas]]
+[[Meditas]]
 
 
 (set: $puntosCarisma to 0)
@@ -51,12 +51,14 @@ Te despiertas. Tienes dolor de cabeza y de estómago. ¿Qué haces?
 
 (link-goto: &quot;Vale&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="3" name="Item&#39;s Description" tags="" position="854,6" size="100,100">(print: $selectedItem&#39;s description)
 
-(link-goto: &quot;Vale&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="4" name="Miras alrededor" tags="" position="358,356" size="100,100">Estás en tu cama. Ves tu teléfono en la mesita de noche. 
+(link-goto: &quot;Vale&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="4" name="Miras alrededor" tags="" position="358,356" size="100,100">Estás en tu cama. Hay un teléfono en la mesita de noche. 
 
 [[Mira tu teléfono|un teléfono]]
 [[Revisa el teléfono|Revisa el teléfono.]]
-[[Sal de la cama|Sal de la cama]]
-(set: $previousPassage to &quot;Mira alrededor&quot;)</tw-passagedata><tw-passagedata pid="5" name="Meditas" tags="" position="600,229" size="100,100">Sientes mucho malestar en todo el cuerpo.
+[[Levántate|Sal de la cama]]
+(set: $previousPassage to &quot;Mira alrededor&quot;)</tw-passagedata><tw-passagedata pid="5" name="Meditas" tags="" position="574,228" size="100,100">Tienes una posicion como de yoga, con piernas cruzadas y sientes tu cuerpo con un profundo... 
+
+... malestar. 
 
 [[Miras a tu alrededor|Miras alrededor]]
 [[Piensas un poco|Piensas]]</tw-passagedata><tw-passagedata pid="6" name="Piensas" tags="" position="587,94" size="100,100">(css: &quot;color: lightblue;&quot;)[*Seguro fue el tequila.*]
@@ -84,7 +86,7 @@ Hay dos puertas, una al baño y la otra a la sala. [[Ve al baño.|Ve al baño]] 
 
 [[Sí, me quiero cambiar de ropa ya mismo|cámbiate de ropa sucio]]
 (link-goto: &quot;Date un baño como la gente común&quot;, $previousPassage)] 
-(else:)[(css: &quot;color: green;&quot;) [**(+1 punto por vestirte luego de bañarte).**] [¡Uy, quien te ve la guapura! (set:$itemClothes&#39;s isCarried to true) 
+(else:)[(css: &quot;color: green;&quot;) [**(+1 punto por vestirte luego de bañarte).**] [Te ves en el espejo. (css: &quot;color: lightblue;&quot;)[¡Qué bien me siento con esta ropa!] (set:$itemClothes&#39;s isCarried to true) 
 ] (set: $puntosCarisma to $puntosCarisma + 1)]
 (link-goto: &quot;Ve a ponerte aún mejor&quot;, $previousPassage)
 
@@ -404,7 +406,7 @@ Hay algo debajo de las sábanas... ¡Tu billetera!
 
 (if: (($hasBathed is true) or ($itemClothes&#39;s isCarried is true)) and ($itemShoes&#39;s isCarried is false))[ [[Ponte los zapatos|Ponte los zapatos]] ]
 (else:)[ [[Mira los zapatos|Mirar los zapatos]] ]
-(link-goto: &quot;Levántate&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Cris indiferente" tags="" position="1774,617" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no llamar antes a Cris).**]
+(link-goto: &quot;Ponte de pie&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Cris indiferente" tags="" position="1774,617" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por no llamar antes a Cris).**]
 
 (css: &quot;color: white;&quot;)[**Cris:** *“Hola. Espero hayas amanecido muy bien. Anoche fue muy especial. Quiero asegurarme de que sí sientes algo por mí, a ver si tenemos algo de verdad. Llámame pronto”.*] 
 
@@ -663,7 +665,11 @@ Dices: (css: &quot;color: #187FF5;&quot;)[*─Hola, Cris. Estoy aqui con Juli.*]
 
 Al ver la reacción de Juli, sales a correr como la persona cobarde que eres. Cris se desilusiona profundamente de ti. Mientras tanto, Juli se enloquece y se siente muy ofendida. Pierdes la confianza de tus amistades, y te quedarás sin saber qué fue lo que en realidad pasó anoche. 
 
-[[Fin del juego - Reiniciar|Parte 2]]
+Fin del juego.
+
+Seria mejor hablar con Cris sin Juli cerca.
+
+[[VUELVE A JUGAR DESDE EL INICIO|Despierta]]
 
 (set: $puntosJuli to $puntosJuli - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="78" name="2.1. Llegas a El Sitio" tags="" position="2372,2274" size="100,100">El taxista te pide el dinero de tu recorrido. 
@@ -696,7 +702,7 @@ Sales rápidamente de El Sitio para tomar otro taxi.
 
 [[Toma un taxi para ir a Café Tinta.|2.3. LLEGAS AL CAFÉ TINTA]] 
 
-(if: $itemWalletisCarried is false)[ [[Ve a casa para recoger lo que te hace falta.|2.1.5.7 RECUPERAR BILLETERA]] ] </tw-passagedata><tw-passagedata pid="82" name="2.2.2.1. ENFRENTA CON Cris A Juli CON CONFIANZA" tags="" position="1934,2914" size="100,100">Juli se acerca.
+(if: $itemWalletisCarried is false)[ [[Ve a casa para recoger lo que te hace falta.|2.1.5.7 RECUPERAR BILLETERA]] ] </tw-passagedata><tw-passagedata pid="82" name="2.2.2.1. ENFRENTA CON Cris A Juli CON CONFIANZA" tags="" position="1926,2901" size="100,100">Juli se acerca.
 
 (css: &quot;color: orange;&quot;)[**Juli:**] *¡Buenas, buenas! Uy, Cris. ¡Qué sorpresa! No me digan que están... porque eso no puede ser.*
 
@@ -715,7 +721,11 @@ Pudiste haber tratado mejor a Cris, pero está con mucha rabia y se va rápidame
 
 Por más que intentas reducir la importancia de estar con Cris, pierdes su confianza. Juli comienza a reclamarte en el bar. Se arma un escándalo. Y con indignación Cris también te abandona. Tu vida es horrible y pagas todos los daños en el restaurante, que son muchísimos. 
 
-[[Fin del juego - Reiniciar|Parte 2]]
+Fin del juego.
+
+Seria mejor hablar con Cris sin Juli cerca.
+
+[[VUELVE A JUGAR DESDE EL INICIO|Despierta]]
 
 (set: $puntosCris to $puntosCris - 1)
 (set: $puntosJuli to $puntosJuli - 1)
@@ -736,7 +746,11 @@ Te decidiste por estar con Cris, pero aún no tienes claro por qué. Cris se ha 
 
 Si bien quieres estar con Cris, tienes que darle muchas explicaciones sobre tu pacto con Juli. La relación comienza bien, pero eventualmente Cris se irá apartando de ti. Terminas en soledad. A lo mejor es lo que mereces.]
 
-[[Fin del juego - Reiniciar|Parte 2]]
+Fin del juego.
+
+Seria mejor hablar con Cris sin Juli cerca.
+
+[[VUELVE A JUGAR DESDE EL INICIO|Despierta]]
 
 (set: $puntosCris to $puntosCris + 1)
 (set: $puntosJuli to $puntosJuli - 1)
@@ -748,13 +762,22 @@ Si bien quieres estar con Cris, tienes que darle muchas explicaciones sobre tu p
 
 Cris, con indignación y dolor, sube las pruebas de que le acompañaste a la fiesta de anoche a sus redes sociales. Esto Juli no lo aguanta y te hace un tremendo escándalo ante todo el mundo. Pierdes su confianza. Tu vida se vuelve terrible. 
 
-[[Fin del juego - Reiniciar|Parte 2]]]
+Fin del juego.
+
+Seria mejor hablar con Cris sin Juli cerca.
+
+[[VUELVE A JUGAR DESDE EL INICIO|Despierta]]]
 
 (else:)[(css: &quot;color: white;&quot;)[**Cris:**] *¡Ah, claro! Para ti es muy fácil olvidarlo todo y ya. La cobardía tuya no tiene límites. Juli, mira estas fotos y dime si todo esto es mentira.* 
 
 Cris muestra algunas fotos en las que le acompañas a la fiesta de anoche. Algunas revelan la mucha cercanía que tuvieron. Juli no lo aguanta y sale indignadísima del lugar. Es evidente que tu amistad con ella se ha roto definitivamente. Ya nadie va a confiar en ti en muchísimo tiempo. 
 
-[[Fin del juego - Reiniciar|Parte 2]]]
+Fin del juego.
+
+Seria mejor hablar con Cris sin Juli cerca.
+
+[[VUELVE A JUGAR DESDE EL INICIO|Despierta]]
+]
 
 (set: $puntosCris to $puntosCris - 1)
 (set: $puntosJuli to $puntosJuli + 1)
