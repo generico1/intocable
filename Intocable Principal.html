@@ -11,12 +11,12 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
  display: none;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Inicio" color="green"></tw-tag><tw-passagedata pid="1" name="Despierta" tags="Inicio" position="392,56" size="100,100">(css: &quot;color: gray;&quot;)[**Intocable - Versión: 1.3.1**]
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Inicio" color="green"></tw-tag><tw-passagedata pid="1" name="Despierta" tags="Inicio" position="392,56" size="100,100">(css: &quot;color: gray;&quot;)[**Intocable - Versión: 1.3.2**]
 
 Te despiertas. Tienes dolor de cabeza y de estómago. ¿Qué haces?
 
@@ -56,7 +56,7 @@ Te despiertas. Tienes dolor de cabeza y de estómago. ¿Qué haces?
 [[Mira el teléfono|un teléfono]]
 [[Revisa el teléfono|Revisa el teléfono.]]
 [[Levántate|Sal de la cama]]
-(set: $previousPassage to &quot;Miras alrededor&quot;)</tw-passagedata><tw-passagedata pid="5" name="Meditas" tags="" position="582,222" size="100,100">Estás con las piernas cruzadas, como en una posición de yoga, y sientes que tu cuerpo es uno con el Univer... 
+(set: $previousPassage to &quot;Miras alrededor&quot;)</tw-passagedata><tw-passagedata pid="5" name="Meditas" tags="" position="582,222" size="100,100">Estás con las piernas cruzadas, como en una posición de yoga, y sientes que tu cuerpo es uno con el univers... 
 
 (css: &quot;color: lightblue;&quot;)[*... ¡Aaayyy, mi cabeza! Qué sensación tan extraña...*] 
 
@@ -1303,7 +1303,7 @@ Cris sale deprisa, y ya has perdido la oportunidad de aclarar las cosas. Le cont
 (css: &quot;color: white;&quot;)[**Cris:**] *¿De qué te tienes que disculpar? ¡De nada! A menos que haya algo que me quieras decir.*
 
 [[─¿No lo sabes acaso? Juli no quiere que hablemos. Por eso vine a hablarte.|2.3.5.1.B]]
-[[─Tengo miedo de lo que hará si se entera que tú y yo estamos en contacto.|2.3.5.1.A]]
+[[─Tengo miedo de lo que Juli hará si se entera que tú y yo estamos en contacto.|2.3.5.1.A]]
 
 (set: $puntosCris to $puntosCris - 1)
 (css: &quot;color: yellow;&quot;)[**Puntos con Cris:**] $puntosCris
@@ -1465,7 +1465,7 @@ Eventualmente tendrás problemas con la policía, y tendrás que aclarar tu situ
 
 (if: $segundosReloj &gt; 600)[
 Si hubieras tenido más tiempo, tal vez habrías puesto el teléfono en una posición menos sospechosa.
-]</tw-passagedata><tw-passagedata pid="147" name="2.4.2 Busca información en tu teléfono" tags="" position="4856,4287" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─¡Por fin el wifi funciona en este teléfono de mierda!*] 
+]</tw-passagedata><tw-passagedata pid="147" name="2.4.2 Busca información en tu teléfono" tags="" position="4856,4287" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─¡Por suerte el wifi aquí es bueno!*] 
 
 ¿Qué quieres hacer en tu teléfono?
 
@@ -1744,6 +1744,7 @@ Te fugas con Cris y se van de viaje por algunos días. Esa obsesión suya no dur
 
 **Intenta completar el juego otra vez para ver más dinámicas de esta historia:**
 
+[[REINICIA DESDE EL PUNTO DE CONTROL|Parte 2]]
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="164" name="Final con Juli Sospechosa" tags="" position="5972,4259" size="100,100">(if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot; or $puntosJuli &gt;= 7)[
 Ya has explicado por qué no quieres estar con Cris. Cris respeta tu decisión y ha borrado cualquier evidencia de lo que pasó anoche. Y es hora de volver con Juli. Aunque la amistad se mantiene, ella no dejará de hacerle preguntas a Cris o averiguar por otros medios para saber qué pasó realmente. No hay nadie tan desconfiada como ella.
 ]
@@ -1752,6 +1753,7 @@ Cris se ha cansado de insistir por tu amor y te propone olvidarlo todo. Aceptas 
 ]
 **Intenta completar el juego otra vez para ver más dinámicas de esta historia:**
 
+[[REINICIA DESDE EL PUNTO DE CONTROL|Parte 2]]
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="165" name="Final con Juli Feliz" tags="" position="4162,3999" size="100,100">Has decidido respetar el pacto que tienes con Juli, tu mejor amiga que has tenido en la vida. 
 
 (if: $textedJuli is true or $calledJuli is true or $dateLocation is &quot;Sitio&quot; or $puntosJuli &gt;= 5)[Juli y tú siguen con una gran amistad durante toda la vida.]
@@ -1771,6 +1773,7 @@ Cris se ha cansado de insistir por tu amor y te propone olvidarlo todo. Aceptas 
 
 **Intenta completar el juego otra vez para ver más dinámicas de esta historia:**
 
+[[REINICIA DESDE EL PUNTO DE CONTROL|Parte 2]]
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="167" name="Final con obsesión con Cris" tags="" position="6252,3645" size="100,100">Estás con Cris... porque sí. 
 
 Le correspondiste a su amor sin saber exactamente por qué. Acaso también estabas en obsesión con Cris desde un comienzo. Te hablará sobre anoche, pero asumirás todas las consecuencias.
@@ -1779,6 +1782,7 @@ La más importante de todas: perder la amistad de Juli, tu mejor amiga.
 
 **Intenta completar el juego otra vez para ver más dinámicas de esta historia:**
 
+[[REINICIA DESDE EL PUNTO DE CONTROL|Parte 2]]
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="168" name="2.4.3.2. Cris es confrontado por causa de Juli" tags="" position="5457,4205" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto por señalarle a Cris sus defectos de manera muy directa).**]
 
 (css: &quot;color: white;&quot;)[**Cris:**] Lealtad es lo que he demostrado contigo cuando me has pedido que te aclare qué pasó anoche. Y eso que no he publicado esto: 
@@ -1818,10 +1822,7 @@ Te muestra algunas fotos tuyas con Cris bastante comprometedoras.
 Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 
 [[Coméntanos cómo te ha parecido el juego|Créditos]]
-
-**Intenta completar el juego otra vez para ver más dinámicas de esta historia:**
-
-[[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="172" name="Final neutro diplomático" tags="" position="5264,4579" size="100,100">Cris se humilla ante ti y tiene que confesarte que te ha manipulado para ir al concierto contigo. Los detalles son un doloroso secreto entre ustedes.
+</tw-passagedata><tw-passagedata pid="172" name="Final neutro diplomático" tags="" position="5264,4579" size="100,100">Cris se humilla ante ti y tiene que confesarte que te ha manipulado para ir al concierto contigo. Los detalles son un doloroso secreto entre ustedes.
 
 Pensando en el bienestar tuyo y el de Juli, tu mejor amiga, le pides a Cris que borre cualquier evidencia de anoche, se olviden de esta bochornosa situación, y que nunca más te pida nada más. 
 
@@ -1836,10 +1837,7 @@ Hablas con Juli como si nada, pero ella aún sospecha de ti. Quiere preguntarle 
 Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 
 [[Coméntanos cómo te ha parecido el juego|Créditos]]
-
-**Intenta completar el juego otra vez para ver otras dinámicas de esta historia:**
-
-[[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="173" name="2.3.6.1. Sobre el correo de Mike" tags="" position="5370,4418" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] *¿Manipulación? Estás fuera de ti, en serio. Lo que me faltaba. Que me acuses de algo que sería yo incapaz de hacerle a nadie.*
+</tw-passagedata><tw-passagedata pid="173" name="2.3.6.1. Sobre el correo de Mike" tags="" position="5370,4418" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] *¿Manipulación? Estás fuera de ti, en serio. Lo que me faltaba. Que me acuses de algo que sería yo incapaz de hacerle a nadie.*
 
 (css: &quot;color: #187FF5;&quot;)[*─Mira el correo de Mike. El que &quot;no has visto&quot;.*]
 
@@ -1869,6 +1867,7 @@ Ya no crees que Cris sea la persona &quot;intocable&quot; de Juli, y aunque pier
 
 **Intenta completar el juego otra vez para ver más dinámicas de esta historia:**
 
+[[REINICIA DESDE EL PUNTO DE CONTROL|Parte 2]]
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="176" name="2.5. El comienzo del fin" tags="" position="4835,5492" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] *Con inquietud porque no te has definido si me quieres o no. Y créeme que eso no me gusta nada.* 
 
 (css: &quot;color: #187FF5;&quot;)[*─Claro que te quiero. Sólo que me confundo un poco porque es algo que nunca antes había sentido. Fue divertido anoche.*]
@@ -1935,6 +1934,7 @@ Sin las cosas aclaradas con Cris, es imposible volver con Juli de la misma maner
 
 **Si quieres descubrir hasta donde te es posible qué pasó anoche entre tú y Cris, intenta jugar nuevamente:**
 
+[[REINICIA DESDE EL PUNTO DE CONTROL|Parte 2]]
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="181" name="2.5.2.2 Termina con Cris sin explicaciones" tags="" position="4883,5826" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] *¿Cómo que quieres terminar conmigo? Y claro, luego de que tú borraras las fotos, ¿cierto?*
 
 (css: &quot;color: #187FF5;&quot;)[*─¿Terminar contigo? No recuerdo haber salido contigo nunca. Todo esto está muy raro, y la verdad me cansa estar así. No te quiero más en mi vida.*] 
@@ -1947,6 +1947,7 @@ Sin querer aclarar nada, así se enrarece todo en tu vida. Cuando sales del luga
 
 **Si quieres descubrir hasta donde te es posible qué pasó anoche entre tú y Cris, intenta jugar nuevamente:**
 
+[[REINICIA DESDE EL PUNTO DE CONTROL|Parte 2]]
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="182" name="2.5.2.3 Ríete de Cris a la cara" tags="" position="5026,5825" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] *Aquí estoy viendo a una persona de lo peor de lo peor. ¡Te odio! ¡No te saldrás con la tuya!*
 
 (css: &quot;color: #187FF5;&quot;)[*─¿Y eso qué? ¿Qué pruebas hay? ¡Nada! No tienes nada. No eres nada, Cris. Jajaja. Haz lo que quieras. A la hora de la verdad, ¿a quién le creerán? ¡A quién le creerá Juli, &quot;cariño&quot;!*]
@@ -1981,6 +1982,7 @@ Tú también sabes que no tienes nada para protegerte de una eventual venganza d
 
 **Intenta completar el juego otra vez para ver otras dinámicas de esta historia:**
 
+[[REINICIA DESDE EL PUNTO DE CONTROL|Parte 2]]
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="183" name="2.5.1.1 Acusa a Cris de calumnioso" tags="" position="5335,5661" size="100,100">(if: ($puntosCris) &gt;= 6)[
 (css: &quot;color: white;&quot;)[**Cris:**] *Te hice ir a ese concierto, ¿y así es como me pagas?*
 
@@ -2003,6 +2005,7 @@ Gracias por jugar.  Has logrado saber qué pasó realmente anoche.**
 
 **Intenta completar el juego otra vez para ver otras dinámicas de esta historia:**
 
+[[REINICIA DESDE EL PUNTO DE CONTROL|Parte 2]]
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]
 
 ](else:)[
@@ -2021,6 +2024,7 @@ Presientes que Cris te manipuló de alguna manera, pero como no le has demostrad
 
 **Intenta completar el juego otra vez para descubrirlo:**
 
+[[REINICIA DESDE EL PUNTO DE CONTROL|Parte 2]]
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]
 
 ]</tw-passagedata><tw-passagedata pid="184" name="2.5.1.2 Cris te acusa de ladrón" tags="" position="5203,5657" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] *¡Sí, cómo no! Es que todo es tan casual, en serio. No tienes vergüenza en mentirme a la cara. ¡Eres una porquería!*
@@ -2035,6 +2039,7 @@ Por supuesto has terminado muy mal con Cris.
 
 **Intenta completar el juego otra vez:**
 
+[[REINICIA DESDE EL PUNTO DE CONTROL|Parte 2]]
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="185" name="Modo de Prueba: Start Part 2" tags="" position="2343,2144" size="100,100">(set: $puntosCarisma to 4)
 (set: $puntosCris to 5)
 (set: $puntosJuli to 0)
@@ -2063,7 +2068,10 @@ Por supuesto has terminado muy mal con Cris.
 También, visítanos en nuestra página web: &lt;a style=&quot;color:lightblue&quot; href=&quot;https://drawingboard.games&quot;&gt;drawingboard.games&lt;/a&gt; 
 
 
-**Intocable es creado por Jason Denney y Félix González - 2023**</tw-passagedata><tw-passagedata pid="187" name="Part 1 Final" tags="" position="2312,2008" size="100,100">(set: $puntosCarisma to 4)
+**Intocable es creado por Jason Denney y Félix González - 2023**
+
+
+[[VUELVE A JUGAR DESDE EL INICIO|Despierta]]</tw-passagedata><tw-passagedata pid="187" name="Part 1 Final" tags="" position="2312,2008" size="100,100">(set: $puntosCarisma to 4)
 (set: $puntosCris to 5)
 (set: $puntosJuli to 0)
 (set: $hasDrunkWater to true)
