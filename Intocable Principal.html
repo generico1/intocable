@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.5" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="Intocable Principal" startnode="1" creator="Twine" creator-version="2.3.9" ifid="A121ECB8-E4ED-4428-9983-ED183F2DD030" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -411,20 +411,22 @@ Hay algo debajo de las sábanas... ¡Tu billetera!
 
 (if: (($hasBathed is true) or ($itemClothes&#39;s isCarried is true)) and ($itemShoes&#39;s isCarried is false))[ [[Ponte los zapatos|Ponte los zapatos]] ]
 (else:)[ [[Mira los zapatos|Mirar los zapatos]] ]
-(link-goto: &quot;Ponte de pie&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="48" name="Mensaje Cris indiferente" tags="" position="1772,622" size="100,100">(css: &quot;color: white;&quot;)[**Cris:** *“Hola. Espero hayas amanecido muy bien. Anoche fue muy especial. Quiero asegurarme de que sí sientes algo por mí. Llámame pronto”.*] 
+(link-goto: &quot;Ponte de pie&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="48" name="Mensaje Cris indiferente" tags="" position="1770,622" size="100,100">(css: &quot;color: white;&quot;)[**Cris:** *“Hola. Espero hayas amanecido muy bien. Anoche fue muy especial. Quiero asegurarme de que sí sientes algo por mí. Llámame pronto”.*] 
 
-(css: &quot;color: lightblue;&quot;)[*Esto es muy extraño. Nunca había establecido contacto con Cris, y ahora me dice que &quot;anoche fue muy especial&quot;. Tengo que averiguar qué está pasando con el mayor tacto posible.*]
+(if: $viewedMessage is false)[(css: &quot;color: lightblue;&quot;)[*Esto es muy extraño. Nunca había establecido contacto con Cris, y ahora me dice que &quot;anoche fue muy especial&quot;. Tengo que averiguar qué está pasando con el mayor tacto posible.*]
 
 [[Responde el mensaje|Responder mensaje]]
 [[Deja el mensaje en visto|No responder mensaje]]
 
-(set: $viewedMessage to true)</tw-passagedata><tw-passagedata pid="49" name="Mensaje Cris amable" tags="" position="1960,620" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**]*“¡Hola! Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Incluso me dedicaste mi canción favorita. Eso fue muy especial. ¡Quiero contarles a todas mis amistades de lo nuestro!”.* 
+(set: $viewedMessage to true)]
 
-(css: &quot;color: lightblue;&quot;)[*¿Pero por qué Cris me dice estas cosas? No recuerdo esto en lo absoluto. Y menos si no le había dado nunca mi número. ¿Cómo es eso que le dediqué una canción? ¡Debo hacer algo y pronto!*]
+(else:)[[[Deja el teléfono]]]</tw-passagedata><tw-passagedata pid="49" name="Mensaje Cris amable" tags="" position="1962,622" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**]*“¡Hola! Todavía tengo mariposas en el estómago, no sabía que también sentías algo por mí. Anoche fue increíble. Incluso me dedicaste mi canción favorita. Eso fue muy especial. ¡Quiero contarles a todas mis amistades de lo nuestro!”.* 
 
-[[Deja el teléfono|Deja el teléfono]]
+(if: $viewedMessage is false)[(css: &quot;color: lightblue;&quot;)[*¿Pero por qué Cris me dice estas cosas? No recuerdo esto en lo absoluto. Y menos si no le había dado nunca mi número. ¿Cómo es eso que le dediqué una canción? ¡Debo hacer algo y pronto!*]
 
-(set: $viewedMessage to true)</tw-passagedata><tw-passagedata pid="50" name="Fin de Parte 1" tags="" position="2621,2172" size="100,100">(css: &quot;color: green;&quot;) [**¡Te has alistado para salir de la casa!**]
+(set: $viewedMessage to true)]
+
+[[Deja el teléfono]]</tw-passagedata><tw-passagedata pid="50" name="Fin de Parte 1" tags="" position="2621,2172" size="100,100">(css: &quot;color: green;&quot;) [**¡Te has alistado para salir de la casa!**]
 
 Este es tu punto de control. Y si tienes que reiniciar el juego, vas a empezar desde aquí.
 
@@ -515,11 +517,10 @@ Te quedan muy bien, tal como lo pensaste.[(set: $selectedItem to $itemShoes)(set
 (link-goto: &quot;Explora más la habitación&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="61" name="Revisa el teléfono." tags="" position="1596,103" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─¡Carajo! Otra vez este internet de mierda...* ]
 (css: &quot;color: lightblue;&quot;)[*Debo hacer algo con eso. Sólo puedo mirar lo básico.*]
 
-Tienes (if: $viewedMessage is false)[1 mensaje no leído y] 15 llamadas perdidas.
+Tienes 1 mensaje (if: $viewedMessage is false)[no] leído y 15 llamadas perdidas.
 
 [[Mira las llamadas|Mira las llamadas]]
-
-(if: $viewedMessage is false)[ [[Mira el mensaje|Mira el mensaje]] ]
+[[Mira el mensaje|Mira el mensaje]] 
 
 (if: $calledCris is true and ($hasBathed is false or ($itemClothes&#39;s isCarried is true and $hasBathed is true)))[ (link:&quot;Llévate el teléfono&quot;)[ (set:$selectedItem to $itemPhone)(set:$itemPhone&#39;s isCarried to true)(goto:&quot;Item Acquired&quot;)]]</tw-passagedata><tw-passagedata pid="62" name="&quot;Por ahí&quot;" tags="" position="2743,938" size="100,100">(css: &quot;color: red;&quot;)[**(-1 punto con Cris por evitar la pregunta).**]
 
@@ -2223,7 +2224,7 @@ Es claro que Juli te ha manipulado, y que ha cambiado la amistad contigo por ese
 
 (set: $Juliconfessed to true)</tw-passagedata><tw-passagedata pid="195" name="Juli complacida y Cris azorada" tags="" position="2221,3664" size="100,100">[[─Bueno, cumplí con alejar a Cris. Ahora explícame, Juli, por qué debía hacerlo.|Juli resignada]]
 
-[[─Todo esto es simplemente patético, Juli. ¿Por qué no puedo contactar a Cris y tú sí?|Juli asustada]]</tw-passagedata></tw-storydata>
+[[─Todo esto es simplemente patético, Juli. ¿Por qué no puedo contactar a Cris y tú sí?|Juli asustada]]</tw-passagedata><tw-passagedata pid="196" name="[Deja el teléfono" tags="" position="1770,772" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
