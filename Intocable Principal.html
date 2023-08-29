@@ -38,6 +38,7 @@ Te despiertas. Tienes dolor de cabeza y de estómago. ¿Qué haces?
 (set: $calledCris to false)
 (set: $textedJuli to false)
 (set: $viewedMessage to false)
+(set: $Juliconfessed to false)
 (set: $inBed to true)
 (set: $itemPhone to (datamap:&quot;name&quot;, &quot;phone&quot;, &quot;description&quot;, &quot;Pagaste demasiado por este smartphone.&quot;, &quot;pickupText&quot;, &quot;Tienes el teléfono en el bolsillo.&quot;, &quot;isCarried&quot;, false))
 (set: $itemWallet to (datamap:&quot;name&quot;, &quot;wallet&quot;, &quot;description&quot;, &quot;Es una billetera&quot;, &quot;pickupText&quot;, &quot;Tienes la billetera en tu bolsillo.&quot;, &quot;isCarried&quot;, false))
@@ -571,7 +572,6 @@ Tienes 1 mensaje (if: $viewedMessage is false)[no] leído y 15 llamadas perdidas
 (set: $takenPhoto to false)
 (set: $shownPhoto to false)
 (set: $hasViewedCrisEmail to false)
-(set: $Juliconfessed to false)
 (set: $talkedtoCrisSitio to false)
 (set: $phoneCodeGuess to &quot;&quot;)</tw-passagedata><tw-passagedata pid="66" name="2.1.1. TAXI CON MI DINERO EN EL SITIO" tags="" position="2162,2396" size="100,100">¡Bien! Pagaste el recorrido completo. (if: $dateLocation is &quot;Tinta&quot;)[Pero apenas te queda dinero para ir a otro lugar, en caso de que sea necesario.]
 
@@ -601,20 +601,20 @@ Luego le dices:
 (elseif: $textedJuli is true) [ [[─¿Viste mi mensaje?|2.1.1.1.B]] ]
 (else:)[ [[─Yo sé que me he portado mal contigo. Pero sí que necesito saber una cosa.|2.1.1.1.C]] ]
 
-(css: &quot;color: purple;&quot;)[**(Tu preparación para salir de casa determinó esta interacción).** ]</tw-passagedata><tw-passagedata pid="68" name="2.1.2. Juli CAMINA" tags="" position="2625,2528" size="100,100">Mira quién viene caminando casualmente… ¡Es Juli! 
+(css: &quot;color: purple;&quot;)[**(Tu preparación para salir de casa determinó esta interacción).** ]</tw-passagedata><tw-passagedata pid="68" name="2.1.2. Juli CAMINA" tags="" position="2613,2520" size="100,100">Mira quién viene caminando casualmente… ¡Es Juli! 
 
 ¿Qué haces? Si hablas con ella no sabrás muy bien qué decirle.
 
 (if: $hasPaidSitioTaxi is false) [ [[Pídele prestado para el taxi|2.1.3. PEDIR PRESTADO A Juli]] ]
 (else:)[
 [[Habla con Juli|2.1.5.A]] ]
-[[Trata de ignorarla|2.1.7. TRATAS DE IGNORARLA]]</tw-passagedata><tw-passagedata pid="69" name="2.1.3. PEDIR PRESTADO A Juli" tags="" position="3110,2455" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─¡Juli! ¡Qué bueno verte! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota.*] 
+[[Trata de ignorarla|2.1.7. TRATAS DE IGNORARLA]]</tw-passagedata><tw-passagedata pid="69" name="2.1.3. PEDIR PRESTADO A Juli" tags="" position="3110,2455" size="100,100">(css: &quot;color: #187FF5;&quot;)[*─¡Juli! ¡Qué bueno verte aquí! ¿Me puedes prestar algo para el taxi? Es que olvidé la billetera por idiota.*]
 (css: &quot;color: red;&quot;) [**(-1 punto con Juli por pedirle dinero prestado).**]
 
 (if: $calledJuli is false) [
 	(css: &quot;color: orange;&quot;)[**Juli:**] *Sólo estoy para favores, ¿no?*]
 (else:) [ (if: $textedJuli is true) [
-  (css: &quot;color: orange;&quot;)[**Juli:**] *¡Claro! Precisamente quería hablarte.*] 
+  (css: &quot;color: orange;&quot;)[**Juli:**] *Hola. ¡Claro! Precisamente quería hablarte.*] 
   (else:)[
 	(css: &quot;color: orange;&quot;)[**Juli:**] *¿Y a ti qué carajos te pasó? Jajaja… sí que eres idiota.*]
 ]
@@ -698,7 +698,7 @@ Al ver la reacción de Juli, sales a correr como la persona cobarde que eres. Cr
 [[VUELVE A JUGAR DESDE EL INICIO|Despierta]]
 
 (set: $puntosJuli to $puntosJuli - 1)
-(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="77" name="2.1. Llegas a El Sitio" tags="" position="2371,2268" size="100,100">El taxista te pide el dinero de tu recorrido. 
+(css: &quot;color: yellow;&quot;)[**Puntos con Juli:**] $puntosJuli</tw-passagedata><tw-passagedata pid="77" name="2.1. Llegas a El Sitio" tags="" position="2372,2266" size="100,100">El taxista te pide el dinero de tu recorrido. 
 (if: $itemWalletisCarried is true) [ [[Paga la carrera |2.1.1. TAXI CON MI DINERO EN EL SITIO]] ] 
 
 (else:) [Olvidaste tu billetera. ¡Qué mal!
@@ -1278,9 +1278,7 @@ Más bien, ¿por qué no te vas a descansar? A lo mejor se te viene algo a la ca
 
 (css: &quot;color: orange;&quot;)[**Juli:**] (if: $puntosCarisma &gt;= 3) [*Sé que sí, sobre todo por el buen aspecto que traes hoy.*](elseif: $itemGlass&#39;s isCarried is false and $hasDrunkJuice is true) [*Con esa manchota en la camisa, yo como que lo estoy dudando, jajaja.*] (elseif: $puntosCarisma is 0) [*Eso lo veremos.*](else:) [*La verdad no creo. Y más con esa mala pinta y mal olor que traes. Toma un poco de mi perfume.*
 
-(css: &quot;color: #187FF5;&quot;)[*─Discúlpame por haberte molestado. En serio.*]]
-
-(css: &quot;color: #187FF5;&quot;)[*─Mira, vine a preguntarte algo...*]
+(css: &quot;color: #187FF5;&quot;)[*─Discúlpame por haberte molestado. En serio. Mira, vine a preguntarte algo...*]]
 
 (if: $itemWalletisCarried is true) [[[─Ven, siéntate, que te invito a tomar lo que quieras.|2.1.5.A]] ]
 (if: $textedJuli is true) [[[─¿Viste mi mensaje?|2.1.5.B]] ]
@@ -1990,7 +1988,7 @@ Ya no crees que Cris sea la persona &quot;intocable&quot; de Juli. (if: $Julicon
 
 [[─Sí, es que los hackers son tremendos pillos, ¿no? Mala suerte para ti. (Y disfruta verle sufrir).|2.5.2.3 Ríete de Cris a la cara]]</tw-passagedata><tw-passagedata pid="180" name="2.5.2.1 Huir de Cris" tags="" position="4733,5825" size="100,100">Huyes rápidamente del lugar, y Cris se sorprende mucho por tu reacción. Con más veras sospecha de ti, pero no tiene pruebas para acusarte de entrar a su teléfono. 
 
-Sin las cosas aclaradas con Cris, es imposible (if: $Juliconfessed is false)[volver con Juli de la misma manera. Con el tiempo pierdes también su amistad.] (else:)[saber nada de nadie, ya que Juli te ha traicionado.]
+Sin las cosas aclaradas con Cris, es imposible (if: $Juliconfessed is false)[volver con Juli de la misma manera. Con el tiempo pierdes también su amistad.] (else:)[saber nada de nadie, ya que Juli también te ha traicionado.]
 
 Aprendes que no debes meterte con esta clase de personas tan manipuladoras. Huyes de todo el mundo.
 
