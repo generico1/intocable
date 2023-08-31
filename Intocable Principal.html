@@ -16,7 +16,7 @@
 }
 tw-sidebar tw-icon.undo {
  display: none;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Inicio" color="green"></tw-tag><tw-passagedata pid="1" name="Despierta" tags="Inicio" position="392,56" size="100,100">(css: &quot;color: gray;&quot;)[**Intocable - Versión: 1.4.1**]
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Inicio" color="green"></tw-tag><tw-passagedata pid="1" name="Despierta" tags="Inicio" position="392,56" size="100,100">(css: &quot;color: gray;&quot;)[**Intocable - Versión: 1.4.2**]
 
 Te despiertas. Tienes dolor de cabeza y de estómago. ¿Qué haces?
 
@@ -196,15 +196,13 @@ No contesta. ¿Qué haces?
 (link-goto: &quot;Da una vuelta por la cocina&quot;, $previousPassage)</tw-passagedata><tw-passagedata pid="26" name="Sal de la casa" tags="" position="3221,2038" size="100,100">(if: $calledCris is true) [
 	(if: $itemWallet&#39;s isCarried is false)[
  (css: &quot;color: yellow;&quot;)[¿Tienes todo lo que necesitas?]
-    [[Busca en la habitación|Sal de la cama]]
       ]
 	(if: $itemPhone&#39;s isCarried is true)[   
 	[[Averigua qué pasó anoche|Fin de Parte 1]] ]
 	(else:)[
 	  Sin teléfono, ¿cómo vas a estar en contacto con tus amistades?
-	  
-	  [[Ve a la habitación|Sal de la cama]]
 	]
+	[[Ve a la habitación|Sal de la cama]]
 ](else:)[
 (if: $hasBathed is true and $itemClothes&#39;s isCarried is false)[Te has bañado, pero no te has cambiado de ropa. Está bien que no te importe nada de lo que la gente pueda decir de ti, pero es claro que así no podrás encontrarte ni con Cris ni con Juli.](else:)[
 Sales como si nada, pero hay un asunto pendiente por aclarar. Igual, eso no te importa.
@@ -885,7 +883,7 @@ Cris se acerca hacia ti (if: $puntosCarisma &gt;= 3 and $itemGlass&#39;s isCarri
 [[En tu boca|2.3.2.2. EN TU BOCA]]
 [[En tu mejilla|2.3.2.1. EN TU MEJILLA]]
 
-(css: &quot;color: purple;&quot;)[**(Tu preparación para la cita determinó esta interacción).**]</tw-passagedata><tw-passagedata pid="90" name="2.3.3. SALUDO A Cris CUANDO FUISTE A EL SITIO" tags="" position="4082,2592" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] *¿Me puedes explicar qué hacías allá afuera?* (if: $talkedtoCrisSitio is true)[*¿Por qué me llama Juli así con esa actitud tan horrible?*]
+(css: &quot;color: purple;&quot;)[**(Tu preparación para la cita determinó esta interacción).**]</tw-passagedata><tw-passagedata pid="90" name="2.3.3. SALUDO A Cris CUANDO FUISTE A EL SITIO" tags="" position="4082,2592" size="100,100">(css: &quot;color: white;&quot;)[**Cris:**] *¿Me puedes explicar por qué te demoraste tanto?* (if: $talkedtoCrisSitio is true)[*¿Por qué me llama Juli así con esa actitud tan horrible?*]
 
 [[─¿No lo sabes acaso? Hice un pacto con Juli. Y acordamos en que tú y yo no debemos contactarnos. Por eso necesito hablarte.|2.3.5.2.C]]
 [[─Juli no puede enterarse de que tú y yo hablamos. Por eso fui a hablarle para que no sospechara más de mí.|2.3.5.2.A]] 
